@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+  {{ "<!-- Build time: " | safeHTML }}{{now}}{{ "-->" | safeHTML }}
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,6 +16,6 @@
         {{- if .Params.heading -}} {{- .Params.heading -}} {{- else -}} {{- .Site.Title -}} {{ print " | " }} {{- .Title -}} {{- end -}}
     {{- end -}}
     </title>
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/main.css" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/main.css?v={{ md5 $.Hugo.BuildDate }}" />
   </head>
   <body>

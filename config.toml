@@ -1,4 +1,4 @@
-baseURL = "https://floss.events/"
+baseURL = "http://flossevents.nandus.net/"
 languageCode = "en-us"
 title = "FLOSS Events"
 theme = "events"
