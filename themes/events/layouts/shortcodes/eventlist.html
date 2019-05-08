@@ -1,0 +1,52 @@
+{{- $type := .Get "type" -}} <!-- e.g. "year" or "range" -->
+{{- $date := .Get "date" -}} <!-- e.g. "2019" or "next" -->
+{{- $data := .Site.Data.events -}}
+{{- $month_counter := "0" -}} <!-- set to non-existing month number to let month name display initially -->
+
+<!-- range over all files in "events" -->
+{{- range sort $data "date_start" "asc" -}}
+  {{- $display := 0 -}}
+  {{- $ts := (time .date_start) -}}
+  {{- $te := (time .date_end) -}}
+  {{- $day := dateFormat "02" $ts -}} <!-- 02 is 2-digit day -->
+  {{- $month := dateFormat "January" $ts -}}
+  {{- $year := dateFormat "06" $ts -}}
+  {{- $month_no := dateFormat "01" $ts -}} <!-- 01 is 2-digit month -->
+  {{- $range_next := now.AddDate 1 0 0 -}} <!-- date in 12 months as limit for "range next" -->
+  {{- $range_prev_diff := now.Sub $ts -}}
+
+  <!-- evaluate whether to show event -->
+  {{- if eq $type "year" -}} <!-- type = year -->
+    {{- if eq $ts.Year (int $date) -}}
+      {{- $display = 1 -}}
+    {{- end -}}
+  {{- else if eq $type "range" -}} <!-- type = range -->
+    {{- if eq $date "next" -}} <!-- date = next -->
+      <!-- between now and +1 year -->
+      {{- if and ($ts.After now) ($ts.Before $range_next) -}}
+        {{- $display = 1 -}}
+      {{- end -}}
+    {{- else if eq $date "prev" -}} <!-- date = prev -->
+      <!-- between -8760 hours and now -->
+      {{- if and ($ts.Before now) (lt $range_prev_diff.Hours 8760) -}}
+        {{- $display = 1 -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  
+  <!-- display event only if conditions before met -->
+  {{- if eq $display 1 -}}
+    {{- if ne $month_no $month_counter -}} <!-- does the current month occur the first time? -->
+      {{- if ne $month_counter "0" -}} <!-- close <ul> if not first occasion -->
+        </ul>
+      {{- end -}}
+      <h2>{{- $month -}} '{{- $year -}}</h2> <!-- print month if first event in this month -->
+      <ul>
+      {{- $month_counter = $month_no -}} <!-- update concurring month to current one -->
+    {{- end -}}
+
+    <li>{{ $day }} {{ $ts.Year }}: {{ .title }} in {{ .city }}</li>
+    <!-- /display event -->
+  {{- end -}}
+{{- end -}}
+</ul>
