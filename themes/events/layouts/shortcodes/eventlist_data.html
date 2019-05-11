@@ -1,12 +1,13 @@
 {{- $type := .Get "type" -}} <!-- e.g. "year" or "range" -->
 {{- $date := .Get "date" -}} <!-- e.g. "2019" or "next" -->
+{{- $data := .Site.Data.events -}}
 {{- $month_counter := "0" -}} <!-- set to non-existing month number to let month name display initially -->
 
-<!-- range over all pages whose front matter holds "event: true", sorted by date_start -->
-{{- range sort (where .Site.Pages "Params.event" true) "Params.date_start" "asc" -}}
+<!-- range over all files in "events" -->
+{{- range sort $data "date_start" "asc" -}}
   {{- $display := 0 -}} <!-- by default, event will not be displayed -->
-  {{- $ts := (time .Params.date_start) -}} <!-- write in variable -->
-  {{- $te := (time .Params.date_end) -}} <!-- write in variable -->
+  {{- $ts := (time .date_start) -}} <!-- write in variable -->
+  {{- $te := (time .date_end) -}} <!-- write in variable -->
   {{- $day := dateFormat "02" $ts -}} <!-- 02 is 2-digit day -->
   {{- $month := dateFormat "January" $ts -}} <!-- event date as month name -->
   {{- $year := dateFormat "06" $ts -}} <!-- event date as month number-->
@@ -45,7 +46,7 @@
       {{- $month_counter = $month_no -}} <!-- update month counter to current month -->
     {{- end -}}
 
-    <li>{{ $day }} {{ $ts.Year }}: {{ .Params.title }} in {{ .Params.city }}</li>
+    <li>{{ $day }} {{ $ts.Year }}: {{ .title }} in {{ .city }}</li>
   {{- end -}}
   {{- /* <!-- /display event --> */ -}}
 {{- end -}} <!-- /range all events -->
