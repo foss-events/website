@@ -2,3 +2,37 @@ baseURL = "http://flossevents.nandus.net/"
 languageCode = "en-us"
 title = "FLOSS Events"
 theme = "events"
+
+[menu]
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  identifier = "home"
+  weight = 1
+
+[[menu.main]]
+  name = "Events"
+  url = "/events/"
+  identifier = "events"
+  weight = 2
+
+[[menu.main]]
+  name = "Upcoming Events"
+  url = "/events/upcoming/"
+  identifier = "upcoming"
+  parent = "events"
+  weight = 2
+
+[[menu.main]]
+  name = "Passed Events"
+  url = "/events/passed/"
+  identifier = "passed"
+  parent = "events"
+  weight = 3
+
+[[menu.main]]
+  name = "List per years"
+  url = "/events/years/"
+  identifier = "years"
+  parent = "events"
+  weight = 1
