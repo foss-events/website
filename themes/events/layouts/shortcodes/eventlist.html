@@ -55,7 +55,8 @@
       {{- $month_counter = $month_no -}} <!-- update month counter to current month -->
     {{- end -}}
 
-    <li>{{ $day }} {{ $ts.Year }}: {{ .Params.title }} in {{ .Params.city }}</li>
+    <!--<li>{{ $day }} {{ $ts.Year }}: {{ .Params.title }} in {{ .Params.city }}</li>-->
+    {{ partial "event" (dict "context" . "day" $day "year" $ts.Year ) }}
   {{- end -}}
   {{- /* <!-- /display event --> */ -}}
 {{- end -}} <!-- /range all events -->
