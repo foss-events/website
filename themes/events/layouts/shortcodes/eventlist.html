@@ -1,5 +1,5 @@
-{{- $type := .Get "type" -}} <!-- e.g. "year" or "range" -->
-{{- $date := .Get "date" -}} <!-- e.g. "2019" or "next" -->
+{{- $type := .Get "type" -}} <!-- options: year, range -->
+{{- $date := .Get "date" -}} <!-- options: all, YYYY, next_12m, prev_12m, next_all, prev_all -->
 {{- $month_counter := "0" -}} <!-- set to non-existing month number to let month name display initially -->
 
 <!-- range over all pages whose front matter holds "event: true", sorted by date_start -->
@@ -20,16 +20,26 @@
       {{- $display = 1 -}}
     {{- end -}}
   {{- else if eq $type "range" -}} <!-- type = range -->
-    {{- if eq $date "next" -}} <!-- date = next -->
+    {{- if eq $date "next_12m" -}} <!-- date = next_12m -->
       {{- /* <!-- between now and +1 year --> */ -}}
       {{- if and ($ts.After now) ($ts.Before $range_next) -}}
         {{- $display = 1 -}}
       {{- end -}}
-    {{- else if eq $date "prev" -}} <!-- date = prev -->
+    {{- else if eq $date "prev_12m" -}} <!-- date = prev_12m -->
       {{- /* <!-- between -8760 hours and now --> */ -}}
       {{- if and ($ts.Before now) (lt $range_prev_diff.Hours 8760) -}}
         {{- $display = 1 -}}
       {{- end -}}
+    {{- else if eq $date "next_all" -}} <!-- date = next_all -->
+      {{- if $ts.After now -}}
+        {{- $display = 1 -}}
+      {{- end -}}
+    {{- else if eq $date "prev_all" -}} <!-- date = prev_all -->
+      {{- if $ts.Before now -}}
+        {{- $display = 1 -}}
+      {{- end -}}
+    {{- else if eq $date "all" -}} <!-- date = all -->
+      {{- $display = 1 -}}
     {{- end -}}
   {{- end -}}
 
