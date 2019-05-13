@@ -1,0 +1,20 @@
+<!-- Template for all posts with "type: event" -->
+{{ partial "head" . }}
+
+{{ partial "header" . }}
+
+<h1>{{ .Title }} {{ (time .Params.date_start).Year }}</h1>
+
+<h2>Metadata</h2>
+
+<pre>
+  Start: {{ dateFormat "02 January 2006" .Params.date_start }}
+  End: {{ dateFormat "02 January 2006" .Params.date_end }}
+  Location: {{ .Params.city }}
+</pre>
+
+<h2>Description</h2>
+
+{{ .Content }}
+
+{{ partial "footer" . }}

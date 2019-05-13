@@ -3,7 +3,7 @@
 {{- $month_counter := "0" -}} <!-- set to non-existing month number to let month name display initially -->
 
 <!-- range over all pages whose front matter holds "event: true", sorted by date_start -->
-{{- range sort (where .Site.Pages "Params.event" true) "Params.date_start" "asc" -}}
+{{- range sort (where .Site.Pages "Params.type" "event") "Params.date_start" "asc" -}}
   {{- $display := 0 -}} <!-- by default, event will not be displayed -->
   {{- $ts := (time .Params.date_start) -}} <!-- write in variable -->
   {{- $te := (time .Params.date_end) -}} <!-- write in variable -->
