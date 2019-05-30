@@ -16,5 +16,8 @@
   },
   "scripts": {
     "serve": "hugo server -D"
+  },
+  "dependencies": {
+    "postcss-cli": "^6.1.2"
   }
 }
