@@ -12,12 +12,10 @@
   },
   "homepage": "https://floss.events/",
   "devDependencies": {
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "postcss-cli": "^6.1.2"
   },
   "scripts": {
     "serve": "hugo server -D"
-  },
-  "dependencies": {
-    "postcss-cli": "^6.1.2"
   }
 }
