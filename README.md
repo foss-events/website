@@ -7,7 +7,6 @@
 * Get [Hugo](https://gohugo.io/)
 * Get [Node.js](https://nodejs.org/en/download/package-manager/)
 * Run `npm install` once
-* Run `npm install postcss-cli` once
 * Run `npm run serve`
 
 ### Details
