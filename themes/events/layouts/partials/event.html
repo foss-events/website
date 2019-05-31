@@ -1,1 +1,17 @@
-<li>{{ .day }} {{ .year }}: {{ .context.Params.title }} in {{ .context.Params.city }} (<a href="{{ .context.RelPermalink }}">more</a>)</li>
+<div class="fe-event mb-3">
+    <div class="fe-event-date">
+        {{ .day }}
+        {{ if .day not eq .end_day }}
+            -{{ .end_day }}
+        {{ end }}
+    </div>
+    <div class="fe-event-description">
+        {{ if .context.Params.homepage }}
+            <a href="{{ .context.Params.homepage }}" target="_blank">{{ .context.Params.title }}</a>
+        {{ else }}
+            {{ .context.Params.title }}
+        {{ end }}
+         in {{ .context.Params.city }}
+        <small>(<a href="">details</a>)</small>
+    </div>
+</div>

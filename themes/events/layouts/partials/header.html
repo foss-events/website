@@ -1,45 +1,72 @@
-<div id="nav">
-<!--
-<ul>
-  <li><a href="/">Index</a></li>
-  <li>Years
-    <ul>
-      <li><a href="/years/2018/">2018</a></li>
-      <li><a href="/years/2019/">2019</a></li>
-      <li><a href="/years/2020/">2020</a></li>
-    </ul>
-  </li>
-</ul>
-</div>
--->
+<div id="top">top</div>
+<div class="container">
+    <div class="text-center mt-5">
+        <div class="d-inline-block">
+            <div class="fe-brand d-inline-block px-6 py-3 mb-2">
+                FLOSS Events in Europe in 2019
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-<!-- menu start -->
-<aside>
-    <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-                <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-                    <a href="{{ .URL }}">
-                        {{ .Pre }}
-                        <span>{{ .Name }}</span>
-                    </a>
-                </li>
-                <ul class="sub-menu">
-                    {{ range .Children }}
-                        <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                            <a href="{{ .URL }}">{{ .Name }}</a>
+                <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent">
+                    <ul class="navbar-nav justify-content-around w-100">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">List <span class="sr-only">(current)</span></a>
                         </li>
-                    {{ end }}
-                </ul>
-            {{ else }}
-                <li>
-                    <a href="{{ .URL }}">
-                        {{ .Pre }}
-                        <span>{{ .Name }}</span>
-                    </a>
-                </li>
-            {{ end }}
-        {{ end }}
-    </ul>
-</aside>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Calendar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!--<aside>-->
+<!--    <ul>-->
+<!--        {{ $currentPage := . }}-->
+<!--        {{ range .Site.Menus.main }}-->
+<!--            {{ if .HasChildren }}-->
+<!--                <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">-->
+<!--                    <a href="{{ .URL }}">-->
+<!--                        {{ .Pre }}-->
+<!--                        <span>{{ .Name }}</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <ul class="sub-menu">-->
+<!--                    {{ range .Children }}-->
+<!--                        <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">-->
+<!--                            <a href="{{ .URL }}">{{ .Name }}</a>-->
+<!--                        </li>-->
+<!--                    {{ end }}-->
+<!--                </ul>-->
+<!--            {{ else }}-->
+<!--                <li>-->
+<!--                    <a href="{{ .URL }}">-->
+<!--                        {{ .Pre }}-->
+<!--                        <span>{{ .Name }}</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            {{ end }}-->
+<!--        {{ end }}-->
+<!--    </ul>-->
+<!--</aside>-->

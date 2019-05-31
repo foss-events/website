@@ -4,7 +4,7 @@
 
 ### TL;DR
 
-* Get [Hugo](https://gohugo.io/)
+* Get [Hugo extended](https://gohugo.io/)
 * Get [Node.js](https://nodejs.org/en/download/package-manager/)
 * Run `npm install` once
 * Run `npm run serve`

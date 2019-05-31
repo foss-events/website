@@ -1,6 +1,7 @@
 {{- $type := .Get "type" -}} <!-- options: year, range -->
 {{- $date := .Get "date" -}} <!-- options: all, YYYY, next_12m, prev_12m, next_all, prev_all -->
 {{- $month_counter := "0" -}} <!-- set to non-existing month number to let month name display initially -->
+{{- $homepage := .Get "homepage" -}}
 
 <!-- range over all pages whose front matter holds "event: true", sorted by date_start -->
 {{- range sort (where .Site.Pages "Params.type" "event") "Params.date_start" "asc" -}}
@@ -8,6 +9,7 @@
   {{- $ts := (time .Params.date_start) -}} <!-- write in variable -->
   {{- $te := (time .Params.date_end) -}} <!-- write in variable -->
   {{- $day := dateFormat "02" $ts -}} <!-- 02 is 2-digit day -->
+  {{- $end_day := dateFormat "02" $te -}} <!-- 02 is 2-digit day -->
   {{- $month := dateFormat "January" $ts -}} <!-- event date as month name -->
   {{- $year := dateFormat "06" $ts -}} <!-- event date as month number-->
   {{- $month_no := dateFormat "01" $ts -}} <!-- 01 is 2-digit month -->
@@ -48,16 +50,16 @@
     {{- /* <!-- show month in headline if this is its first occurence --> */ -}}
     {{- if ne $month_no $month_counter -}} <!-- does the current month occur the first time? -->
       {{- if ne $month_counter "0" -}} <!-- close <ul> if not first occasion -->
-        </ul>
+        </div>
       {{- end -}}
-      <h2>{{ $month }} '{{ $year }}</h2> <!-- print month 'year -->
-      <ul>
+      <h4 class="mb-3">{{ $month }}</h4> <!-- print month 'year -->
+      <div class="mb-5">
       {{- $month_counter = $month_no -}} <!-- update month counter to current month -->
     {{- end -}}
 
     <!--<li>{{ $day }} {{ $ts.Year }}: {{ .Params.title }} in {{ .Params.city }}</li>-->
-    {{ partial "event" (dict "context" . "day" $day "year" $ts.Year ) }}
+    {{ partial "event" (dict "context" . "day" $day "end_day" $end_day "year" $ts.Year ) }}
   {{- end -}}
   {{- /* <!-- /display event --> */ -}}
 {{- end -}} <!-- /range all events -->
-</ul>
+</div>
