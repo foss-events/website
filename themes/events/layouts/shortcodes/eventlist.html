@@ -2,6 +2,9 @@
 {{- $date := .Get "date" -}} <!-- options: all, YYYY, next_12m, prev_12m, next_all, prev_all -->
 {{- $month_counter := "0" -}} <!-- set to non-existing month number to let month name display initially -->
 {{- $homepage := .Get "homepage" -}}
+{{- $cfp := .Get "cfp" -}}
+{{- $cfp_link := .Get "cfp_link" -}}
+{{- $cfp_date := .Get "cfp_date" -}}
 
 <!-- range over all pages whose front matter holds "event: true", sorted by date_start -->
 {{- range sort (where .Site.Pages "Params.type" "event") "Params.date_start" "asc" -}}

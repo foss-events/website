@@ -3,6 +3,10 @@
  * @return {{year, month, day}}
  */
 module.exports = (string) => {
+    if (string.trim() === 'open') {
+        return null;
+    }
+
     const stringLength = string.length;
     const date = {
         day: '01'

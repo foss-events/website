@@ -17,6 +17,7 @@ fs.createReadStream('events_db.csv')
 
         const startDate = parseDate(data.datestart);
         const endDate = parseDate(data.dateend);
+        const cfpdate = parseDate(data.cfpdate);
 
         const event = {
             type: 'event',
@@ -24,8 +25,16 @@ fs.createReadStream('events_db.csv')
             homepage: data.homepage,
             date_start: `${startDate.year}-${startDate.month}-${startDate.day}`,
             date_end: `${endDate.year}-${endDate.month}-${endDate.day}`,
-            city: data.city
+            city: data.city,
+            cfp: !!data.cfplink,
+            cfp_link: data.cfplink
         };
+
+        if (cfpdate) {
+            event.cfp_date = `${cfpdate.year}-${cfpdate.month}-${cfpdate.day}`;
+        } else {
+            event.cfp_date = 'open';
+        }
 
         const dir = `content/events/${startDate.year}`;
 
