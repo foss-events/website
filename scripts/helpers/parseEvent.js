@@ -13,7 +13,7 @@ module.exports = (data) => {
 
     const event = {
         type: 'event',
-        title: data.name,
+        title: data.label,
         homepage: data.homepage,
         date_start: `${startDate.year}-${startDate.month}-${startDate.day}`,
         date_start_components: startDate,

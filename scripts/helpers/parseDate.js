@@ -3,6 +3,10 @@
  * @return {{year, month, day}}
  */
 module.exports = (string) => {
+    if (string.trim() === '') {
+        return null;
+    }
+
     if (string.trim() === 'open') {
         return null;
     }

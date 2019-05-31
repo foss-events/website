@@ -8,7 +8,7 @@ const renderEvent = require('./helpers/renderEvent');
 const parseEvent = require('./helpers/parseEvent');
 
 const csvOptions = {
-    separator: ';'
+    separator: '\t'
 };
 
 fs.createReadStream('events_db.csv')
