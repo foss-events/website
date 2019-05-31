@@ -1,0 +1,21 @@
+{
+  "name": "@flossevents/website",
+  "version": "1.0.0",
+  "description": "floss.events",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flossevents/website.git"
+  },
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/flossevents/website/issues"
+  },
+  "homepage": "https://floss.events/",
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "postcss-cli": "^6.1.2"
+  },
+  "scripts": {
+    "serve": "hugo server -D"
+  }
+}
