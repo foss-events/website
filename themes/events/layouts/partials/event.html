@@ -1,7 +1,6 @@
 <div class="fe-event mb-3">
         <div class="fe-event-date">
-            {{ .day }}
-            <!-- todo display end day if differs from day -->
+            {{ .day }}{{ if not (eq .day .end_day) }}-{{ .end_day }}{{ end }}
         </div>
         <div class="fe-event-description">
             <div>
