@@ -1,2 +1,61 @@
 @import "variables-defaults";
 @import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+  padding-bottom: 5rem;
+}
+
+.fe-brand {
+  border-bottom: 2px solid $gray-600;
+  border-top: 2px solid $gray-600;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.fe-hl {
+  margin-bottom: 4rem;
+  text-align: center;
+
+  &:after {
+    background-color: $gray-600;
+    content: "";
+    display: block;
+    height: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    width: 20%;
+  }
+}
+
+.fe-event {
+
+  display: flex;
+
+  .fe-event-date {
+    flex: 0 0 4rem;
+    margin-left: 1rem;
+  }
+
+  .fe-event-description {
+    flex: 1 0 auto;
+  }
+}
+
+.fe-text-lg {
+  font-size: $font-size-lg;
+}
+
+a {
+  font-weight: bold;
+}
+
+#top {
+  height: 0;
+  overflow: hidden;
+}
+
+.fe-love {
+  font-size: 4rem;
+  font-weight: bold;
+}
