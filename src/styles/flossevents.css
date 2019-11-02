@@ -1,0 +1,163 @@
+/* overall-design for floss.events */
+
+html {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+a {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* all divs */
+
+div.stickercontainer {
+    box-sizing: content-box;
+    border: 5px;
+    padding: 0.5em 1em 0.5em 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.eyecatcher {
+    box-sizing: content-box;
+    border: 5px;
+    margin: 2em 30% 2em 30%;
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    text-align: center;
+}
+
+
+div.bgimp {
+    background-image: url("https://floss.events/picturebase/europe-wo-borders-250a.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+h1.header {
+    text-align: center;
+}
+
+
+h2.month {
+    padding-top: 2em;
+}
+
+
+h2.navhead {
+    padding-top: 2em;
+}
+
+div.menu {
+    text-align: center;
+}
+
+div.topheading {
+    text-align: center;
+}
+
+
+/* deprecated: former design-styles */
+
+/* the list of events with bullet-lists
+
+ul.eventlist {
+			list-style-type: none;
+			line-height: 2;
+			text-indent: -3em; 
+			padding-left:3em;
+		}
+	
+
+
+ul.tba {
+			list-style: none;
+			opacity: 0.5;
+			padding-left: 2em;
+			font-size: 0.9em;
+			padding-top: 0.5em;
+			line-height: 2;
+		}
+		
+		
+ul.meta {
+			list-style: none;
+			padding-left: 4em;
+			font-size: 0.9em;
+			line-height: 2;
+		}
+
+*/
+
+table.month {
+    padding-left: 1em;
+}
+
+table.month th, td {
+    padding: 0.5em;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.tba {
+    padding-left: 4em;
+    opacity: 0.5;
+}
+
+table.tba th td {
+
+    padding: 0.25em;
+    font-size: 0.9em;
+}
+
+table td.globaldate {
+    background-color: WhiteSmoke;
+    text-align: center;
+}
+
+
+table td.globalaction {
+    background-color: WhiteSmoke;
+    text-align: center;
+}
+
+
+table.month p.eventcfp {
+    padding-left: 4em;
+    font-size: 0.8em;
+    padding-bottom: 2em;
+}
+
+
+table.month p.eventcfppassed {
+    padding-left: 4em;
+    font-size: 0.8em;
+    padding-bottom: 2em;
+    text-decoration: line-through;
+}
+
+
+table.month p.eventname {
+    margin: 0;
+}
+
+
+table.month a {
+    color: green;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+table.month p.eventdate {
+    margin: 0;
+}

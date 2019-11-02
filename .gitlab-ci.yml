@@ -1,10 +1,25 @@
 image: alpine:3.10
 
 stages:
+  - build
   - deploy
+
+build:
+  artifacts:
+    paths:
+      - build/
+  before_script:
+    - apk update
+    - apk add --no-cache python3 make
+    - pip3 install pipenv
+  script:
+    - pipenv install
+    - make
 
 deploy_to_test:
   stage: deploy
+  dependencies:
+    - build
   before_script:
     - apk update
     - apk add --no-cache lftp
@@ -12,3 +27,4 @@ deploy_to_test:
     - lftp -e "set ftp:ssl-allow no; mirror --parallel --delete --no-symlinks -R build/ /" -u $TEST_FTP_USER,$TEST_FTP_PASS $TEST_FTP_HOST || true
   only:
     - test
+
