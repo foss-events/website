@@ -15,7 +15,7 @@ build/index.html: 2019_events_db.csv
 
 build/events/token: 2019_events_db.csv
 	rm -rf build/events/*
-	python generator/gen.py
+	python3 generator/gen.py
 	touch build/events/token
 
 clean:
