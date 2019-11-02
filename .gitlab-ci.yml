@@ -6,9 +6,9 @@ stages:
 deploy_to_test:
   stage: deploy
   before_script:
-    - sudo apk update
-    - sudo apk add --no-cache lftp
+    - apk update
+    - apk add --no-cache lftp
   script:
-    - lftp -e "set ftp:ssl-allow no; mirror --parallel --delete --no-symlinks -R $CI_PROJECT_DIR/build /" -u $TEST_FTP_USER,$TEST_FTP_PASS $TEST_FTP_HOST || true
+    - lftp -e "set ftp:ssl-allow no; mirror --parallel --delete --no-symlinks -R build/ /" -u $TEST_FTP_USER,$TEST_FTP_PASS $TEST_FTP_HOST || true
   only:
     - test
