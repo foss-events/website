@@ -4,7 +4,8 @@ stages:
   - build
   - deploy
 
-build:
+build_website:
+  stage: build
   artifacts:
     paths:
       - build/
@@ -19,7 +20,7 @@ build:
 deploy_to_test:
   stage: deploy
   dependencies:
-    - build
+    - build_website
   before_script:
     - apk update
     - apk add --no-cache lftp
