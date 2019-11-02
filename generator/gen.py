@@ -8,5 +8,6 @@ print(result)
 with open('2019_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
     for row in reader:
-        print(row['label'])
-
+        with open("build/events/" + row['label'].replace('/', '-') + ".html", "a") as f:
+            f.write(row['label'])
+        # print(row['label'])

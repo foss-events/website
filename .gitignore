@@ -1,6 +1,4 @@
-node_modules
-resources/
-public/
-content/events/**
-.~lock.events_db.csv#
+/build
+/public
 /venv
+.~lock.events_db.csv#
