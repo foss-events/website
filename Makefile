@@ -11,7 +11,7 @@ build/img/europe-wo-borders-250a.jpg: src/img/europe-wo-borders-250a.jpg
 build/index.html: 2019_events_db.csv
 	mkdir -p build
 	rm -rf build/index.html
-	python generator/index.py
+	python3 generator/index.py
 
 build/events/token: 2019_events_db.csv
 	rm -rf build/events/*
