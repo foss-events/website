@@ -3,3 +3,4 @@ resources/
 public/
 content/events/**
 .~lock.events_db.csv#
+/venv
