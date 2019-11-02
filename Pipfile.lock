@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a44f9ac93fb5f2e1aec5db6d7503ffb1a2379b4283f542311f6c05a7d66feac8"
+            "sha256": "1b8ba89c27f5cad71257d9a535c5bca85e01202f0156f618d070f308ea36bf45"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -15,8 +15,7 @@
             }
         ]
     },
-    "default": {},
-    "develop": {
+    "default": {
         "jinja2": {
             "hashes": [
                 "sha256:74320bb91f31270f9551d46522e33af46a80c3d619f4a4bf42b3164d30b5911f",
@@ -58,5 +57,6 @@
             ],
             "version": "==1.1.1"
         }
-    }
+    },
+    "develop": {}
 }

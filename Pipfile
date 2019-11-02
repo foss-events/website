@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+jinja2 = "*"
 
 [dev-packages]
-jinja2 = "*"
 
 [requires]
 python_version = "3.7"
