@@ -46,11 +46,19 @@
     <hr>
 </div>
 
-<ul>
-{% for event in events %}
-    <li>{{ event["label"] }}</li>
+{% for month_id, month in months.items() %}
+    <h2 class="month" id="{{ month["label"] }}">
+        {{ month['label'] }}
+    </h2>
+    <table class="month">
+        {% for event in month['events'] %}
+            <tr>
+                <td>{{ event['start_day'] }}</td>
+                <td>{{ event['label'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endfor %}
-</ul>
 
 <h2 class="month" id="october">October</h2>
 <table class="month">
