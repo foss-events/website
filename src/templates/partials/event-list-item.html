@@ -1,0 +1,25 @@
+<tr>
+    <td>
+        {{ event['start_day'] }}<!--
+        -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
+    </td>
+    <td>
+        {% if event['homepage'] %}
+            <a href="{{ event['homepage'] }}">
+                {{ event['label'] }}
+            </a>
+        {% else %}
+            {{ event['label'] }}
+        {% endif %}
+        {% if event['city'] or event['country'] %}
+            in
+            {% if event['city'] %}
+                {{ event['city'] }}<!--
+                -->{% endif %}<!--
+                -->{% if event['city'] and event['country'] %},{% endif %}
+            {% if event['country'] %}
+                {{ event['country'] }}
+            {% endif %}
+        {% endif %}
+    </td>
+</tr>

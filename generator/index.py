@@ -2,6 +2,8 @@ import csv
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
+now = datetime(2019, 11, 1, 0, 0, 0)
+
 iso_label_dict = {
     'AT': 'Austria',
     'BE': 'Belgium',
@@ -29,7 +31,18 @@ iso_label_dict = {
     'UK': 'UK'
 }
 
-months = {
+upcoming = {
+    '11': {
+        'label': 'November',
+        'events': []
+    },
+    '12': {
+        'label': 'December',
+        'events': []
+    }
+}
+
+prev = {
     '01': {
         'label': 'January',
         'events': []
@@ -69,14 +82,6 @@ months = {
     '10': {
         'label': 'October',
         'events': []
-    },
-    '11': {
-        'label': 'November',
-        'events': []
-    },
-    '12': {
-        'label': 'December',
-        'events': []
     }
 }
 
@@ -109,11 +114,15 @@ with open('2019_events_db.csv') as csvfile:
             'city': city,
             'country': country
         }
-        months[start_month]['events'].append(event)
+
+        if start_date > now:
+            upcoming[start_month]['events'].append(event)
+        else:
+            prev[start_month]['events'].append(event)
 
 file_loader = FileSystemLoader('src/templates')
 env = Environment(loader=file_loader)
 template = env.get_template('index.html')
-result = template.render(months=months)
+result = template.render(upcoming=upcoming, prev=prev)
 with open('build/index.html', 'a') as f:
     f.write(result)
