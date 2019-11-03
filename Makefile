@@ -1,4 +1,4 @@
-all: build/index.html build/flossevents.css build/img/europe-wo-borders-250a.jpg
+all: build/index.html build/flossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png
 
 build/flossevents.css: src/styles/flossevents.css
 	mkdir -p build/styles
@@ -7,6 +7,10 @@ build/flossevents.css: src/styles/flossevents.css
 build/img/europe-wo-borders-250a.jpg: src/img/europe-wo-borders-250a.jpg
 	mkdir -p build/img
 	cp src/img/europe-wo-borders-250a.jpg build/img
+
+build/img/logo.png: src/img/logo.png
+	mkdir -p build/img
+	cp src/img/logo.png build/img
 
 build/index.html: 2019_events_db.csv
 	mkdir -p build

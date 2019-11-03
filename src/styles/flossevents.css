@@ -58,8 +58,17 @@ h2.navhead {
     padding-top: 2em;
 }
 
-div.menu {
+.menu {
     text-align: center;
+}
+
+.menu__logo {
+    display: inline-block;
+    height: 2rem;
+    margin-right: .5rem;
+    position: relative;
+    top: .2rem;
+    width: 2rem;
 }
 
 div.topheading {
