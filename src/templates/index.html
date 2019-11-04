@@ -53,14 +53,16 @@
 </div>
 
 {% for month_id, month in upcoming.items() %}
-    <h2 class="month" id="{{ month["label"] }}">
-        {{ month['label'] }}
-    </h2>
-    <table class="month">
-        {% for event in month['events'] %}
+    {% if month['events'] %}
+        <h2 class="month" id="{{ month["label"] }}">
+            {{ month['label'] }}
+        </h2>
+        <table class="month">
+            {% for event in month['events'] %}
             {% include 'partials/event-list-item.html' %}
-        {% endfor %}
-    </table>
+            {% endfor %}
+        </table>
+    {% endif %}
 {% endfor %}
 
 <div class="eyecatcher">
@@ -69,23 +71,27 @@
     <h3>please <a href="#contribute">contribute</a></h3>
 </div>
 
-<div id="passed" class="topheading">
-    <h1 style="padding-top:2em;">Events passed</h1>
-</div>
-<div style="padding: 0 40% 0 40%">
-    <hr>
-</div>
+{% if prev %}
+    <div id="passed" class="topheading">
+        <h1 style="padding-top:2em;">Events passed</h1>
+    </div>
+    <div style="padding: 0 40% 0 40%">
+        <hr>
+    </div>
 
-{% for month_id, month in prev.items() %}
-    <h2 class="month" id="{{ month["label"] }}">
-        {{ month['label'] }}
-    </h2>
-    <table class="month">
-        {% for event in month['events'] %}
-            {% include 'partials/event-list-item.html' %}
-        {% endfor %}
-    </table>
-{% endfor %}
+    {% for month_id, month in prev.items() %}
+        {% if month['events'] %}
+            <h2 class="month" id="{{ month["label"] }}">
+                {{ month['label'] }}
+            </h2>
+            <table class="month">
+                {% for event in month['events'] %}
+                {% include 'partials/event-list-item.html' %}
+                {% endfor %}
+            </table>
+        {% endif %}
+    {% endfor %}
+{% endif %}
 
 <div class="topheading">
     <h1 id="about" style="padding-top:3em;">About</h1>
