@@ -2,7 +2,7 @@ import csv
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
-now = datetime(2019, 11, 1, 0, 0, 0)
+now = datetime(2020, 1, 1, 0, 0, 0)
 
 iso_label_dict = {
     'AT': 'Austria',
@@ -32,17 +32,6 @@ iso_label_dict = {
 }
 
 upcoming = {
-    '11': {
-        'label': 'November',
-        'events': []
-    },
-    '12': {
-        'label': 'December',
-        'events': []
-    }
-}
-
-prev = {
     '01': {
         'label': 'January',
         'events': []
@@ -82,12 +71,28 @@ prev = {
     '10': {
         'label': 'October',
         'events': []
+    },
+    '11': {
+        'label': 'November',
+        'events': []
+    },
+    '12': {
+        'label': 'December',
+        'events': []
     }
 }
 
-with open('2019_events_db.csv') as csvfile:
+prev = {}
+
+with open('2020_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
     for row in reader:
+
+        if row['approved'] != 'yes':
+            continue
+
+        print('parsing ' + row['label'])
+
         start_date = datetime.strptime(row['datestart'], '%Y%m%d')
         start_day = start_date.strftime('%d')
         start_month = start_date.strftime('%m')
@@ -111,11 +116,14 @@ with open('2019_events_db.csv') as csvfile:
         if upcoming_event:
             cfp_link = row['cfplink']
 
-            if row['cfpdate']:
+            if row['cfpdate'] and row['cfpdate'] != '--':
                 if row['cfpdate'] == 'open':
                     cfp_date = None
                 else:
-                    cfp_date = datetime.strptime(row['cfpdate'], '%Y%m%d')
+                    try:
+                        cfp_date = datetime.strptime(row['cfpdate'], '%Y%m%d')
+                    except:
+                        cfp_date = None
             else:
                 cfp_date = None
         else:
@@ -143,9 +151,9 @@ env = Environment(loader=file_loader)
 template = env.get_template('index.html')
 result = template.render(
     upcoming=upcoming,
-    prev=prev, year='2019',
-    other_year='2020',
-    other_year_link='events-2020.html'
+    prev=prev, year='2020',
+    other_year='2019',
+    other_year_link='/'
 )
-with open('build/index.html', 'a') as f:
+with open('build/events-2020.html', 'a') as f:
     f.write(result)
