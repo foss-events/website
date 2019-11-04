@@ -95,6 +95,8 @@ with open('2019_events_db.csv') as csvfile:
         end_date = datetime.strptime(row['dateend'], '%Y%m%d')
         end_day = end_date.strftime('%d')
 
+        upcoming_event = start_date > now
+
         if row['city'] == '--' or not row['city']:
             city = ''
         else:
@@ -106,16 +108,32 @@ with open('2019_events_db.csv') as csvfile:
             country_code = row['country'].strip()
             country = iso_label_dict.get(country_code, country_code)
 
+        if upcoming_event:
+            print(row['label'])
+            print(row['cfplink'])
+            cfp_link = row['cfplink']
+
+            if row['cfpdate']:
+                if row['cfpdate'] == 'open':
+                    cfp_date = None
+                else:
+                    cfp_date = datetime.strptime(row['cfpdate'], '%Y%m%d')
+        else:
+            cfp_date = None
+            cfp_link = None
+
         event = {
             'label': row['label'],
             'start_day': start_day,
             'end_day': end_day,
             'homepage': row['homepage'],
             'city': city,
-            'country': country
+            'country': country,
+            'cfp_date': cfp_date,
+            'cfp_link': cfp_link
         }
 
-        if start_date > now:
+        if upcoming_event:
             upcoming[start_month]['events'].append(event)
         else:
             prev[start_month]['events'].append(event)

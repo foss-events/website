@@ -21,5 +21,13 @@
                 {{ event['country'] }}
             {% endif %}
         {% endif %}
+        {% if event['cfp_link'] %}
+            <p class="eventcfp">
+                Take part in the <a href="{{ event['cfp_link'] }}">Call for Participation</a>.
+                {% if event['cfp_date'] %}
+                    Deadline: {{  event['cfp_date'].strftime('%d.%m.%Y') }}
+                {% endif %}
+            </p>
+        {% endif %}
     </td>
 </tr>
