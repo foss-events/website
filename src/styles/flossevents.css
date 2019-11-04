@@ -17,17 +17,14 @@ a {
     font-weight: bold;
 }
 
-
-/* all divs */
-
-div.stickercontainer {
+.stickercontainer {
     box-sizing: content-box;
     border: 5px;
     padding: 0.5em 1em 0.5em 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-div.eyecatcher {
+.eyecatcher {
     box-sizing: content-box;
     border: 5px;
     margin: 2em 30% 2em 30%;
@@ -37,7 +34,7 @@ div.eyecatcher {
 }
 
 
-div.bgimp {
+.bgimp {
     background-image: url("https://floss.events/picturebase/europe-wo-borders-250a.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -83,10 +80,10 @@ div.topheading {
 ul.eventlist {
 			list-style-type: none;
 			line-height: 2;
-			text-indent: -3em; 
+			text-indent: -3em;
 			padding-left:3em;
 		}
-	
+
 
 
 ul.tba {
@@ -97,8 +94,8 @@ ul.tba {
 			padding-top: 0.5em;
 			line-height: 2;
 		}
-		
-		
+
+
 ul.meta {
 			list-style: none;
 			padding-left: 4em;
