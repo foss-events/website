@@ -133,6 +133,10 @@ def parse_event(row, today):
         cfp_date = None
         cfp_link = None
 
+    if cfp_link == '--':
+        cfp_date = None
+        cfp_link = None
+
     return {
         'label': row['label'],
         'start_day': start_day,
