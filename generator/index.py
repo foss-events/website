@@ -123,7 +123,15 @@ with open('2019_events_db.csv') as csvfile:
                 if row['cfpdate'] == 'open':
                     cfp_date = None
                 else:
-                    cfp_date = datetime.strptime(row['cfpdate'], '%Y%m%d')
+                    try:
+                        cfp_date = datetime.strptime(row['cfpdate'], '%Y%m%d')
+
+                        if cfp_date < now:
+                            cfp_date = None
+                            cfp_link = None
+                    except:
+                        cfp_date = None
+
             else:
                 cfp_date = None
         else:
