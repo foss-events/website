@@ -91,24 +91,16 @@ table.tba th td {
     font-size: 0.9em;
 }
 
-table td.globaldate {
+.event--highlighted {
     background-color: WhiteSmoke;
     text-align: center;
 }
-
-
-table td.globalaction {
-    background-color: WhiteSmoke;
-    text-align: center;
-}
-
 
 table.month p.eventcfp {
     padding-left: 4em;
     font-size: 0.8em;
     padding-bottom: 2em;
 }
-
 
 table.month p.eventcfppassed {
     padding-left: 4em;

@@ -85,9 +85,15 @@ prev = {
     }
 }
 
+event_type_class_map = {
+    'Global Day': 'event--highlighted',
+    'Regional Day': 'event--highlighted'
+}
+
 with open('2019_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
     for row in reader:
+
         start_date = datetime.strptime(row['datestart'], '%Y%m%d')
         start_day = start_date.strftime('%d')
         start_month = start_date.strftime('%m')
@@ -96,6 +102,8 @@ with open('2019_events_db.csv') as csvfile:
         end_day = end_date.strftime('%d')
 
         upcoming_event = start_date > now
+
+        classes = event_type_class_map.get(row['type'], '')
 
         if row['city'] == '--' or not row['city']:
             city = ''
@@ -130,7 +138,8 @@ with open('2019_events_db.csv') as csvfile:
             'city': city,
             'country': country,
             'cfp_date': cfp_date,
-            'cfp_link': cfp_link
+            'cfp_link': cfp_link,
+            'classes': classes
         }
 
         if upcoming_event:
