@@ -2,19 +2,19 @@ all: build/index.html build/events-2020.html build/flossevents.css build/img/eur
 
 build/flossevents.css: src/styles/flossevents.css
 	mkdir -p build/styles
-	cp src/styles/flossevents.css build/styles
+	cp $< $@
 
 build/img/europe-wo-borders-250a.jpg: src/img/europe-wo-borders-250a.jpg
 	mkdir -p build/img
-	cp src/img/europe-wo-borders-250a.jpg build/img
+	cp $< $@
 
 build/img/logo.png: src/img/logo.png
 	mkdir -p build/img
-	cp src/img/logo.png build/img
+	cp $< $@
 
 build/favicon.ico: src/img/favicon.ico
 	mkdir -p build
-	cp src/img/favicon.ico build
+	cp $< $@
 
 build/index.html: 2019_events_db.csv
 	mkdir -p build
