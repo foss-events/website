@@ -1,4 +1,5 @@
 import csv
+import os
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
@@ -19,5 +20,11 @@ result = template.render(
     other_year='2019',
     other_year_link='/'
 )
-with open('build/events-2020.html', 'a') as f:
+
+target_dir = 'build/2020'
+target_file = target_dir + '/index.html'
+
+os.makedirs(target_dir, exist_ok=True)
+
+with open(target_file, 'a') as f:
     f.write(result)

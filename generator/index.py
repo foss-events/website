@@ -17,7 +17,7 @@ result = template.render(
     upcoming=events['upcoming'],
     prev=events['prev'], year='2019',
     other_year='2020',
-    other_year_link='events-2020.html'
+    other_year_link='2020'
 )
 with open('build/index.html', 'a') as f:
     f.write(result)

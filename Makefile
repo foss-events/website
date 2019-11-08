@@ -1,6 +1,6 @@
-all: build/index.html build/events-2020.html build/flossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png build/favicon.ico
+all: build/index.html build/2020/index.html build/styles/flossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png build/favicon.ico
 
-build/flossevents.css: src/styles/flossevents.css
+build/styles/flossevents.css: src/styles/flossevents.css
 	mkdir -p build/styles
 	cp $< $@
 
@@ -21,9 +21,9 @@ build/index.html: 2019_events_db.csv
 	rm -rf build/index.html
 	pipenv run python3 generator/index.py
 
-build/events-2020.html: 2020_events_db.csv
+build/2020/index.html: 2020_events_db.csv
 	mkdir -p build
-	rm -rf build/events-2020.html
+	rm -rf build/2020/index.html
 	pipenv run python3 generator/events-2020.py
 
 build/events/token: 2019_events_db.csv 2020_events_db.csv
