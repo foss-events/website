@@ -18,7 +18,7 @@ result = template.render(
     upcoming=events['upcoming'],
     prev=events['prev'], year='2020',
     other_year='2019',
-    other_year_link='/'
+    other_year_link=''
 )
 
 target_dir = 'build/2020'
