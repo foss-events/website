@@ -25,7 +25,7 @@ deploy_to_test:
     - apk update
     - apk add --no-cache lftp
   script:
-    - lftp -e "set ftp:ssl-allow no; mirror --parallel --delete --no-symlinks -R build/ /" -u $TEST_FTP_USER,$TEST_FTP_PASS $TEST_FTP_HOST || true
+    - lftp -e "set ftp:ssl-allow no; mirror --parallel --no-symlinks -R build/ /" -u $TEST_FTP_USER,$TEST_FTP_PASS $TEST_FTP_HOST || true
   only:
     - test
 
@@ -37,6 +37,6 @@ deploy_to_live:
     - apk update
     - apk add --no-cache lftp
   script:
-    - lftp -e "set ftp:ssl-allow no; mirror --parallel --delete --no-symlinks -R build/ /" -u $LIVE_FTP_USER,$LIVE_FTP_PASS $LIVE_FTP_HOST || true
+    - lftp -e "set ftp:ssl-allow no; mirror --parallel --no-symlinks -R build/ /" -u $LIVE_FTP_USER,$LIVE_FTP_PASS $LIVE_FTP_HOST || true
   only:
     - master
