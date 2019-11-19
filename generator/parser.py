@@ -133,7 +133,7 @@ def parse_event(row, today):
         cfp_date = None
         cfp_link = None
 
-    if cfp_link == '--':
+    if cfp_link == '--' or cfp_link == 'nada':
         cfp_date = None
         cfp_link = None
 
