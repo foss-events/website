@@ -61,24 +61,6 @@ bzw wir nehmen einen schätzwert und zwar immer den standard-wert zum standardpr
 # Logo:
 "yes" = Logo wurde gespeichert
 
-Fragen: 
-OSM-Links mit oder ohne blauem nubbel?
-kann ich ein "no" bei einer variable drinhaben udn bei einer anderen ist "no" norwegen?
-
-
-
-https://about.sustainable.software
-
-about.sustainable.software
-
-notes.sustainable software
-
-notes.sustainabletech.info
-
-
-sustainable.software
-sustainabletech.info
-sustainablesoftware.info
 
 
 
