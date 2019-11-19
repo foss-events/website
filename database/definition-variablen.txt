@@ -1,0 +1,84 @@
+Variable
+
+# Approved
+* "yes": this shall be put online, it is approved
+* "no": this one is confirmed to happen but misses some important information
+* "nada": this one is not going to happen this year
+* "": keep on checking this if there are news
+
+# Datestart: YYYYMMDD
+# Datenend: YYYYMMDD
+
+# Label: the name we use in the list
+# Name: The name we use in the detailed view
+# Shortname: no use yet, usable in social media etc
+# Hashtag: to be used in social media
+# Homepage: URL
+# City: English City name (could be changed one day to an international id, let's see ...)
+# Country: the two-digit country code
+# Venue: Name of the venue
+# OSM-Link: OpenStreetMap link for the building or the coordinates
+
+# CoC-Link: 
+* URL: Link to the CoC
+* nada: no code of condut
+* "empty": keep on checking this if there are news
+
+# Self-Description: some sentences or paragraphs taken from the page in that they describe their own event.
+
+# Cfp-Date: 
+* Deadline for the CfP in YYYYMMDD
+* "open": there is no deadline specified
+
+# Cfp-Link: Link to the CfP
+
+
+# Type
+* Community Conference = Conference about everything FS + organised by / for community, e.g. booths by community organisations
+* Project Conference = NixOS, Drupal etc
+* Science Conference = Conference run by and for scientists
+* Business Conference = Linuxplumbet etc?
+* Policy Conference = administrations, policy, politics
+* Exhibition = Messe (ohne talks) without conferene, normally aber gemischt mit einer form von konferenz
+* Hackathon
+* Camping
+* Festival
+* Unconference
+* Global Day = IloveFS, Software Freedom Day etc
+* Regional Day = regional eher eingeschränkte aktionstage, zb flisol, linux presentation day etc
+
+# Entrance Fee:
+0 = 0
+1 = 1-10
+2 = 11-30
+3 = 31-70
+4 = 71-120
+5 = 121-250
+6 = 251-500
+7 = 501+
+bzw wir nehmen einen schätzwert und zwar immer den standard-wert zum standardpreis.
+
+# Logo:
+"yes" = Logo wurde gespeichert
+
+Fragen: 
+OSM-Links mit oder ohne blauem nubbel?
+kann ich ein "no" bei einer variable drinhaben udn bei einer anderen ist "no" norwegen?
+
+
+
+https://about.sustainable.software
+
+about.sustainable.software
+
+notes.sustainable software
+
+notes.sustainabletech.info
+
+
+sustainable.software
+sustainabletech.info
+sustainablesoftware.info
+
+
+
