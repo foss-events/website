@@ -14,4 +14,3 @@ source venv/bin/activate
 pipenv install
 make
 ```
-
