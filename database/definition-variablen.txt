@@ -37,15 +37,16 @@ Variable
 * Community Conference = Conference about everything FS + organised by / for community, e.g. booths by community organisations
 * Project Conference = NixOS, Drupal etc
 * Science Conference = Conference run by and for scientists
-* Business Conference = Linuxplumbet etc?
-* Policy Conference = administrations, policy, politics
+* Business Conference = Conference organised for and by Business, business booths for money etc. Examples: CubeCon, OpenExpo, Linuxplumbet etc
+* Policy Conference = Conference run by and for administrations, policy, politics. Examples: Connected Smart Cities Conference
 * Exhibition = Messe (ohne talks) without conferene, normally aber gemischt mit einer form von konferenz
-* Hackathon
+* Hackmeeting = Meetings to hack together without conference around and without competition like in a hackathon. Examples: GNU Hackers Meeting, Debcamp etc
+* Hackathon = competitive hack events with winners and awards
 * Camping
 * Festival
 * Unconference
 * Global Day = IloveFS, Software Freedom Day etc
-* Regional Day = regional eher eingeschränkte aktionstage, zb flisol, linux presentation day etc
+* Regional Day = regional eingeschränkte aktionstage, zb flisol, linux presentation day etc
 
 # Entrance Fee:
 0 = 0
