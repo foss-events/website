@@ -1,4 +1,4 @@
-# floss.events website
+# [//foss.events](https://foss.events) website
 
 ## Build instructions
 
@@ -14,4 +14,3 @@ source venv/bin/activate
 pipenv install
 make
 ```
-

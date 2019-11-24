@@ -32,13 +32,11 @@ a {
     text-align: center;
 }
 
-
 .bgimp {
     background-image: url("https://floss.events/picturebase/europe-wo-borders-250a.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
 
 h1.header {
     text-align: center;
