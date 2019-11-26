@@ -33,7 +33,7 @@ a {
 }
 
 .bgimp {
-    background-image: url("https://floss.events/picturebase/europe-wo-borders-250a.jpg");
+    background-image: url("/img/europe-wo-borders-250a.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
