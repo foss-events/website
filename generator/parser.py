@@ -1,4 +1,5 @@
 from datetime import datetime
+from pprint import pprint
 
 from helper import get_start_of_month, get_end_of_day
 
@@ -77,6 +78,12 @@ def parse_events(reader, today, approved):
             upcoming[start_month]['events'].append(event)
         else:
             prev[start_month]['events'].append(event)
+
+    for month_key,month in upcoming.items():
+        month['events'] = sorted(month['events'], key=lambda event: event['start_day'])
+
+    for month_key,month in prev.items():
+        month['events'] = sorted(month['events'], key=lambda event: event['start_day'])
 
     return {
         'upcoming': upcoming,
