@@ -18,30 +18,40 @@
 
 <body>
 
-<div class="menu" style="padding:2em;">
-    <hr size="3" color="black">
+<div class="menu">
+    <hr class="menu__divider">
     <h1>
-        <img class="menu__logo" src="img/logo.png">
+        <img class="menu__logo" src="img/logo.png" alt="// floss.events">
         FOSS events in Europe in {{ year }}
-        <img class="menu__logo" src="img/logo.png">
+        <img class="menu__logo" src="img/logo.png" alt="// floss.events">
     </h1>
-    <hr>
+    <hr class="menu__divider">
 </div>
 
 <p style="text-align:center; font-size:1.5em;">
     ... and in <a href="{{ other_year_link }}">{{ other_year }}</a>
 </p>
 
-<p>This page is <a href="#about">about</a> connecting people beyond borders and nations who understand the benefits of sharing knowledge and to collectively use, study, share and improve it for everyone.</p> 
+<p>
+    This page is <a href="#about">about</a> connecting people beyond borders and nations who understand the benefits of
+    sharing knowledge and to collectively use, study, share and improve it for everyone.
+</p>
 	
-	<p>You find a list of Free, Libre and/or Open Source Software (related) events happening in Europe in {{ year }} below, chronologically sorted into <a href="#upcoming">upcoming</a> and <a href="#passed">passed</a>. Unity in diversity!</p>  
-	
-	<p>If you know about an event that is not yet listed here and it matches the <a href="#criteria">criteria</a>, please <a href="#contribute">contribute</a>. For any questions get in <a href="mailto:contact@foss.events">contact</a>.
+<p>
+    You find a list of Free, Libre and/or Open Source Software (related) events happening in Europe in {{ year }}
+    below, chronologically sorted into <a href="#upcoming">upcoming</a> and <a href="#passed">passed</a>.
+    Unity in diversity!
 </p>
 
-<div id="upcoming" class="topheading">
-    <h1 style="padding-top:2em;">Upcoming events</h1>
-</div>
+<p>
+    If you know about an event that is not yet listed here and it matches the <a href="#criteria">criteria</a>,
+    please <a href="#contribute">contribute</a>.
+    For any questions get in <a href="mailto:contact@foss.events">contact</a>.
+</p>
+
+<h1 id="upcoming" class="topheading">
+    Upcoming events
+</h1>
 
 <div style="padding: 0 40% 0 40%">
     <hr>
@@ -67,9 +77,7 @@
 </div>
 
 {% if prev %}
-    <div id="passed" class="topheading">
-        <h1 style="padding-top:2em;">Events passed</h1>
-    </div>
+    <h1 id="passed" class="topheading">Events passed</h1>
     <div style="padding: 0 40% 0 40%">
         <hr>
     </div>
@@ -88,30 +96,27 @@
     {% endfor %}
 {% endif %}
 
-<div class="topheading">
-    <h1 id="about" style="padding-top:3em;">About</h1>
-</div>
-
+<h1 id="about" class="topheading">About</h1>
 <div style="padding: 0 40% 3em 40%">
     <hr>
 </div>
 
-
 <div class="bgimp">
-
-    <p>Planet Earth in its late 2010s: Europeans are facing an uprise of right-wing movements in most parts of the
+    <p>
+        Planet Earth in its late 2010s: Europeans are facing an uprise of right-wing movements in most parts of the
         continent. New forms of political oppression and restrictions of freedom are put into practice, creating new
         deportation procedures, excessive police laws and border controls, new walls and entry bans. One can only
         speculate how the overall situation will develop in the next decade or the one after, how borders outside and
         within Europe will be re-established and potentially closed down ... But one can be sure that when crossing
-        borders will become a privilege again, inter-European families, networks and communities will get dispersed.</p>
+        borders will become a privilege again, inter-European families, networks and communities will get dispersed.
+    </p>
 
-    <p>To grow and live (in) a free society we need freedom of exchange. We need human cooperation as a breeding ground
+    <p>
+        To grow and live (in) a free society we need freedom of exchange. We need human cooperation as a breeding ground
         for creativity and inspiration as well as a fundament to safeguard our peace and mutual understanding. Freedom
         of people - just as freedom of code - is fundamental to Free, Libre and Open Source Software and their
-        communities and a requirement to collectively construct our commons. </p>
-
-
+        communities and a requirement to collectively construct our commons.
+    </p>
 </div>
 
 <p>This project shall help growing a free society. As long as inner-European borders can still be crossed and
@@ -120,7 +125,9 @@
     there, their habits, knowledge and backgrounds. Help each other and listen to each other. And above all do what you
     always love to do: <a rel="me" href="https://mastodon.social/@FOSS_events"> </a><a rel="me" href="https://mastodon.social/@FLOSS_events"> </a><a rel="me" href="https://mastodon.social/@3rik"> </a></p>
 
-<p style="text-align:center"><strong>Use, study, share and improve. Together.</strong></p>
+<p style="text-align:center">
+    <strong>Use, study, share and improve. Together.</strong>
+</p>
 
 
 <div style="clear: both; padding-top:2em;"></div>
@@ -150,17 +157,20 @@
 			
 			<p><a href="">Download our posters</a>, print them out and put them on a wall at one of the conferences you are going to. This is a great way to help us know about each other and to interconnect.</p>
 		-->	
-			<p>If you know of an event that matches our criteria [<a href="#criteria">&darr;</a>] and you do not see it mentioned in our list of events [<a href="listofevents">&uarr;</a>], please <a href="mailto:onemore@floss.events?subject=one more event">contribute with an email</a>. Easiest option is to simply copy-paste the URL of the event into the body section of your mail and after checking we will list it here.</p>
+    <p>
+        If you know of an event that matches our criteria [<a href="#criteria">&darr;</a>] and
+        you do not see it mentioned in our list of events [<a href="listofevents">&uarr;</a>],
+        please <a href="mailto:onemore@floss.events?subject=one+more+event">contribute with an email</a>.
+        Easiest option is to simply copy-paste the URL of the event into the body section of your mail and
+        after checking we will list it here.
+    </p>
 		
 	<!--
 			<p>And if you have 5 minutes of time, it would be of such a great help to this project if you can <a href="https://lite.framacalc.org/SdHmD5qQID">use this email-template</a>.</p>
 	-->
-			<h3 style="text-align:center">Thank you so much for your contribution!</p>
-			
-			<h1 style="text-align:center"><3</h1>
-			
+			<h3 style="text-align:center">Thank you so much for your contribution!</h3>
+			<h1 style="text-align:center">&lt;3</h1>
 			<p style="text-align: right;"><a href="#top">Navigation [&uarr;]</a></p>
-
 
 <h2 class="navhead" id="criteria">about: criteria</h2>
 	
