@@ -37,6 +37,7 @@ iso_label_dict = {
     'GR': 'Greece',
     'HR': 'Croatia',
     'HU': 'Hungary',
+    'IE': 'Ireland',
     'IT': 'Italy',
     'KO': 'Kosova',
     'NL': 'the Netherlands',
@@ -47,7 +48,8 @@ iso_label_dict = {
     'RS': 'Serbia',
     'SE': 'Sweden',
     'SQ': 'Albania',
-    'UK': 'UK'
+    'UA': 'Ukraine',
+    'UK': 'United Kingdom'
 }
 
 
