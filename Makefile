@@ -1,4 +1,4 @@
-all: build/index.html build/2020/index.html build/styles/fossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png build/favicon.ico
+all: build/index.html build/2020/index.html build/styles/fossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png build/img/fossevents_512.png build/img/fossevents_1024.png build/favicon.ico
 
 build/styles/fossevents.css: src/styles/fossevents.css
 	mkdir -p build/styles
@@ -9,6 +9,14 @@ build/img/europe-wo-borders-250a.jpg: src/img/europe-wo-borders-250a.jpg
 	cp $< $@
 
 build/img/logo.png: src/img/logo.png
+	mkdir -p build/img
+	cp $< $@
+
+build/img/fossevents_512.png: src/img/fossevents_512.png
+	mkdir -p build/img
+	cp $< $@
+
+build/img/fossevents_1024.png: src/img/fossevents_1024.png
 	mkdir -p build/img
 	cp $< $@
 
