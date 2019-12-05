@@ -1,6 +1,6 @@
-all: build/index.html build/2020/index.html build/styles/flossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png build/favicon.ico
+all: build/index.html build/2020/index.html build/styles/fossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png build/favicon.ico
 
-build/styles/flossevents.css: src/styles/flossevents.css
+build/styles/fossevents.css: src/styles/fossevents.css
 	mkdir -p build/styles
 	cp $< $@
 
