@@ -55,6 +55,7 @@ iso_label_dict = {
 
 def parse_events(reader, today, approved):
 
+    all_events = []
     upcoming = {}
     prev = {}
 
@@ -70,7 +71,7 @@ def parse_events(reader, today, approved):
 
     for row in reader:
 
-        if not approved and row['approved'] != 'yes':
+        if not approved or row['approved'] != 'yes':
             continue
 
         event = parse_event(row, today)
@@ -78,6 +79,7 @@ def parse_events(reader, today, approved):
         if event is None:
             continue
 
+        all_events.append(event)
         start_month = event['start_month']
 
         if event['upcoming']:
@@ -92,6 +94,7 @@ def parse_events(reader, today, approved):
         month['events'] = sorted(month['events'], key=lambda event: event['start_day'])
 
     return {
+        'all': all_events,
         'upcoming': upcoming,
         'prev': prev
     }
@@ -111,6 +114,7 @@ def parse_event(row, today):
 
     start_day = start_date.strftime('%d')
     start_month = start_date.strftime('%m')
+    start_year = start_date.strftime('%Y')
 
     end_date = datetime.strptime(row['dateend'], '%Y%m%d')
     end_day = end_date.strftime('%d')
@@ -167,6 +171,7 @@ def parse_event(row, today):
         'label': row['label'],
         'start_day': start_day,
         'start_month': start_month,
+        'start_year': start_year,
         'end_day': end_day,
         'homepage': row['homepage'],
         'city': city,
