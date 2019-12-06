@@ -26,7 +26,6 @@
     <meta name="twitter:creator" content="@FOSS_events"/>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/styles/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
 
     <title>// foss.events in Europe</title>
@@ -38,125 +37,20 @@
     <hr class="menu__divider">
     <h1>
         <img class="menu__logo" src="img/logo.png" alt="// foss.events">
-        FOSS events in Europe
+        FOSS events in Europe in {{ year }}
         <img class="menu__logo" src="img/logo.png" alt="// foss.events">
     </h1>
     <hr class="menu__divider">
 </div>
 
-<p class="navlinks">
-    <a href="/2019" class="navlinks__link navlinks__link--inactive">2019</a> |
-    <a href="/" class="navlinks__link navlinks__link--inactive">2020</a>
+<p style="text-align:center; font-size:1.5em;">
+    ... and in <a href="{{ other_year_link }}">{{ other_year }}</a>
 </p>
 
-<h2 class="event-title">{{ event['label'] }}</h2>
+<p>
+    {{ event['label'] }}
+</p>
 
-{% if event['type'] %}
-    <div class="event-type">{{ event['type'] }}</div>
-{% endif %}
-
-<div class="event-date">
-    {{ event['start_day'] }}<!--
-        -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
-    {{ event['start_month_string'] }} {{ event['start_year'] }}
-</div>
-
-<div class="event-location">
-    {{ event['venue'] }}<!--
-    -->{% if event['venue'] and event['city'] %},{% endif %}
-    {{ event['city'] }}<!--
-    -->{% if (event['venue'] or event['city']) and event['country'] %},{% endif %}
-    {{ event['country'] }}
-    {% if event['osm_link'] %}
-        <a class="event-location__link" href="{{ event['osm_link'] }}" target="_blank">OSM</a>
-        {% if event['geo'] %}/{% endif %}
-    {% endif %}
-    {% if event['geo'] %}
-        <a class="event-location__link" href="{{ event['geo'] }}">
-            geo
-        </a>
-    {% endif %}
-</div>
-
-<div id="map" class="event-map"></div>
-
-<table class="event-table">
-    {% if event['homepage'] %}
-        <tr>
-            <th class="event-table__label">Website</th>
-            <td class="event-table__content">
-                <a href="{{ event['homepage'] }}">
-                    {{ event['homepage'] }}
-                </a>
-            </td>
-        </tr>
-    {% endif %}
-    {% if event['reg'] %}
-        <tr>
-            <th class="event-table__label">Registration</th>
-            <td class="event-table__content">
-                Required.
-                {% if event['reg_link'] %}
-                    Find more info <a href="{{ event['reg_link'] }}" target="_blank">here</a>.
-                {% endif %}
-            </td>
-        </tr>
-    {% endif %}
-    {% if event['fee'] %}
-        <tr>
-            <th class="event-table__label">Entrance fee</th>
-            <td class="event-table__content">{{ event['fee'] }}</td>
-        </tr>
-    {% endif %}
-    {% if event['description'] %}
-        <tr>
-            <th class="event-table__label">Description</th>
-            <td class="event-table__content">{{ event['description'] }}</td>
-        </tr>
-    {% endif %}
-    {% if event['participants'] %}
-        <tr>
-            <th class="event-table__label">Event size</th>
-            <td class="event-table__content">
-                Round about {{ event['participants'] }} participants last time
-            </td>
-        </tr>
-    {% endif %}
-    {% if event['cfp_link'] %}
-        <tr>
-            <th class="event-table__label">CfP</th>
-            <td class="event-table__content">
-                Take part in the <a href="{{ event['cfp_link'] }}">Call for Participation</a>.
-                {% if event['cfp_date'] %}
-                    <div class="event-cfp__deadline">
-                        Deadline: {{  event['cfp_date'].strftime('%d.%m.%Y') }}
-                    </div>
-                {% endif %}
-            </td>
-        </tr>
-    {% endif %}
-    {% if event['coc_link'] %}
-        <tr>
-            <th class="event-table__label">CoC</th>
-            <td class="event-table__content">
-                Read the <a href="{{ event['coc_link'] }}" target="_blank">Code of Conduct</a>
-            </td>
-        </tr>
-    {% endif %}
-</table>
-
-{% if event['lat'] and event['lon'] %}
-<script>
-    window.fe = {
-        event: {
-            lat: {{ event['lat'] }},
-            lon: {{ event['lon'] }}
-        }
-    };
-</script>
-{% endif %}
-<script src="/js/leaflet.js"></script>
-<script src="/js/event.js"></script>
 </body>
 
 </html>

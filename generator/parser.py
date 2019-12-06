@@ -1,7 +1,7 @@
 from datetime import datetime
 from pprint import pprint
 
-from helper import get_start_of_month, get_end_of_day, generate_event_path
+from helper import get_start_of_month, get_end_of_day
 
 months = {
     '01': 'January',
@@ -71,14 +71,10 @@ def parse_events(reader, today, approved):
 
     for row in reader:
 
-        if not approved and row['approved'] != 'yes':
+        if not approved or row['approved'] != 'yes':
             continue
 
         event = parse_event(row, today)
-
-        if event is None:
-            continue
-
         all_events.append(event)
         start_month = event['start_month']
 
@@ -105,13 +101,7 @@ def parse_event(row, today):
     start_of_month = get_start_of_month(today)
     end_of_today = get_end_of_day(today)
 
-    try:
-        start_date = datetime.strptime(row['datestart'], '%Y%m%d')
-    except ValueError:
-        pprint('error parsing datestart')
-        pprint(row)
-        return None
-
+    start_date = datetime.strptime(row['datestart'], '%Y%m%d')
     start_day = start_date.strftime('%d')
     start_month = start_date.strftime('%m')
     start_year = start_date.strftime('%Y')
@@ -122,11 +112,6 @@ def parse_event(row, today):
     upcoming_event = start_date > start_of_month
 
     classes = event_type_class_map.get(row['type'], '')
-
-    if row['coclink'] and row['coclink'] != 'nococ':
-        coc_link = row['coclink']
-    else:
-        coc_link = None
 
     if row['city'] == '--' or not row['city']:
         city = ''
@@ -165,58 +150,17 @@ def parse_event(row, today):
         cfp_date = None
         cfp_link = None
 
-    if row['EntranceFee'] != '0':
-        fee = row['EntranceFee']
-    else:
-        fee = None
-
-    if row['Registration'] and row['Registration'] != 'no':
-        reg = True
-        if row['Registration'] != 'no':
-            reg_link = row['Registration']
-        else:
-            reg_link = None
-    else:
-        reg = False
-        reg_link = None
-
-    try:
-        lat = float(row['lat'])
-        lon = float(row['lon'])
-        geo = 'geo:' + str(lat) + ',' + str(lon)
-    except:
-        lat = None
-        lon = None
-        geo = None
-
-    event = {
+    return {
         'label': row['label'],
-        'description': row['Self-description'],
         'start_day': start_day,
         'start_month': start_month,
-        'start_month_string': months[start_month],
         'start_year': start_year,
         'end_day': end_day,
         'homepage': row['homepage'],
-        'fee': fee,
-        'venue': row['venue'],
         'city': city,
         'country': country,
-        'osm_link': row['OSM-Link'],
-        'geo': geo,
         'cfp_date': cfp_date,
         'cfp_link': cfp_link,
-        'coc_link': coc_link,
-        'reg': reg,
-        'reg_link': reg_link,
         'classes': classes,
-        'type': row['type'],
-        'upcoming': upcoming_event,
-        'participants': row['ParticipantsLastTime'],
-        'lat': lat,
-        'lon': lon
+        'upcoming': upcoming_event
     }
-
-    event['details_url'] = generate_event_path(event)
-
-    return event
