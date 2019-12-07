@@ -14,3 +14,9 @@ source venv/bin/activate
 pipenv install
 make
 ```
+
+Start the dev server
+
+```shell script
+pipenv run bin/serve.py
+```
