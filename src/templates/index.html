@@ -35,16 +35,26 @@
 
 <div class="menu">
     <hr class="menu__divider">
-    <h1>
-        <img class="menu__logo" src="img/logo.png" alt="// foss.events">
-        FOSS events in Europe in {{ year }}
-        <img class="menu__logo" src="img/logo.png" alt="// foss.events">
-    </h1>
+    <a
+            class="menu__link"
+            href="/">
+        <h1>
+            <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+            FOSS events in Europe
+            <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+        </h1>
+    </a>
     <hr class="menu__divider">
 </div>
 
-<p style="text-align:center; font-size:1.5em;">
-    ... and in <a href="{{ other_year_link }}">{{ other_year }}</a>
+<p class="navlinks">
+    {% if year == '2019' %}
+        <span class="navlinks__link navlinks__link--active">2019</span> |
+        <a href="/" class="navlinks__link navlinks__link--inactive">2020</a>
+    {% else %}
+        <a href="/2019" class="navlinks__link navlinks__link--inactive">2019</a> |
+        <span class="navlinks__link navlinks__link--active">2020</span>
+    {% endif %}
 </p>
 
 <p>
@@ -65,7 +75,7 @@
 </p>
 
 <h1 id="upcoming" class="topheading">
-    Upcoming events
+    Upcoming events in {{ year }}
 </h1>
 
 <div style="padding: 0 40% 0 40%">
@@ -92,7 +102,9 @@
 </div>
 
 {% if prev %}
-    <h1 id="passed" class="topheading">Events passed</h1>
+    <h1 id="passed" class="topheading">
+        Past events in {{ year }}
+    </h1>
     <div style="padding: 0 40% 0 40%">
         <hr>
     </div>

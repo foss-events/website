@@ -74,6 +74,10 @@ def parse_events(reader, today, approved):
             continue
 
         event = parse_event(row, today)
+
+        if event is None:
+            continue
+
         start_month = event['start_month']
 
         if event['upcoming']:
@@ -98,7 +102,13 @@ def parse_event(row, today):
     start_of_month = get_start_of_month(today)
     end_of_today = get_end_of_day(today)
 
-    start_date = datetime.strptime(row['datestart'], '%Y%m%d')
+    try:
+        start_date = datetime.strptime(row['datestart'], '%Y%m%d')
+    except ValueError:
+        pprint('error parsing event')
+        pprint(row)
+        return None
+
     start_day = start_date.strftime('%d')
     start_month = start_date.strftime('%m')
 

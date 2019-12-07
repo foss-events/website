@@ -53,8 +53,13 @@ h2.navhead {
 }
 
 .menu {
-    padding: 2em;
+    padding: 2rem 2rem 0;
     text-align: center;
+}
+
+.menu__link {
+    color: #000;
+    text-decoration: none;
 }
 
 .menu__divider {
@@ -69,6 +74,21 @@ h2.navhead {
     position: relative;
     top: .2rem;
     width: 2rem;
+}
+
+.navlinks {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.navlinks__link {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.navlinks__link--active {
+    font-weight: bold;
 }
 
 .topheading {
