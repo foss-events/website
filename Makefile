@@ -1,25 +1,17 @@
 $(shell mkdir -p build/2019)
 $(shell mkdir -p build/img)
 $(shell mkdir -p build/styles)
-all: build/.htaccess build/index.html build/2019/index.html build/styles/fossevents.css build/img/europe-wo-borders-250a.jpg build/img/logo.png build/img/fossevents_512.png build/img/fossevents_1024.png build/favicon.ico
+SOURCE_IMGS=$(wildcard src/img/*.png) $(wildcard src/img/*.jpg)
+TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
+all: build/.htaccess build/index.html build/2019/index.html build/styles/fossevents.css  build/favicon.ico $(TARGET_IMGS)
+
+build/img/%: src/img/%
+	cp $< $@
 
 build/styles/fossevents.css: src/styles/fossevents.css
-	mkdir -p build/styles
 	cp $< $@
 
 build/.htaccess: src/.htaccess
-	cp $< $@
-
-build/img/europe-wo-borders-250a.jpg: src/img/europe-wo-borders-250a.jpg
-	cp $< $@
-
-build/img/logo.png: src/img/logo.png
-	cp $< $@
-
-build/img/fossevents_512.png: src/img/fossevents_512.png
-	cp $< $@
-
-build/img/fossevents_1024.png: src/img/fossevents_1024.png
 	cp $< $@
 
 build/favicon.ico: src/img/favicon.ico
