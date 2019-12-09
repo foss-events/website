@@ -1,1 +1,2 @@
-Redirect 301 /2020 /
+RedirectMatch 301 ^/2020$ /
+
