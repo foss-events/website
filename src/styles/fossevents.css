@@ -82,6 +82,11 @@ h2.navhead {
     text-align: center;
 }
 
+.navlinks__separator {
+    position: relative;
+    top: -.2rem;
+}
+
 .navlinks__link {
     font-weight: normal;
     text-decoration: none;

@@ -49,10 +49,12 @@
 
 <p class="navlinks">
     {% if year == '2019' %}
-        <span class="navlinks__link navlinks__link--active">2019</span> |
+        <span class="navlinks__link navlinks__link--active">2019</span>
+        <span class="navlinks__separator">|</span>
         <a href="/" class="navlinks__link navlinks__link--inactive">2020</a>
     {% else %}
-        <a href="/2019" class="navlinks__link navlinks__link--inactive">2019</a> |
+        <a href="/2019" class="navlinks__link navlinks__link--inactive">2019</a>
+        <span class="navlinks__separator">|</span>
         <span class="navlinks__link navlinks__link--active">2020</span>
     {% endif %}
 </p>
