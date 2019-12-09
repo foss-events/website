@@ -150,6 +150,62 @@ table.month p.eventdate {
     margin: 0;
 }
 
-.map {
+/* event page */
+
+.event-map {
     height: 15rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+.event-type {
+    font-size: .9rem;
+}
+
+.event-date {
+    margin-top: .75rem;
+}
+
+.event-location {
+    margin-bottom: .5rem;
+}
+
+.event-location__link {
+    font-size: .75rem;
+}
+
+.event-table {
+
+}
+
+.event-table__label {
+    color: #343a40;
+    font-weight: bold;
+    padding: 0 1rem 1rem 0;
+    text-align: right;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.event-table__content {
+    padding: 0 0 1rem;
+    vertical-align: top;
+}
+
+.event-table__content p:first-of-type {
+    margin-top: 0;
+}
+
+.event-table__content p:last-of-type {
+    margin-bottom: 0;
+}
+
+.event-cfp__deadline {
+    font-size: .9rem;
 }

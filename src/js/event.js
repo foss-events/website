@@ -8,14 +8,27 @@
         zoomControl: false
     };
 
-    var lon = 8.682222;
-    var lat = 50.110556;
+
+    var lat = 50.115597;
+    var lon = 9.242031;
+    var hasCoordinates = false;
+    var zoom = 3;
+
+    if (window.fe && window.fe.event.lat && window.fe.event.lon) {
+        lat = window.fe.event.lat;
+        lon = window.fe.event.lon;
+        hasCoordinates = true;
+        zoom = 13;
+    }
+
     var latLon = [lat, lon];
 
     var map = L.map('map', mapOptions)
-        .setView(latLon, 12);
+        .setView(latLon, zoom);
 
-    var marker = L.marker(latLon).addTo(map);
+    if (hasCoordinates) {
+        var marker = L.marker(latLon).addTo(map);
+    }
 
     /*
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
