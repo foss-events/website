@@ -184,10 +184,15 @@ def parse_event(row, today):
         lat = float(row['lat'])
         lon = float(row['lon'])
         geo = 'geo:' + str(lat) + ',' + str(lon)
+        if row['default_zoom']:
+            zoom = row['default_zoom']
+        else:
+            zoom = 10
     except:
         lat = None
         lon = None
         geo = None
+        zoom = None
 
     event = {
         'label': row['label'],
@@ -214,7 +219,8 @@ def parse_event(row, today):
         'upcoming': upcoming_event,
         'participants': row['ParticipantsLastTime'],
         'lat': lat,
-        'lon': lon
+        'lon': lon,
+        'zoom': zoom
     }
 
     event['details_url'] = generate_event_path(event)

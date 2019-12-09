@@ -1,13 +1,5 @@
 (function () {
-    var mapOptions = {
-        boxZoom: false,
-        doubleClickZoom: false,
-        dragging: false,
-        keyboard: false,
-        scrollWheelZoom: false,
-        zoomControl: false
-    };
-
+    var mapOptions = {};
 
     var lat = 50.115597;
     var lon = 9.242031;
@@ -15,10 +7,10 @@
     var zoom = 3;
 
     if (window.fe && window.fe.event.lat && window.fe.event.lon) {
+        hasCoordinates = true;
         lat = window.fe.event.lat;
         lon = window.fe.event.lon;
-        hasCoordinates = true;
-        zoom = 13;
+        zoom = window.fe.event.zoom;
     }
 
     var latLon = [lat, lon];
@@ -30,14 +22,7 @@
         var marker = L.marker(latLon).addTo(map);
     }
 
-    /*
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        'attribution': 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        'useCache': true
-    }).addTo(map);
-     */
-
-    L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+    L.tileLayer('https://c.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         'attribution': 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         'useCache': true
     }).addTo(map);
