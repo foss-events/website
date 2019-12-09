@@ -63,7 +63,7 @@
     This page is <a href="#about">about</a> connecting people beyond borders and nations who understand the benefits of
     sharing knowledge and to collectively use, study, share and improve it for everyone.
 </p>
-	
+
 <p>
     You find a list of Free, Libre and/or Open Source Software (related) events happening in Europe in {{ year }}
     below, chronologically sorted into <a href="#upcoming">upcoming</a> and <a href="#passed">passed</a>.
@@ -97,10 +97,10 @@
     {% endif %}
 {% endfor %}
 
-<div class="eyecatcher">
+<div class="contribute-box">
     <h3>missing an event?</h3>
     <h3>info out of date?</h3>
-    <h3>please <a href="#contribute">contribute</a></h3>
+    <h3>please <a href="/#contribute">contribute</a></h3>
 </div>
 
 {% if prev %}
@@ -118,7 +118,7 @@
             </h2>
             <table class="month">
                 {% for event in month['events'] %}
-                {% include 'partials/event-list-item.html' %}
+                    {% include 'partials/event-list-item.html' %}
                 {% endfor %}
             </table>
         {% endif %}
@@ -180,12 +180,6 @@
 
 
 <h2 class="navhead" id="contribute">about contribute</h2>
-	
-	<!--
-			<p>If you like // foss.events there are several ways how you can contribute to this project:</p>
-			
-			<p><a href="">Download our posters</a>, print them out and put them on a wall in your school, at your workplace or at one of the conferences you are going to. This is a great way to help us know about each other and to help creating resilient communities.</p>
-		-->	
     <p>
         If you know of an event that matches our criteria [<a href="#criteria">&darr;</a>] and
         you do not see it mentioned in our list of events [<a href="listofevents">&uarr;</a>],
@@ -194,9 +188,9 @@
         after checking we will list it here. If you see that some information is missing on our side, use the same email-address and send us the missing information.
     </p>
 		
-	
+
 			<p>If you are an organiser or you have 5 minutes of time, it would be of such a great help to this project if you can <a href="mailto:onemore@foss.events?subject=one more event&body=Hi all,%0D%0A%0D%0Aplease add/update this event on // foss.events:%0D%0A%0D%0AName:%0D%0ADate:%0D%0AURL:%0D%0ACity:%0D%0ACountry:%0D%0AOSM-Link:%0D%0ASelf-Description:%0D%0ALink for Call for Participation:%0D%0ADeadline for Call for Participation:%0D%0ALink for Code of Conduct:%0D%0AEntrance Fee:%0D%0AParticipants last time:%0D%0ALink for Call for Participation:%0D%0AMain language: ">use this advanced email-template</a> and help us with collecting all necessary information about an event.</p>
-	
+
 			<h3 style="text-align:center">Thank you so much for your contribution!</h3>
 			<h1 style="text-align:center">&lt;3</h1>
 			<p style="text-align: right;"><a href="#top">Navigation [&uarr;]</a></p>
@@ -204,16 +198,16 @@
 <h2 class="navhead" id="criteria">about criteria</h2>
 	
 			<p>// foss.events is all about collecting and spreading FOSS events in Europe. These are mainly conferences but can also be meetings, *-a-thons, camps, festival, exhibitions and other kind of events - as long as they match the following criteria:</p>
-			
+
 			<ul>
 				<li>only events that happen in Europe.</li>
 				<li>only events that are open for the general public. Entrance fee is ok, but events shall be accessible for everyone to participate and in particular not restricted to a specific group like the members of a specific group, organisation or similar. </li>
-				<li>only "full-day" events. As a rule of thumb, that means events that are at least 6-8 hours or more.</li> 
+				<li>only "full-day" events. As a rule of thumb, that means events that are at least 6-8 hours or more.</li>
 			</ul>
-		
-		
+
+
 			<p>If you know about Free, Libre and/or Open Source Software event in Europe that matches this criteria and is not yet in our list, please contribute [<a href="#contribute">&uarr;</a>]</p>
-			
+
 			<p style="text-align: right;"><a href="#top">Navigation [&uarr;]</a></p>
 
 
@@ -224,10 +218,12 @@
 <h2 class="navhead" id="contact">about contact</h2>
 
 			<p>Whenever you feel like giving us your feedback, you have a good idea or you want to give us a digital hug, you can simply send us an <a href="mailto:contact@foss.events">email</a>. Also consider following us on <a rel="me" href="https://mastodon.social/@FOSS_events">Mastodon</a> or <a href="https://twitter.com/FOSS_events">Twitter</a> to enjoy our toots and tweets around foss-events in Europe<a rel="me" href="https://mastodon.social/@3rik">.</a> </p>
-			
+
 <p style="text-align: right;"><a href="#top">Navigation [&uarr;]</a></p>
 
 <p><a href="/imprint.png">imprint</a></p>
+
+{% include 'partials/footer.html' %}
 
 </body>
 

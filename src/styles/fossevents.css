@@ -8,7 +8,6 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 3rem;
 }
 
 a {
@@ -23,11 +22,11 @@ a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.eyecatcher {
-    box-sizing: content-box;
+.contribute-box {
     border: 5px;
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: content-box;
     margin: 2em 30% 2em 30%;
-    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
     padding: 0.5em;
     text-align: center;
 }
@@ -186,7 +185,7 @@ table.month p.eventdate {
 }
 
 .event-table {
-
+    margin-bottom: 3rem;
 }
 
 .event-table__label {
@@ -213,4 +212,15 @@ table.month p.eventdate {
 
 .event-cfp__deadline {
     font-size: .9rem;
+}
+
+/* footer */
+
+.footer {
+    padding: 3rem 0 4rem;
+    text-align: center;
+}
+
+.footer__heart {
+    color: #9B2C2C;
 }
