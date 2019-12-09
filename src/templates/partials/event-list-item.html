@@ -4,13 +4,9 @@
         -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
     </td>
     <td>
-        {% if event['homepage'] %}
-            <a href="{{ event['homepage'] }}">
-                {{ event['label'] }}
-            </a>
-        {% else %}
+        <a href="{{ event['details_url'] }}">
             {{ event['label'] }}
-        {% endif %}
+        </a>
         {% if event['city'] or event['country'] %}
             in
             {% if event['city'] %}

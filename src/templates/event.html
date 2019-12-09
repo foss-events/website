@@ -26,6 +26,7 @@
     <meta name="twitter:creator" content="@FOSS_events"/>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/styles/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
 
     <title>// foss.events in Europe</title>
@@ -37,20 +38,52 @@
     <hr class="menu__divider">
     <h1>
         <img class="menu__logo" src="img/logo.png" alt="// foss.events">
-        FOSS events in Europe in {{ year }}
+        FOSS events in Europe
         <img class="menu__logo" src="img/logo.png" alt="// foss.events">
     </h1>
     <hr class="menu__divider">
 </div>
 
-<p style="text-align:center; font-size:1.5em;">
-    ... and in <a href="{{ other_year_link }}">{{ other_year }}</a>
+<p class="navlinks">
+    <a href="/2019" class="navlinks__link navlinks__link--inactive">2019</a> |
+    <a href="/" class="navlinks__link navlinks__link--inactive">2020</a>
 </p>
 
-<p>
-    {{ event['label'] }}
-</p>
+<div>
+    {{ event['start_day'] }}<!--
+        -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
+    {{ event['start_month_string'] }} {{ event['start_year'] }}
+</div>
+<h2>{{ event['label'] }}</h2>
+<div>
+    {% if event['osm_link'] %}
+        <a href="{{ event['osm_link'] }}" target="_blank">
+            {{ event['city'] }}, {{ event['country'] }}
+        </a>
+    {% else %}
+        {{ event['city'] }}, {{ event['country'] }}
+    {% endif %}
+</div>
 
+<div id="map" class="map"></div>
+
+{% if event['homepage'] %}
+    Visit their website
+    <a href="{{ event['homepage'] }}">
+        {{ event['homepage'] }}
+    </a>
+{% endif %}
+
+<div>
+    {{ event['description'] }}
+</div>
+
+<div>
+    {{ event['type'] }}
+</div>
+
+<script src="/js/leaflet.js"></script>
+<script src="/js/event.js"></script>
 </body>
 
 </html>

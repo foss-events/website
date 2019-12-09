@@ -1,7 +1,7 @@
 from datetime import datetime
 from pprint import pprint
 
-from helper import get_start_of_month, get_end_of_day
+from helper import get_start_of_month, get_end_of_day, generate_event_path
 
 months = {
     '01': 'January',
@@ -71,7 +71,7 @@ def parse_events(reader, today, approved):
 
     for row in reader:
 
-        if not approved or row['approved'] != 'yes':
+        if not approved and row['approved'] != 'yes':
             continue
 
         event = parse_event(row, today)
@@ -108,7 +108,7 @@ def parse_event(row, today):
     try:
         start_date = datetime.strptime(row['datestart'], '%Y%m%d')
     except ValueError:
-        pprint('error parsing event')
+        pprint('error parsing datestart')
         pprint(row)
         return None
 
@@ -167,8 +167,9 @@ def parse_event(row, today):
         lat = None
         lon = None
 
-    return {
+    event = {
         'label': row['label'],
+        'description': row['Self-description'],
         'start_day': start_day,
         'start_month': start_month,
         'start_year': start_year,
@@ -183,3 +184,7 @@ def parse_event(row, today):
         'lat': lat,
         'lon': lon
     }
+
+    event['details_url'] = generate_event_path(event)
+
+    return event

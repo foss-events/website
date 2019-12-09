@@ -149,3 +149,7 @@ table.month a {
 table.month p.eventdate {
     margin: 0;
 }
+
+.map {
+    height: 15rem;
+}
