@@ -156,6 +156,13 @@ def parse_event(row, today):
         cfp_date = None
         cfp_link = None
 
+    try:
+        lat = float(row['lat'])
+        lon = float(row['lon'])
+    except:
+        lat = None
+        lon = None
+
     return {
         'label': row['label'],
         'start_day': start_day,
@@ -167,5 +174,7 @@ def parse_event(row, today):
         'cfp_date': cfp_date,
         'cfp_link': cfp_link,
         'classes': classes,
-        'upcoming': upcoming_event
+        'upcoming': upcoming_event,
+        'lat': lat,
+        'lon': lon
     }
