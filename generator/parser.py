@@ -223,6 +223,9 @@ def parse_event(row, today):
         'zoom': zoom
     }
 
-    event['details_url'] = generate_event_path(event)
+    if row['type'] == 'Global Day' or row['type'] == 'Regional Day':
+        event['details_url'] = row['homepage']
+    else:
+        event['details_url'] = generate_event_path(event)
 
     return event
