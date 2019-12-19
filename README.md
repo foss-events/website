@@ -1,5 +1,7 @@
 # [//foss.events](https://foss.events) website
 
+![](https://chaos.expert/floss.events/website/badges/master/pipeline.svg)
+
 ## Build instructions
 
 Requirements:
