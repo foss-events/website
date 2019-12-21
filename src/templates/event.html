@@ -90,13 +90,17 @@
             </td>
         </tr>
     {% endif %}
-    {% if event['reg'] %}
+    {% if event['reg'] != None %}
         <tr>
-            <th class="event-table__label">Registration</th>
+            <th class="event-table__label">Registration required?</th>
             <td class="event-table__content">
-                Required.
-                {% if event['reg_link'] %}
-                    Find more info <a href="{{ event['reg_link'] }}" target="_blank">here</a>.
+                {% if event['reg'] %}
+                    Yes
+                    {% if event['reg_link'] %}
+                        <a href="{{ event['reg_link'] }}" target="_blank">Link</a>
+                    {% endif %}
+                {% else %}
+                    No
                 {% endif %}
             </td>
         </tr>

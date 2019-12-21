@@ -170,14 +170,18 @@ def parse_event(row, today):
     else:
         fee = None
 
-    if row['Registration'] and row['Registration'] != 'no':
-        reg = True
-        if row['Registration'] != 'yes':
-            reg_link = row['Registration']
-        else:
+    if row['Registration']:
+        if row['Registration'] == 'no':
+            reg = False
             reg_link = None
+        elif row['Registration'] == 'yes':
+            reg = True
+            reg_link = None
+        else:
+            reg = True
+            reg_link = row['Registration']
     else:
-        reg = False
+        reg = None
         reg_link = None
 
     if row['ParticipantsLastTime']:
