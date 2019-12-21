@@ -8,7 +8,7 @@ today = datetime.now()
 
 with open('2020_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
-    events = parse_events(reader, today, False)
+    events = parse_events(reader, today)
 
 file_loader = FileSystemLoader('src/templates')
 env = Environment(loader=file_loader)

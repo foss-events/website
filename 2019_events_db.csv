@@ -1,4 +1,4 @@
-online	datestart	dateend	label	name	shortname	hashtag	homepage	city	country	venue	OSM-Link	lat	lon	default_zoom	coclink	Self-description	cfpdate	cfplink	type	tags	lat	lng	EntranceFee	Registration	ParticipantsLastTime	language	approved
+approved	datestart	dateend	label	name	shortname	hashtag	homepage	city	country	venue	OSM-Link	lat	lon	default_zoom	coclink	Self-description	cfpdate	cfplink	type	tags	lat	lng	EntranceFee	Registration	ParticipantsLastTime	language	approved
 yes	20190117	20190117	Connected Smart Cities Conference	Connected Smart Cities Conference	CSCC	CSCC19	https://oasc.events.idloom.com/connected-smart-cities-conference-2019	Brussels	BE	--	https://www.openstreetmap.org/way/524776763	50.83318	4.32697			--											
 yes	20190126	20190127	DevConf.cz	DevConf.cz	--	--	https://devconf.info/cz/2019	Brno	CZ	--	https://www.openstreetmap.org/way/387444374	41.31616	19.82172		https://www.devconf.info/coc	--	20181101	https://cfp.devconf.info/					0				
 yes	20190203	20190204	FOSDEM	Free and Open Source Software Developers European Meeting	FOSDEM	fosdem	https://fosdem.org/2019/	Brussels	BE	Université Libre Bruxelles	https://www.openstreetmap.org/?mlat=50.81295&mlon=4.38002#map=18/50.81295/4.38002	50.81295	4.38002		https://fosdem.org/2018/practical/conduct/	<p>FOSDEM is a free event for software developers to meet, share ideas and collaborate.</p> <p>Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels.</p>	20181013	https://fosdem.org/2019/news/2018-08-10-call-for-participation/	Conference,Community	development,security	50.81328	4.37943	0		7500		yes
@@ -35,7 +35,7 @@ yes	20190426	20190427	Linuxwochen Eisenstadt	Linuxwochen	--	--	https://www.linux
 yes	20190427	20190427	FLISOL	Festival Latinoamericano de Instalación de Software Libre	--	--	https://flisol.info/FLISOL2019/Espana	--	--	--	--				--	Cada año, el cuarto sábado de abril se organizan jornadas de difusión de Software Libre de forma simultánea en varios cientos de localidades del planeta, un macroevento conocido como FLISOL. Hace ya 9 años se organizó por primera vez en España, por lo que en 2019 será la 10ª vez que se realice. Y es que lo gratificante de la experiencia y la importancia de apoyar y difundir el Software Libre en nuestro entorno, nos motiva a continuar año tras año. 											
 yes	20190427	20190427	Frühlingsfest	Frühlingsfest	--	--	https://fruehlingsfest.frama.site/	Munich	DE	Café Netzwerk	https://www.openstreetmap.org/node/957531675	48.1441	11.56246		--	--											
 yes	20190502	20190504	Linuxwochen Wien	LinuxWochenWien	--	--	http://wien.linuxwochen.at/	Vienna	AT	--					--	--											
-no	20190504	20190505	FOSSA	Free and Open Source Software Auditing 	EU-FOSSA2	FOSSA	https://eufossahackathon.bemyapp.com/	Brussels	BE	Silversquare Europe	https://www.openstreetmap.org/node/2656943066	50.84073	4.36937		--	The next EU-FOSSA 2 Hackathon, on 4/5th May, has broadened its scope. It will still have a large focus on Apache Tomcat, but will now also include other communities under the Apache Software Foundation (ASF). Aditionally, the Hackathon will be offering training sessions on some of the latest ASF projects.	open	https://www.openstreetmap.org/node/2656943066	Hackathon,Public Administration		50.84074	4.36903	0		50		yes
+yes	20190504	20190505	FOSSA	Free and Open Source Software Auditing 	EU-FOSSA2	FOSSA	https://eufossahackathon.bemyapp.com/	Brussels	BE	Silversquare Europe	https://www.openstreetmap.org/node/2656943066	50.84073	4.36937		--	The next EU-FOSSA 2 Hackathon, on 4/5th May, has broadened its scope. It will still have a large focus on Apache Tomcat, but will now also include other communities under the Apache Software Foundation (ASF). Aditionally, the Hackathon will be offering training sessions on some of the latest ASF projects.	open	https://www.openstreetmap.org/node/2656943066	Hackathon,Public Administration		50.84074	4.36903	0		50		yes
 yes	20190504	20190504	Libertybits	Libertybits	--	--	https://libertybits.org/	Sofia	BG	Sofia Tech Park's Forum	https://www.openstreetmap.org/way/334366114	42.6688	23.3742		https://libertybits.org/code-of-conduct/	<p>The concentration of great power into very small number of players (a.k.a. centralization) puts them in a dominant position and leads to misuse of the acquired power. This includes governmental, political, economical and corporate power.</p><p>The goal of LibertyBits Conference is to stress out this critical ethical issue, focusing on 4 major topics (blockchain, privacy, free software and independent living) in order to reveal as much opportunities as possible about how we could avoid (or even escape) our dependency from the monopolies of power and how we can achieve more sustainable and peaceful life through decentralization.</p>											
 yes	20190506	20190512	Drupalcamp Spain	Drupalcamp Spain	--	--	https://2019.drupalcamp.es/	Conil	ES	Casa de la Cultura	https://www.openstreetmap.org/#map=19/36.27756/-6.08779	36.27756	-6.08779		https://2019.drupalcamp.es/node/23.html	--	open	https://docs.google.com/forms/d/e/1FAIpQLScxHHPbOIin_6N0Oeft9aqVQN8iUo9JZREk_VqPwGbHvVuaLg/viewform									
 yes	20190511	20190511	T-Dose	T-Dose	--	--	http://www.t-dose.org/	Eindhoven	NL	Fontys University of Applied Science	https://www.openstreetmap.org/way/150553268	51.45191	5.48099		--	T-DOSE is a free and yearly event held in The Netherlands to promote use and development of Open Source Software. During this event, Open Source projects, developers and visitors can exchange ideas and knowledge. This year's event will be held at the Fontys University of Applied Science in Eindhoven on 11 May 2019.	20190401	http://www.t-dose.org/2019/cfp									
@@ -55,86 +55,86 @@ yes	20190530	20190602	Gulaschprogrammiernacht	Gulaschprogrammiernacht	--	GPN19	h
 yes	20190530	20190602	Toulouse Hacker Space Factory	Toulouse Hacker Space Factory	--	--	https://www.thsf.net/	Toulouse	FR	Mix'Art Myrys	https://www.openstreetmap.org/way/48416748	43.61876	1.42031		--	<p>ge en 2019 dans une Néo-Tokyo post-apocalyptique et futuriste. Mégapole aliénante, politiciens corrompus, révoltes sociales, expérimentations militaires, pouvoirs psychiques et mutations techno-organiques… Katsuhiro Otomo pose les bases du cyberpunk japonais et questionne avec acuité les modes d’organisation sociale, le rapport de l’homme à la technologie et sa place dans l’environnement.</p><p>La 10ème édition de la Toulouse HackerSpace Factory (THSF) se construit en hommage et écho à cette oeuvre majeure tant sur le plan graphique que scénaristique avec un récit profondément politique et social. Malheureusement la 2019 d’Otomo se rapproche par bien des aspects de notre 2019 actuelle, et les questions qu'il soulevait au début des années 80 restent toujours prégnantes. Notamment les inégalites et l'injustice sociale, le rapport à la science et aux technologies, aux contrôles des personnes et des masses, et à l’environnement. Autant de questions que, depuis 10 ans, la THSF entend partager avec des artistes, des hackers, des chercheurs, des militants associatifs et tous les publics.</p>	20190315	https://www.thsf.net/									
 yes	20190531	20190602	Hackmeeting 0x16	Hackmeeting 0x16	--	--	https://hackmeeting.org/hackit19/	Florence	FR	nEXT Emerson	https://www.openstreetmap.org/#map=19/43.82102/11.22241	43.82102	11.22241		--	<p>Hackmeeting is the yearly Italian digital counter-cultures meeting	 it gathers those communities that take a hard look at how technologies work in our society. And that’s not all. We tell you, just you, in a whisper (don’t even tell anybody!): Hack-it is just for real hackers, that is to say for those people who want to manage their own lives as they want and are ready to fight for this right, even though they haven’t ever seen a computer in their life.</p><p>Three days of lessons, games, parties, debates, crossfires and collective learning, analyzing together those technologies that we use everyday, the way they change and how they can impact on our real or virtual lives	 which role we can play in order to redirect these changes and set us free of control from those who want to monopolize their development, letting society crumble and relegating us in even tighter virtual spaces.</p><p>The event is totally self-managed: there are neither promoters nor users, just participants.</p>	open	https://hackmeeting.org/hackit19/schedule.en.html							
 yes	20190531	20190502	Wireless Community Weekend	Freifunk Wireless Community Weekend 2019	--	--	https://wiki.freifunk.net/Wireless_Community_Weekend_2019	Berlin	DE	C-base	http://www.openstreetmap.org/?box=yes&bbox=13.42013%2C52.51297%2C13.42013%2C52.51297	52.51307	13.42041		--	The WirelessCommunityWeekend will follow the 15 years of tradition also in 2019 and take place in the c-base space station in Berlin. From the 31th of May to the 2nd of June the Freifunk community will meet with their guests to create an unconference and hackathon											
-no	20190604	20190606	deRSE19	deRSE19	--	--	https://www.de-rse.org/de/conf2019/index.html	Potsdam	DE	Wissenschaftspark Albert Einstein	https://www.openstreetmap.org/#map=17/52.38132/13.06396	52.38132	13.06396		https://www.de-rse.org/de/conf2019/index.html	Erste Konferenz für ForschungssoftwareentwicklerInnen in Deutschland											
-no	20190608	20190609	TuxCon	TuxCon	--	TuxCon	http://tuxcon.mobi/	Plovdiv	BG	--	--				--	TuxCon is an annual event about free and open source software and hardware. The entrance is free for all visitors. TuxCon is a community event and it is organized by volunteers. The twitter hashtag of the event is #TuxCon.											
-no	20190605	20190609	MiniDebConf in Hamburg	MiniDebCamp and MiniDebConf in Hamburg	--	--	https://wiki.debian.org/DebianEvents/de/2019/MiniDebConfHamburg	Hamburg	DE	--	--				--	--											
-no	20190611	20190611	Sharing & Reuse Conference	Sharing & Reuse Conference	--	--	https://joinup.ec.europa.eu/collection/sharing-and-reuse-it-solutions/sharing-reuse-conference-2019	Bucharest	RO	--	--				--	--											
-no	20190612	20190612	UK Open Source Awards	UK Open Source Awards	--	--	https://opensourceawards.org/	Edinburgh	UK	--	--				--	--											
-no	20190612	20190613	OW2Con	OW2Con	--	--	https://www.ow2con.org/view/2019	Paris	France	--	--				--	--											
-no	20190615	20190616	Jornadas de tecnología y cultura libre	Jornadas de tecnología y cultura libre	--	--	https://jornadaslibr.es/	Madrid	ES	--	--				--	--											
-no	20190620	20190620	Open Expo	OpenExpo Europe	OpenExpo	OpenExpo19	https://openexpoeurope.com/	Madrid	ES	La N@ve	https://www.openstreetmap.org/way/37995038	40.34743	-3.69628		--	--											
-no	20190621	20190621	esLibre	esLibre	--	--	https://eslib.re/2019/	Granada	ES	--	--				--	--											
-no	20190620	20190622	WordCamp Europe	WordCamp Europe	--	--	https://2019.europe.wordcamp.org/	Berlin	DE	--	--				--	--											
-no	20190627	20190630	Pas sage en seine	Pas sage en seine	--	--	https://passageenseine.fr/	Choisy-le-Roi	FR	--	--				--	--											
-no	20190701	20190703	Pass the SALT	Pass the SALT	--	--	https://2019.pass-the-salt.org/	Lille	FR	Polytech Lille	https://www.openstreetmap.org/way/79509053	50.60776	3.13634		https://2019.pass-the-salt.org/code-of-conduct/	--											
-no	20190706	20190706	Tübix	Tübix	--	--	http://tuebix.org	Tübingen	DE	Gebäude auf dem Sand	https://www.openstreetmap.org/way/8044916#map=17/48.53476/9.07111	48.53476	9.07111		--	--											
-no	20190725	20190728	Camp++	Camp++	--	--	https://camp.hsbp.org/2019/pp7e3/	Komárom	HU	Fort Monostor	https://www.openstreetmap.org/?mlat=47.750556&mlon=18.093889&zoom=15#map=15/47.7506/18.0939	47.750556	18.093889		--	--											
-no	20190801	20190804	Technik Camp	Technik Camp	--	--	https://freifunk-bodensee.net/camp/	Überlingen	DE	Campus der Waldorfschule Überlingen	https://ffbsee.net/map/				--	--			Conference,Community,Camp	CCC	47.77286	9.20153					
-no	20190808	20190815	BornHack	Bornhack	--	--	https://bornhack.dk/bornhack-2019/	--	--	--	--				--	--	20190601	https://bornhack.dk/bornhack-2019/program/call-for-participation/									
-no	20190808	20190811	Flock	Flock	--	--	https://flocktofedora.org/	--	--	--	--				--	--			Conference,Community	Fedora							
-no	20190810	20190811	FrOSCon	Froscon	--	--	https://www.froscon.de/en/	--	--	--	--				--	--											
-no	20190812	20190818	Linux Bierwanderung	Linux Bierwanderung	--	--	https://linuxbierwanderung.com/	South Shropshire	UK	--	--				--	--											
-no	20190814	20190818	Wikimania	Wikimania	--	--	https://wikimania2019.wikimedia.org/	Stockholm	SE	--	--				--	--											
-no	20190820	20190822	OpenSym	OpenSym	--	--	http://opensym.org/os2019/	Skövde	SE	--	--				--	--											
-no	20190822	20190825	LVEE	Linux Vacation / Eastern Europe	LVEE	--	https://lvee.org/en/	Minsk	BY	--	--				--	--	20190804	https://lvee.org/en/reports/abstract									
-no	20190821	20190825	Chaos Communication Camp	Chaos Communication Camp	CCCamp	camp19	https://events.ccc.de/camp/2019/wiki/Main_Page	Mildenberg	DE	Ziegeleimuseum Mildenberg	https://www.openstreetmap.org/#map=15/53.0306/13.3067	53.0306	53.0306		--	--	20190611	https://events.ccc.de/2019/05/22/call-for-participation-chaos-communication-camp-2019/	Conference,Community,Camp,Festival	CCC	53.0306	13.3014	295		5000		yes
-no	20190823	20190828	GUADEC	GNOME Users And Developers European Conference	GUADEC	guadec	https://2019.guadec.org/	Thessaloniki	GR	University of Macedonia	https://www.openstreetmap.org/way/14791176	40.62525	22.96002		https://2019.guadec.org/pages/code-of-conduct.html	--	20190519	https://www.gnome.org/news/2019/04/guadec-2019-call-for-papers/	Conference,Community,Unconference	Gnome	40.6247	22.9606	0				yes
-no	20190830	20190808	Wuthering Bytes	Wuthering Bytes	--	--	https://wutheringbytes.com/	Hebden Bridge	UK	--	--				--	--											
-no	20190904	20190906	GNU Hackers Meeting	GNU Hackers Meeting	--	--	https://www.gnu.org/ghm/2019/	Madrid	ES	--	--				--	--											
-no	20190907	20190908	ActivityPub Conference	ActivityPub Conference	--	--	https://dustycloud.org/blog/activitypub-conf-2019/	Prague	CZ	--	--				--	--											
-no	20190907	20190913	Akademy	Akademy	--	--	https://akademy.kde.org/	Milan	IT	--	--				--	--											
-no	20190909	20190911	Linux Plumbers Conference	Linux Plumbers Conference	--	--	https://www.linuxplumbersconf.org/	Lisbon	PT	--	--				--	--											
-no	20190910	20190913	LibreOffice Conference	LibreOffice Conference	--	--	https://conference.libreoffice.org/2019/	Almería	ES	--	--				--	--											
-no	20190911	20190912	Cloud Foundry Summit Europe	Cloud Foundry Summit Europe	--	--	https://www.cloudfoundry.org/event/eusummit2019/	The Hague	NL	--	--				--	--											
-no	20190912	20190912	Kernel Maintainer Summit	Kernel Maintainer Summit	--	--	https://events.linuxfoundation.org/events/linux-kernel-maintainer-summit-2019/	Lisbon	PT	--	--				--	--											
-no	20190913	20190915	BalCCon2k19	BalCCon2k19	--	--	https://2k19.balccon.org/index.php?title=BalCCon2k19_CfP	Novi Sad	RS	--	--				--	--											
-no	20190914	20190914	Open Source and GNU/Linux	Open Source and GNU/Linux	--	--	https://osdn.org.ua/	Kiev	UA	--	--				--	--											
-no	20190914	20190914	Tech201909Party	Tech201909Party	--	--	http://techparty.online/	Madrid	ES	--	--				--	--											
-no	20190914	20190915	Nextcloud conference	Nextcloud conference	--	--	https://nextcloud.com/conf/	Berlin	DE	--	--				--	--											
-no	20190917	20190917	Bitkom Forum Open Source	Bitkom Forum Open Source	--	--	https://www.bitkom.org/bfoss19	Erfurt	DE	--	--				--	--											
-no	20190917	20190920	Owncloud Conference	Owncloud Conference	--	--	https://conference.owncloud.org/	Nuremberg	DE	--	--				--	--											
-no	20190918	20190922	End Summer Camp	End Summer Camp	--	--	https://www.endsummercamp.org/	Venezia Tessera	Italy	--	--				--	--											
-no	20190920	20190921	Kieler Linuxtage	Kieler Linuxtage	--	--	https://www.kieler-linuxtage.de/	Kiel	DE	--	--				--	--											
-no	20190920	20190922	Datenspuren	Datenspuren	--	--	https://wiki.c3d2.de/Datenspuren_2019	Dresden	DE	--	--				--	--											
-no	20190920	20190922	Hackmeeting	Hackmeeting	--	--	https://es.hackmeeting.org/hm/index.php?title=Hackmeeting2019	Errekaleor-Gasteiz	ES	--	--				--	--											
-no	20190920	20190922	FixFest_Reparatur-Festival	FixFest_Reparatur-Festival	--	--	https://reparatur-festival.runder-tisch-reparatur.de/	Berlin	DE	--	--				--	--											
-no	20190921	20190921	Software Freedom Day around the globe	Software Freedom Day around the globe	--	--	http://www.softwarefreedomday.org/			--	--				--	--											
-no	20190921	20190923	State of the Map	State of the Map	--	--	https://2019.stateofthemap.org/	Heidelberg	DE	--	--				--	--											
-no	20190923	20190925	Open Networking Summit	Open Networking Summit	ONS	--	https://events.linuxfoundation.org/events/open-networking-summit-europe-2019/	Antwerp	BE	--	--				--	--											
-no	20190923	20190926	INFORMATIK2019	INFORMATIK2019	--	--	https://gi.de/veranstaltung/informatik-2019-jahrestagung-der-gesellschaft-fuer-informatik/	Kassel	DE	--	--				--	--											
-no	20190926	20190929	Digitalfestival	Digitalfestival	--	--	http://www.digitalfestival.ch/	Zurich	CH	--	--				--	--											
-no	20190927	20190927	educode	educode	--	--	https://educode.be/	Brussels	BE	--	--				--	--											
-no	20190930	20190902	Percona Live	Percona Live	--	--	https://www.percona.com/live/19/	Amsterdam	NL	--	--				--	--											
-no	20190930	20190902	Open-Access-Tage	Open-Access-Tage	--	--	https://open-access.net/community/open-access-tage/open-access-tage-2019	Hannover	DE	--	--				--	--											
-no	20191004	20191004	OpenSource Lisbon	OpenSource Lisbon	--	--	https://opensourcelisbon.com/	Lisbon	PT	--	--				--	--											
-no	20191004	20191006	Hackers Congress	Hackers Congress	--	--	https://opt-out.hcpp.cz/	Prague	CZ	--	--				--	--											
-no	20191004	20191006	PyConES (Python conference)	PyConES (Python conference)	--	--	http://2019.es.pycon.org/	Alicante	ES	--	--				--	--											
-no	20191004	20191006	suckless conference	suckless conference	--	--	https://suckless.org/conferences/2019/	Bad Liebenzell	DE	--	--				--	--											
-no	20191005	20191006	LinuxDays	LinuxDays	--	--	https://www.linuxdays.cz/2019/en/	Prague	CZ	--	--				--	--											
-no	20191010	20191013	Ubucon Europe	Ubucon Europe	--	--	http://ubucon.org/en/events/ubucon-europe/	Sintra	PT	--	--				--	--											
-no	20191011	20191013	FOSSCOM	FOSSCOM	--	--	https://2019.fosscomm.gr/	Lamia	GR	--	--				--	--											
-no	20191012	20191012	Hacktoberfest Poznań Meetup	Hacktoberfest Poznań Meetup	--	--	https://hacktoberfest.pl/	Poznań	PL	--	--				--	--											
-no	20191017	20191018	TYPO3 Conference	TYPO3 Conference	--	--	https://t3con19.typo3.com/	The Hague	NL	--	--				--	--											
-no	20191018	20191018	DINAcon	DINAcon	--	--	https://dinacon.ch/	Bern	CH	--	--				--	--											
-no	20191019	20191019	GNU/LinuxDay – Vorarlberg	GNU/LinuxDay – Vorarlberg	--	--	https://www.linuxday.at/	Dornbirn	AT	--	--				--	--											
-no	20191019	20191020	OggCamp (Free Culture/FLOSS Unconference)	OggCamp (Free Culture/FLOSS Unconference)	--	--	http://oggcamp.org/	Sheffield	UK	--	--				--	--											
-no	20191022	20191024	ApacheCon Europe	ApacheCon Europe	--	--	https://aceu19.apachecon.com/	Berlin	DE	--	--				--	--											
-no	20191025	20191026	WikidataCon	WikidataCon	--	--	https://www.wikidata.org/wiki/Wikidata:WikidataCon_2019	Berlin	DE	--	--				--	--											
-no	20191025	20191027	MiniDebConf in Vaumarcus	MiniDebConf in Vaumarcus	--	--	https://wiki.debian.org/DebianEvents/ch/2019/Vaumarcus	Vaumarcus	CH	--	--				--	--											
-no	20191026	20191026	PSSOH Conference	PSSOH Conference	--	--	http://pssoh.etf.bg.ac.rs/	Belgrade	RS	--	--				--	--											
-no	20191026	20191026	Linux Day across Italy	Linux Day across Italy	--	--	http://www.linuxday.it/			--	--				--	--											
-no	20191026	20191027	Sonoj Convention	Sonoj Convention	--	--	https://www.sonoj.org/	Cologne	DE	--	--				--	--											
-no	20191028	20191030	Open Source Summit + Embedded Linux Conference Europe	Open Source Summit + Embedded Linux Conference Europe	--	--	https://www.linuxfoundation.org/press-release/2019/01/the-linux-foundation-announces-2019-events-schedule/	Lyon	FR	--	--				--	--											
-no	20191102	20191102	EmacsConf	EmacsConf	--	--	https://emacsconf.org/2019/	Online	--	--	--				--	--											
-no	20191102	20191103	OpenFest	OpenFest	--	--	https://www.openfest.org/	Sofia	BG	--	--				--	--	20191010	https://www.openfest.org/2019/bg/2019/06/12/call-speakers-bg/									
-no	20191107	20191108	Promcon	Promcon	--	--	https://promcon.io/2019-munich/	Munich	DE	--	--				--	--											
-no	20191109	20191109	OSHWDem	OSHWDem	--	--	https://oshwdem.org/	A Coruña	ES	--	--				--	--											
-no	20191112	20191115	Linux App Summit	Linux App Summit	--	--	https://linuxappsummit.org/	Barcelona	ES	--	--				--	--											
-no	20191115	20191115	SFScon	SFScon	--	--	https://www.sfscon.it/	Bozen	IT	--	--				--	--											
-no	20191116	20191116	Linux Presentation Day 2019.2	Linux Presentation Day 2019.2	--	--	http://linux-presentation-day.org/			--	--				--	--											
-no	20191116	20191117	Capitole du libre	Capitole du libre	--	--	https://2019.capitoledulibre.org/	Toulouse	FR	--	--				--	--											
-no	20191121	20191123	Piksel	Piksel	--	--	http://piksel.no/	Bergen	NO	--	--				--	--											
-no	20191122	20191124	FIfFKon	FIfFKon	--	--	https://2019.fiffkon.de/	Bremen	DE	--	--				--	--											
-no	20191213	20191215	GNU Health Con	GNU Health Con	--	--	http://www.gnuhealthcon.org/2019-liege/	Liège	BE	--	--				--	--											
-no	20191227	20191230	36th Chaos Communication Conference	36th Chaos Communication Conference	--	ccc,36c3	https://events.ccc.de/congress/2019/wiki/index.php	Leipzig	DE	--	--				--	--											
-no	20191210	20191211	Paris Open Source Summit	Paris Open Source Summit	POSS	--	https://www.opensourcesummit.paris/	Paris	FR	--	--				--	--											
+yes	20190604	20190606	deRSE19	deRSE19	--	--	https://www.de-rse.org/de/conf2019/index.html	Potsdam	DE	Wissenschaftspark Albert Einstein	https://www.openstreetmap.org/#map=17/52.38132/13.06396	52.38132	13.06396		https://www.de-rse.org/de/conf2019/index.html	Erste Konferenz für ForschungssoftwareentwicklerInnen in Deutschland											
+yes	20190608	20190609	TuxCon	TuxCon	--	TuxCon	http://tuxcon.mobi/	Plovdiv	BG	--	--				--	TuxCon is an annual event about free and open source software and hardware. The entrance is free for all visitors. TuxCon is a community event and it is organized by volunteers. The twitter hashtag of the event is #TuxCon.											
+yes	20190605	20190609	MiniDebConf in Hamburg	MiniDebCamp and MiniDebConf in Hamburg	--	--	https://wiki.debian.org/DebianEvents/de/2019/MiniDebConfHamburg	Hamburg	DE	--	--				--	--											
+yes	20190611	20190611	Sharing & Reuse Conference	Sharing & Reuse Conference	--	--	https://joinup.ec.europa.eu/collection/sharing-and-reuse-it-solutions/sharing-reuse-conference-2019	Bucharest	RO	--	--				--	--											
+yes	20190612	20190612	UK Open Source Awards	UK Open Source Awards	--	--	https://opensourceawards.org/	Edinburgh	UK	--	--				--	--											
+yes	20190612	20190613	OW2Con	OW2Con	--	--	https://www.ow2con.org/view/2019	Paris	France	--	--				--	--											
+yes	20190615	20190616	Jornadas de tecnología y cultura libre	Jornadas de tecnología y cultura libre	--	--	https://jornadaslibr.es/	Madrid	ES	--	--				--	--											
+yes	20190620	20190620	Open Expo	OpenExpo Europe	OpenExpo	OpenExpo19	https://openexpoeurope.com/	Madrid	ES	La N@ve	https://www.openstreetmap.org/way/37995038	40.34743	-3.69628		--	--											
+yes	20190621	20190621	esLibre	esLibre	--	--	https://eslib.re/2019/	Granada	ES	--	--				--	--											
+yes	20190620	20190622	WordCamp Europe	WordCamp Europe	--	--	https://2019.europe.wordcamp.org/	Berlin	DE	--	--				--	--											
+yes	20190627	20190630	Pas sage en seine	Pas sage en seine	--	--	https://passageenseine.fr/	Choisy-le-Roi	FR	--	--				--	--											
+yes	20190701	20190703	Pass the SALT	Pass the SALT	--	--	https://2019.pass-the-salt.org/	Lille	FR	Polytech Lille	https://www.openstreetmap.org/way/79509053	50.60776	3.13634		https://2019.pass-the-salt.org/code-of-conduct/	--											
+yes	20190706	20190706	Tübix	Tübix	--	--	http://tuebix.org	Tübingen	DE	Gebäude auf dem Sand	https://www.openstreetmap.org/way/8044916#map=17/48.53476/9.07111	48.53476	9.07111		--	--											
+yes	20190725	20190728	Camp++	Camp++	--	--	https://camp.hsbp.org/2019/pp7e3/	Komárom	HU	Fort Monostor	https://www.openstreetmap.org/?mlat=47.750556&mlon=18.093889&zoom=15#map=15/47.7506/18.0939	47.750556	18.093889		--	--											
+yes	20190801	20190804	Technik Camp	Technik Camp	--	--	https://freifunk-bodensee.net/camp/	Überlingen	DE	Campus der Waldorfschule Überlingen	https://ffbsee.net/map/				--	--			Conference,Community,Camp	CCC	47.77286	9.20153					
+yes	20190808	20190815	BornHack	Bornhack	--	--	https://bornhack.dk/bornhack-2019/	--	--	--	--				--	--	20190601	https://bornhack.dk/bornhack-2019/program/call-for-participation/									
+yes	20190808	20190811	Flock	Flock	--	--	https://flocktofedora.org/	--	--	--	--				--	--			Conference,Community	Fedora							
+yes	20190810	20190811	FrOSCon	Froscon	--	--	https://www.froscon.de/en/	--	--	--	--				--	--											
+yes	20190812	20190818	Linux Bierwanderung	Linux Bierwanderung	--	--	https://linuxbierwanderung.com/	South Shropshire	UK	--	--				--	--											
+yes	20190814	20190818	Wikimania	Wikimania	--	--	https://wikimania2019.wikimedia.org/	Stockholm	SE	--	--				--	--											
+yes	20190820	20190822	OpenSym	OpenSym	--	--	http://opensym.org/os2019/	Skövde	SE	--	--				--	--											
+yes	20190822	20190825	LVEE	Linux Vacation / Eastern Europe	LVEE	--	https://lvee.org/en/	Minsk	BY	--	--				--	--	20190804	https://lvee.org/en/reports/abstract									
+yes	20190821	20190825	Chaos Communication Camp	Chaos Communication Camp	CCCamp	camp19	https://events.ccc.de/camp/2019/wiki/Main_Page	Mildenberg	DE	Ziegeleimuseum Mildenberg	https://www.openstreetmap.org/#map=15/53.0306/13.3067	53.0306	53.0306		--	--	20190611	https://events.ccc.de/2019/05/22/call-for-participation-chaos-communication-camp-2019/	Conference,Community,Camp,Festival	CCC	53.0306	13.3014	295		5000		yes
+yes	20190823	20190828	GUADEC	GNOME Users And Developers European Conference	GUADEC	guadec	https://2019.guadec.org/	Thessaloniki	GR	University of Macedonia	https://www.openstreetmap.org/way/14791176	40.62525	22.96002		https://2019.guadec.org/pages/code-of-conduct.html	--	20190519	https://www.gnome.org/news/2019/04/guadec-2019-call-for-papers/	Conference,Community,Unconference	Gnome	40.6247	22.9606	0				yes
+yes	20190830	20190808	Wuthering Bytes	Wuthering Bytes	--	--	https://wutheringbytes.com/	Hebden Bridge	UK	--	--				--	--											
+yes	20190904	20190906	GNU Hackers Meeting	GNU Hackers Meeting	--	--	https://www.gnu.org/ghm/2019/	Madrid	ES	--	--				--	--											
+yes	20190907	20190908	ActivityPub Conference	ActivityPub Conference	--	--	https://dustycloud.org/blog/activitypub-conf-2019/	Prague	CZ	--	--				--	--											
+yes	20190907	20190913	Akademy	Akademy	--	--	https://akademy.kde.org/	Milan	IT	--	--				--	--											
+yes	20190909	20190911	Linux Plumbers Conference	Linux Plumbers Conference	--	--	https://www.linuxplumbersconf.org/	Lisbon	PT	--	--				--	--											
+yes	20190910	20190913	LibreOffice Conference	LibreOffice Conference	--	--	https://conference.libreoffice.org/2019/	Almería	ES	--	--				--	--											
+yes	20190911	20190912	Cloud Foundry Summit Europe	Cloud Foundry Summit Europe	--	--	https://www.cloudfoundry.org/event/eusummit2019/	The Hague	NL	--	--				--	--											
+yes	20190912	20190912	Kernel Maintainer Summit	Kernel Maintainer Summit	--	--	https://events.linuxfoundation.org/events/linux-kernel-maintainer-summit-2019/	Lisbon	PT	--	--				--	--											
+yes	20190913	20190915	BalCCon2k19	BalCCon2k19	--	--	https://2k19.balccon.org/index.php?title=BalCCon2k19_CfP	Novi Sad	RS	--	--				--	--											
+yes	20190914	20190914	Open Source and GNU/Linux	Open Source and GNU/Linux	--	--	https://osdn.org.ua/	Kiev	UA	--	--				--	--											
+yes	20190914	20190914	Tech201909Party	Tech201909Party	--	--	http://techparty.online/	Madrid	ES	--	--				--	--											
+yes	20190914	20190915	Nextcloud conference	Nextcloud conference	--	--	https://nextcloud.com/conf/	Berlin	DE	--	--				--	--											
+yes	20190917	20190917	Bitkom Forum Open Source	Bitkom Forum Open Source	--	--	https://www.bitkom.org/bfoss19	Erfurt	DE	--	--				--	--											
+yes	20190917	20190920	Owncloud Conference	Owncloud Conference	--	--	https://conference.owncloud.org/	Nuremberg	DE	--	--				--	--											
+yes	20190918	20190922	End Summer Camp	End Summer Camp	--	--	https://www.endsummercamp.org/	Venezia Tessera	Italy	--	--				--	--											
+yes	20190920	20190921	Kieler Linuxtage	Kieler Linuxtage	--	--	https://www.kieler-linuxtage.de/	Kiel	DE	--	--				--	--											
+yes	20190920	20190922	Datenspuren	Datenspuren	--	--	https://wiki.c3d2.de/Datenspuren_2019	Dresden	DE	--	--				--	--											
+yes	20190920	20190922	Hackmeeting	Hackmeeting	--	--	https://es.hackmeeting.org/hm/index.php?title=Hackmeeting2019	Errekaleor-Gasteiz	ES	--	--				--	--											
+yes	20190920	20190922	FixFest_Reparatur-Festival	FixFest_Reparatur-Festival	--	--	https://reparatur-festival.runder-tisch-reparatur.de/	Berlin	DE	--	--				--	--											
+yes	20190921	20190921	Software Freedom Day around the globe	Software Freedom Day around the globe	--	--	http://www.softwarefreedomday.org/			--	--				--	--											
+yes	20190921	20190923	State of the Map	State of the Map	--	--	https://2019.stateofthemap.org/	Heidelberg	DE	--	--				--	--											
+yes	20190923	20190925	Open Networking Summit	Open Networking Summit	ONS	--	https://events.linuxfoundation.org/events/open-networking-summit-europe-2019/	Antwerp	BE	--	--				--	--											
+yes	20190923	20190926	INFORMATIK2019	INFORMATIK2019	--	--	https://gi.de/veranstaltung/informatik-2019-jahrestagung-der-gesellschaft-fuer-informatik/	Kassel	DE	--	--				--	--											
+yes	20190926	20190929	Digitalfestival	Digitalfestival	--	--	http://www.digitalfestival.ch/	Zurich	CH	--	--				--	--											
+yes	20190927	20190927	educode	educode	--	--	https://educode.be/	Brussels	BE	--	--				--	--											
+yes	20190930	20190902	Percona Live	Percona Live	--	--	https://www.percona.com/live/19/	Amsterdam	NL	--	--				--	--											
+yes	20190930	20190902	Open-Access-Tage	Open-Access-Tage	--	--	https://open-access.net/community/open-access-tage/open-access-tage-2019	Hannover	DE	--	--				--	--											
+yes	20191004	20191004	OpenSource Lisbon	OpenSource Lisbon	--	--	https://opensourcelisbon.com/	Lisbon	PT	--	--				--	--											
+yes	20191004	20191006	Hackers Congress	Hackers Congress	--	--	https://opt-out.hcpp.cz/	Prague	CZ	--	--				--	--											
+yes	20191004	20191006	PyConES (Python conference)	PyConES (Python conference)	--	--	http://2019.es.pycon.org/	Alicante	ES	--	--				--	--											
+yes	20191004	20191006	suckless conference	suckless conference	--	--	https://suckless.org/conferences/2019/	Bad Liebenzell	DE	--	--				--	--											
+yes	20191005	20191006	LinuxDays	LinuxDays	--	--	https://www.linuxdays.cz/2019/en/	Prague	CZ	--	--				--	--											
+yes	20191010	20191013	Ubucon Europe	Ubucon Europe	--	--	http://ubucon.org/en/events/ubucon-europe/	Sintra	PT	--	--				--	--											
+yes	20191011	20191013	FOSSCOM	FOSSCOM	--	--	https://2019.fosscomm.gr/	Lamia	GR	--	--				--	--											
+yes	20191012	20191012	Hacktoberfest Poznań Meetup	Hacktoberfest Poznań Meetup	--	--	https://hacktoberfest.pl/	Poznań	PL	--	--				--	--											
+yes	20191017	20191018	TYPO3 Conference	TYPO3 Conference	--	--	https://t3con19.typo3.com/	The Hague	NL	--	--				--	--											
+yes	20191018	20191018	DINAcon	DINAcon	--	--	https://dinacon.ch/	Bern	CH	--	--				--	--											
+yes	20191019	20191019	GNU/LinuxDay – Vorarlberg	GNU/LinuxDay – Vorarlberg	--	--	https://www.linuxday.at/	Dornbirn	AT	--	--				--	--											
+yes	20191019	20191020	OggCamp (Free Culture/FLOSS Unconference)	OggCamp (Free Culture/FLOSS Unconference)	--	--	http://oggcamp.org/	Sheffield	UK	--	--				--	--											
+yes	20191022	20191024	ApacheCon Europe	ApacheCon Europe	--	--	https://aceu19.apachecon.com/	Berlin	DE	--	--				--	--											
+yes	20191025	20191026	WikidataCon	WikidataCon	--	--	https://www.wikidata.org/wiki/Wikidata:WikidataCon_2019	Berlin	DE	--	--				--	--											
+yes	20191025	20191027	MiniDebConf in Vaumarcus	MiniDebConf in Vaumarcus	--	--	https://wiki.debian.org/DebianEvents/ch/2019/Vaumarcus	Vaumarcus	CH	--	--				--	--											
+yes	20191026	20191026	PSSOH Conference	PSSOH Conference	--	--	http://pssoh.etf.bg.ac.rs/	Belgrade	RS	--	--				--	--											
+yes	20191026	20191026	Linux Day across Italy	Linux Day across Italy	--	--	http://www.linuxday.it/			--	--				--	--											
+yes	20191026	20191027	Sonoj Convention	Sonoj Convention	--	--	https://www.sonoj.org/	Cologne	DE	--	--				--	--											
+yes	20191028	20191030	Open Source Summit + Embedded Linux Conference Europe	Open Source Summit + Embedded Linux Conference Europe	--	--	https://www.linuxfoundation.org/press-release/2019/01/the-linux-foundation-announces-2019-events-schedule/	Lyon	FR	--	--				--	--											
+yes	20191102	20191102	EmacsConf	EmacsConf	--	--	https://emacsconf.org/2019/	Online	--	--	--				--	--											
+yes	20191102	20191103	OpenFest	OpenFest	--	--	https://www.openfest.org/	Sofia	BG	--	--				--	--	20191010	https://www.openfest.org/2019/bg/2019/06/12/call-speakers-bg/									
+yes	20191107	20191108	Promcon	Promcon	--	--	https://promcon.io/2019-munich/	Munich	DE	--	--				--	--											
+yes	20191109	20191109	OSHWDem	OSHWDem	--	--	https://oshwdem.org/	A Coruña	ES	--	--				--	--											
+yes	20191112	20191115	Linux App Summit	Linux App Summit	--	--	https://linuxappsummit.org/	Barcelona	ES	--	--				--	--											
+yes	20191115	20191115	SFScon	SFScon	--	--	https://www.sfscon.it/	Bozen	IT	--	--				--	--											
+yes	20191116	20191116	Linux Presentation Day 2019.2	Linux Presentation Day 2019.2	--	--	http://linux-presentation-day.org/			--	--				--	--											
+yes	20191116	20191117	Capitole du libre	Capitole du libre	--	--	https://2019.capitoledulibre.org/	Toulouse	FR	--	--				--	--											
+yes	20191121	20191123	Piksel	Piksel	--	--	http://piksel.no/	Bergen	NO	--	--				--	--											
+yes	20191122	20191124	FIfFKon	FIfFKon	--	--	https://2019.fiffkon.de/	Bremen	DE	--	--				--	--											
+yes	20191213	20191215	GNU Health Con	GNU Health Con	--	--	http://www.gnuhealthcon.org/2019-liege/	Liège	BE	--	--				--	--											
+yes	20191227	20191230	36th Chaos Communication Conference	36th Chaos Communication Conference	--	ccc,36c3	https://events.ccc.de/congress/2019/wiki/index.php	Leipzig	DE	--	--				--	--											
+yes	20191210	20191211	Paris Open Source Summit	Paris Open Source Summit	POSS	--	https://www.opensourcesummit.paris/	Paris	FR	--	--				--	--											

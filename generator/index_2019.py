@@ -1,5 +1,4 @@
 import csv
-import os
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
@@ -9,7 +8,7 @@ today = datetime.now()
 
 with open('2019_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
-    events = parse_events(reader, today, True)
+    events = parse_events(reader, today)
 
 file_loader = FileSystemLoader('src/templates')
 env = Environment(loader=file_loader)

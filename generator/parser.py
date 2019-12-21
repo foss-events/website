@@ -53,7 +53,7 @@ iso_label_dict = {
 }
 
 
-def parse_events(reader, today, approved):
+def parse_events(reader, today):
 
     all_events = []
     upcoming = {}
@@ -71,7 +71,7 @@ def parse_events(reader, today, approved):
 
     for row in reader:
 
-        if not approved and row['approved'] != 'yes':
+        if row['approved'] != 'yes':
             continue
 
         event = parse_event(row, today)
