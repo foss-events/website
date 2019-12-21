@@ -56,6 +56,10 @@ h2.navhead {
     text-align: center;
 }
 
+.menu--spacing-bottom {
+    margin-bottom: 4rem;
+}
+
 .menu__link {
     color: #000;
     text-decoration: none;

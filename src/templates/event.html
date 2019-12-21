@@ -34,21 +34,19 @@
 
 <body>
 
-<div class="menu">
+<div class="menu menu--spacing-bottom">
     <hr class="menu__divider">
-    <h1>
-        <img class="menu__logo" src="img/logo.png" alt="// foss.events">
-        FOSS events in Europe
-        <img class="menu__logo" src="img/logo.png" alt="// foss.events">
-    </h1>
+    <a
+            class="menu__link"
+            href="/">
+        <h1>
+            <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+            FOSS events in Europe
+            <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+        </h1>
+    </a>
     <hr class="menu__divider">
 </div>
-
-<p class="navlinks">
-    <a href="/2019" class="navlinks__link navlinks__link--inactive">2019</a>
-    <span class="navlinks__separator">|</span>
-    <a href="/" class="navlinks__link navlinks__link--inactive">2020</a>
-</p>
 
 <h2 class="event-title">{{ event['label'] }}</h2>
 
