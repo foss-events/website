@@ -1,6 +1,6 @@
 html {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 body {
@@ -10,25 +10,63 @@ body {
     margin-right: auto;
 }
 
+@media only screen and (min-width: 768px) {
+    html {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
 a {
     color: #34920a;
     font-weight: bold;
 }
 
 .stickercontainer {
-    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.stickercontainer__sticker {
     border: 5px;
-    padding: 0.5em 1em 0.5em 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .stickercontainer {
+        flex-direction: row;
+    }
+
+    .stickercontainer__sticker {
+        flex: 0 1 auto;
+        white-space: nowrap;
+    }
+}
+
+.heart {
+    color: #9b2c2c;
+    font-size: 4rem;
+    text-align: center;
 }
 
 .contribute-box {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.contribute-box__content {
     border: 5px;
     box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);
     box-sizing: content-box;
-    margin: 2em 30% 2em 30%;
-    padding: 0.5em;
-    text-align: center;
+    display: inline-block;
+    overflow: visible;
+    padding: .5rem 2rem;
 }
 
 .bgimp {
@@ -60,6 +98,10 @@ h2.navhead {
     margin-bottom: 4rem;
 }
 
+.menu__hl {
+    display: block;
+}
+
 .menu__link {
     color: #000;
     text-decoration: none;
@@ -73,10 +115,36 @@ h2.navhead {
 
 .menu__logo {
     display: inline-block;
-    height: 2rem;
+    height: 4rem;
+    margin: 0 auto;
     position: relative;
     top: .2rem;
-    width: 2rem;
+    width: 4rem;
+}
+
+.menu__logo-container {
+    display: block;
+}
+
+.menu__logo-container--second {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .menu__logo {
+        height: 2rem;
+        margin: 0;
+        width: 2rem;
+    }
+
+    .menu__logo-container {
+        display: inline-block;
+    }
+
+    .menu__logo-container--second {
+        display: inline-block;
+    }
 }
 
 .navlinks {
@@ -104,14 +172,16 @@ h2.navhead {
     text-align: center;
 }
 
-table.month {
-    padding-left: 1em;
-}
+/* event list/table */
 
 table.month th, td {
     padding: 0.5em;
     text-align: left;
     vertical-align: top;
+}
+
+table.month th, td:first-of-type {
+    padding-left: 0;
 }
 
 table.tba {
@@ -130,13 +200,13 @@ table.tba th td {
 }
 
 table.month p.eventcfp {
-    padding-left: 4em;
+    padding-left: 1rem;
     font-size: 0.8em;
     padding-bottom: 2em;
 }
 
 table.month p.eventcfppassed {
-    padding-left: 4em;
+    padding-left: 1em;
     font-size: 0.8em;
     padding-bottom: 2em;
     text-decoration: line-through;
@@ -147,7 +217,6 @@ table.month p.eventname {
     margin: 0;
 }
 
-
 table.month a {
     color: #34920a;
     font-weight: bold;
@@ -156,6 +225,25 @@ table.month a {
 
 table.month p.eventdate {
     margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+    table.month {
+        padding-left: 1em;
+    }
+
+    table.month th, td:first-of-type {
+        padding-left: .5rem;
+    }
+
+    table.month p.eventcfp {
+        padding-left: 4rem;
+    }
+
+    table.month p.eventcfppassed {
+        padding-left: 4rem;
+    }
 }
 
 /* event page */

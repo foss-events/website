@@ -39,10 +39,14 @@
     <a
             class="menu__link"
             href="/">
-        <h1>
-            <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+        <h1 class="menu__hl">
+            <div class="menu__logo-container">
+                <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+            </div>
             FOSS events in Europe
-            <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+            <div class="menu__logo-container menu__logo-container--second">
+                <img class="menu__logo" src="img/logo.png" alt="// foss.events">
+            </div>
         </h1>
     </a>
     <hr class="menu__divider">
@@ -130,7 +134,7 @@
                 Take part in the <a href="{{ event['cfp_link'] }}">Call for Participation</a>.
                 {% if event['cfp_date'] %}
                     <div class="event-cfp__deadline">
-                        Deadline: {{  event['cfp_date'].strftime('%d.%m.%Y') }}
+                        Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
                     </div>
                 {% endif %}
             </td>
@@ -147,23 +151,25 @@
 </table>
 
 <div class="contribute-box">
-    <h3>missing info?</h3>
-    <h3>info out of date?</h3>
-    <h3>please <a href="/#contribute">contribute</a></h3>
+    <div class="contribute-box__content">
+        <h3>missing info?</h3>
+        <h3>info out of date?</h3>
+        <h3>please <a href="/#contribute">contribute</a></h3>
+    </div>
 </div>
 
 {% include 'partials/footer.html' %}
 
 {% if event['lat'] and event['lon'] %}
-<script>
-    window.fe = {
-        event: {
-            lat: {{ event['lat'] }},
-            lon: {{ event['lon'] }},
-            zoom: {{ event['zoom'] }}
-        }
-    };
-</script>
+    <script>
+        window.fe = {
+            event: {
+                lat: {{ event['lat'] }},
+                lon: {{ event['lon'] }},
+                zoom: {{ event['zoom'] }}
+            }
+        };
+    </script>
 {% endif %}
 <script src="/js/leaflet.js"></script>
 <script src="/js/event.js"></script>
