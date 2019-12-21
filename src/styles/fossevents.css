@@ -172,12 +172,9 @@ table.month p.eventdate {
     margin-top: 1rem;
 }
 
-.event-type {
-    font-size: .9rem;
-}
-
 .event-date {
-    margin-top: .75rem;
+    font-weight: bold;
+    margin-top: 1rem;
 }
 
 .event-location {
