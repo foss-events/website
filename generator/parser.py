@@ -180,6 +180,11 @@ def parse_event(row, today):
         reg = False
         reg_link = None
 
+    if row['ParticipantsLastTime']:
+        participants = row['ParticipantsLastTime']
+    else:
+        participants = '?'
+
     try:
         lat = float(row['lat'])
         lon = float(row['lon'])
@@ -217,7 +222,7 @@ def parse_event(row, today):
         'classes': classes,
         'type': row['type'],
         'upcoming': upcoming_event,
-        'participants': row['ParticipantsLastTime'],
+        'participants': participants,
         'lat': lat,
         'lon': lon,
         'zoom': zoom

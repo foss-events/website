@@ -113,14 +113,12 @@
             <td class="event-table__content">{{ event['description'] }}</td>
         </tr>
     {% endif %}
-    {% if event['participants'] %}
-        <tr>
-            <th class="event-table__label">Event size</th>
-            <td class="event-table__content">
-                Round about {{ event['participants'] }} participants last time
-            </td>
-        </tr>
-    {% endif %}
+    <tr>
+        <th class="event-table__label">Participants last time</th>
+        <td class="event-table__content">
+            {{ event['participants'] }}
+        </td>
+    </tr>
     {% if event['cfp_link'] %}
         <tr>
             <th class="event-table__label">CfP</th>
