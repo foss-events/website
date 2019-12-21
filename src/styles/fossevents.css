@@ -273,34 +273,60 @@ table.month p.eventdate {
     font-size: .75rem;
 }
 
-.event-table {
+.event-props {
     margin-bottom: 3rem;
 }
 
-.event-table__label {
+.event-props__group {
+    margin-bottom: 1rem;
+}
+
+.event-props__label {
     color: #343a40;
     font-weight: bold;
-    padding: 0 1rem 1rem 0;
-    text-align: right;
+    margin-bottom: .25rem;
     vertical-align: top;
     white-space: nowrap;
 }
 
-.event-table__content {
+.event-props__content {
     padding: 0 0 1rem;
     vertical-align: top;
 }
 
-.event-table__content p:first-of-type {
+.event-props__content p:first-of-type {
     margin-top: 0;
 }
 
-.event-table__content p:last-of-type {
+.event-props__content p:last-of-type {
     margin-bottom: 0;
 }
 
 .event-cfp__deadline {
     font-size: .9rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .event-props {
+        display: table;
+    }
+
+    .event-props__group {
+        display: table-row;
+        margin-bottom: 0;
+    }
+
+    .event-props__content {
+        display: table-cell;
+    }
+
+    .event-props__label {
+        display: table-cell;
+        margin-bottom: 0;
+        padding: 0 1rem 1rem 0;
+        text-align: right;
+    }
 }
 
 /* footer */

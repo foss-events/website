@@ -83,21 +83,21 @@
 
 <div id="map" class="event-map"></div>
 
-<table class="event-table">
+<div class="event-props">
     {% if event['homepage'] %}
-        <tr>
-            <th class="event-table__label">Website</th>
-            <td class="event-table__content">
+        <div class="event-props__group">
+            <div class="event-props__label">Website</div>
+            <div class="event-props__content">
                 <a href="{{ event['homepage'] }}">
                     {{ event['homepage'] }}
                 </a>
-            </td>
-        </tr>
+            </div>
+        </div>
     {% endif %}
     {% if event['reg'] != None %}
-        <tr>
-            <th class="event-table__label">Registration required?</th>
-            <td class="event-table__content">
+        <div class="event-props__group">
+            <div class="event-props__label">Registration required?</div>
+            <div class="event-props__content">
                 {% if event['reg'] %}
                     Yes
                     {% if event['reg_link'] %}
@@ -106,49 +106,49 @@
                 {% else %}
                     No
                 {% endif %}
-            </td>
-        </tr>
+            </div>
+        </div>
     {% endif %}
     {% if event['fee'] %}
-        <tr>
-            <th class="event-table__label">Standard participation fee</th>
-            <td class="event-table__content">{{ event['fee'] }}</td>
-        </tr>
+        <div class="event-props__group">
+            <div class="event-props__label">Standard participation fee</div>
+            <div class="event-props__content">{{ event['fee'] }}</div>
+        </div>
     {% endif %}
     {% if event['description'] %}
-        <tr>
-            <th class="event-table__label">Their self-description</th>
-            <td class="event-table__content">{{ event['description'] }}</td>
-        </tr>
+        <div class="event-props__group">
+            <div class="event-props__label">Their self-description</div>
+            <div class="event-props__content">{{ event['description'] }}</div>
+        </div>
     {% endif %}
-    <tr>
-        <th class="event-table__label">Participants last time</th>
-        <td class="event-table__content">
+    <div class="event-props__group">
+        <div class="event-props__label">Participants last time</div>
+        <div class="event-props__content">
             {{ event['participants'] }}
-        </td>
-    </tr>
+        </div>
+    </div>
     {% if event['cfp_link'] %}
-        <tr>
-            <th class="event-table__label">CfP</th>
-            <td class="event-table__content">
+        <div class="event-props__group">
+            <div class="event-props__label">CfP</div>
+            <div class="event-props__content">
                 Take part in the <a href="{{ event['cfp_link'] }}">Call for Participation</a>.
                 {% if event['cfp_date'] %}
                     <div class="event-cfp__deadline">
                         Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
                     </div>
                 {% endif %}
-            </td>
-        </tr>
+            </div>
+        </div>
     {% endif %}
     {% if event['coc_link'] %}
-        <tr>
-            <th class="event-table__label">Code of Conduct</th>
-            <td class="event-table__content">
+        <div class="event-props__group">
+            <div class="event-props__label">Code of Conduct</div>
+            <div class="event-props__content">
                 <a href="{{ event['coc_link'] }}" target="_blank">Link</a>
-            </td>
-        </tr>
+            </div>
+        </div>
     {% endif %}
-</table>
+</div>
 
 <div class="contribute-box">
     <div class="contribute-box__content">
