@@ -172,6 +172,10 @@ h2.navhead {
     text-align: center;
 }
 
+.navtop {
+    text-align: right;
+}
+
 /* event list/table */
 
 table.month th, td {
