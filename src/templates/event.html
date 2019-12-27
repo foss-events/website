@@ -99,9 +99,11 @@
             <div class="event-props__label">Registration required?</div>
             <div class="event-props__content">
                 {% if event['reg'] %}
-                    Yes
+
                     {% if event['reg_link'] %}
-                        <a href="{{ event['reg_link'] }}" target="_blank">Link</a>
+                        <a href="{{ event['reg_link'] }}" target="_blank">Yes</a>
+                    {% else %}
+                        Yes
                     {% endif %}
                 {% else %}
                     No
