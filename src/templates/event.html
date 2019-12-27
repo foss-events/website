@@ -131,13 +131,11 @@
     </div>
     {% if event['cfp_link'] %}
         <div class="event-props__group">
-            <div class="event-props__label">CfP</div>
+            <div class="event-props__label">Call for Participation</div>
             <div class="event-props__content">
-                Take part in the <a href="{{ event['cfp_link'] }}">Call for Participation</a>.
+                <a href="{{ event['cfp_link'] }}">Take part</a>.
                 {% if event['cfp_date'] %}
-                    <div class="event-cfp__deadline">
-                        Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
-                    </div>
+                    Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
                 {% endif %}
             </div>
         </div>
