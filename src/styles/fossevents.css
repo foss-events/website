@@ -79,12 +79,6 @@ h1.header {
     text-align: center;
 }
 
-
-h2.month {
-    padding-top: 2em;
-}
-
-
 h2.navhead {
     padding-top: 2em;
 }
@@ -172,11 +166,19 @@ h2.navhead {
     text-align: center;
 }
 
+.topheading__divider {
+    margin-bottom: 4rem;
+}
+
 .navtop {
     text-align: right;
 }
 
 /* event list/table */
+
+table.month {
+    margin-bottom: 4rem;
+}
 
 table.month th, td {
     padding: 0.5em;

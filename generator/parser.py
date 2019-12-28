@@ -69,6 +69,9 @@ def parse_events(reader, today):
             'events': []
         }
 
+    has_upcoming = False
+    has_prev = False
+
     for row in reader:
 
         if row['approved'] != 'yes':
@@ -84,8 +87,10 @@ def parse_events(reader, today):
 
         if event['upcoming']:
             upcoming[start_month]['events'].append(event)
+            has_upcoming = True
         else:
             prev[start_month]['events'].append(event)
+            has_prev = True
 
     for month_key,month in upcoming.items():
         month['events'] = sorted(month['events'], key=lambda event: event['start_day'])
@@ -96,7 +101,9 @@ def parse_events(reader, today):
     return {
         'all': all_events,
         'upcoming': upcoming,
-        'prev': prev
+        'has_upcoming': has_upcoming,
+        'prev': prev,
+        'has_prev': has_prev
     }
 
 

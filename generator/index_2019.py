@@ -15,7 +15,9 @@ env = Environment(loader=file_loader)
 template = env.get_template('index.html')
 result = template.render(
     upcoming=events['upcoming'],
+    has_upcoming=events['has_upcoming'],
     prev=events['prev'],
+    has_prev=events['has_prev'],
     year='2019',
     other_year='2020',
     other_year_link=''
