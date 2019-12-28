@@ -99,9 +99,11 @@
             <div class="event-props__label">Registration required?</div>
             <div class="event-props__content">
                 {% if event['reg'] %}
-                    Yes
+
                     {% if event['reg_link'] %}
-                        <a href="{{ event['reg_link'] }}" target="_blank">Link</a>
+                        <a href="{{ event['reg_link'] }}" target="_blank">Yes</a>
+                    {% else %}
+                        Yes
                     {% endif %}
                 {% else %}
                     No
@@ -129,13 +131,11 @@
     </div>
     {% if event['cfp_link'] %}
         <div class="event-props__group">
-            <div class="event-props__label">CfP</div>
+            <div class="event-props__label">Call for Participation</div>
             <div class="event-props__content">
-                Take part in the <a href="{{ event['cfp_link'] }}">Call for Participation</a>.
+                <a href="{{ event['cfp_link'] }}">Take part</a>.
                 {% if event['cfp_date'] %}
-                    <div class="event-cfp__deadline">
-                        Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
-                    </div>
+                    Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
                 {% endif %}
             </div>
         </div>
@@ -144,7 +144,7 @@
         <div class="event-props__group">
             <div class="event-props__label">Code of Conduct</div>
             <div class="event-props__content">
-                <a href="{{ event['coc_link'] }}" target="_blank">Link</a>
+                <a href="{{ event['coc_link'] }}" target="_blank">Read</a>
             </div>
         </div>
     {% endif %}
@@ -152,7 +152,7 @@
 
 <div class="contribute-box">
     <div class="contribute-box__content">
-        <h3>missing info?</h3>
+        <h3>info missing?</h3>
         <h3>info out of date?</h3>
         <h3>please <a href="/#contribute">contribute</a></h3>
     </div>

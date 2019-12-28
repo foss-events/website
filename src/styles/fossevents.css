@@ -306,10 +306,6 @@ table.month p.eventdate {
     margin-bottom: 0;
 }
 
-.event-cfp__deadline {
-    font-size: .9rem;
-}
-
 @media only screen and (min-width: 768px) {
 
     .event-props {
