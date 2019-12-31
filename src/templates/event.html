@@ -62,6 +62,11 @@
     {{ event['start_day'] }}<!--
         -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
     {{ event['start_month_string'] }} {{ event['start_year'] }}
+    <a
+            class="event-date__link"
+            href="{{ event['ical_path'] }}">
+        add to your calendar
+    </a>
 </div>
 
 <div class="event-location">
