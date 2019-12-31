@@ -1,7 +1,7 @@
 from datetime import datetime
 from pprint import pprint
 
-from helper import get_start_of_month, get_end_of_day, generate_event_path
+from helper import get_start_of_month, get_end_of_day, generate_event_details_path, generate_event_ical_path
 from consts import iso_label_dict, months
 from parse_helper import extract_cfp
 
@@ -132,10 +132,12 @@ def parse_event(row, today):
     event = {
         'label': row['label'],
         'description': row['Self-description'],
+        'start_date': start_date,
         'start_day': start_day,
         'start_month': start_month,
         'start_month_string': months[start_month],
         'start_year': start_year,
+        'end_date': end_date,
         'end_day': end_day,
         'homepage': row['homepage'],
         'fee': fee,
@@ -159,9 +161,11 @@ def parse_event(row, today):
         'zoom': zoom
     }
 
+    event['ical_path'] = generate_event_ical_path(event)
+
     if row['type'] == 'Global Day' or row['type'] == 'Regional Day':
         event['details_url'] = row['homepage']
     else:
-        event['details_url'] = generate_event_path(event)
+        event['details_url'] = generate_event_details_path(event)
 
     return event

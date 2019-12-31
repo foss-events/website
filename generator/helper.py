@@ -10,7 +10,7 @@ def get_end_of_day(date):
     return datetime(date.year, date.month, date.day, 23, 59, 59)
 
 
-def generate_event_path(event):
+def generate_event_details_path(event):
     event_path = event['start_year'] + '/'
 
     if event['start_month']:
@@ -37,3 +37,14 @@ def create_jinja_env():
     env = Environment(loader=file_loader)
     env.filters['url_mixed'] = url_mixed_filter
     return env
+
+def generate_event_ical_path(event):
+    event_path = event['start_year'] + '/'
+
+    if event['start_month']:
+        event_path += event['start_month'] + '-'
+
+    if event['start_day']:
+        event_path += event['start_day'] + '-'
+
+    return event_path + slugify(event['label']) + '.ics'
