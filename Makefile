@@ -43,13 +43,13 @@ build/.htaccess: src/.htaccess
 build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
-build/index.html: 2020_events_db.csv
+build/index.html: data/2020_events_db.csv
 	pipenv run python3 generator/index.py
 
-build/2019/index.html: 2019_events_db.csv
+build/2019/index.html: data/2019_events_db.csv
 	pipenv run python3 generator/index_2019.py
 
-build/events_token: 2019_events_db.csv 2020_events_db.csv
+build/events_token: data/2019_events_db.csv data/2020_events_db.csv
 	pipenv run python3 generator/event_pages.py
 	touch build/events_token
 

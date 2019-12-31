@@ -6,7 +6,7 @@ from parser import parse_events
 
 today = datetime.now()
 
-with open('2019_events_db.csv') as csvfile:
+with open('data/2019_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
     events = parse_events(reader, today)
 
