@@ -8,6 +8,3 @@ jinja2 = "*"
 python-slugify = "*"
 
 [dev-packages]
-
-[requires]
-python_version = "3.6"
