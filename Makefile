@@ -1,11 +1,11 @@
-$(shell mkdir -p build/2019 build/2020 build/img build/js build/styles/images)
-SOURCE_IMGS=$(wildcard src/img/*.png) $(wildcard src/img/*.jpg)
+$(shell mkdir -p build/2019 build/2020 build/img/services build/js build/cgi-bin build/styles/images)
+SOURCE_IMGS=$(wildcard src/img/*.png) $(wildcard src/img/services/*.png) $(wildcard src/img/*.jpg)
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 
-all: css js img build/.htaccess build/index.html build/2019/index.html build/events_token
+all: css js img cgi-bin build/.htaccess build/index.html build/2019/index.html build/events_token
 
 .PHONY: css
-css: build/styles/fossevents.css build/styles/leaflet.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
+css: build/styles/fossevents.css build/styles/leaflet.css build/styles/buttons.css build/styles/buttons-side.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
 
 .PHONY: js
 js: build/js/event.js build/js/leaflet.js
@@ -13,10 +13,19 @@ js: build/js/event.js build/js/leaflet.js
 .PHONY: img
 img: build/favicon.ico $(TARGET_IMGS)
 
+.PHONY: cgi-bin
+cgi-bin: build/cgi-bin/share.php build/cgi-bin/share.php
+
 build/img/%: src/img/%
 	cp $< $@
 
 build/styles/fossevents.css: src/styles/fossevents.css
+	cp $< $@
+
+build/styles/buttons.css: src/styles/buttons.css
+	cp $< $@
+
+build/styles/buttons-side.css: src/styles/buttons-side.css
 	cp $< $@
 
 build/styles/leaflet.css: src/lib/leaflet/leaflet.css
@@ -35,6 +44,9 @@ build/js/event.js: src/js/event.js
 	cp $< $@
 
 build/js/leaflet.js: src/lib/leaflet/leaflet.js
+	cp $< $@
+
+build/cgi-bin/share.php: src/cgi-bin/share.php
 	cp $< $@
 
 build/.htaccess: src/.htaccess
