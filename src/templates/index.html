@@ -105,9 +105,15 @@
                 {% endfor %}
             </table>
         {% endif %}
+
+        {% if month['events'] and month_id == '03' %}
+            {% include 'partials/contribute-box.html' %}
+        {% endif %}
     {% endfor %}
 
-    {% include 'partials/contribute-box.html' %}
+    {% if not upcoming['03']['events'] %}
+        {% include 'partials/contribute-box.html' %}
+    {% endif %}
 
 {% endif %}
 
@@ -130,12 +136,17 @@
                 {% endfor %}
             </table>
         {% endif %}
+
+        {% if month['events'] and month_id == '03' and not has_upcoming %}
+            {% include 'partials/contribute-box.html' %}
+        {% endif %}
     {% endfor %}
+
+    {% if not prev['03']['events'] and not has_upcoming %}
+        {% include 'partials/contribute-box.html' %}
+    {% endif %}
 {% endif %}
 
-{% if not has_upcoming %}
-    {% include 'partials/contribute-box.html' %}
-{% endif %}
 
 <h1 id="about" class="topheading">About</h1>
 <div style="padding: 0 40% 3em 40%">
