@@ -1,6 +1,11 @@
+import re
+
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from slugify import slugify
+
+TAG_RE = re.compile(r'<[^>]+>')
+
 
 def get_start_of_month(date):
     return datetime(date.year, date.month, 1, 0, 0, 0)
@@ -38,6 +43,7 @@ def create_jinja_env():
     env.filters['url_mixed'] = url_mixed_filter
     return env
 
+
 def generate_event_ical_path(event):
     event_path = event['start_year'] + '/'
 
@@ -48,3 +54,9 @@ def generate_event_ical_path(event):
         event_path += event['start_day'] + '-'
 
     return event_path + slugify(event['label']) + '.ics'
+
+
+def remove_tags(text):
+    text = text.replace('<br>', '\n')
+    text = text.replace('</p>', '\n\n')
+    return TAG_RE.sub('', text)
