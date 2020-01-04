@@ -163,9 +163,27 @@ def parse_event(row, today):
 
     event['ical_path'] = generate_event_ical_path(event)
 
+    readable_location = event['venue']
+
+    if event['venue'] and event['city']:
+        readable_location += ', '
+
+    readable_location += event['city']
+
+    if (event['venue'] or event['city']) and event['country']:
+        readable_location += ', '
+
+    readable_location += event['country']
+
+    event['readable_location'] = readable_location
+
     if row['type'] == 'Global Day' or row['type'] == 'Regional Day':
+        event['has_details'] = False
         event['details_url'] = row['homepage']
+        event['abs_details_url'] = row['homepage']
     else:
+        event['has_details'] = True
         event['details_url'] = generate_event_details_path(event)
+        event['abs_details_url'] = 'https://foss.events/' + str(event['details_url'])
 
     return event

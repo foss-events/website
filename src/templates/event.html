@@ -54,11 +54,7 @@
 </div>
 
 <div class="event-location">
-    {{ event['venue'] }}<!--
-    -->{% if event['venue'] and event['city'] %},{% endif %}
-    {{ event['city'] }}<!--
-    -->{% if (event['venue'] or event['city']) and event['country'] %},{% endif %}
-    {{ event['country'] }}
+    {{ event['readable_location'] }}
     {% if event['osm_link'] %}
         <a class="event-location__link" href="{{ event['osm_link'] }}" target="_blank">OSM</a>
         {% if event['geo'] %}/{% endif %}

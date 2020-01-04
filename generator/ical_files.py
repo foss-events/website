@@ -1,6 +1,7 @@
 import csv
 from datetime import datetime
-from icalendar import Calendar, Event, vDate
+
+from icalendar import Calendar, Event, vDate, vUri, vGeo
 
 from helper import generate_event_ical_path
 from parser import parse_events
@@ -18,8 +19,26 @@ def generate_event_ical_files(events):
         cal_event.add('summary', event['label'])
         cal_event.add('dtstart', vDate(event['start_date']))
         cal_event.add('dtend', vDate(event['end_date']))
+        cal_event.add('location', event['readable_location'])
+        cal_event.add('url', vUri(event['abs_details_url']))
+
+        description = event['description'] or ''
+        description += '\n\n'
+
+        if event['has_details']:
+          description += 'More info at // foss.events: ' + event['details_url'] + '\n'
+
+        description += 'Official Homepage: ' + event['homepage'] + '\n'
+
+        if event['osm_link']:
+            description += 'Find your way: ' + event['osm_link'] + '\n'
+
+        cal_event['description'] = description
 
         cal.add_component(cal_event)
+
+        if event['lat'] and event['lon']:
+            cal_event['geo'] = vGeo([event['lat'], event['lon']])
 
         filepath = generate_event_ical_path(event)
         with open('build/' + filepath, 'wb') as f:
