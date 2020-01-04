@@ -1,5 +1,9 @@
+import re
+
 from datetime import datetime
 from slugify import slugify
+
+TAG_RE = re.compile(r'<[^>]+>')
 
 
 def get_start_of_month(date):
@@ -21,6 +25,7 @@ def generate_event_details_path(event):
 
     return event_path + slugify(event['label']) + '.html'
 
+
 def generate_event_ical_path(event):
     event_path = event['start_year'] + '/'
 
@@ -31,3 +36,9 @@ def generate_event_ical_path(event):
         event_path += event['start_day'] + '-'
 
     return event_path + slugify(event['label']) + '.ics'
+
+
+def remove_tags(text):
+    text = text.replace('<br>', '\n')
+    text = text.replace('</p>', '\n\n')
+    return TAG_RE.sub('', text)
