@@ -69,12 +69,6 @@ a {
     padding: .5rem 2rem;
 }
 
-.bgimp {
-    background-image: url("/img/europe-wo-borders-250a.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
 h1.header {
     text-align: center;
 }

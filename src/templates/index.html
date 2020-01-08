@@ -105,9 +105,15 @@
                 {% endfor %}
             </table>
         {% endif %}
+
+        {% if month['events'] and month_id == '03' %}
+            {% include 'partials/contribute-box.html' %}
+        {% endif %}
     {% endfor %}
 
-    {% include 'partials/contribute-box.html' %}
+    {% if not upcoming['03']['events'] %}
+        {% include 'partials/contribute-box.html' %}
+    {% endif %}
 
 {% endif %}
 
@@ -130,19 +136,24 @@
                 {% endfor %}
             </table>
         {% endif %}
+
+        {% if month['events'] and month_id == '03' and not has_upcoming %}
+            {% include 'partials/contribute-box.html' %}
+        {% endif %}
     {% endfor %}
+
+    {% if not prev['03']['events'] and not has_upcoming %}
+        {% include 'partials/contribute-box.html' %}
+    {% endif %}
 {% endif %}
 
-{% if not has_upcoming %}
-    {% include 'partials/contribute-box.html' %}
-{% endif %}
 
 <h1 id="about" class="topheading">About</h1>
 <div style="padding: 0 40% 3em 40%">
     <hr>
 </div>
 
-<div class="bgimp">
+<div>
     <p>
         Planet Earth in its late 2010s: Europeans are facing an uprise of right-wing movements in most parts of the
         continent. New forms of political oppression and restrictions of freedom are put into practice, creating new
