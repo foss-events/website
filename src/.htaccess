@@ -1,2 +1,2 @@
 RedirectMatch 301 ^/2020$ /
-
+RedirectMatch ^share$ /cgi-bin/share.php

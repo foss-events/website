@@ -27,6 +27,7 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
+    <link rel="stylesheet" type="text/css" href="/styles/buttons-side.css">
 
     <title>// foss.events in Europe</title>
 </head>
@@ -62,6 +63,29 @@
         <span class="navlinks__link navlinks__link--active">2020</span>
     {% endif %}
 </p>
+
+<div class="sharecolumn">
+  <form action="/share" method="GET" class="share-buttons side" target="_blank">
+    <input name="popup" id="no-share-popup-side" type="radio" />
+    <input name="ref" value="side" type="hidden" />
+    <input name="url" value="https://foss.events" type="hidden" />  <!-- replace with your URL -->
+    <input name="title" value="// foss.events - the most comprehensive list of FOSS events in Europe" type="hidden" />       <!-- replace with site/share title -->
+    <input class="n" name="website" placeholder="Please do not put anything here" />  <!-- stupid bot detection -->
+
+    <label class="button share-fediverse" title="Share this page on the Fediverse" for="fediverse-share-side">&nbsp;</label>
+    <input name="popup" id="fediverse-share-side" type="radio" />
+    <span class="popup fediverse">
+      <label for="no-share-popup-side"></label>
+      <input name="fediversepod" value="" placeholder="Fediverse URL (fediverse.tld)" type="text" />
+      <button type="submit" name="service" value="fediverse">OK</button>
+    </span>
+
+    <button type="submit" name="service" value="reddit" class="button share-reddit" title="Share this page on Reddit">&nbsp;</button>
+    <button type="submit" name="service" value="hnews" class="button share-hnews" title="Share this page on Hacker News">&nbsp;</button>
+    <button type="submit" name="service" value="twitter" class="button share-twitter" title="Share this page on Twitter">&nbsp;</button>
+    <button type="submit" name="service" value="facebook" class="button share-facebook" title="Share this page on Facebook">&nbsp;</button>
+  </form>
+</div>
 
 <p>
     This page is <a href="#about">about</a> connecting people beyond borders

@@ -28,6 +28,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/styles/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
+    <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
 
     <title>// foss.events in Europe</title>
 </head>
@@ -150,6 +151,29 @@
         </div>
     {% endif %}
 </div>
+
+<form action="/share" method="GET" class="share-buttons" target="_blank">
+  <input name="popup" id="no-share-popup" type="radio" />
+  <input name="ref" value="bottom" type="hidden" />
+  <!-- replace with your URL -->
+  <input name="url" value="https://EXAMPLE.COM" type="hidden" />
+  <!-- replace with site/share title -->
+  <input name="title" value="{{ event['label'] }}:" type="hidden" />
+  <!-- stupid bot detection -->
+  <input class="n" name="website" placeholder="Please do not put anything here" />
+
+  <label class="button share-fediverse" title="Share this page on the Fediverse" for="fediverse-share">Fediverse</label>
+  <input name="popup" id="fediverse-share" type="radio" />
+  <span class="popup fediverse">
+    <label for="no-share-popup"></label>
+    <input name="fediversepod" value="" placeholder="Fediverse URL (fediverse.tld)" type="text" />
+    <button type="submit" name="service" value="fediverse">OK</button>
+  </span>
+
+  <button type="submit" name="service" value="reddit" class="button share-reddit" title="Share this page on Reddit">Reddit</button>
+  <button type="submit" name="service" value="twitter" class="button share-twitter" title="Share this page on Twitter">Twitter</button>
+  <button type="submit" name="service" value="facebook" class="button share-facebook" title="Share this page on Facebook">Facebook</button>
+</form>
 
 <div class="contribute-box">
     <div class="contribute-box__content">
