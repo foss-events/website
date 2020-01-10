@@ -6,6 +6,8 @@ stages:
 
 build_website:
   stage: build
+  variables:
+      GIT_SUBMODULE_STRATEGY: recursive
   artifacts:
     paths:
       - build/
