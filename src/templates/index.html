@@ -27,7 +27,7 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
-    <link rel="stylesheet" type="text/css" href="/styles/buttons-side.css">
+    <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
 
     <title>// foss.events in Europe</title>
 </head>
@@ -65,7 +65,7 @@
 </p>
 
 <div class="sharecolumn">
-  <form action="/share" method="GET" class="share-buttons side" target="_blank">
+  <form action="/share.php" method="GET" class="share-buttons side" target="_blank">
     <input name="popup" id="no-share-popup-side" type="radio" />
     <input name="ref" value="side" type="hidden" />
     <input name="url" value="https://foss.events" type="hidden" />  <!-- replace with your URL -->
@@ -82,6 +82,7 @@
 
     <button type="submit" name="service" value="reddit" class="button share-reddit" title="Share this page on Reddit">&nbsp;</button>
     <button type="submit" name="service" value="hnews" class="button share-hnews" title="Share this page on Hacker News">&nbsp;</button>
+    <a class="button share-mail" title="Share this page via e-mail" href="mailto:?subject=// foss.events&amp;body=// foss.events - the most comprehensive list of FOSS events in Europe%0A%0Ahttps://foss.events" >E-Mail</a>
     <button type="submit" name="service" value="twitter" class="button share-twitter" title="Share this page on Twitter">&nbsp;</button>
     <button type="submit" name="service" value="facebook" class="button share-facebook" title="Share this page on Facebook">&nbsp;</button>
   </form>

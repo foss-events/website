@@ -1,0 +1,3 @@
+[submodule "src/lib/share-buttons"]
+	path = src/lib/share-buttons
+	url = https://git.fsfe.org/FSFE/share-buttons.git

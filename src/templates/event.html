@@ -152,7 +152,7 @@
     {% endif %}
 </div>
 
-<form action="/share" method="GET" class="share-buttons" target="_blank">
+<form action="/share.php" method="GET" class="share-buttons" target="_blank">
   <input name="popup" id="no-share-popup" type="radio" />
   <input name="ref" value="bottom" type="hidden" />
   <!-- replace with your URL -->
@@ -171,6 +171,7 @@
   </span>
 
   <button type="submit" name="service" value="reddit" class="button share-reddit" title="Share this page on Reddit">Reddit</button>
+  <a class="button share-mail" title="Share this page via e-mail" href="mailto:?subject={{ event['label'] }}&amp;body={{ event['label'] }}%0ARead more on // foss.events - the most comprehensive list of FOSS events in Europe%0A%0Ahttps://foss.events" >E-Mail</a>
   <button type="submit" name="service" value="twitter" class="button share-twitter" title="Share this page on Twitter">Twitter</button>
   <button type="submit" name="service" value="facebook" class="button share-facebook" title="Share this page on Facebook">Facebook</button>
 </form>
