@@ -3,6 +3,7 @@ from pprint import pprint
 
 from helper import get_start_of_month, get_end_of_day, generate_event_path
 from consts import iso_label_dict, months
+from parse_helper import extract_cfp
 
 event_type_class_map = {
     'Global Day': 'event--highlighted',
@@ -82,7 +83,7 @@ def parse_event(row, today):
     end_date = datetime.strptime(row['dateend'], '%Y%m%d')
     end_day = end_date.strftime('%d')
 
-    upcoming_event = start_date > start_of_month
+    upcoming_event = end_date >= today
 
     classes = event_type_class_map.get(row['type'], '')
 
@@ -101,32 +102,6 @@ def parse_event(row, today):
     else:
         country_code = row['country'].strip()
         country = iso_label_dict.get(country_code, country_code)
-
-    if upcoming_event:
-        cfp_link = row['cfplink']
-
-        if row['cfpdate']:
-            if row['cfpdate'] == 'open':
-                cfp_date = None
-            else:
-                try:
-                    cfp_date = datetime.strptime(row['cfpdate'], '%Y%m%d')
-
-                    if cfp_date < end_of_today:
-                        cfp_date = None
-                        cfp_link = None
-                except:
-                    cfp_date = None
-
-        else:
-            cfp_date = None
-    else:
-        cfp_date = None
-        cfp_link = None
-
-    if cfp_link == '--' or cfp_link == 'nada':
-        cfp_date = None
-        cfp_link = None
 
     if row['EntranceFee'] != '0':
         fee = row['EntranceFee']
@@ -152,6 +127,8 @@ def parse_event(row, today):
         geo = None
         zoom = None
 
+    cfp = extract_cfp(row, today)
+
     event = {
         'label': row['label'],
         'description': row['Self-description'],
@@ -167,8 +144,10 @@ def parse_event(row, today):
         'country': country,
         'osm_link': row['OSM-Link'],
         'geo': geo,
-        'cfp_date': cfp_date,
-        'cfp_link': cfp_link,
+        'cfp_date': cfp['cfp_date'],
+        'cfp_passed': cfp['cfp_passed'],
+        'cfp_link': cfp['cfp_link'],
+        'cfp_raw_link': cfp['cfp_raw_link'],
         'coc_link': coc_link,
         'registration': row['Registration'],
         'classes': classes,

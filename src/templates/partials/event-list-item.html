@@ -17,9 +17,14 @@
                 {{ event['country'] }}
             {% endif %}
         {% endif %}
-        {% if event['cfp_link'] %}
+        {% if event['cfp_link'] and not event['cfp_passed'] and event['upcoming'] %}
             <p class="eventcfp">
-                Take part in the <a href="{{ event['cfp_link'] }}">Call for Participation</a>.
+                {% if event['cfp_raw_link'] %}
+                    Take part in the <a href="{{ event['cfp_raw_link'] }}">Call for Participation</a>.
+                {% else %}
+                    Take part in the Call for Participation (<a href="{{ event['details_url'] }}">see details</a>).
+                {% endif %}
+
                 {% if event['cfp_date'] %}
                     Deadline: {{  event['cfp_date'].strftime('%d.%m.%Y') }}
                 {% endif %}

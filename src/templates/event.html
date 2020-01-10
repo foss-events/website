@@ -106,9 +106,13 @@
         <div class="event-props__group">
             <div class="event-props__label">Call for Participation</div>
             <div class="event-props__content">
-                <a href="{{ event['cfp_link'] }}">Take part</a>.
-                {% if event['cfp_date'] %}
-                    Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
+                {% if event['cfp_passed'] %}
+                    The deadline for this CfP passed on {{ event['cfp_date'].strftime('%d.%m.%Y') }}.
+                {% else %}
+                    {{ event['cfp_link'] }}
+                    {% if event['cfp_date'] %}
+                        Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
