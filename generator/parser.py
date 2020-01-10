@@ -49,10 +49,10 @@ def parse_events(reader, today):
             has_prev = True
 
     for month_key,month in upcoming.items():
-        month['events'] = sorted(month['events'], key=lambda event: event['start_day'])
+        month['events'] = sorted(month['events'], key=lambda event: event['start_day'] + event['end_day'])
 
     for month_key,month in prev.items():
-        month['events'] = sorted(month['events'], key=lambda event: event['start_day'])
+        month['events'] = sorted(month['events'], key=lambda event: event['start_day']  + event['end_day'])
 
     return {
         'all': all_events,
