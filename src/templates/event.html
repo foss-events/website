@@ -12,7 +12,7 @@
 
     <!-- Open Graph meta-data (e.g. Facebook) -->
     <meta property="og:title" content="// foss.events"/>
-    <meta property="og:url" content="https://foss.events/"/>
+    <meta property="og:url" content="https://foss.events/{{ event['details_url'] }}"/>
     <meta property="og:image" content="https://foss.events/img/logo.png"/>
     <meta property="og:description" content="A collection of FOSS events in Europe"/>
     <meta property="og:locale" content="en"/>
@@ -21,6 +21,7 @@
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@FOSS_events"/>
     <meta name="twitter:title" content="// foss.events"/>
+    <meta name="twitter:url" content="https://foss.events/{{ event['details_url'] }}"/>
     <meta name="twitter:description" content="A collection of FOSS events in Europe"/>
     <meta name="twitter:image" content="https://foss.events/img/logo.png"/>
     <meta name="twitter:creator" content="@FOSS_events"/>
@@ -156,7 +157,7 @@
   <input name="popup" id="no-share-popup" type="radio" />
   <input name="ref" value="bottom" type="hidden" />
   <!-- replace with your URL -->
-  <input name="url" value="https://EXAMPLE.COM" type="hidden" />
+  <input name="url" value="https://foss.events/{{ event['details_url'] }}" type="hidden" />
   <!-- replace with site/share title -->
   <input name="title" value="{{ event['label'] }}:" type="hidden" />
   <!-- stupid bot detection -->
@@ -171,7 +172,7 @@
   </span>
 
   <button type="submit" name="service" value="reddit" class="button share-reddit" title="Share this page on Reddit">Reddit</button>
-  <a class="button share-mail" title="Share this page via e-mail" href="mailto:?subject={{ event['label'] }}&amp;body={{ event['label'] }}%0ARead more on // foss.events - the most comprehensive list of FOSS events in Europe%0A%0Ahttps://foss.events" >E-Mail</a>
+  <a class="button share-mail" title="Share this page via e-mail" href="mailto:?subject={{ event['label'] }}&amp;body={{ event['label'] }}%0ARead more on // foss.events - the most comprehensive list of FOSS events in Europe%0A%0Ahttps://foss.events/{{ event['details_url'] }}" >E-Mail</a>
   <button type="submit" name="service" value="twitter" class="button share-twitter" title="Share this page on Twitter">Twitter</button>
   <button type="submit" name="service" value="facebook" class="button share-facebook" title="Share this page on Facebook">Facebook</button>
 </form>
