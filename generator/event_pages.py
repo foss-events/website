@@ -1,14 +1,12 @@
 import csv
 from datetime import datetime
-from jinja2 import Environment, FileSystemLoader
 
-from helper import generate_event_path
+from helper import create_jinja_env, generate_event_path
 from parser import parse_events
 
 # this script generates the event detail pages
 
-file_loader = FileSystemLoader('src/templates')
-env = Environment(loader=file_loader)
+env = create_jinja_env()
 template = env.get_template('event.html')
 
 

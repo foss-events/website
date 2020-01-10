@@ -1,7 +1,7 @@
 import csv
 from datetime import datetime
-from jinja2 import Environment, FileSystemLoader
 
+from helper import create_jinja_env
 from parser import parse_events
 
 today = datetime.now()
@@ -10,8 +10,7 @@ with open('data/2019_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
     events = parse_events(reader, today)
 
-file_loader = FileSystemLoader('src/templates')
-env = Environment(loader=file_loader)
+env = create_jinja_env()
 template = env.get_template('index.html')
 result = template.render(
     upcoming=events['upcoming'],

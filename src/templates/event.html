@@ -78,23 +78,12 @@
             </div>
         </div>
     {% endif %}
-    {% if event['reg'] != None %}
-        <div class="event-props__group">
-            <div class="event-props__label">Registration required?</div>
-            <div class="event-props__content">
-                {% if event['reg'] %}
-
-                    {% if event['reg_link'] %}
-                        <a href="{{ event['reg_link'] }}" target="_blank">Yes</a>
-                    {% else %}
-                        Yes
-                    {% endif %}
-                {% else %}
-                    No
-                {% endif %}
-            </div>
+    <div class="event-props__group">
+        <div class="event-props__label">Registration required?</div>
+        <div class="event-props__content">
+        {{ event['registration'] | url_mixed }}
         </div>
-    {% endif %}
+    </div>
     {% if event['fee'] %}
         <div class="event-props__group">
             <div class="event-props__label">Standard participation fee</div>

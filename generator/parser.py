@@ -133,20 +133,6 @@ def parse_event(row, today):
     else:
         fee = None
 
-    if row['Registration']:
-        if row['Registration'] == 'no':
-            reg = False
-            reg_link = None
-        elif row['Registration'] == 'yes':
-            reg = True
-            reg_link = None
-        else:
-            reg = True
-            reg_link = row['Registration']
-    else:
-        reg = None
-        reg_link = None
-
     if row['ParticipantsLastTime']:
         participants = row['ParticipantsLastTime']
     else:
@@ -184,8 +170,7 @@ def parse_event(row, today):
         'cfp_date': cfp_date,
         'cfp_link': cfp_link,
         'coc_link': coc_link,
-        'reg': reg,
-        'reg_link': reg_link,
+        'registration': row['Registration'],
         'classes': classes,
         'type': row['type'],
         'upcoming': upcoming_event,
