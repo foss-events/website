@@ -164,8 +164,14 @@ h2.navhead {
     margin-bottom: 4rem;
 }
 
-.navtop {
+.nav-to-top {
+    display: block;
+    margin-top: 1.5rem;
     text-align: right;
+}
+
+.section {
+    margin-bottom: 4rem;
 }
 
 /* event list/table */
@@ -334,4 +340,38 @@ table.month p.eventdate {
 
 .footer__heart {
     color: #9B2C2C;
+}
+
+/* about page */
+
+.about-nav-headline {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.about-nav {
+    text-align: center;
+}
+
+.about-nav__item {
+    background: #339109;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+    padding: .3rem .4rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 100ms linear;
+    width: 8rem;
+}
+
+.about-nav__item:hover {
+    background: #1A7800;
+}
+
+.about-four-freedoms {
+    margin: 2rem 0;
+    text-align: center;
 }
