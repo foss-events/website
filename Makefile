@@ -54,6 +54,7 @@ build/about.html: src/templates/about.html
 
 build/events_token: data/2019_events_db.csv data/2020_events_db.csv
 	pipenv run python3 generator/event_pages.py
+	pipenv run python3 generator/ical_files.py
 	touch build/events_token
 
 .PHONY: clean

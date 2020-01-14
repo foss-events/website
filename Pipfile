@@ -6,5 +6,6 @@ name = "pypi"
 [packages]
 jinja2 = "*"
 python-slugify = "*"
+icalendar = "*"
 
 [dev-packages]

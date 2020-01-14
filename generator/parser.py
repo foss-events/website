@@ -1,7 +1,7 @@
 from datetime import datetime
 from pprint import pprint
 
-from helper import get_start_of_month, get_end_of_day, generate_event_path
+from helper import get_start_of_month, get_end_of_day, generate_event_details_path, generate_event_ical_path
 from consts import iso_label_dict, months
 from parse_helper import extract_cfp
 
@@ -132,10 +132,12 @@ def parse_event(row, today):
     event = {
         'label': row['label'],
         'description': row['Self-description'],
+        'start_date': start_date,
         'start_day': start_day,
         'start_month': start_month,
         'start_month_string': months[start_month],
         'start_year': start_year,
+        'end_date': end_date,
         'end_day': end_day,
         'homepage': row['homepage'],
         'fee': fee,
@@ -159,9 +161,29 @@ def parse_event(row, today):
         'zoom': zoom
     }
 
+    event['ical_path'] = generate_event_ical_path(event)
+
+    readable_location = event['venue']
+
+    if event['venue'] and event['city']:
+        readable_location += ', '
+
+    readable_location += event['city']
+
+    if (event['venue'] or event['city']) and event['country']:
+        readable_location += ', '
+
+    readable_location += event['country']
+
+    event['readable_location'] = readable_location
+
     if row['type'] == 'Global Day' or row['type'] == 'Regional Day':
+        event['has_details'] = False
         event['details_url'] = row['homepage']
+        event['abs_details_url'] = row['homepage']
     else:
-        event['details_url'] = generate_event_path(event)
+        event['has_details'] = True
+        event['details_url'] = generate_event_details_path(event)
+        event['abs_details_url'] = 'https://foss.events/' + str(event['details_url'])
 
     return event

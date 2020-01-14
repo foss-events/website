@@ -265,6 +265,10 @@ table.month p.eventdate {
     margin-top: 1rem;
 }
 
+.event-date__link {
+    font-size: .75rem;
+}
+
 .event-location {
     margin-bottom: .5rem;
 }
