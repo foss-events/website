@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="A collection of FOSS events in Europe"/>
     <meta name="keywords"
-          content="Free Software,FOSS,FLOSS,Software Libre, Open Source,Events,Camp,Conference,Collection,List,Europe,Unity,Diversity"/>
+          content="Free Software,FOSS,FLOSS,Software Libre, Open Source,Events,Camp,Conferences,Collection,Europe,Unity,Diversity,about,contact,contribute,sustainability,criteria"/>
 
     <!-- Open Graph meta-data (e.g. Facebook) -->
     <meta property="og:title" content="// foss.events"/>
@@ -41,15 +41,14 @@
 
 <p class="about-nav">
     <a href="#website" class="about-nav__item">Website</a><!--
-    --><a href="#contributing" class="about-nav__item">Contributing</a><!--
+    --><a href="#data" class="about-nav__item">Data</a><!--
     --><a href="#criteria" class="about-nav__item">Criteria</a><!--
-    --><a href="#features" class="about-nav__item">Features</a><!--
+    --><a href="#contributing" class="about-nav__item">Contributing</a><!--
+    <a href="#promoting" class="about-nav__item">Promoting</a>
     --><a href="#freedom" class="about-nav__item">Freedom</a><!--
     --><a href="#sustainability" class="about-nav__item">Sustainability</a><!--
     --><a href="#privacy" class="about-nav__item">Privacy</a><!--
-    --><a href="#promoting" class="about-nav__item">Promoting</a><!--
-    --><a href="#contact" class="about-nav__item">Contact</a><!--
-    --><a href="#people" class="about-nav__item">People</a>
+    --><a href="#contact" class="about-nav__item">Contact</a>
 </p>
 
 <h1 id="project" class="topheading">About this project</h1>
@@ -124,38 +123,60 @@
         You find <a href="/">the most comprehensive list of Free, Libre and/or Open Source Software (related) events happening in Europe</a>
         on the front-page.
     </p>
+    
+    <p>Keep in mind that this page is work in progress. It is build from scratch and step by step shall become a database-driven web-project for and by
+        the FOSS community to help connecting people. If you are interested in sharing knowlege or improving something
+        <a
+                href="mailto:contact@foss.events">get in contact</a> or open an issue on <a
+                href="https://github.com/foss-events/website">github</a>. Also pass by once in a while on this page to
+        enjoy the newest features : )</p></p>
 
     <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
 
 </section>
 
-<section id="contributing" class="section">
 
-    <h2>about: contributing</h2>
+
+<section id="data" class="section">
+
+    <h2>about: data</h2>
+    
     <p>
-        If you know of an event that matches our criteria [<a href="#criteria">&darr;</a>] and you do not see it
-        mentioned in our list of events, please contribute. The easiest option is to simply copy-paste the URL of the event
-        into the body section of <a
-            href="mailto:onemore@foss.events?subject=one more event">an email</a> and after checking we will list it here.
-        Also if you see that some information is missing on our side, use <a
-            href="mailto:thesameemailaddress@foss.events?subject=one more event">the same email-address</a> and send us any missing
-        information of the event.
+		All event-data on // foss.events is collected by hand or generously shared with us by an event-organiser. In both cases we guarantee neither completeness nor correctness of the data shown. In doubt, please re-assure with the event's own webpage. If you find something is wrong on our page, please help to fix it by contributing [<a href="#contributing">&darr;</a>]. Refer to this legend to understand our data-set:
     </p>
-
-    <p>
-        If you are an organiser or you have 5 minutes of time, it would be of such a great help to this project if you
-        can <a
-            href="mailto:onemore@foss.events?subject=one more event&body=Hi all,%0D%0A%0D%0Aplease add/update this event on // foss.events:%0D%0A%0D%0AName:%0D%0ADate:%0D%0AURL:%0D%0AShortname:%0D%0AHashtag:%0D%0ACity:%0D%0ACountry:%0D%0AVenue:%0D%0AOSM-Link:%0D%0ASelf-Description:%0D%0ALink for Call for Participation:%0D%0ADeadline for Call for Participation:%0D%0ALink for Code of Conduct:%0D%0AEntrance Fee:%0D%0ARegistration required:%0D%0AParticipants last time:%0D%0AMain language:%0D%0AAny specialties: ">use
-        this advanced email-template</a> and help us with collecting all necessary information about an event.
-    </p>
-
-    <h3 style="text-align:center">Thank you so much for your contribution!</h3>
-
-    <div class="heart">♥</div>
-
+    
+    <h3 id="legend">Legend</h3>
+    
+    <ul>
+		<li>Date, Name, Location (Venue, City, Country) and links to OpenStreetMap, Code of Conduct, Call for Participation: This data is exactly what the relevant label implies.</li>
+		<li>Self-Description: One Sentence up to some paragraphs that are copy and pasted from the event's web-page to describe the event. </li>
+		<li>Type: We differentiate between different kinds of events. So far on our list we have:
+			<ul>
+				<li>Community Conference: A conference about everything FOSS &amp; organised by/for a community, usually includes booths for free by non-profit organisations. Examples: FOSDEM, Froscon, etc.</li>
+				<li>Project Conference: A conference dedicated to a particular project, for example NixOS, OpenSuse etc.</li>
+				<li>Science Conference: A conference about something FOSS, run by/for scientists.</li>
+				<li>Business Conference: A conference organised for/by business, usually includes booths by for-profit organisations for money. Examples: CubeCon, OpenExpo, Linuxplumbet etc.</li>
+				<li>Policy Conference: A conference run by/for administrations, policy, politics. Examples: Connected Smart Cities Conference, Digitale Souveränität, etc.</li>
+				<li>Exhibition: Fair. Sometimes without talks but often mixed with a conference.</li>
+				<li>Hackmeeting: Meetings to come together and hack without conference around and without competition like in a hackathon. Examples: GNU Hackers Meeting, Debcamp etc</li>
+				<li>Hackathon: competitive hack events with winners and awards</li>
+				<li>Camping: FOSS events outdoors with camping on-site.</li>
+				<li>Festival: Events that include or are only about a festival-atmosphere and entertainment.</li>
+				<li>Unconference: FOSS happenings that bring people together in un-organised spontaneous talks and workshops like in unconferences and barcamps.</li>
+				<li>Global Day: Days to celebrate FOSS around the globe. Examples: IloveFS, Software Freedom Day etc.</li>
+				<li>Regional Day: Days to celebrate FOSS in a particular region. For example Flisol, Linux Presentation Day etc</li>
+			</ul>
+		</li>
+		<li>Standard participation fee: Participation fee if you buy a standard ticket without discount, early bird etc.</li>
+		<li>Participants last time: The estimated number of visitors this event happened the last time.</li>
+		<li>Main language: The default language of the talks given, not of the visitors. The main language is English, for example, in case all talks are in English although the visitors speak mainly another (local) language.</li>
+		<li>Specialities: Any speciality. Individual.</li>
+    </ul>
+    
     <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
-
+    
 </section>
+
 
 <section id="criteria" class="section">
 
@@ -184,9 +205,76 @@
 
 </section>
 
-<div id="diversity" class="section">
 
-    <h2>about: diversity</h2>
+
+<section id="contributing" class="section">
+
+    <h2>about: contributing</h2>
+    <p>
+        If you know of an event that matches our criteria [<a href="#criteria">&darr;</a>] and you do not see it
+        mentioned in our list of events, please contribute. The easiest option is to simply copy-paste the URL of the event
+        into the body section of <a
+            href="mailto:onemore@foss.events?subject=one more event">an email</a> and after checking we will list it here.
+        Also if you see that some information is missing on our side, use <a
+            href="mailto:thesameemailaddress@foss.events?subject=one more event">the same email-address</a> and send us any missing
+        information of the event.
+    </p>
+
+    <p>
+        If you are an organiser or you have 5 minutes of time, it would be of such a great help to this project if you
+        can <a
+            href="mailto:onemore@foss.events?subject=one more event&body=Hi all,%0D%0A%0D%0Aplease add/update this event on // foss.events:%0D%0A%0D%0AName:%0D%0ADate:%0D%0AURL:%0D%0AShortname:%0D%0AHashtag:%0D%0ACity:%0D%0ACountry:%0D%0AVenue:%0D%0AOSM-Link:%0D%0ASelf-Description:%0D%0ALink for Call for Participation:%0D%0ADeadline for Call for Participation:%0D%0ALink for Code of Conduct:%0D%0AEntrance Fee:%0D%0ARegistration required:%0D%0AParticipants last time:%0D%0AMain language:%0D%0AAny specialties: ">use
+        this advanced email-template</a> and help us with collecting all necessary information about an event. If you have trouble understand our data-set, check the legend <a href="#legend">[&uarr;]</a> for an explanation.
+    </p>
+
+    <h3 style="text-align:center">Thank you so much for your contribution!</h3>
+
+    <div class="heart">♥</div>
+
+    <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
+
+</section>
+
+
+
+
+<!--
+<section id="promoting" class="section">
+
+    <h2>about: promoting</h2>
+
+    <p>
+        If you like this project and you like to spread the word, you can <a href="/outreach.html#posters">print one or
+        more of our posters</a> and put them on a wall in your hackerspace, your working place or the next conference
+        you are going to. We highly appreciate this guerilla communication and if you make a picture and share it on
+        social media we will definitely share it as well : )
+    </p>
+
+    <p>
+        There also have already been some <a href="/outreach.html#sticker">// foss.events stickers</a> produced but
+        unfortunately we are not able to send them around. If you are happy to have one and you put it in a nice place,
+        the same is true as with the posters: make a picture and share it with us so we can share it as well. 
+    </p>
+
+
+    <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
+
+</section>
+
+-->
+
+<section id="freedom" class="section">
+	
+	<h2>about: freedom</h2>
+
+    <p>
+        We believe in the 4 freedoms to use, study, share and improve an software. Our page is self-made and published
+        as FOSS under <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPLv3</a>. You can <a href="">find
+        the code on github</a>.
+    </p>
+
+
+    <h3 id="diversity">Diversity</h3>
 
     <p>
         There are reasons and arguments why some people prefer FOSS over FLOSS or vice versa, why some refer to Open
@@ -201,33 +289,8 @@
         share and improve the software without limitations. That is why on // foss.events we will not prefer one name
         over the other and in case we use one, it is representative to all the others.</p> 
         
-	<p> Let us unite in diversity: No matter the name, if your event
-        is about the four freedoms of software you are part of // foss.events!
-    </p>
-
-    <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
-
-</div>
-
-<section id="features" class="section">
-
-    <h2>about: features</h2>
-
-    <p>This page is work in progress. It is build from scratch and shall become a database-driven web-project for and by
-        the FOSS community to help connecting people. If you are interested in sharing knowlege or improving something
-        <a
-                href="mailto:contact@foss.events">get in contact</a> or open an issue on <a
-                href="https://github.com/foss-events/website">github</a>. Also pass by once in a while on this page to
-        enjoy the newest features : )</p>
-
-    <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
-
-    <h2 class="navhead" id="freedom">about: freedom</h2>
-
-    <p>
-        We believe in the 4 freedoms to use, study, share and improve an software. Our page is self-made and published
-        as Free Software under <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPLv3</a>. You can <a href="">find
-        the code on github</a>.
+	<p> Let us unite in diversity: <strong>No matter the name, if your event
+        is about the four freedoms of software your event is part of // foss.events!</strong>
     </p>
 
     <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
@@ -289,27 +352,7 @@
 	
 	    <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
 
-<section id="promoting" class="section">
 
-    <h2>about: promoting</h2>
-
-    <p>
-        If you like this project and you like to spread the word, you can <a href="/outreach.html#posters">print one or
-        more of our posters</a> and put them on a wall in your hackerspace, your working place or the next conference
-        you are going to. We highly appreciate this guerilla communication and if you make a picture and share it on
-        social media we will definitely share it as well : )
-    </p>
-
-    <p>
-        There also have already been some <a href="/outreach.html#sticker">// foss.events stickers</a> produced but
-        unfortunately we are not able to send them around. If you are happy to have one and you put it in a nice place,
-        the same is true as with the posters: make a picture and share it with us so we can share it as well. 
-    </p>
-
-
-    <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
-
-</section>
 
 
 <section id="contact" class="section">
@@ -324,21 +367,19 @@
         Europe.
     </p>
 
-    <a class="nav-to-top" href="about.html#top">Navigation [&uarr;]</a>
-
-</section>
 
 
-<section id="people" class="section">
-
-    <h2>about: people</h2>
+    <h3>People</h3>
 
     <p>
         // foss.events is a project for and by all FOSS enthusiasts and everyone else who seeks living in a Free
         Society. In its daily operations it is run by some friendly Free Software geeks who simply feel like doing what
         we feel to be good. If you have questions or you look for direct contact, reach out to <a href="https://mastodon.social/@3rik">Erik
-        'Dreirik' Albers</a> (brainpower) or <a href="https://github.com/weeman1337">Michael Weimann</a> (technical lead).
+        'Dreirik' Albers</a> (brainpower), <a href="https://github.com/weeman1337">Michael Weimann</a> (technical lead) or <a href="https://mastodon.social/@mxmehl">Max Mehl</a> (department of good advice).
     </p>
+    
+
+  
 
     <p>
         The domain foss.events was initially registered and run by <a href="https://openrheinruhr.de/">OpenRheinRuhr
