@@ -29,7 +29,7 @@ def generate_event_ical_files(events):
         description += '\n\n'
 
         if event['has_details']:
-          description += 'More info at // foss.events: ' + event['details_url'] + '\n\n'
+            description += 'Read everything about ' + event['label'] + ' in a nutshell on // foss.events: ' + event['abs_details_url'] + '\n\n'
 
         description += 'Official Homepage: ' + event['homepage'] + '\n\n'
 
