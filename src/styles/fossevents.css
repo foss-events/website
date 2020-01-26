@@ -379,3 +379,12 @@ table.month p.eventdate {
     margin: 2rem 0;
     text-align: center;
 }
+
+.img-link-center {
+    display: block;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}

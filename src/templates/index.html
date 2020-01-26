@@ -37,20 +37,8 @@
 
 {% include 'partials/header-logo.html' %}
 
-<p class="navlinks">
-    {% if year == '2019' %}
-        <span class="navlinks__link navlinks__link--active">2019</span>
-        <span class="navlinks__separator">|</span>
-        <a href="/" class="navlinks__link navlinks__link--inactive">2020</a>
-    {% else %}
-        <a href="/2019" class="navlinks__link navlinks__link--inactive">2019</a>
-        <span class="navlinks__separator">|</span>
-        <span class="navlinks__link navlinks__link--active">2020</span>
-    {% endif %}
-</p>
-
 <p>
-    This page is <a href="#about">about</a> connecting people beyond borders
+    This page is <a href="/about.html">about</a> connecting people beyond borders
     and nations who understand the benefits of sharing knowledge and to
     collectively use, study, share and improve it for everyone.
 </p>
@@ -58,27 +46,21 @@
 <p>
     You find a list of Free, Libre and/or Open Source Software (related)
     events happening in Europe in {{ year }}
-    below, chronologically sorted into <a href="#upcoming">upcoming</a>
+    below, chronologically sorted into <a href="#fossevents">upcoming</a>
     and <a href="#passed">passed</a>.
-    Unity in diversity!
-</p>
-
-<p>
-    If you know about an event that is not yet listed here and it
-    matches the <a href="#criteria">criteria</a>,
-    please <a href="#contribute">contribute</a>.
-    For any questions get in <a href="#contact">contact</a>.
+    <a href="/about.html#diversity">Unity in diversity!</a>
 </p>
 
 {% if has_upcoming %}
 
-    <h1 id="upcoming" class="topheading">
-        Upcoming events in {{ year }}
-    </h1>
-
-    <div class="topheading__divider" style="padding: 0 40% 0 40%">
+	<h1 id="fossevents" class="topheading">FOSS events in Europe</h1>
+	<div style="padding: 0 40% 0 40%">
         <hr>
     </div>
+
+    <h2 id="upcoming" style="text-align:center; margin-bottom: 2em;">
+        Upcoming in {{ year }}
+    </h2>
 
     {% for month_id, month in upcoming.items() %}
         {% if month['events'] %}
@@ -103,10 +85,17 @@
 
 {% endif %}
 
+<p>
+    If you know about an event that is not yet listed here and it
+    matches the <a href="/about.html#criteria">criteria</a>,
+    please <a href="/about.html#contribute">contribute</a>.
+    For any questions get in <a href="/about.html#contact">contact</a>.
+</p>
+
 {% if has_prev %}
-    <h1 id="passed" class="topheading">
+    <h2 id="passed" class="topheading">
         Past events in {{ year }}
-    </h1>
+    </h2>
     <div style="padding: 0 40% 0 40%">
         <hr>
     </div>
@@ -134,141 +123,24 @@
 {% endif %}
 
 
-<h1 id="about" class="topheading">About</h1>
-<div style="padding: 0 40% 3em 40%">
-    <hr>
-</div>
-
-<div>
-    <p>
-        Planet Earth in its late 2010s: Europeans are facing an uprise of right-wing movements in most parts of the
-        continent. New forms of political oppression and restrictions of freedom are put into practice, creating new
-        deportation procedures, excessive police laws and border controls, new walls and entry bans. One can only
-        speculate how the overall situation will develop in the next decade or the one after, how borders outside and
-        within Europe will be re-established and potentially closed down ... But one can be sure that when crossing
-        borders will become a privilege again, inter-European families, networks and communities will get dispersed.
-    </p>
-
-    <p>
-        To grow and live (in) a free society we need freedom of exchange. We need human cooperation as a breeding ground
-        for creativity and inspiration as well as a fundament to safeguard our peace and mutual understanding. Freedom
-        of people - just as freedom of code - is fundamental to Free, Libre and Open Source Software and their
-        communities and a requirement to collectively construct our commons.
-    </p>
-</div>
-
-<p>This project shall help growing a free society. As long as inner-European borders can still be crossed and
-    international events are possible, this page is here to encourage you to get to know and network with each other.
-    Create international organisations, form resilient communities and build friendships with each other across borders.
-    Go to a FOSS event in another country this year, an event where you have never been before. Get to know new people
-    there, their habits, knowledge and backgrounds. Help each other and listen to each other. And above all do what you
-    always love to do: </p>
-
-<p style="text-align:center">
-    <strong>Use, study, share and improve. Together.</strong>
-</p>
-
-
-<div style="clear: both; padding-top:2em;"></div>
-
-<div class="stickercontainer">
-    <div class="stickercontainer__sticker">
-        <h3>No borders. No nations.</h3>
-        <h3>Just humans.</h3>
-        <h3>And tech.</h3>
+	<h1 id="archive" class="topheading">
+        Archive
+    </h1>
+    <div style="padding: 0 40% 0 40%">
+        <hr>
     </div>
 
-    <div class="stickercontainer__sticker">
-        <h3>No DRM. No firewalls.</h3>
-        <h3>Just freedom.</h3>
-        <h3>And humans.</h3>
-    </div>
+<p>See the list of Free, Libre and/or Open Source Software (related) events happening in Europe in ...</p>
+
+<p style="font-size:200%">
+   
+  <a href="/2019"><strong>2019</strong></a>
+        
+</p>
+
+<div class="footer">
+    Made with <span class="footer__heart">♥</span> | <a href="/about.html">about</a> | <a href="/about.html#contact">contact</a>
 </div>
-
-<a class="nav-to-top" href="#top">Navigation [&uarr;]</a>
-
-
-<h2 class="navhead" id="contribute">about: contribute</h2>
-<p>
-    If you know of an event that matches our criteria [<a href="#criteria">&darr;</a>] and
-    you do not see it mentioned in our list of events [<a href="listofevents">&uarr;</a>],
-    please <a href="mailto:onemore@foss.events?subject=one more event">contribute with an email</a>.
-    Easiest option is to simply copy-paste the URL of the event into the body section of your mail and
-    after checking we will list it here. If you see that some information is missing on our side, use the same
-    email-address and send us the missing information.
-</p>
-
-
-<p>
-    If you are an organiser or you have 5 minutes of time, it would be of such a great help to this project if you can
-    <a href="mailto:onemore@foss.events?subject=one more event&body=Hi all,%0D%0A%0D%0Aplease add/update this event on // foss.events:%0D%0A%0D%0AName:%0D%0ADate:%0D%0AURL:%0D%0ACity:%0D%0ACountry:%0D%0AOSM-Link:%0D%0ASelf-Description:%0D%0ALink for Call for Participation:%0D%0ADeadline for Call for Participation:%0D%0ALink for Code of Conduct:%0D%0AEntrance Fee:%0D%0AParticipants last time:%0D%0AMain language: ">use
-        this advanced email-template</a> and help us with collecting all necessary information about an event.
-</p>
-
-<h3 style="text-align:center">Thank you so much for your contribution!</h3>
-<div class="heart">♥</div>
-<a class="nav-to-top" href="#top">Navigation [&uarr;]</a>
-
-<h2 class="navhead" id="criteria">about: criteria</h2>
-
-<p>
-    // foss.events is all about collecting and spreading FOSS events in Europe. These are mainly conferences but can
-    also be meetings, *-a-thons, camps, festival, exhibitions and other kind of events - as long as they match the
-    following criteria:
-</p>
-
-<ul>
-    <li>only events that happen in Europe.</li>
-    <li>only events that are open for the general public. Entrance fee is ok, but events shall be accessible for
-        everyone to participate and in particular not restricted to a specific group like the members of a specific
-        group, organisation or similar.
-    </li>
-    <li>only "full-day" events. As a rule of thumb, that means events that are at least 6-8 hours or more.</li>
-</ul>
-
-
-<p>If you know about Free, Libre and/or Open Source Software event in Europe that matches this criteria and is not yet
-    in our list, please contribute [<a href="#contribute">&uarr;</a>]</p>
-
-<a class="nav-to-top" href="#top">Navigation [&uarr;]</a>
-
-
-<h2 class="navhead" id="features">about: features</h2>
-
-<p>This page is work in progress. It is build from scratch and shall become a database-driven web-project for and by the
-    FOSS community to help connecting people. If you are interested in sharing knowlege or improving something <a
-            href="mailto:contact@foss.events">get in contact</a> or open an issue on <a
-            href="https://github.com/foss-events/website">github</a>.
-    Also pass by once in a while on this page to enjoy the newest features : )</p>
-
-<h2 class="navhead" id="contact">about: contact</h2>
-
-<p>
-    Whenever you feel like giving us your feedback, you have a good idea or you want to give us a digital hug, you can
-    simply send us an <a href="mailto:contact@foss.events">email</a>. Also consider following us on
-    <a rel="me" href="https://mastodon.social/@FOSS_events">Mastodon</a>
-    or <a href="https://twitter.com/FOSS_events">Twitter</a> to enjoy our toots and tweets around foss-events in
-    Europe<a rel="me" href="https://mastodon.social/@3rik">.</a>
-</p>
-
-<h2 class="navhead" id="people">about: people</h2>
-
-<p>
-    // foss.events is a project for and by all FOSS enthusiasts and everyone else who seeks
-    living in a Free Society. In its daily operations it is run by some friendly Free Software
-    geeks who simply feel like doing what we feel to be good. No commercial interest involved.
-    Project lead is <a href="https://mastodon.social/@3rik">Erik Albers</a>, technical lead
-    is <a href="https://github.com/weeman1337">Michael Weimann</a>.</p>
-
-<p>The domain foss.events was initially registered and run by
-    <a href="https://openrheinruhr.de/">OpenRheinRuhr e.V.</a> and later generously shared with
-    // foss.events. Thank you so much for this priceless contribution!</p>
-
-<p><a href="/img/imprint.png">Imprint</a>.</p>
-
-<a class="nav-to-top" href="#top">Navigation [&uarr;]</a>
-
-{% include 'partials/footer.html' %}
 
 </body>
 
