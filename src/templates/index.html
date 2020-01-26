@@ -37,7 +37,6 @@
 
 {% include 'partials/header-logo.html' %}
 
-
 <p>
     This page is <a href="/about.html">about</a> connecting people beyond borders
     and nations who understand the benefits of sharing knowledge and to
@@ -52,8 +51,6 @@
     <a href="/about.html#diversity">Unity in diversity!</a>
 </p>
 
-
-
 {% if has_upcoming %}
 
 	<h1 id="fossevents" class="topheading">FOSS events in Europe</h1>
@@ -64,8 +61,6 @@
     <h2 id="upcoming" style="text-align:center; margin-bottom: 2em;">
         Upcoming in {{ year }}
     </h2>
-
-    
 
     {% for month_id, month in upcoming.items() %}
         {% if month['events'] %}
@@ -90,14 +85,12 @@
 
 {% endif %}
 
-
 <p>
     If you know about an event that is not yet listed here and it
     matches the <a href="/about.html#criteria">criteria</a>,
     please <a href="/about.html#contribute">contribute</a>.
     For any questions get in <a href="/about.html#contact">contact</a>.
 </p>
-
 
 {% if has_prev %}
     <h2 id="passed" class="topheading">
