@@ -23,6 +23,6 @@ You can now access the website locally in your browser [https://localhost:1337/]
 
 ## Contributing
 
-Please read the [contribute section on the website](https://foss.events/#contribute).
+Please read the [contribute section on the website](https://foss.events/about.html#contributing).
 
 Pull requests are welcome as well.
