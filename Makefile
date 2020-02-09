@@ -52,6 +52,9 @@ build/2019/index.html: data/2019_events_db.csv
 build/about.html: src/templates/about.html
 	pipenv run python3 generator/about.py
 
+build/publicity.html: src/templates/publicity.html
+	pipenv run python3 generator/publicity.py
+
 build/events_token: data/2019_events_db.csv data/2020_events_db.csv
 	pipenv run python3 generator/event_pages.py
 	pipenv run python3 generator/ical_files.py
