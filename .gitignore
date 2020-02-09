@@ -1,4 +1,6 @@
 /build
+/node_modules
+/npmi_token
 /public
 /venv
 .~lock.*.csv#

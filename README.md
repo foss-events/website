@@ -4,6 +4,7 @@
 
 Requirements:
 
+* [Node.js](https://nodejs.org/en/download/package-manager/)
 * Python >= 3.6
 * pipenv
 * virtualenv
