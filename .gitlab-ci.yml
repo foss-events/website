@@ -13,7 +13,7 @@ build_website:
       - build/
   before_script:
     - apk update
-    - apk add --no-cache python3 make
+    - apk add --no-cache python3 make nodejs npm
     - pip3 install pipenv
   script:
     - pipenv install
