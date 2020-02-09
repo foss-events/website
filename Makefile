@@ -2,7 +2,9 @@ $(shell mkdir -p build/2019 build/2020 build/img build/js build/styles/images)
 SOURCE_IMGS=$(wildcard src/img/*.png) $(wildcard src/img/*.jpg) $(wildcard src/img/*.svg)
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 
-all: css js img build/.htaccess build/index.html build/2019/index.html build/about.html build/events_token
+all: build/index.html build/2019/index.html build/about.html build/publicity.html \
+build/events_token \
+css js img build/.htaccess
 
 .PHONY: css
 css: build/styles/fossevents.css build/styles/leaflet.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
