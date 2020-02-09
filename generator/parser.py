@@ -3,7 +3,7 @@ from pprint import pprint
 
 from helper import get_start_of_month, get_end_of_day, generate_event_details_path, generate_event_ical_path
 from consts import iso_label_dict, months
-from parse_helper import extract_cfp
+from parse_helper import extract_cfp, extract_meta_keywords
 
 event_type_class_map = {
     'Global Day': 'event--highlighted',
@@ -179,5 +179,9 @@ def parse_event(row, today):
         event['has_details'] = True
         event['details_url'] = generate_event_details_path(event)
         event['abs_details_url'] = 'https://foss.events/' + str(event['details_url'])
+
+    meta_keywords = extract_meta_keywords(row)
+    keyword_sep = ', '
+    event['keywords_string'] = keyword_sep.join(meta_keywords)
 
     return event

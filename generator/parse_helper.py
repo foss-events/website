@@ -3,6 +3,43 @@ from datetime import datetime
 from helper import get_end_of_day
 
 
+def extract_meta_keywords(row):
+    meta_keywords = [
+        'Free Software',
+        'FOSS',
+        'FLOSS',
+        'Software Libre',
+        'Open Source',
+        'Events'
+    ]
+
+    if row['name']:
+        meta_keywords.append(row['name'])
+
+    if row['shortname']:
+        meta_keywords.append(row['shortname'])
+
+    if row['hashtag']:
+        meta_keywords.append(row['hashtag'])
+
+    if row['city']:
+        meta_keywords.append(row['city'])
+
+    if row['country']:
+        meta_keywords.append(row['country'])
+
+    if row['tags']:
+        meta_keywords += row['tags'].split(',')
+
+    if row['type']:
+        meta_keywords.append(row['type'])
+
+    if row.get('Main Organiser', None):
+        meta_keywords.append(row['Main Organiser'])
+
+    return meta_keywords
+
+
 def extract_cfp(row, today):
     cfp_date_string = row['cfpdate']
 
