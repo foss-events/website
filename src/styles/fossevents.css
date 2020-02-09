@@ -495,6 +495,8 @@ table.month p.eventdate {
 
 .about-nav__item:hover {
     background: #1A7800;
+    color: white;
+    text-decoration: none;
 }
 
 .about-four-freedoms {
