@@ -117,15 +117,10 @@ def parse_event(row, today):
         lat = float(row['lat'])
         lon = float(row['lon'])
         geo = 'geo:' + str(lat) + ',' + str(lon)
-        if row['default_zoom']:
-            zoom = row['default_zoom']
-        else:
-            zoom = 10
     except:
         lat = None
         lon = None
         geo = None
-        zoom = None
 
     cfp = extract_cfp(row, today)
 
@@ -157,8 +152,7 @@ def parse_event(row, today):
         'upcoming': upcoming_event,
         'participants': participants,
         'lat': lat,
-        'lon': lon,
-        'zoom': zoom
+        'lon': lon
     }
 
     event['ical_path'] = generate_event_ical_path(event)
