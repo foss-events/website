@@ -37,10 +37,6 @@
 
 <h2 class="event-title">{{ event['label'] }}</h2>
 
-{% if event['type'] %}
-    <div class="event-type">Type: {{ event['type'] }}</div>
-{% endif %}
-
 <div class="event-date">
     {{ event['start_day'] }}<!--
         -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
@@ -78,6 +74,12 @@
             </div>
         </div>
     {% endif %}
+    <div class="event-props__group">
+        <div class="event-props__label">Type</div>
+        <div class="event-props__content">
+            {{ event['type'] }}
+        </div>
+    </div>
     <div class="event-props__group">
         <div class="event-props__label">Main language</div>
         <div class="event-props__content">

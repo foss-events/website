@@ -150,7 +150,7 @@ def parse_event(row, today):
         'coc_link': coc_link,
         'registration': row['Registration'],
         'classes': classes,
-        'type': row['type'],
+        'type': row.get('type', '?'),
         'upcoming': upcoming_event,
         'participants': participants,
         'lat': lat,
