@@ -130,6 +130,7 @@ def parse_event(row, today):
         'editions_topic': row.get('Edition’s Topic', None),
         'main_organiser': row.get('Main Organiser', None),
         'description': row['Self-description'],
+        'specialities': row.get('Specialties', None),
         'start_date': start_date,
         'start_day': start_day,
         'start_month': start_month,

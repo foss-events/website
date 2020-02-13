@@ -113,6 +113,12 @@
             <div class="event-props__content">{{ event['description'] }}</div>
         </div>
     {% endif %}
+    {% if event['specialities'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Specialities</div>
+            <div class="event-props__content">{{ event['specialities'] }}</div>
+        </div>
+    {% endif %}
     <div class="event-props__group">
         <div class="event-props__label">Participants last time</div>
         <div class="event-props__content">
