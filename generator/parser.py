@@ -10,6 +10,7 @@ event_type_class_map = {
     'Regional Day': 'event--highlighted'
 }
 
+
 def parse_events(reader, today):
 
     all_events = []

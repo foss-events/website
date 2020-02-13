@@ -181,7 +181,6 @@ h2.navhead {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 50%;
     cursor: pointer;
     height: 2.5rem;
     margin-right: .8rem;
@@ -215,6 +214,10 @@ h2.navhead {
 
 .menu-icons__icon--github:hover {
     background-image: url("/img/menu_GitHub_darker.svg");
+}
+
+.menu-icons__icon--fossevents {
+    background-image: url("/img/fossevents_nippelspace.svg");
 }
 
 .menu-icons__icon--info {
