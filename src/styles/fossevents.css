@@ -155,7 +155,7 @@ h2.navhead {
 }
 
 .menu-icons {
-    align-items: center;
+    align-items: flex-end;
     display: flex;
     justify-content: center;
 }
@@ -218,6 +218,9 @@ h2.navhead {
 
 .menu-icons__icon--fossevents {
     background-image: url("/img/fossevents_nippelspace.svg");
+    background-size: contain;
+    height: 3rem;
+    width: 3rem;
 }
 
 .menu-icons__icon--info {

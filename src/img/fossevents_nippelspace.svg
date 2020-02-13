@@ -7,8 +7,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="120"
-   height="120"
+   width="114.4"
+   height="124.95482"
    version="1.1"
    id="svg4"
    sodipodi:docname="fossevents_nippelspace.svg"
@@ -40,12 +40,12 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1173"
+     inkscape:window-height="1053"
      id="namedview6"
      showgrid="false"
-     inkscape:zoom="1.1429945"
-     inkscape:cx="-166.13087"
-     inkscape:cy="86.130663"
+     inkscape:zoom="9.143956"
+     inkscape:cx="58.56828"
+     inkscape:cy="119.68645"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -55,17 +55,17 @@
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <path
-     d="M 2.8,110.61542 V 21.61541 c 0,-2.4 0.9,-4.5 2.6,-6.3 1.7,-1.8 3.8,-2.6 6.2,-2.6 h 96.8 c 2.4,0 4.4,0.9 6.2,2.6 1.7,1.8 2.6,3.8 2.6,6.3 v 88.90001 c 0,2.4 -0.9,4.5 -2.6,6.3 -1.7,1.8 -3.8,2.6 -6.2,2.6 H 11.6 c -2.4,0 -4.4,-0.9 -6.2,-2.6 -1.7,-1.8 -2.6,-3.8 -2.6,-6.2 z M 15.6,107.615 h 88.8 v -74.2 H 15.6 Z"
+     d="M 0,116.15482 V 27.154802 c 0,-2.4 0.9,-4.5 2.6,-6.3 1.7,-1.8 3.8,-2.6 6.2,-2.6 h 96.8 c 2.4,0 4.4,0.9 6.2,2.6 1.7,1.8 2.6,3.8 2.6,6.3 v 88.900018 c 0,2.4 -0.9,4.5 -2.6,6.3 -1.7,1.8 -3.8,2.6 -6.2,2.6 H 8.8 c -2.4,0 -4.4,-0.9 -6.2,-2.6 -1.7,-1.8 -2.6,-3.8 -2.6,-6.2 z m 12.8,-3.00042 h 88.8 V 38.954392 H 12.8 Z"
      id="path2"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ssscccssssscsccccc"
      style="fill:#2f2f31;fill-opacity:1" />
   <g
      id="g870"
-     transform="translate(-16.633767,0.3648522)"
-     style="fill:#2f2f31;fill-opacity:1">
+     transform="matrix(1.2192785,0,0,1.2192785,-30.561368,3.5457524)"
+     style="fill:#2f2f31;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
     <path
-       style="fill:#2f2f31;fill-opacity:1;stroke:#ffffff;stroke-width:1.50109565;stroke-opacity:1"
+       style="fill:#2f2f31;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 50.343365,-1.4078558 c -3.82731,0.00448 -6.981652,3.0036739 -7.178995,6.825895 h -0.018 v 0.371095 8.2315568 c -0.03162,0.267997 -0.0095,0.53756 -0.01082,0.807412 0,3.97479 3.18354,7.196993 7.15833,7.19699 3.974788,0 7.19699,-3.222202 7.19699,-7.19699 -0.0011,-0.05025 -0.0028,-0.100478 -0.005,-0.150688 0.113554,-2.831249 0.054,-5.9580904 0.054,-8.8882808 v -0.371095 h -0.0135 c -0.197435,-3.8239579 -3.354449,-6.8238114 -7.1835,-6.825895 z"
        id="path864"
        inkscape:connector-curvature="0"
@@ -73,7 +73,7 @@
   </g>
   <g
      id="g875"
-     transform="matrix(0.92640439,0,0,0.92640439,34.870136,45.020172)"
+     transform="matrix(0.92640439,0,0,0.92640439,32.070136,50.559564)"
      style="fill:#feff00;fill-opacity:1">
     <g
        id="g819"
@@ -192,13 +192,13 @@
        style="fill:#feff00;fill-opacity:1" />
   </g>
   <g
-     id="g870-5"
-     transform="translate(35.858762,0.3648522)"
-     style="fill:#2f2f31;fill-opacity:1">
+     id="g870-3"
+     transform="matrix(1.2192785,0,0,1.2192785,22.060737,3.5454861)"
+     style="fill:#2f2f31;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
     <path
-       style="fill:#2f2f31;fill-opacity:1;stroke:#ffffff;stroke-width:1.50109565;stroke-opacity:1"
+       style="fill:#2f2f31;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 50.343365,-1.4078558 c -3.82731,0.00448 -6.981652,3.0036739 -7.178995,6.825895 h -0.018 v 0.371095 8.2315568 c -0.03162,0.267997 -0.0095,0.53756 -0.01082,0.807412 0,3.97479 3.18354,7.196993 7.15833,7.19699 3.974788,0 7.19699,-3.222202 7.19699,-7.19699 -0.0011,-0.05025 -0.0028,-0.100478 -0.005,-0.150688 0.113554,-2.831249 0.054,-5.9580904 0.054,-8.8882808 v -0.371095 h -0.0135 c -0.197435,-3.8239579 -3.354449,-6.8238114 -7.1835,-6.825895 z"
-       id="path864-3"
+       id="path864-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccsccccccc" />
   </g>
