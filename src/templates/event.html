@@ -36,6 +36,9 @@
 {% include 'partials/header-logo.html' %}
 
 <h2 class="event-title">{{ event['label'] }}</h2>
+{% if event['editions_topic'] %}
+    <div class="event-subtitle">Edition's topic: {{ event['editions_topic'] }}</div>
+{% endif %}
 
 <div class="event-date">
     {{ event['start_day'] }}<!--
