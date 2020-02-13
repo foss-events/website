@@ -128,6 +128,7 @@ def parse_event(row, today):
     event = {
         'label': row['label'],
         'editions_topic': row.get('Edition’s Topic', None),
+        'main_organiser': row.get('Main Organiser', None),
         'description': row['Self-description'],
         'start_date': start_date,
         'start_day': start_day,

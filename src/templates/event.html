@@ -83,6 +83,12 @@
             {{ event['type'] }}
         </div>
     </div>
+    {% if event['main_organiser'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Main organiser</div>
+            <div class="event-props__content">{{ event['main_organiser'] }}</div>
+        </div>
+    {% endif %}
     <div class="event-props__group">
         <div class="event-props__label">Main language</div>
         <div class="event-props__content">
