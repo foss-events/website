@@ -142,6 +142,7 @@ def parse_event(row, today):
         'country': country,
         'osm_link': row['OSM-Link'],
         'geo': geo,
+        'main_language': row.get('Main language', '?'),
         'cfp_date': cfp['cfp_date'],
         'cfp_passed': cfp['cfp_passed'],
         'cfp_link': cfp['cfp_link'],

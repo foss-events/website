@@ -79,6 +79,12 @@
         </div>
     {% endif %}
     <div class="event-props__group">
+        <div class="event-props__label">Main language</div>
+        <div class="event-props__content">
+            {{ event['main_language'] }}
+        </div>
+    </div>
+    <div class="event-props__group">
         <div class="event-props__label">Registration required?</div>
         <div class="event-props__content">
         {{ event['registration'] | url_mixed }}
