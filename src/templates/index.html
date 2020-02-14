@@ -38,27 +38,22 @@
 {% include 'partials/header-logo.html' %}
 
 <p>
-    // foss.events is <a href="/about.html">about</a> connecting people beyond borders
-    and nations who understand the benefits of sharing knowledge and to
-    collectively use, study, share and improve it for everyone.
+    // foss.events is <a href="/about.html">about</a> connecting people beyond borders and nations who understand the
+    benefits of sharing knowledge and to collectively use, study, share and improve it for everyone.
 </p>
 
 <p>
-    You find a list of Free, Libre and/or Open Source Software (related)
-    events happening in Europe in {{ year }}
-    below, chronologically sorted into <a href="#fossevents">upcoming</a>
-    and <a href="#passed">passed</a>.
-    <a href="/about.html#diversity">Unity in diversity!</a>
+    You find a list of Free, Libre and/or Open Source Software (related) events happening in Europe in {{ year }} below,
+    chronologically sorted into <a href="#fossevents">upcoming</a> and <a href="#passed">passed</a>. <a
+        href="/about.html#diversity">Unity in diversity!</a>
 </p>
 
 {% if has_upcoming %}
 
-	<h1 id="fossevents" class="topheading">FOSS events in Europe</h1>
-	<div style="padding: 0 40% 0 40%">
-        <hr>
-    </div>
+    <h1 id="fossevents" class="h1">FOSS events in Europe</h1>
+    <div class="h1-divider"></div>
 
-    <h2 id="upcoming" style="text-align:center; margin-bottom: 2em;">
+    <h2 id="upcoming" class="h2">
         Upcoming in {{ year }}
     </h2>
 
@@ -86,19 +81,14 @@
 {% endif %}
 
 <p>
-    If you know about an event that is not yet listed here and it
-    matches the <a href="/about.html#criteria">criteria</a>,
-    please <a href="/about.html#contributing">contribute</a>.
-    For any questions get in <a href="/about.html#contact">contact</a>.
+    If you know about an event that is not yet listed here and it matches the <a
+        href="/about.html#criteria">criteria</a>, please <a href="/about.html#contributing">contribute</a>. For any
+    questions get in <a href="/about.html#contact">contact</a>.
 </p>
 
 {% if has_prev %}
-    <h2 id="passed" class="topheading">
-        Past events in {{ year }}
-    </h2>
-    <div style="padding: 0 40% 0 40%">
-        <hr>
-    </div>
+    <h2 id="passed" class="h2">Past events in {{ year }}</h2>
+    <div class="h2-divider"></div>
 
     {% for month_id, month in prev.items() %}
         {% if month['events'] %}
@@ -123,24 +113,16 @@
 {% endif %}
 
 
-	<h1 id="archive" class="topheading">
-        Archive
-    </h1>
-    <div style="padding: 0 40% 0 40%">
-        <hr>
-    </div>
+<h1 id="archive" class="h1">Archive</h1>
+<div class="h1-divider"></div>
 
 <p>See the list of Free, Libre and/or Open Source Software (related) events happening in Europe in ...</p>
 
 <p style="font-size:200%">
-   
-  <a href="/2019"><strong>2019</strong></a>
-        
+    <a href="/2019"><strong>2019</strong></a>
 </p>
 
-<div class="footer">
-    Made with <span class="footer__heart">♥</span> | <a href="/about.html">about</a> | <a href="/about.html#contact">contact</a>
-</div>
+{% include 'partials/footer.html' %}
 
 </body>
 
