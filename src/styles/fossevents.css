@@ -1,7 +1,7 @@
 html,
 body {
-    margin-bottom: 0;
-    margin-top: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -22,6 +22,7 @@ body:after {
     content: url(/img/menu_Mastodon_darker.svg) url(/img/menu_Twitter_darker.svg) url(/img/menu_GitHub_darker.svg) url(/img/menu_info_darker.svg) url(/img/menu_envelope_darker.svg);
     display: inline-block;
     height: 0;
+    position: absolute;
     overflow: hidden;
     width: 0;
 }
@@ -85,15 +86,11 @@ a:hover {
 
 .contribute-box__content {
     border: 5px;
-    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.33);
     box-sizing: content-box;
     display: inline-block;
     overflow: visible;
     padding: .5rem 2rem;
-}
-
-h1.header {
-    text-align: center;
 }
 
 h2.navhead {
@@ -111,9 +108,8 @@ h2.navhead {
 
 .menu__hl {
     display: block;
-    font-size: 2.1rem;
-    margin: 0;
-    margin-bottom: .8rem;
+    font-size: 2.25rem;
+    margin: 0 0 .85rem;
 }
 
 .menu__link {
@@ -129,13 +125,19 @@ h2.navhead {
     text-decoration: none;
 }
 
-.menu__divider {
+.h1-divider,
+.h2-divider,
+.menu__divider,
+.footer__divider {
     background-color: #888;
     border: 0;
     height: 1px;
+}
+
+.menu__divider {
     margin-bottom: 1.4rem;
     margin-top: 0;
-    width: 10rem;
+    width: 100%;
 }
 
 .menu__logo {
@@ -278,13 +280,32 @@ h2.navhead {
     font-weight: bold;
 }
 
-.topheading {
-    padding-top: 2em;
+.h1 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    margin-top: 2em;
     text-align: center;
 }
 
-.topheading__divider {
-    margin-bottom: 4rem;
+.h2 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.h2--left {
+    text-align: left;
+}
+
+.h2--standalone {
+    margin-bottom: 1rem;
+}
+
+.h1-divider,
+.h2-divider {
+    margin: 0 auto 2rem;
+    width: 33%;
 }
 
 .nav-to-top {
@@ -513,8 +534,16 @@ table.month p.eventdate {
 /* footer */
 
 .footer {
-    padding: 3rem 0 4rem;
+    margin-top: 4rem;
     text-align: center;
+}
+
+.footer__content {
+    margin: 3rem 0;
+}
+
+.footer__divider {
+    width: 100%;
 }
 
 .footer__heart {
@@ -534,7 +563,7 @@ table.month p.eventdate {
 
 .about-nav__item {
     background: #339109;
-    border-radius: 5px;
+    border-radius: 3px;
     color: white;
     display: inline-block;
     margin-bottom: .5rem;
