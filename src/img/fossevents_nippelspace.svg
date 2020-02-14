@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -44,8 +44,8 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="9.143956"
-     inkscape:cx="58.56828"
-     inkscape:cy="119.68645"
+     inkscape:cx="36.695909"
+     inkscape:cy="49.257415"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -74,122 +74,122 @@
   <g
      id="g875"
      transform="matrix(0.92640439,0,0,0.92640439,32.070136,50.559564)"
-     style="fill:#feff00;fill-opacity:1">
+     style="fill:#34920a;fill-opacity:1">
     <g
        id="g819"
-       style="fill:#00ba31;fill-opacity:1">
+       style="fill:#34920a;fill-opacity:1">
       <g
-         style="fill:#00ba31;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+         style="fill:#34920a;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
          id="g925"
          transform="translate(-5.2902892,16.900777)">
         <g
-           style="fill:#00ba31;fill-opacity:1;stroke:none"
+           style="fill:#34920a;fill-opacity:1;stroke:none"
            transform="matrix(6.3675315,0,0,6.3675315,-128.0171,-82.119523)"
            id="g882">
           <g
              transform="matrix(0.28987433,0,0,0.28987433,20.557596,10.003857)"
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g826">
             <path
                sodipodi:nodetypes="ccccsccccccccscccsccccccc"
                inkscape:connector-curvature="0"
                id="star"
-               style="fill:#00ba31;fill-opacity:1;stroke:none;stroke-width:1.81146312"
+               style="fill:#34920a;fill-opacity:1;stroke:none;stroke-width:1.81146312"
                d="M 30.383919,12.217672 C 30.133031,11.493993 29.489056,10.96414 28.71375,10.849113 L 21.172629,9.7278166 17.894786,2.92215 c -0.345083,-0.7146221 -1.083255,-1.1720166 -1.89479,-1.1720166 -0.811535,0 -1.549707,0.4573945 -1.89479,1.1720166 L 10.827363,9.7278166 3.2853363,10.849113 c -0.7744005,0.115027 -1.4183756,0.64488 -1.6683575,1.368559 -0.2490762,0.725491 -0.060684,1.524347 0.4863778,2.069597 l 5.5267739,5.517717 -1.2816102,7.654337 c -0.1304253,0.770777 0.2037896,1.544272 0.8586335,1.995326 0.3595754,0.247265 0.7825521,0.373162 1.2055287,0.373162 0.3478009,0 0.6965076,-0.08514 1.0126079,-0.254511 l 6.5747056,-3.539599 6.575611,3.539599 c 0.3161,0.169372 0.664807,0.254511 1.011702,0.254511 0.422977,0 0.845953,-0.125897 1.206435,-0.373162 0.654843,-0.451054 0.987247,-1.224549 0.857727,-1.995326 l -1.282516,-7.654337 5.528586,-5.517717 c 0.546156,-0.546156 0.733642,-1.345011 0.486378,-2.069597 z M 15.999996,3.7889351 c -1.693369,14.4262239 -0.846685,7.2131119 0,0 z" />
           </g>
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g828" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g830" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g832" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g834" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g836" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g838" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g840" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g842" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g844" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g846" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g848" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g850" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g852" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g854" />
           <g
-             style="fill:#00ba31;fill-opacity:1;stroke:none"
+             style="fill:#34920a;fill-opacity:1;stroke:none"
              id="g856" />
         </g>
       </g>
     </g>
     <g
        id="g821"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g823"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g825"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g827"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g829"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g831"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g833"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g835"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g837"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g839"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g841"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g843"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g845"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g847"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
     <g
        id="g849"
-       style="fill:#feff00;fill-opacity:1" />
+       style="fill:#34920a;fill-opacity:1" />
   </g>
   <g
      id="g870-3"
