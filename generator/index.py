@@ -4,7 +4,7 @@ from datetime import datetime
 from helper import create_jinja_env
 from parser import parse_events
 
-today = datetime.now()
+today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 
 with open('data/2020_events_db.csv') as csvfile:
     reader = csv.DictReader(csvfile, delimiter='\t')
