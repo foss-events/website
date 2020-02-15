@@ -37,7 +37,7 @@
 
 <h2 class="event-title">{{ event['label'] }}</h2>
 {% if event['editions_topic'] %}
-    <div class="event-subtitle">Edition's topic: {{ event['editions_topic'] }}</div>
+    <div class="event-subtitle">This edition's topic: <em>{{ event['editions_topic'] }}</em></div>
 {% endif %}
 
 <div class="event-date">
@@ -83,18 +83,20 @@
             {{ event['type'] }}
         </div>
     </div>
-    {% if event['main_organiser'] %}
-        <div class="event-props__group">
-            <div class="event-props__label">Main organiser</div>
-            <div class="event-props__content">{{ event['main_organiser'] }}</div>
-        </div>
-    {% endif %}
+    {% if event['main_language'] %}
     <div class="event-props__group">
         <div class="event-props__label">Main language</div>
         <div class="event-props__content">
             {{ event['main_language'] }}
         </div>
     </div>
+    {% endif %}
+    {% if event['description'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Their self-description</div>
+            <div class="event-props__content">{{ event['description'] }}</div>
+        </div>
+    {% endif %}
     <div class="event-props__group">
         <div class="event-props__label">Registration required?</div>
         <div class="event-props__content">
@@ -107,24 +109,18 @@
             <div class="event-props__content">{{ event['fee'] }}</div>
         </div>
     {% endif %}
-    {% if event['description'] %}
-        <div class="event-props__group">
-            <div class="event-props__label">Their self-description</div>
-            <div class="event-props__content">{{ event['description'] }}</div>
-        </div>
-    {% endif %}
-    {% if event['specialities'] %}
-        <div class="event-props__group">
-            <div class="event-props__label">Specialities</div>
-            <div class="event-props__content">{{ event['specialities'] }}</div>
-        </div>
-    {% endif %}
     <div class="event-props__group">
         <div class="event-props__label">Participants last time</div>
         <div class="event-props__content">
             {{ event['participants'] }}
         </div>
     </div>
+    {% if event['specialities'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Specialities</div>
+            <div class="event-props__content">{{ event['specialities'] }}</div>
+        </div>
+    {% endif %}   
     {% if event['cfp_link'] %}
         <div class="event-props__group">
             <div class="event-props__label">Call for Participation</div>
@@ -148,13 +144,19 @@
             </div>
         </div>
     {% endif %}
+    {% if event['main_organiser'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Main organiser</div>
+            <div class="event-props__content">{{ event['main_organiser'] }}</div>
+        </div>
+    {% endif %}
 </div>
 
 <div class="contribute-box">
     <div class="contribute-box__content">
         <h3>info missing?</h3>
         <h3>info out of date?</h3>
-        <h3>please <a href="/about.html#contributing">contribute</a></h3>
+        <h3>please <a href="/about.html#contributing">help fix it</a></h3>
     </div>
 </div>
 
