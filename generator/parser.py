@@ -1,3 +1,4 @@
+import sys
 from datetime import datetime
 from pprint import pprint
 
@@ -35,7 +36,12 @@ def parse_events(reader, today):
         if row['approved'] != 'yes':
             continue
 
-        event = parse_event(row, today)
+        try:
+            event = parse_event(row, today)
+        except:
+            print('Error parsing event ' + row.get('label', 'n/a'))
+            print(sys.exc_info())
+            event = None
 
         if event is None:
             continue
