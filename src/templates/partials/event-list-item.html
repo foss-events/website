@@ -23,10 +23,10 @@
             {% endif %}
         {% endif %}
         {% if event['cancelled'] %}
-            (cancelled)
+            <span class="event__cancellation-note">(cancelled)</span>
         {% endif %}
         {% if event['postponed'] %}
-            (postponed)
+            <span class="event__cancellation-note">(postponed)</span>
         {% endif %}
         {% if event['cfp_link'] and not event['cfp_passed'] and event['upcoming'] %}
             <p class="eventcfp">

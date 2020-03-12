@@ -362,6 +362,10 @@ table.month p.eventname {
     text-decoration: line-through;
 }
 
+.event__cancellation-note {
+    font-weight: bold;
+}
+
 table.month p.eventdate {
     margin: 0;
 }
