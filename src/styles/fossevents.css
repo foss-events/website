@@ -345,16 +345,21 @@ table.month p.eventname {
     margin: 0;
 }
 
-table.month a {
+.event__link {
     color: #34920a;
     font-weight: bold;
     text-decoration: none;
     transition: color 100ms linear;
 }
 
-table.month a:hover {
-    color: #266c08;
-    text-decoration: underline;
+.event--cancelled .event__link {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.event--cancelled .event__link:hover {
+    color: #333;
+    text-decoration: line-through;
 }
 
 table.month p.eventdate {

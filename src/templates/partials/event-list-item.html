@@ -1,12 +1,17 @@
-<tr class="event {{ event['classes'] }}">
+<tr
+        class="event {{ event['classes'] }}
+        {% if event['cancelled'] or event['postponed'] %}event--cancelled{% endif %}
+        ">
     <td>
         {{ event['start_day'] }}<!--
         -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
     </td>
     <td>
-        <a href="{{ event['details_url'] }}">
-            {{ event['label'] }}
-        </a>
+        <a
+                class="event__link"
+                href="{{ event['details_url'] }}">
+            {{ event['label'] }}<!--
+        --></a>
         {% if event['city'] or event['country'] %}
             in
             {% if event['city'] %}
@@ -16,6 +21,12 @@
             {% if event['country'] %}
                 {{ event['country'] }}
             {% endif %}
+        {% endif %}
+        {% if event['cancelled'] %}
+            (cancelled)
+        {% endif %}
+        {% if event['postponed'] %}
+            (postponed)
         {% endif %}
         {% if event['cfp_link'] and not event['cfp_passed'] and event['upcoming'] %}
             <p class="eventcfp">

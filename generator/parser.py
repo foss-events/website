@@ -137,6 +137,8 @@ def parse_event(row, today):
         'main_organiser': row.get('Main Organiser', None),
         'description': row['Self-description'],
         'specialities': row.get('Specialties', None),
+        'cancelled': row.get('coronacancelled', None) == 'cancelled',
+        'postponed': row.get('coronacancelled', None) == 'postpone',
         'start_date': start_date,
         'start_day': start_day,
         'start_month': start_month,
