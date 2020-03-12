@@ -40,6 +40,23 @@
     <div class="event-subtitle">This edition's topic: <em>{{ event['editions_topic'] }}</em></div>
 {% endif %}
 
+{% if event['cancelled'] or event['postponed'] %}
+<div class="event-cancellation-note">
+    <div class="event-cancellation-note__title">
+        {% if event['cancelled'] %}
+            Cancelled
+        {% else  %}
+            Postponed
+        {% endif %}
+    </div>
+    {% if  (event['cancelled'] or event['postponed']) and event['cancellation_description'] %}
+        <div class="event-cancellation-note__text">
+            {{ event['cancellation_description'] }}
+        </div>
+    {% endif %}
+</div>
+{% endif %}
+
 <div class="event-date">
     {{ event['start_day'] }}<!--
         -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}

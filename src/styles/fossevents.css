@@ -366,6 +366,23 @@ table.month p.eventname {
     font-weight: bold;
 }
 
+.event-cancellation-note {
+    background-color: #f8d7da;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: .75rem .75rem .75rem .75rem;
+}
+
+.event-cancellation-note__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.event-cancellation-note__text p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 table.month p.eventdate {
     margin: 0;
 }
