@@ -193,6 +193,11 @@ def parse_event(row, today):
         event['details_url'] = generate_event_details_path(event)
         event['abs_details_url'] = 'https://foss.events/' + str(event['details_url'])
 
+    if event['cancelled'] or event['postponed']:
+        event['cfp_date'] = None
+        event['cfp_link'] = None
+        event['cfp_passed'] = None
+
     meta_keywords = extract_meta_keywords(row)
     keyword_sep = ', '
     event['keywords_string'] = keyword_sep.join(meta_keywords)
