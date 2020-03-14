@@ -2,10 +2,10 @@ $(shell mkdir -p build/2019 build/2020 build/img build/js build/styles/images)
 SOURCE_IMGS=$(wildcard src/img/*.png) $(wildcard src/img/*.jpg) $(wildcard src/img/*.svg)
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 
-all: npmi_token css js img build/.htaccess build/index.html build/2019/index.html build/about.html build/events_token
+all: css js img build/.htaccess build/index.html build/2019/index.html build/about.html build/events_token
 
 .PHONY: css
-css: build/styles/fossevents.css build/styles/leaflet.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
+css: build/styles/fossevents.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
 
 .PHONY: js
 js: build/js/event.js build/js/leaflet.js
@@ -13,28 +13,20 @@ js: build/js/event.js build/js/leaflet.js
 .PHONY: img
 img: build/favicon.ico $(TARGET_IMGS)
 
-build/img/%.png: src/img/%.png
+build/styles/fossevents.css: npmi_token
+
+build/styles/fossevents.css: src/styles/fossevents.css src/lib/leaflet/leaflet.css
+	cat $^ | node_modules/postcss-cli/bin/postcss > $@
+
+build/img/%: src/img/%
 	cp $< $@
 
-build/img/%.jpg: src/img/%.jpg
-	cp $< $@
+build/img/%.svg: npmi_token
 
 build/img/%.svg: src/img/%.svg
 	node_modules/svgo/bin/svgo $< -o $@
 
-build/styles/fossevents.css: src/styles/fossevents.css
-	node_modules/postcss-cli/bin/postcss $< > $@
-
-build/styles/leaflet.css: src/lib/leaflet/leaflet.css
-	node_modules/postcss-cli/bin/postcss $< > $@
-
-build/styles/images/marker-icon.png: src/lib/leaflet/images/marker-icon.png
-	cp $< $@
-
-build/styles/images/marker-icon-2x.png: src/lib/leaflet/images/marker-icon-2x.png
-	cp $< $@
-
-build/styles/images/marker-shadow.png: src/lib/leaflet/images/marker-shadow.png
+build/styles/images/%.png: src/lib/leaflet/images/%.png
 	cp $< $@
 
 build/js/event.js: src/js/event.js
