@@ -139,6 +139,7 @@ def parse_event(row, today):
         'specialities': row.get('Specialties', None),
         'cancelled': row.get('cancelled', None) == 'cancelled',
         'postponed': row.get('cancelled', None) == 'postpone',
+        'only_online': row.get('cancelled', None) == 'online',
         'cancellation_description': row.get('cancellation_description', None),
         'start_date': start_date,
         'start_day': start_day,

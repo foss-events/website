@@ -28,6 +28,9 @@
         {% if event['postponed'] %}
             <span class="event__cancellation-note">(postponed)</span>
         {% endif %}
+        {% if event['only_online'] %}
+            <span class="event__cancellation-note">(only online)</span>
+        {% endif %}
         {% if event['cfp_link'] and not event['cfp_passed'] and event['upcoming'] %}
             <p class="eventcfp">
                 {% if event['cfp_raw_link'] %}
