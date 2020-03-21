@@ -38,17 +38,12 @@
 {% include 'partials/header-logo.html' %}
 
 <p>
-    // foss.events stimulates knowledge exchange by connecting people beyond
+    // foss.events fosters knowledge sharing by connecting people beyond
     borders and nations via the most comprehensive collection of Free, Libre
-    and/or Open Source Software (related) events happening in Europe. 
+    and/or Open Source Software events happening in Europe. 
     <a href="/about.html#diversity">Unity in diversity!</a>
 </p>
 
-<p>
-    You find an up-to-date list for {{ year }} below, chronologically sorted
-    into <a href="#fossevents">upcoming</a> and <a href="#passed">passed</a>.
-    
-</p>
 
 {% if has_upcoming %}
 
@@ -57,9 +52,12 @@
         <hr>
     </div>
 
+
     <h2 id="upcoming" style="text-align:center; margin-bottom: 2em;">
         Upcoming in {{ year }}
     </h2>
+
+
 
     {% for month_id, month in upcoming.items() %}
         {% if month['events'] %}
@@ -93,7 +91,7 @@
 
 {% if has_prev %}
     <h2 id="passed" class="topheading">
-        Past events in {{ year }}
+        Passed in {{ year }}
     </h2>
     <div style="padding: 0 40% 0 40%">
         <hr>
