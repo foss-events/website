@@ -1,4 +1,3 @@
-import csv
 from datetime import datetime, timedelta
 
 from icalendar import Calendar, Event, vDate, vUri, vGeo
@@ -7,6 +6,7 @@ from helper import generate_event_ical_path, remove_tags
 from parser import parse_events
 
 # this script generates the event detail pages
+
 
 def generate_event_ical_files(events):
     for event in events:
@@ -47,8 +47,9 @@ def generate_event_ical_files(events):
         with open('build/' + filepath, 'wb') as f:
             f.write(cal.to_ical())
 
+
 today = datetime.now()
 
 for year in [2019, 2020]:
     events = parse_events('data/' + str(year) + '_events_db.csv', today)
-    generate_event_ical_files(events['all'])
+    generate_event_ical_files(events['all'].values())

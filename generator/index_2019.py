@@ -1,9 +1,10 @@
 from datetime import datetime
 
 from helper import create_jinja_env
-from parser import parse_events
+from parser import parse_events, parse_all_events
 
 today = datetime.now()
+all_events = parse_all_events()
 events = parse_events('data/2019_events_db.csv', today)
 
 env = create_jinja_env()
@@ -13,6 +14,7 @@ result = template.render(
     has_upcoming=events['has_upcoming'],
     prev=events['prev'],
     has_prev=events['has_prev'],
+    all_events=all_events,
     year='2019',
     other_year='2020',
     other_year_link=''

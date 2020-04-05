@@ -25,11 +25,21 @@ def open_file(path):
         return csv.DictReader(content_io, delimiter='\t')
 
 
+def parse_all_events():
+    """
+    :return: dict containing all events by id
+    """
+    today = datetime.now()
+    events2019 = parse_events('data/2019_events_db.csv', today)
+    events2020 = parse_events('data/2020_events_db.csv', today)
+    return {**events2019['all'], **events2020['all']}
+
+
 def parse_events(file_path, today):
 
     reader = open_file(file_path)
 
-    all_events = []
+    all_events = {}
     upcoming = {}
     prev = {}
 
@@ -61,7 +71,8 @@ def parse_events(file_path, today):
         if event is None:
             continue
 
-        all_events.append(event)
+        event_id = event['id']
+        all_events[event_id] = event
         start_month = event['start_month']
 
         if event['upcoming']:
@@ -147,6 +158,7 @@ def parse_event(row, today):
     cfp = extract_cfp(row, today)
 
     event = {
+        'id': row['id'],
         'label': row['label'],
         'editions_topic': row.get('Edition’s Topic', None),
         'main_organiser': row.get('Main Organiser', None),
@@ -154,6 +166,8 @@ def parse_event(row, today):
         'specialities': row.get('Specialties', None),
         'cancelled': row.get('cancelled', None) == 'cancelled',
         'postponed': row.get('cancelled', None) == 'postpone',
+        'replacement': row.get('replacement', None),
+        'replaces': row.get('replaces', None),
         'only_online': row.get('cancelled', None) == 'online',
         'cancellation_description': row.get('cancellation_description', None),
         'start_date': start_date,

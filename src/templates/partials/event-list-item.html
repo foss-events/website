@@ -26,7 +26,15 @@
             <span class="event__cancellation-note">(cancelled)</span>
         {% endif %}
         {% if event['postponed'] %}
-            <span class="event__cancellation-note">(postponed)</span>
+            {% if event['replacement'] %}
+                <span class="event__cancellation-note">
+                    (<a href="{{ all_events[event['replacement']]['details_url'] }}"><!--
+                        -->postponed to {{ all_events[event['replacement']]['start_month'] }}/{{ all_events[event['replacement']]['start_year'] }}<!--
+                    --></a>)
+                </span>
+            {% else %}
+                <span class="event__cancellation-note">(postponed)</span>
+            {% endif %}
         {% endif %}
         {% if event['only_online'] %}
             <span class="event__cancellation-note">(only online)</span>

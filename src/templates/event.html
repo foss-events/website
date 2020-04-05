@@ -24,6 +24,12 @@
     <meta name="twitter:image" content="https://foss.events/img/logo.png"/>
     <meta name="twitter:creator" content="@FOSS_events"/>
 
+    {% if event['replacement'] %}
+        <meta
+                http-equiv="refresh"
+                content="0; URL={{ all_events[event['replacement']]['abs_details_url'] }}" />
+    {% endif %}
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/styles/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
@@ -47,16 +53,38 @@
             Cancelled
         {% elif event['postponed']  %}
             Postponed
+            {% if event['replacement'] %}
+                to {{ all_events[event['replacement']]['start_month'] }}/{{ all_events[event['replacement']]['start_year'] }}
+            {% endif %}
         {% else %}
             Only online
         {% endif %}
     </div>
+    {% if event['replacement'] %}
+        <div class="event-cancellation-note__replacement">
+            A replacement for this event is scheduled on
+            {{ all_events[event['replacement']]['start_month'] }}/{{ all_events[event['replacement']]['start_year'] }}.<br>
+            Find all info <a href="{{ all_events[event['replacement']]['details_url'] }}">here</a>.
+        </div>
+    {% endif %}
     {% if  (event['cancelled'] or event['postponed'] or event['only_online']) and event['cancellation_description'] %}
         <div class="event-cancellation-note__text">
             {{ event['cancellation_description'] }}
         </div>
     {% endif %}
 </div>
+{% endif %}
+
+{% if event['replaces'] %}
+    <div class="event-replacement-note">
+        <div class="event-replacement-note__title">
+            Replacement event
+        </div>
+        <div class="event-replacement-note__text">
+            This event replaces the original event from
+            {{ all_events[event['replaces']]['start_month'] }}/{{ all_events[event['replaces']]['start_year'] }}.
+        </div>
+    </div>
 {% endif %}
 
 <div class="event-date">

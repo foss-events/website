@@ -366,22 +366,38 @@ table.month p.eventname {
     font-weight: bold;
 }
 
-.event-cancellation-note {
+
+.event-cancellation-note,
+.event-replacement-note {
     background-color: #f8d7da;
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding: .75rem .75rem .75rem .75rem;
 }
 
-.event-cancellation-note__title {
+.event-replacement-note {
+    background-color: #d4edda;
+}
+
+.event-cancellation-note__title,
+.event-replacement-note__title {
     font-size: 1.25rem;
     font-weight: bold;
 }
 
-.event-cancellation-note__text p:last-of-type {
+.event-cancellation-note__text p:last-of-type,
+.event-replacement-note__text p:last-of-type {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
+.event-cancellation-note__replacement {
+    color: #721c24;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
 
 table.month p.eventdate {
     margin: 0;
