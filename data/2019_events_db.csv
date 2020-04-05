@@ -18,7 +18,7 @@ yes	20190314	20190315	t3chfest	t3chfest	--	T3chfest2019	https://t3chfest.uc3m.es
 yes	20190316	20190317	Chemnitzer Linux-Tage	Chemnitzer Linux-Tage	CLT	CLT2019	https://chemnitzer.linux-tage.de/2019/	Chemnitz	DE	Technische Universität Chemnitz	https://www.openstreetmap.org/way/30742889	50.81357	12.92928	--	The Chemnitz Linux Days stand for a cosmopolitan and peaceful communication with each other. We promote and welcome an open society, from which many new and good ideas emerge. We warmly welcome guests of all nations and look forward to 16./17. March 2019 and our international audience at the 21. Chhemnitzer Linux-Tagen										
 yes	20190320	20190317	Libre en Fête	Libre en Fête	--	--	https://www.libre-en-fete.net/2019/	--	--	--	--			--	--										
 yes	20190325	20190329	Taller de Periodismo de Datos	Taller de Periodismo de Datos	--	--	https://www.medialab-prado.es/programas/taller-de-periodismo-de-datos-2019-sigue-el-rastro-de-la-comida	Madrid	ES	Medialab Prado	https://www.openstreetmap.org/way/219016719	40.41053	-3.69358	--	--										
-yes	20190401	20190403	Collaborations Workshop	Collaborations Workshop	--	--	https://www.software.ac.uk/cw19	Loughborough	UK	Loughborough University	https://www.openstreetmap.org/way/38046982	52.76027	-1.24336	https://software.ac.uk/cw19/code-conduct	--										
+yes	20190401	20190403	Collaborations Workshop	Collaborations Workshop	--	--	https://www.software.ac.uk/cw19	Loughborough	GB	Loughborough University	https://www.openstreetmap.org/way/38046982	52.76027	-1.24336	https://software.ac.uk/cw19/code-conduct	--										
 yes	20190401	20190405	Internet Freedom Festival	Internet Freedom Festival	IFF	--	https://internetfreedomfestival.org/	Valencia	ES	Las Naves	https://www.openstreetmap.org/way/158789093	39.45849	-0.33797	https://internetfreedomfestival.org/wiki/index.php/Code_of_Conduct	The Internet Freedom Festival is the only organization focused entirely in community development for the Internet Freedom field. We design programs and tools to bring together the eclectic plethora of activist groups, NGOs, governmental agencies, media organizations, large internet platforms, and many others who rely on each other to achieve the common goal of a free and open internet for all.									1700	
 yes	20190404	20190407	Software Freedom Kosova	Software Freedom Kosova	SFK	--	https://sfk.flossk.org/sfk19/	Prishtina	KO	Kino Armata	https://www.openstreetmap.org/?mlat=42.66068&mlon=21.16014#map=19/42.66068/21.16014	42.66068	21.16014	https://sfk.flossk.org/sfk19/#collapseabout1	Software Freedom Kosova is the annual international conference held in Kosovo organized to promote free/libre open source software, free culture and open knowledge, now in its 8th edition and 10th anniversary (yaaay!). It is organized by FLOSSK, a non governmental, not for profit organization, dedicated to promotion of software freedom and related philosophies. Almost all sessions will be held in English. Entry is free, thanks to our partners and supporters, but you have to register. 										
 yes	20190406	20190406	Linux InfoTag	Linux InfoTag	--	--	https://www.luga.de/Aktionen/LIT-2019/	Augsburg	DE	Hochschule Augsburg	https://www.openstreetmap.org/index.html?mlat=48.3584&mlon=10.9061&zoom=16	48.3584	10.9061	--	Auf dem Linux-Infotag können sich Neulinge einen Überblick über die Anwendungsmöglichkeiten von Linux und Open-Source-Software verschaffen und fortgeschrittene NutzerInnen können sich durch den Einblick in neue Entwicklungen inspirieren lassen. Projektstände bieten die Möglichkeit zum direkten Kontakt zwischen EntwicklerInnen, ProtagonistInnen und AnwenderInnen. Außerdem wird der Bogen zu allgemeineren Themen wie Kunst und digitale Gesellschaft gespannt.	20190324	https://frab.luga.de/en/LIT2019/cfp/							350	
@@ -59,8 +59,8 @@ yes	20190604	20190606	deRSE19	deRSE19	--	--	https://www.de-rse.org/de/conf2019/i
 yes	20190608	20190609	TuxCon	TuxCon	--	TuxCon	http://tuxcon.mobi/	Plovdiv	BG	--	--			--	TuxCon is an annual event about free and open source software and hardware. The entrance is free for all visitors. TuxCon is a community event and it is organized by volunteers. The twitter hashtag of the event is #TuxCon.										
 yes	20190605	20190609	MiniDebConf in Hamburg	MiniDebCamp and MiniDebConf in Hamburg	--	--	https://wiki.debian.org/DebianEvents/de/2019/MiniDebConfHamburg	Hamburg	DE	--	--			--	--										
 yes	20190611	20190611	Sharing & Reuse Conference	Sharing & Reuse Conference	--	--	https://joinup.ec.europa.eu/collection/sharing-and-reuse-it-solutions/sharing-reuse-conference-2019	Bucharest	RO	--	--			--	--										
-yes	20190612	20190612	UK Open Source Awards	UK Open Source Awards	--	--	https://opensourceawards.org/	Edinburgh	UK	--	--			--	--										
-yes	20190612	20190613	OW2Con	OW2Con	--	--	https://www.ow2con.org/view/2019	Paris	France	--	--			--	--										
+yes	20190612	20190612	UK Open Source Awards	UK Open Source Awards	--	--	https://opensourceawards.org/	Edinburgh	GB	--	--			--	--										
+yes	20190612	20190613	OW2Con	OW2Con	--	--	https://www.ow2con.org/view/2019	Paris	FR	--	--			--	--										
 yes	20190615	20190616	Jornadas de tecnología y cultura libre	Jornadas de tecnología y cultura libre	--	--	https://jornadaslibr.es/	Madrid	ES	--	--			--	--										
 yes	20190620	20190620	Open Expo	OpenExpo Europe	OpenExpo	OpenExpo19	https://openexpoeurope.com/	Madrid	ES	La N@ve	https://www.openstreetmap.org/way/37995038	40.34743	-3.69628	--	--										
 yes	20190621	20190621	esLibre	esLibre	--	--	https://eslib.re/2019/	Granada	ES	--	--			--	--										
@@ -73,13 +73,13 @@ yes	20190801	20190804	Technik Camp	Technik Camp	--	--	https://freifunk-bodensee.
 yes	20190808	20190815	BornHack	Bornhack	--	--	https://bornhack.dk/bornhack-2019/	--	--	--	--			--	--	20190601	https://bornhack.dk/bornhack-2019/program/call-for-participation/								
 yes	20190808	20190811	Flock	Flock	--	--	https://flocktofedora.org/	--	--	--	--			--	--			Conference,Community	Fedora						
 yes	20190810	20190811	FrOSCon	Froscon	--	--	https://www.froscon.de/en/	--	--	--	--			--	--										
-yes	20190812	20190818	Linux Bierwanderung	Linux Bierwanderung	--	--	https://linuxbierwanderung.com/	South Shropshire	UK	--	--			--	--										
+yes	20190812	20190818	Linux Bierwanderung	Linux Bierwanderung	--	--	https://linuxbierwanderung.com/	South Shropshire	GB	--	--			--	--										
 yes	20190814	20190818	Wikimania	Wikimania	--	--	https://wikimania2019.wikimedia.org/	Stockholm	SE	--	--			--	--										
 yes	20190820	20190822	OpenSym	OpenSym	--	--	http://opensym.org/os2019/	Skövde	SE	--	--			--	--										
 yes	20190822	20190825	LVEE	Linux Vacation / Eastern Europe	LVEE	--	https://lvee.org/en/	Minsk	BY	--	--			--	--	20190804	https://lvee.org/en/reports/abstract								
 yes	20190821	20190825	Chaos Communication Camp	Chaos Communication Camp	CCCamp	camp19	https://events.ccc.de/camp/2019/wiki/Main_Page	Mildenberg	DE	Ziegeleimuseum Mildenberg	https://www.openstreetmap.org/#map=15/53.0306/13.3067	53.0306	53.0306	--	--	20190611	https://events.ccc.de/2019/05/22/call-for-participation-chaos-communication-camp-2019/	Conference,Community,Camp,Festival	CCC	53.0306	13.3014	295		5000	
 yes	20190823	20190828	GUADEC	GNOME Users And Developers European Conference	GUADEC	guadec	https://2019.guadec.org/	Thessaloniki	GR	University of Macedonia	https://www.openstreetmap.org/way/14791176	40.62525	22.96002	https://2019.guadec.org/pages/code-of-conduct.html	--	20190519	https://www.gnome.org/news/2019/04/guadec-2019-call-for-papers/	Conference,Community,Unconference	Gnome	40.6247	22.9606	0			
-yes	20190830	20190808	Wuthering Bytes	Wuthering Bytes	--	--	https://wutheringbytes.com/	Hebden Bridge	UK	--	--			--	--										
+yes	20190830	20190808	Wuthering Bytes	Wuthering Bytes	--	--	https://wutheringbytes.com/	Hebden Bridge	GB	--	--			--	--										
 yes	20190904	20190906	GNU Hackers Meeting	GNU Hackers Meeting	--	--	https://www.gnu.org/ghm/2019/	Madrid	ES	--	--			--	--										
 yes	20190907	20190908	ActivityPub Conference	ActivityPub Conference	--	--	https://dustycloud.org/blog/activitypub-conf-2019/	Prague	CZ	--	--			--	--										
 yes	20190907	20190913	Akademy	Akademy	--	--	https://akademy.kde.org/	Milan	IT	--	--			--	--										
@@ -93,7 +93,7 @@ yes	20190914	20190914	Tech201909Party	Tech201909Party	--	--	http://techparty.onl
 yes	20190914	20190915	Nextcloud conference	Nextcloud conference	--	--	https://nextcloud.com/conf/	Berlin	DE	--	--			--	--										
 yes	20190917	20190917	Bitkom Forum Open Source	Bitkom Forum Open Source	--	--	https://www.bitkom.org/bfoss19	Erfurt	DE	--	--			--	--										
 yes	20190917	20190920	Owncloud Conference	Owncloud Conference	--	--	https://conference.owncloud.org/	Nuremberg	DE	--	--			--	--										
-yes	20190918	20190922	End Summer Camp	End Summer Camp	--	--	https://www.endsummercamp.org/	Venezia Tessera	Italy	--	--			--	--										
+yes	20190918	20190922	End Summer Camp	End Summer Camp	--	--	https://www.endsummercamp.org/	Venezia Tessera	IT	--	--			--	--										
 yes	20190920	20190921	Kieler Linuxtage	Kieler Linuxtage	--	--	https://www.kieler-linuxtage.de/	Kiel	DE	--	--			--	--										
 yes	20190920	20190922	Datenspuren	Datenspuren	--	--	https://wiki.c3d2.de/Datenspuren_2019	Dresden	DE	--	--			--	--										
 yes	20190920	20190922	Hackmeeting	Hackmeeting	--	--	https://es.hackmeeting.org/hm/index.php?title=Hackmeeting2019	Errekaleor-Gasteiz	ES	--	--			--	--										
@@ -117,7 +117,7 @@ yes	20191012	20191012	Hacktoberfest Poznań Meetup	Hacktoberfest Poznań Meetup	
 yes	20191017	20191018	TYPO3 Conference	TYPO3 Conference	--	--	https://t3con19.typo3.com/	The Hague	NL	--	--			--	--										
 yes	20191018	20191018	DINAcon	DINAcon	--	--	https://dinacon.ch/	Bern	CH	--	--			--	--										
 yes	20191019	20191019	GNU/LinuxDay – Vorarlberg	GNU/LinuxDay – Vorarlberg	--	--	https://www.linuxday.at/	Dornbirn	AT	--	--			--	--										
-yes	20191019	20191020	OggCamp (Free Culture/FLOSS Unconference)	OggCamp (Free Culture/FLOSS Unconference)	--	--	http://oggcamp.org/	Sheffield	UK	--	--			--	--										
+yes	20191019	20191020	OggCamp (Free Culture/FLOSS Unconference)	OggCamp (Free Culture/FLOSS Unconference)	--	--	http://oggcamp.org/	Sheffield	GB	--	--			--	--										
 yes	20191022	20191024	ApacheCon Europe	ApacheCon Europe	--	--	https://aceu19.apachecon.com/	Berlin	DE	--	--			--	--										
 yes	20191025	20191026	WikidataCon	WikidataCon	--	--	https://www.wikidata.org/wiki/Wikidata:WikidataCon_2019	Berlin	DE	--	--			--	--										
 yes	20191025	20191027	MiniDebConf in Vaumarcus	MiniDebConf in Vaumarcus	--	--	https://wiki.debian.org/DebianEvents/ch/2019/Vaumarcus	Vaumarcus	CH	--	--			--	--										
