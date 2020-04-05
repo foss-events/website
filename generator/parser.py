@@ -20,6 +20,7 @@ def open_file(path):
 
         # fix quotes
         file_content = file_content.replace('”', '\"')
+        file_content = file_content.replace('“', '\"')
 
         content_io = io.StringIO(file_content)
         return csv.DictReader(content_io, delimiter='\t')
