@@ -1,0 +1,5 @@
+The Databases in *_events_db.csv are made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/. Any rights in individual contents of these databases - except any values in the field "Self-description" - are licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA): https://creativecommons.org/licenses/by-sa/4.0/
+
+Content in the field "Self-description" is usually copied and pasted from the organiser's or event's webpage. All rights to this material remain with the original authors.
+
+All rights and trademarks on logos and pictures in https://foss.events/data remain with the respective rightholders.
