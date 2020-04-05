@@ -24,7 +24,5 @@ def generate_event_pages(events, year):
 today = datetime.now()
 
 for year in [2019, 2020]:
-    with open('data/' + str(year) + '_events_db.csv') as csvfile:
-        reader = csv.DictReader(csvfile, delimiter='\t')
-        events = parse_events(reader, today)
-        generate_event_pages(events['all'], year)
+    events = parse_events('data/' + str(year) + '_events_db.csv', today)
+    generate_event_pages(events['all'], year)

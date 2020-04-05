@@ -1,14 +1,10 @@
-import csv
 from datetime import datetime
 
 from helper import create_jinja_env
 from parser import parse_events
 
 today = datetime.now()
-
-with open('data/2019_events_db.csv') as csvfile:
-    reader = csv.DictReader(csvfile, delimiter='\t')
-    events = parse_events(reader, today)
+events = parse_events('data/2019_events_db.csv', today)
 
 env = create_jinja_env()
 template = env.get_template('index.html')

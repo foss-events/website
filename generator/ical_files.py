@@ -50,7 +50,5 @@ def generate_event_ical_files(events):
 today = datetime.now()
 
 for year in [2019, 2020]:
-    with open('data/' + str(year) + '_events_db.csv') as csvfile:
-        reader = csv.DictReader(csvfile, delimiter='\t')
-        events = parse_events(reader, today)
-        generate_event_ical_files(events['all'])
+    events = parse_events('data/' + str(year) + '_events_db.csv', today)
+    generate_event_ical_files(events['all'])

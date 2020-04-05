@@ -1,3 +1,5 @@
+import csv
+import io
 import sys
 from datetime import datetime
 from pprint import pprint
@@ -12,7 +14,20 @@ event_type_class_map = {
 }
 
 
-def parse_events(reader, today):
+def open_file(path):
+    with open(path) as file:
+        file_content = file.read()
+
+        # fix quotes
+        file_content = file_content.replace('”', '\"')
+
+        content_io = io.StringIO(file_content)
+        return csv.DictReader(content_io, delimiter='\t')
+
+
+def parse_events(file_path, today):
+
+    reader = open_file(file_path)
 
     all_events = []
     upcoming = {}
