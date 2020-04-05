@@ -9,6 +9,7 @@ iso_label_dict = {
     'DK': 'Denmark',
     'ES': 'Spain',
     'FR': 'France',
+    'GB': 'United Kingdom',
     'GR': 'Greece',
     'HR': 'Croatia',
     'HU': 'Hungary',
@@ -24,7 +25,7 @@ iso_label_dict = {
     'SE': 'Sweden',
     'SQ': 'Albania',
     'UA': 'Ukraine',
-    'UK': 'United Kingdom'
+    'UK': 'United Kingdom'  # historical reasons™
 }
 
 months = {
