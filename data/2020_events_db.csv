@@ -194,11 +194,11 @@ id	approved	datestart	dateend	label	name	cancelled	replacement	replaces	cancella
 20192		20191210	20191211	Paris Open Source Summit	Paris Open Source Summit					POSS		https://www.opensourcesummit.paris/	Paris	FR																								
 20193	yes	20201022	20201022	Linux Days Villach	Linux Days Villach			20049				https://services.htl-villach.at/linuxday/	Villach	AT					nococ	<p>Neben dem geplanten Rahmenprogramm, wie zum Beispiel der Preisverleihung zur 1. Villacher Hacking-Challenge, wollen wir einen diesen Tag mit Vorträgen und Workshops für alle Teilnehmer zu einem besonderen Erlebnis werden lassen.</p><p><a href=“https://osslinuxday.htl-villach.at/“>source</a></p>			Community Conference		?	?	?	DE										
 20194	yes	20200916	20200920	DjangoCon Europe	DjangoCon Europe			20091				https://2020.djangocon.eu/	Porto	PT									Project Conference	Django	yes	yes	?	EN										
-												https://www.radical-openness.org/en																										
+20195	yes	20200902	20200903	eLife Innovation Sprint	eLife Innovation Sprint 2020					eLife Sprint	eLifeSprint	https://sprint.elifesciences.org/	Cambridge	UK	The Cambridge Junction	https://www.openstreetmap.org/way/28629451	52.19074	0.13583	https://elifesci.org/SprintCoC	A collaborative hackathon where we bring together talents in UX, software and web development, data science, product, policy, community management and research to develop open tech prototypes to help redefine the ways we share and do research.	20200524	https://sprint.elifesciences.org/	Hackmeeting	Open technology,Open Science,	Zero	yes – Call for project (apply to lead a project) open until April 13; application for project contributors will open April 27 to May 24.	60	EN	Emmy Tsang (innovation@elifesciences.org)		?		/data/eventlogos/2020/2020-elife-full-color-horizontal.svg 					
 												https://x.fosdem.org/																										
 												http://openrheinruhr.de/																								https://twitter.com/openrheinruhr		
 												https://bits-und-baeume.org/en																										
-																																				https://nuitduhack.com/fr		
+												https://www.radical-openness.org/en																								https://nuitduhack.com/fr		
 												https://trans.hackmeeting.org/																										
 																																				https://twitter.com/fossbckstg		
 												https://www.librecon.io																								https://mobile.twitter.com/librecon		
