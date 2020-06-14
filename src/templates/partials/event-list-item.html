@@ -2,7 +2,7 @@
         class="event {{ event['classes'] }}
         {% if event['cancelled'] or event['postponed'] %}event--cancelled{% endif %}
         ">
-    <td>
+    <td class="event__date">
         {{ event['start_day'] }}<!--
         -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
     </td>

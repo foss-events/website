@@ -298,6 +298,10 @@ h2.navhead {
 
 /* event list/table */
 
+.event-item__date {
+    white-space: nowrap;
+}
+
 table.month {
     margin-bottom: 4rem;
 }
