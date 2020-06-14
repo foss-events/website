@@ -37,7 +37,11 @@
             </h2>
             <table class="month">
                 {% for event in month['events'] %}
-                    {% include 'partials/event-list-item.html' %}
+                    {% if event['online'] %}
+                        {% include 'partials/event-list-item-online.html' %}
+                    {% else %}
+                        {% include 'partials/event-list-item.html' %}
+                    {% endif %}
                 {% endfor %}
             </table>
         {% endif %}
@@ -75,7 +79,11 @@
             </h2>
             <table class="month">
                 {% for event in month['events'] %}
-                    {% include 'partials/event-list-item.html' %}
+                    {% if event['online'] %}
+                        {% include 'partials/event-list-item-online.html' %}
+                    {% else %}
+                        {% include 'partials/event-list-item.html' %}
+                    {% endif %}
                 {% endfor %}
             </table>
         {% endif %}
@@ -101,9 +109,7 @@
 <p>See the list of Free, Libre and/or Open Source Software (related) events happening in Europe in ...</p>
 
 <p style="font-size:200%">
-
   <a href="/2019"><strong>2019</strong></a>
-
 </p>
 
 {% include 'partials/footer.html' %}

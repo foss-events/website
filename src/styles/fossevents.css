@@ -560,3 +560,22 @@ table.month p.eventdate {
 .text-center {
     text-align: center;
 }
+
+/* Badges */
+
+.badge {
+    border-radius: .25rem;
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    padding: .25em .4em;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.badge--grey {
+    color: #fff;
+    background-color: #6c757d;
+}

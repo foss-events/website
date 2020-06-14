@@ -161,6 +161,7 @@ def parse_event(row, today):
     event = {
         'id': row['id'],
         'label': row['label'],
+        'online': row.get('online', None) == 'online',
         'editions_topic': row.get('Edition’s Topic', None),
         'main_organiser': row.get('Main Organiser', None),
         'description': row['Self-description'],
@@ -185,6 +186,7 @@ def parse_event(row, today):
         'country': country,
         'osm_link': row['OSM-Link'],
         'geo': geo,
+        'has_language_info': row.get('Main language', None) is not None,
         'main_language': row.get('Main language', '?'),
         'cfp_date': cfp['cfp_date'],
         'cfp_passed': cfp['cfp_passed'],
