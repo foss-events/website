@@ -16,7 +16,7 @@ img: build/favicon.ico $(TARGET_IMGS)
 build/styles/fossevents.css: npmi_token
 
 build/styles/fossevents.css: src/styles/fossevents.css src/lib/leaflet/leaflet.css
-	cat $^ | node_modules/postcss-cli/bin/postcss > $@
+	cat $^ | node_modules/postcss-cli/bin/postcss -o $@
 
 build/img/%: src/img/%
 	cp $< $@
@@ -61,4 +61,5 @@ npmi_token: package-lock.json
 
 .PHONY: clean
 clean:
-	rm -rf build/*
+	rm -rf build
+	rm -f npmi_token
