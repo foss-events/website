@@ -28,6 +28,30 @@ iso_label_dict = {
     'UK': 'United Kingdom'  # historical reasons™
 }
 
+iso_639_languages = {
+    "BG": "Bulgarian",
+    "BS": "Bosnian",
+    "CS": "Czech",
+    "DA": "Danish",
+    "DE": "German",
+    "EN": "English",
+    "ES": "Spanish",
+    "FI": "Finnish",
+    "FR": "French",
+    "IT": "Italian",
+    "HR": "Croatian",
+    "HU": "Hungarian",
+    "NL": "Dutch",
+    "PL": "Polish",
+    "PT": "Portuguese",
+    "RO": "Romanian",
+    "RU": "Russian",
+    "SQ": "Albanian",
+    "SR": "Serbian",
+    "SV": "Swedish",
+    "UK": "Ukrainian",
+}
+
 months = {
     '01': 'January',
     '02': 'February',
