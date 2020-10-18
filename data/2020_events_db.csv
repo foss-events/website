@@ -173,7 +173,7 @@ All data in this file is published as Open Data, you are free to reuse it as lon
 20170	yes	20200929	20201001	ApacheCon	ApacheCon			https://www.apachecon.com/acna2020/index.html	online				The Internet				https://www.apachecon.com/acah2020/conduct.html	<p>Coming to your living room this September!</p><p>Join us from the comfort of your own home for three days of Apache project content across dozens of categories, from Big Data to Machine Learning to Search to Web Frameworks and more.</p>			Project Conference	Apache	Zero	https://hopin.to/events/apachecon-home	Zero	EN	Apache Foundation		1998			@home		Hopin	To be defined.			https://twitter.com/apachecon											
 20171		20201024	20201025	T-Dose	T-Dose			http://www.t-dose.org/			Geldrop / Eindhoven	NL	Hofdael	https://www.openstreetmap.org/#map=19/51.42298/5.56255	51.42298	5.56255	nococ	T-DOSE is a free and yearly event held in The Netherlands to promote use and development of Open Source Software. During this event, Open Source projects, developers and visitors can exchange ideas and knowledge.	20200915	https://t-dose.org/news/t-dose-2020-call-for-papers-and-projects/	Community Conference	t-dose	?	?	?	EN / NL	T-DOSE Foundation				/data/eventlogos/2020/2020-t-dose-logo-blue.png							https://twitter.com/tdose										20099	
 20172		20191025	20191026	WikidataCon	WikidataCon			https://www.wikidata.org/wiki/Wikidata:WikidataCon_2019			Berlin	DE													?																								
-20173		20191025	20191027	NixCon	NixCon 2019			https://2019.nixcon.org/			Brno	CZ													?																								
+20173	yes	20201016	20201018	NixCon	NixCon 2020			https://2020.nixcon.org/	online				The Internet				https://2020.nixcon.org/code-of-conduct.html	<p>NixCon is a community-oriented conference for contributors and users of Nix and NixOS. It's about sharing experiences, inspiring people and discussing future development.</p><p>We would like to learn about how you use Nix and NixOS in your organization and what you are currently working on.</p><p>The growth of NixOS as a project brings its own challenges and we would like to know how you think the user experience can be improved and how NixOS can be scaled.</p>			Project Conference	nixos	Zero	No	?	EN	Nixo		2015	Mutable,Equinix Metal			Youtube,IRC,Discord	Q&A	Free Frontend, partly proprietary backend	UTC+2		https://twitter.com/nixconf?ref_src=twsrc%5Etfw			https://github.com/nixcon/2020.nixcon.org								
 20174		20191025	20191027	MiniDebConf in Vaumarcus	MiniDebConf in Vaumarcus			https://wiki.debian.org/DebianEvents/ch/2019/Vaumarcus			Vaumarcus	CH													?																								
 20175		20191026	20191026	PSSOH Conference	PSSOH Conference			http://pssoh.etf.bg.ac.rs/			Belgrade	RS													?																								
 20176		20191026	20191026	Linux Day across Italy	Linux Day across Italy			http://www.linuxday.it/																	?																								
@@ -232,8 +232,10 @@ All data in this file is published as Open Data, you are free to reuse it as lon
 20229	yes	20201121	20201122	Tux-Tage	Tux-Tage 2020			https://www.tux-tage.de/	online	/data/eventbanner/2020/2020-tux-tage.png			The Internet					<p>Die Tux-Tage bestehen aus Vorträgen, Diskussionen, und mehr, welche im Internet live ohne Einschränkung übertragen werden. Jeder ist herzlich willkommen, daran teilzunehmen!</p><p>Jeder ist herzlich willkommen, daran teilzunehmen, neue Kontakte zu schließen, Eindrücke und Erfahrungen zu sammeln, oder einfach etwas neues kennen zu lernen.</p><p>Das ist das Ziel der Veranstaltung. Lasst es uns gemeinsam Wirklichkeit werden!</p><p>Mögliche Überschüsse gehen an die Linux Foundation, Vortragende und das Team werden nicht entlohnt.</p>			Community Conference	Linux	Zero	?		DE						Menschen & Wissen vernetzen	Youtube, Jitsi	To be defined.	To be defined.	UTC+2		https://twitter.com/TuxTage	https://mastodon.online/@tuxtage2020										
 																																																	
 																																																	
-				https://fscons.org																																													
-				http://openrheinruhr.de/	https://twitter.com/openrheinruhr																																												
-				https://bits-und-baeume.org/en																																													
-				https://trans.hackmeeting.org/																																													
-				https://x.fosdem.org/																																													
+																																																	
+																																																	
+								https://fscons.org																																									
+								http://openrheinruhr.de/																																									
+								https://bits-und-baeume.org/en																																									
+								https://trans.hackmeeting.org/																																									
+								https://x.fosdem.org/																																									
