@@ -13,7 +13,7 @@ js: build/js/event.js build/js/leaflet.js
 .PHONY: img
 img: build/favicon.ico $(TARGET_IMGS)
 
-build/styles/fossevents.css: npmi_token
+build/styles/fossevents.css: npm_deps
 
 build/styles/fossevents.css: src/styles/fossevents.css src/lib/leaflet/leaflet.css
 	cat $^ | node_modules/postcss-cli/bin/postcss -o $@
@@ -21,7 +21,7 @@ build/styles/fossevents.css: src/styles/fossevents.css src/lib/leaflet/leaflet.c
 build/img/%: src/img/%
 	cp $< $@
 
-build/img/%.svg: npmi_token
+build/img/%.svg: npm_deps
 
 build/img/%.svg: src/img/%.svg
 	node_modules/svgo/bin/svgo $< -o $@
@@ -41,25 +41,29 @@ build/.htaccess: src/.htaccess
 build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
-build/index.html: data/2020_events_db.csv
+build/index.html: data/2020_events_db.csv pip_deps
 	pipenv run python3 generator/index.py
 
-build/2019/index.html: data/2019_events_db.csv
+build/2019/index.html: data/2019_events_db.csv pip_deps
 	pipenv run python3 generator/index_2019.py
 
-build/about.html: src/templates/about.html
+build/about.html: src/templates/about.html pip_deps
 	pipenv run python3 generator/about.py
 
-build/events_token: data/2019_events_db.csv data/2020_events_db.csv
+build/events_token: data/2019_events_db.csv data/2020_events_db.csv pip_deps
 	pipenv run python3 generator/event_pages.py
 	pipenv run python3 generator/ical_files.py
 	touch build/events_token
 
-npmi_token: package-lock.json
+npm_deps: package-lock.json
 	npm ci
-	touch npmi_token
+	touch npm_deps_token
+
+pip_deps: Pipfile.lock
+	pipenv install
+	touch pip_deps_token
 
 .PHONY: clean
 clean:
 	rm -rf build
-	rm -f npmi_token
+	rm -f npm_deps_token pip_deps_token
