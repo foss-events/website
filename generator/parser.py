@@ -199,7 +199,13 @@ def parse_event(row, today):
         'upcoming': upcoming_event,
         'participants': participants,
         'lat': lat,
-        'lon': lon
+        'lon': lon,
+        'first_edition': row.get('First Edition', None),
+        'main_sponsors': row.get('Main Sponsors', None),
+        'tags': row.get('tags', None),
+        'tech_in_use': row.get('Technologies in use', None),
+        'interactivity': row.get('Online Interactivity', None),
+        'technological_liberties': row.get('Technological Liberties', None)
     }
 
     event['ical_path'] = generate_event_ical_path(event)
