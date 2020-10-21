@@ -144,30 +144,42 @@
             <div class="event-props__content">{{ event['description'] }}</div>
         </div>
     {% endif %}
-    <div class="event-props__group">
-        <div class="event-props__label">Registration required?</div>
-        <div class="event-props__content">
-        {{ event['registration'] | url_mixed }}
-        </div>
-    </div>
     {% if event['fee'] %}
         <div class="event-props__group">
             <div class="event-props__label">Standard participation fee</div>
             <div class="event-props__content">{{ event['fee'] }}</div>
         </div>
     {% endif %}
+	{% if event['tech_in_use'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Technologies in use</div>
+            <div class="event-props__content">{{ event['tech_in_use'] }}</div>
+        </div>
+    {% endif %}
+    {% if event['interactivity'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Interactivity</div>
+            <div class="event-props__content">{{ event['interactivity'] }}</div>
+        </div>
+    {% endif %}
+    {% if event['technical_liberties'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Technological liberties</div>
+            <div class="event-props__content">{{ event['technical_liberties'] }}</div>
+        </div>
+    {% endif %}
+	{% if event['specialities'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Specialities</div>
+            <div class="event-props__content">{{ event['specialities'] }}</div>
+        </div>
+    {% endif %}  
     <div class="event-props__group">
         <div class="event-props__label">Participants last time</div>
         <div class="event-props__content">
             {{ event['participants'] }}
         </div>
-    </div>
-    {% if event['specialities'] %}
-        <div class="event-props__group">
-            <div class="event-props__label">Specialities</div>
-            <div class="event-props__content">{{ event['specialities'] }}</div>
-        </div>
-    {% endif %}   
+    </div> 
     {% if event['cfp_link'] %}
         <div class="event-props__group">
             <div class="event-props__label">Call for Participation</div>
@@ -187,16 +199,48 @@
         <div class="event-props__group">
             <div class="event-props__label">Code of Conduct</div>
             <div class="event-props__content">
-                <a href="{{ event['coc_link'] }}" target="_blank">Read</a>
+                <a href="{{ event['coc_link'] }}">{{ event['coc_link'] }}</a>
             </div>
         </div>
     {% endif %}
-    {% if event['main_organiser'] %}
+           {% if event['main_organiser'] %}
         <div class="event-props__group">
             <div class="event-props__label">Main organiser</div>
             <div class="event-props__content">{{ event['main_organiser'] }}</div>
         </div>
     {% endif %}
+    <!-- let's keep this for later
+    {% if event['main_sponsors'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Main Sponsor(s)</div>
+            <div class="event-props__content">{{ event['main_sponsors'] }}
+            </div>
+        </div>
+    {% endif %}
+    -->
+    {% if event['first_edition'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">First Edition</div>
+            <div class="event-props__content">{{ event['first_edition'] }}
+            </div>
+        </div>
+    {% endif %}
+    {% if event['tags'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Tags</div>
+            <div class="event-props__content"><em>{{ event['tags'] }}</em>
+            </div>
+        </div>
+    {% endif %}
+	{% if event['registration'] %}
+	<div class="event-props__group">
+        <div class="event-props__label">Registration</div>
+        <div class="event-props__content">
+         <a href="{{ event['registration'] }}">{{ event['registration'] }}</a>
+        </div>
+    </div>
+    {% endif %}
+
 </div>
 
 <div class="contribute-box">
