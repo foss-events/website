@@ -1,4 +1,4 @@
-iso_label_dict = {
+iso_3166_countries = {
     'AT': 'Austria',
     'BE': 'Belgium',
     'BG': 'Bulgaria',
