@@ -1,4 +1,5 @@
 iso_3166_countries = {
+    'AL': 'Albania',
     'AT': 'Austria',
     'BE': 'Belgium',
     'BG': 'Bulgaria',
@@ -23,7 +24,6 @@ iso_3166_countries = {
     'RO': 'Romania',
     'RS': 'Serbia',
     'SE': 'Sweden',
-    'SQ': 'Albania',
     'UA': 'Ukraine',
     'UK': 'United Kingdom'  # historical reasons™
 }
