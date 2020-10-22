@@ -16,6 +16,15 @@
         {% if event['main_language'] %}
             <span class="badge badge--grey">{{ event['main_language'] }}</span>
         {% endif %}
+        {% if event['main_organiser'] %}
+			by {{ event['main_organiser'] }} 
+		{% endif %}
+		{% if event['city'] %}
+				in {{ (event['city']) }}
+		{% endif %}	
+		{% if event['country'] %}
+				({{ (event['country']) }})
+		{% endif %}
         {% if event['cancelled'] %}
             <span class="event__cancellation-note">(cancelled)</span>
         {% endif %}
