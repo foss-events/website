@@ -12,6 +12,9 @@
                 href="{{ event['details_url'] }}">
             {{ event['label'] }}<!--
         --></a>
+        {% if event['main_language'] %}
+            <span class="badge badge--grey">{{ event['main_language'] }}</span>
+        {% endif %}
         {% if event['city'] or event['country'] %}
             in
             {% if event['city'] %}
