@@ -26,7 +26,7 @@ iso_3166_countries = {
     'SE': 'Sweden',
     'UA': 'Ukraine',
     'EU': 'Europe',
-    'ZZ': 'International',
+    'ZZ': 'International', # ZZ is a "User-assigned code element" and free to use: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#ZZ
     'UK': 'United Kingdom'  # historical reasons™
 }
 
