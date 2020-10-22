@@ -1,4 +1,5 @@
-iso_label_dict = {
+iso_3166_countries = {
+    'AL': 'Albania',
     'AT': 'Austria',
     'BE': 'Belgium',
     'BG': 'Bulgaria',
@@ -23,11 +24,34 @@ iso_label_dict = {
     'RO': 'Romania',
     'RS': 'Serbia',
     'SE': 'Sweden',
-    'SQ': 'Albania',
     'UA': 'Ukraine',
     'EU': 'Europe',
     'ZZ': 'International',
     'UK': 'United Kingdom'  # historical reasons™
+}
+
+iso_639_languages = {
+    "BG": "Bulgarian",
+    "BS": "Bosnian",
+    "CS": "Czech",
+    "DA": "Danish",
+    "DE": "German",
+    "EN": "English",
+    "ES": "Spanish",
+    "FI": "Finnish",
+    "FR": "French",
+    "IT": "Italian",
+    "HR": "Croatian",
+    "HU": "Hungarian",
+    "NL": "Dutch",
+    "PL": "Polish",
+    "PT": "Portuguese",
+    "RO": "Romanian",
+    "RU": "Russian",
+    "SQ": "Albanian",
+    "SR": "Serbian",
+    "SV": "Swedish",
+    "UK": "Ukrainian",
 }
 
 months = {
