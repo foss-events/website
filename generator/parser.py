@@ -5,7 +5,7 @@ from datetime import datetime
 from pprint import pprint
 
 from helper import get_start_of_month, get_end_of_day, generate_event_details_path, generate_event_ical_path
-from consts import iso_label_dict, months
+from consts import iso_3166_countries, months
 from parse_helper import extract_cfp, extract_meta_keywords
 
 event_type_class_map = {
@@ -135,7 +135,7 @@ def parse_event(row, today):
         country = ''
     else:
         country_code = row['country'].strip()
-        country = iso_label_dict.get(country_code, country_code)
+        country = iso_3166_countries.get(country_code, country_code)
 
     if row['EntranceFee'] != '0':
         fee = row['EntranceFee']
