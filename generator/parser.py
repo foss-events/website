@@ -161,7 +161,7 @@ def parse_event(row, today):
     event = {
         'id': row['id'],
         'label': row['label'],
-        'online': row.get('online', None) == 'online',
+        'online': row.get('presentation form', None) == 'online',
         'editions_topic': row.get('Edition’s Topic', None),
         'main_organiser': row.get('Main Organiser', None),
         'description': row['Self-description'],
@@ -205,7 +205,7 @@ def parse_event(row, today):
         'tags': row.get('tags', None),
         'tech_in_use': row.get('Technologies in use', None),
         'interactivity': row.get('Online Interactivity', None),
-        'technological_liberties': row.get('Technological Liberties', None)
+        'technical_liberties': row.get('Technical Liberties', None)
     }
 
     event['ical_path'] = generate_event_ical_path(event)
