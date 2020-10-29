@@ -111,7 +111,19 @@
     {% endif %}
 </div>
 
-<div id="map" class="event-map"></div>
+
+		{% if event['online'] %}
+				
+			<div class="onlinebannercontainer">
+				<img src="{{ event['onlinebanner'] }}">
+			</div>
+
+
+		 {% else %}
+			<div id="map" class="event-map"></div>
+		{% endif %}
+
+
 
 <div class="event-props">
     {% if event['homepage'] %}
@@ -250,6 +262,17 @@
         <h3>please <a href="/about.html#contributing">help fix it</a></h3>
     </div>
 </div>
+
+		{% if event['online'] == false %}
+		
+			<div class="onlinebannercontainer">
+				<img src="{{ event['onlinebanner'] }}">
+			</div>
+
+			
+
+		{% endif %}
+
 
 {% include 'partials/footer.html' %}
 
