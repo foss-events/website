@@ -111,19 +111,13 @@
     {% endif %}
 </div>
 
-
-		{% if event['online'] %}
-				
-			<div class="event-onlinebannercontainer">
-				<img src="{{ event['onlinebanner'] }}">
-			</div>
-
-
-		 {% else %}
-			<div id="map" class="event-map"></div>
-		{% endif %}
-
-
+{% if event['online'] and event['onlinebanner'] %}
+    <img
+            class="event__onlinebanner"
+            src="{{ event['onlinebanner'] }}">
+{% else %}
+    <div id="map" class="event__map"></div>
+{% endif %}
 
 <div class="event-props">
     {% if event['homepage'] %}
@@ -185,13 +179,13 @@
             <div class="event-props__label">Specialities</div>
             <div class="event-props__content">{{ event['specialities'] }}</div>
         </div>
-    {% endif %}  
+    {% endif %}
     <div class="event-props__group">
         <div class="event-props__label">Participants last time</div>
         <div class="event-props__content">
             {{ event['participants'] }}
         </div>
-    </div> 
+    </div>
     {% if event['cfp_link'] %}
         <div class="event-props__group">
             <div class="event-props__label">Call for Participation</div>
@@ -264,12 +258,12 @@
 </div>
 
 		{% if event['online'] == false %}
-		
+
 			<div class="event-onlinebannercontainer">
 				<img src="{{ event['onlinebanner'] }}">
 			</div>
 
-			
+
 
 		{% endif %}
 
