@@ -1,5 +1,5 @@
 $(shell mkdir -p build/2019 build/2020 build/img build/js build/styles/images)
-SOURCE_IMGS=$(wildcard src/img/*.png) $(wildcard src/img/*.jpg) $(wildcard src/img/*.svg)
+SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.svg')
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 
 all: css js img build/.htaccess build/index.html build/2019/index.html build/about.html build/events_token
@@ -19,6 +19,7 @@ build/styles/fossevents.css: src/styles/fossevents.css src/lib/leaflet/leaflet.c
 	cat $^ | node_modules/postcss-cli/bin/postcss -o $@
 
 build/img/%: src/img/%
+	@mkdir -p $(@D)
 	cp $< $@
 
 build/img/%.svg: npm_deps_token
