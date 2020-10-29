@@ -508,6 +508,22 @@ table.month p.eventdate {
     margin-bottom: 0;
 }
 
+/* container and img on top for events that happen online */
+
+.event-onlinebannercontainer {
+  width:800px; 
+  max-height:280px;
+}
+
+.event-onlinebannercontainer img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding:2em;
+}
+
+
 @media only screen and (min-width: 768px) {
 
     .event-props {
