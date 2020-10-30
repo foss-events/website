@@ -266,7 +266,8 @@
 	<div class="event-props__group">
         <div class="event-props__label">Registration</div>
         <div class="event-props__content">
-         <a href="{{ event['registration'] }}">{{ event['registration'] }}</a>
+			{{ event['registration'] | url_mixed }}
+			<!-- full url would be <a href="{{ event['registration'] }}">{{ event['registration'] }}</a> -->
         </div>
     </div>
     {% endif %}
@@ -276,13 +277,12 @@
 
 <!-- the contribute-element -->
 
-<div class="contribute-box">
-    <div class="contribute-box__content">
-        <h3>info missing?</h3>
-        <h3>info out of date?</h3>
-        <h3>please <a href="/about.html#contributing">help fix it</a></h3>
-    </div>
-</div>
+    <div class="h1-divider"></div>
+    <div class="text-center text-italic">
+        <p>info missing or info out of date?</p>
+        <p><a href="/about.html#contributing">please help to fix it &amp; contribute!</a></p>
+	</div>
+
 
 
 <!-- a selector to show the event's banner here in case it is an offline event and it has a banner -->
