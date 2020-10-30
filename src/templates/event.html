@@ -39,12 +39,20 @@
 
 <body>
 
-{% include 'partials/header-logo.html' %}
+<!-- header -->
+
+	{% include 'partials/header-logo.html' %}
+
+
+<!-- event name and topic -->
 
 <h2 class="event-title">{{ event['label'] }}</h2>
 {% if event['editions_topic'] %}
     <div class="event-subtitle">This edition's topic: <em>{{ event['editions_topic'] }}</em></div>
 {% endif %}
+
+
+<!-- selector to include notes and forwards in case events are cancelled or postponed -->
 
 {% if event['cancelled'] or event['postponed'] or event['only_online'] %}
 <div class="event-cancellation-note">
@@ -87,6 +95,8 @@
     </div>
 {% endif %}
 
+<!-- date and location of an even -->
+
 <div class="event-date">
     {{ event['start_day'] }}<!--
         -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
@@ -111,13 +121,17 @@
     {% endif %}
 </div>
 
-{% if event['online'] and event['onlinebanner'] %}
-    <img
-            class="event__onlinebanner"
-            src="{{ event['onlinebanner'] }}">
-{% else %}
-    <div id="map" class="event__map"></div>
-{% endif %}
+<!-- here is the selector of showing the event banner for online-events or a map for offline-events -->
+
+	{% if event['online'] and event['onlinebanner'] %}
+		<img
+				class="event__onlinebanner"
+				src="{{ event['onlinebanner'] }}">
+	{% else %}
+		<div id="map" class="event__map"></div>
+	{% endif %}
+
+<!-- here starts the list about all the meta data of an event -->
 
 <div class="event-props">
     {% if event['homepage'] %}
@@ -249,6 +263,9 @@
 
 </div>
 
+
+<!-- the contribute-elemtent -->
+
 <div class="contribute-box">
     <div class="contribute-box__content">
         <h3>info missing?</h3>
@@ -256,6 +273,9 @@
         <h3>please <a href="/about.html#contributing">help fix it</a></h3>
     </div>
 </div>
+
+
+<!-- another selector that shows the eventbanner here in case it is an offline event and it has a banner -->
 
 		{% if event['online'] == false %}
 
@@ -266,6 +286,9 @@
 
 
 		{% endif %}
+
+
+<!-- the footer -->
 
 
 {% include 'partials/footer.html' %}
