@@ -162,6 +162,7 @@ def parse_event(row, today):
         'id': row['id'],
         'label': row['label'],
         'online': row.get('presentation form', None) == 'online',
+        'onlinebanner': row.get('onlinebanner', None),
         'editions_topic': row.get('Edition’s Topic', None),
         'main_organiser': row.get('Main Organiser', None),
         'description': row['Self-description'],

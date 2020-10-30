@@ -450,7 +450,7 @@ table.month p.eventdate {
 
 /* event page */
 
-.event-map {
+.event__map {
     height: 15rem;
     margin-bottom: 1.5rem;
 }
@@ -529,6 +529,13 @@ table.month p.eventdate {
         padding: 0 1rem 1rem 0;
         text-align: right;
     }
+}
+
+.event__onlinebanner {
+    display: block;
+    margin: 0 auto 2rem;
+    max-height: 20rem;
+    max-width: 100%;
 }
 
 /* footer */
