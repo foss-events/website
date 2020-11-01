@@ -6,21 +6,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="description" content="Read everything about {{ event['label'] }} {{ event['start_year'] }} in {{ event['readable_location'] }} in a nutshell on // foss.events" />
+    <meta name="description" content="Read everything in a nutshell about {{ event['label'] }} {{ event['start_year'] }} in {{ event['readable_location'] }} on // foss.events" />
     <meta name="keywords" content="{{ event['keywords_string'] }}"/>
 
     <!-- Open Graph meta-data (e.g. Facebook) -->
     <meta property="og:title" content="// foss.events"/>
     <meta property="og:url" content="https://foss.events/"/>
     <meta property="og:image" content="https://foss.events/img/logo.png"/>
-    <meta property="og:description" content="A collection of FOSS events in Europe"/>
+    <meta property="og:description" content="The most comprehensive collection of FOSS events in Europe and online"/>
     <meta property="og:locale" content="en"/>
 
     <!-- Twitter meta-data -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@FOSS_events"/>
     <meta name="twitter:title" content="// foss.events"/>
-    <meta name="twitter:description" content="A collection of FOSS events in Europe"/>
+    <meta name="twitter:description" content="The most comprehensive collection of FOSS events in Europe and online"/>
     <meta name="twitter:image" content="https://foss.events/img/logo.png"/>
     <meta name="twitter:creator" content="@FOSS_events"/>
 
@@ -34,90 +34,114 @@
     <link rel="stylesheet" type="text/css" href="/styles/leaflet.css">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
 
-    <title>{{ event['label'] }} {{ event['start_year'] }} in a nutshell on // foss.events</title>
+    <title>All about {{ event['label'] }} {{ event['start_year'] }} in a nutshell on // foss.events</title>
 </head>
 
 <body>
 
-{% include 'partials/header-logo.html' %}
+<!-- start with header -->
 
-<h2 class="event-title">{{ event['label'] }}</h2>
-{% if event['editions_topic'] %}
-    <div class="event-subtitle">This edition's topic: <em>{{ event['editions_topic'] }}</em></div>
-{% endif %}
+    {% include 'partials/header-logo.html' %}
 
-{% if event['cancelled'] or event['postponed'] or event['only_online'] %}
-<div class="event-cancellation-note">
-    <div class="event-cancellation-note__title">
-        {% if event['cancelled'] %}
-            Cancelled
-        {% elif event['postponed']  %}
-            Postponed
-            {% if event['replacement'] %}
-                to {{ all_events[event['replacement']]['start_month'] }}/{{ all_events[event['replacement']]['start_year'] }}
-            {% endif %}
-        {% else %}
-            Only online
-        {% endif %}
-    </div>
-    {% if event['replacement'] %}
-        <div class="event-cancellation-note__replacement">
-            A replacement for this event is scheduled on
-            {{ all_events[event['replacement']]['start_month'] }}/{{ all_events[event['replacement']]['start_year'] }}.<br>
-            Find all info <a href="{{ all_events[event['replacement']]['details_url'] }}">here</a>.
-        </div>
-    {% endif %}
-    {% if  (event['cancelled'] or event['postponed'] or event['only_online']) and event['cancellation_description'] %}
-        <div class="event-cancellation-note__text">
-            {{ event['cancellation_description'] }}
-        </div>
-    {% endif %}
-</div>
-{% endif %}
 
-{% if event['replaces'] %}
-    <div class="event-replacement-note">
-        <div class="event-replacement-note__title">
-            Replacement event
-        </div>
-        <div class="event-replacement-note__text">
-            This event replaces the original event from
-            {{ all_events[event['replaces']]['start_month'] }}/{{ all_events[event['replaces']]['start_year'] }}.
-        </div>
-    </div>
-{% endif %}
+<!-- show event name and topic -->
 
-<div class="event-date">
-    {{ event['start_day'] }}<!--
-        -->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
-    {{ event['start_month_string'] }} {{ event['start_year'] }}
-    <a
-            class="event-date__link"
-            href="{{ event['ical_path'] }}">
-        add to your calendar
-    </a>
-</div>
+	<h2 class="event-title">{{ event['label'] }}</h2>
+	{% if event['editions_topic'] %}
+		<div class="event-subtitle">This edition's topic: <em>{{ event['editions_topic'] }}</em></div>
+	{% endif %}
 
-<div class="event-location">
-    {{ event['readable_location'] }}
-    {% if event['osm_link'] %}
-        <a class="event-location__link" href="{{ event['osm_link'] }}" target="_blank">OSM</a>
-        {% if event['geo'] %}/{% endif %}
-    {% endif %}
-    {% if event['geo'] %}
-        <a class="event-location__link" href="{{ event['geo'] }}">
-            geo
-        </a>
-    {% endif %}
-</div>
 
-{% if event['online'] and event['onlinebanner'] %}
-    <img
-            class="event__onlinebanner"
-            src="{{ event['onlinebanner'] }}">
-{% else %}
-    <div id="map" class="event__map"></div>
-{% endif %}
+<!-- selector to include notes and/or forwards in case events are cancelled or postponed -->
+
+	{% if event['cancelled'] or event['postponed'] or event['only_online'] %}
+	<div class="event-cancellation-note">
+		<div class="event-cancellation-note__title">
+			{% if event['cancelled'] %}
+				Cancelled
+			{% elif event['postponed']  %}
+				Postponed
+				{% if event['replacement'] %}
+					to {{ all_events[event['replacement']]['start_month'] }}/{{ all_events[event['replacement']]['start_year'] }}
+				{% endif %}
+			{% else %}
+				Only online
+			{% endif %}
+		</div>
+		{% if event['replacement'] %}
+			<div class="event-cancellation-note__replacement">
+				A replacement for this event is scheduled on
+				{{ all_events[event['replacement']]['start_month'] }}/{{ all_events[event['replacement']]['start_year'] }}.<br>
+				Find all info <a href="{{ all_events[event['replacement']]['details_url'] }}">here</a>.
+			</div>
+		{% endif %}
+		{% if  (event['cancelled'] or event['postponed'] or event['only_online']) and event['cancellation_description'] %}
+			<div class="event-cancellation-note__text">
+				{{ event['cancellation_description'] }}
+			</div>
+		{% endif %}
+	</div>
+	{% endif %}
+
+	{% if event['replaces'] %}
+		<div class="event-replacement-note">
+			<div class="event-replacement-note__title">
+				Replacement event
+			</div>
+			<div class="event-replacement-note__text">
+				This event replaces the original event from
+				{{ all_events[event['replaces']]['start_month'] }}/{{ all_events[event['replaces']]['start_year'] }}.
+			</div>
+		</div>
+	{% endif %}
+
+<!-- date and location of an event -->
+
+	<div class="event-date">
+		{{ event['start_day'] }}<!--
+			-->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
+		{{ event['start_month_string'] }} {{ event['start_year'] }}
+		<a
+				class="event-date__link"
+				href="{{ event['ical_path'] }}">
+			add to your calendar
+		</a>
+	</div>
+
+	<div class="event-location">
+		{{ event['readable_location'] }}
+		{% if event['osm_link'] %}
+			<a class="event-location__link" href="{{ event['osm_link'] }}" target="_blank">OSM</a>
+			{% if event['geo'] %}/{% endif %}
+		{% endif %}
+		{% if event['geo'] %}
+			<a class="event-location__link" href="{{ event['geo'] }}">
+				geo
+			</a>
+		{% endif %}
+	</div>
+
+<!-- selector of showing the event banner for online-events or a map for offline-events or nothing for online events without banner -->
+
+	{% if event['online'] and event['onlinebanner'] %}
+	
+		<a href="{{ event['homepage'] }}">
+			<img 
+				class="event__onlinebanner"
+				src="{{ event['onlinebanner'] }}" 
+				alt="picture of a banner or logo from {{ event['name'] }}" 
+				title="{{ event['name'] }}">
+		</a>
+		
+	{% elif event['online'] == false %}
+
+		<div id="map" class="event__map"></div>
+		
+	{% else %}
+		<div class="h1-divider"></div>
+	{% endif %}
+
+<!-- list about all the meta data of an event -->
 
 <div class="event-props">
     {% if event['homepage'] %}
@@ -242,30 +266,35 @@
 	<div class="event-props__group">
         <div class="event-props__label">Registration</div>
         <div class="event-props__content">
-         <a href="{{ event['registration'] }}">{{ event['registration'] }}</a>
+			{{ event['registration'] | url_mixed }}
         </div>
     </div>
     {% endif %}
 
 </div>
 
-<div class="contribute-box">
-    <div class="contribute-box__content">
-        <h3>info missing?</h3>
-        <h3>info out of date?</h3>
-        <h3>please <a href="/about.html#contributing">help fix it</a></h3>
-    </div>
-</div>
 
-		{% if event['online'] == false %}
+<!-- the contribute-element -->
 
-			<div class="event-onlinebannercontainer">
-				<img src="{{ event['onlinebanner'] }}">
-			</div>
+    <div class="h1-divider"></div>
+    <div class="text-center text-italic">
+        <p>info missing or out of date?</p>
+        <p><a href="/about.html#contributing">please help to fix it &amp; contribute!</a></p>
+	</div>
 
 
+
+<!-- a selector to show the event's banner here in case it is an offline event and it has a banner -->
+
+		{% if event['online'] == false and event['onlinebanner'] %}
+		
+				<a href="{{ event['homepage'] }}"><img class="event__onlinebanner"
+				src="{{ event['onlinebanner'] }}" alt="picture of a banner or logo from {{ event['name'] }}" title="{{ event['name'] }}"></a>
 
 		{% endif %}
+
+
+<!-- the footer -->
 
 
 {% include 'partials/footer.html' %}

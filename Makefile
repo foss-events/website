@@ -1,5 +1,6 @@
 $(shell mkdir -p build/2019 build/2020 build/img build/js build/styles/images)
-SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.svg')
+# here is the import of all images from src/img into the build process, see https://github.com/foss-events/website/pull/179/commits/b695c04ec9eecf9dbda4efe0646cc592a8c746ef
+SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg')
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 
 all: css js img build/.htaccess build/index.html build/2019/index.html build/about.html build/events_token
