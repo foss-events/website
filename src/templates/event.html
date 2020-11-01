@@ -41,7 +41,7 @@
 
 <!-- start with header -->
 
-	{% include 'partials/header-logo.html' %}
+    {% include 'partials/header-logo.html' %}
 
 
 <!-- show event name and topic -->
@@ -267,7 +267,6 @@
         <div class="event-props__label">Registration</div>
         <div class="event-props__content">
 			{{ event['registration'] | url_mixed }}
-			<!-- full url would be <a href="{{ event['registration'] }}">{{ event['registration'] }}</a> -->
         </div>
     </div>
     {% endif %}
@@ -279,7 +278,7 @@
 
     <div class="h1-divider"></div>
     <div class="text-center text-italic">
-        <p>info missing or info out of date?</p>
+        <p>info missing or out of date?</p>
         <p><a href="/about.html#contributing">please help to fix it &amp; contribute!</a></p>
 	</div>
 
