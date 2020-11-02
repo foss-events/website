@@ -154,24 +154,33 @@
             </div>
         </div>
     {% endif %}
+    {% if event['online'] %}
+    <div class="event-props__group">
+        <div class="event-props__label">Type</div>
+        <div class="event-props__content">
+            {{ event['type'] }} <span class="badge badge--grey">online</span> 
+        </div>
+    </div>
+    {% else %}
     <div class="event-props__group">
         <div class="event-props__label">Type</div>
         <div class="event-props__content">
             {{ event['type'] }}
         </div>
     </div>
+    {% endif %}
     {% if event['main_language'] %}
     <div class="event-props__group">
         <div class="event-props__label">Main language</div>
         <div class="event-props__content">
-            {{ event['main_language'] }}
+            <span class="badge badge--grey">{{ event['main_language'] }}</span>
         </div>
     </div>
     {% endif %}
     {% if event['description'] %}
         <div class="event-props__group">
-            <div class="event-props__label">Their self-description</div>
-            <div class="event-props__content">{{ event['description'] }}</div>
+            <div class="event-props__label">Their self-description<br/><em>(<a href="{{ event['homepage'] }}">source</a>)</em></div>
+            <div class="event-props__content"><em>{{ event['description'] }}</em></div>
         </div>
     {% endif %}
     {% if event['fee'] %}
@@ -205,7 +214,7 @@
         </div>
     {% endif %}
     <div class="event-props__group">
-        <div class="event-props__label">Participants last time</div>
+        <div class="event-props__label"># of participants last time</div>
         <div class="event-props__content">
             {{ event['participants'] }}
         </div>
@@ -229,7 +238,7 @@
         <div class="event-props__group">
             <div class="event-props__label">Code of Conduct</div>
             <div class="event-props__content">
-                <a href="{{ event['coc_link'] }}">{{ event['coc_link'] }}</a>
+                <a href="{{ event['coc_link'] }}">Read</a>
             </div>
         </div>
     {% endif %}
