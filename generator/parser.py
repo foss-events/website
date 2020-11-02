@@ -224,6 +224,9 @@ def parse_event(row, today):
 
     readable_location += event['country']
 
+    if event['venue'] and event['online']:
+        readable_location = event['venue']
+
     event['readable_location'] = readable_location
 
     if row['type'] == 'Global Day' or row['type'] == 'Regional Day':
