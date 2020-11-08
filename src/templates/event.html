@@ -183,6 +183,12 @@
             <div class="event-props__content"><em>{{ event['description'] }}</em></div>
         </div>
     {% endif %}
+	{% if event['main_organiser'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Main organiser</div>
+            <div class="event-props__content">{{ event['main_organiser'] }}</div>
+        </div>
+    {% endif %}
     {% if event['fee'] %}
         <div class="event-props__group">
             <div class="event-props__label">Standard participation fee</div>
@@ -242,12 +248,7 @@
             </div>
         </div>
     {% endif %}
-           {% if event['main_organiser'] %}
-        <div class="event-props__group">
-            <div class="event-props__label">Main organiser</div>
-            <div class="event-props__content">{{ event['main_organiser'] }}</div>
-        </div>
-    {% endif %}
+   
     <!-- let's keep this for later
     {% if event['main_sponsors'] %}
         <div class="event-props__group">
@@ -264,13 +265,7 @@
             </div>
         </div>
     {% endif %}
-    {% if event['tags'] %}
-        <div class="event-props__group">
-            <div class="event-props__label">Tags</div>
-            <div class="event-props__content"><em>{{ event['tags'] }}</em>
-            </div>
-        </div>
-    {% endif %}
+    
 	{% if event['registration'] %}
 	<div class="event-props__group">
         <div class="event-props__label">Registration</div>
@@ -279,6 +274,18 @@
         </div>
     </div>
     {% endif %}
+    {% if event['tags'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Tags</div>
+            <div class="event-props__content"><em>{{ event['tags'] }}</em>
+            </div>
+        </div>
+    {% endif %}
+    <div class="event-props__group">
+            <div class="event-props__label"><a href="/about.html#legend"><em>about:legend</em></a></div>
+            <div class="event-props__content"><a href="/about.html#legend"><em>?</em></a>
+            </div>
+	</div>
 
 </div>
 
