@@ -196,6 +196,7 @@ def parse_event(row, today):
         'cfp_raw_link': cfp['cfp_raw_link'],
         'coc_link': coc_link,
         'registration': row['Registration'],
+        'timezone': row.get('Timezone', None),
         'classes': classes,
         'type': row.get('type', '?'),
         'upcoming': upcoming_event,
