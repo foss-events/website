@@ -20,8 +20,12 @@
     <h1 id="fossevents" class="h1">FOSS events in Europe</h1>
     <div class="h1-divider"></div>
 
-    <h2 id="upcoming" class="h2">
-        Upcoming in {{ year }}
+	<h2 id="upcoming" class="h2">
+        Upcoming in {{ year }} 
+	{% if year == '2020' %}
+			(and <a href="/2021">2021</a>)
+	{% endif %}
+
     </h2>
 
 
@@ -41,7 +45,8 @@
                 {% endfor %}
             </table>
         {% endif %}
-
+        
+		
         {% if month['events'] and month_id == '03' %}
             {% include 'partials/contribute-box.html' %}
         {% endif %}
@@ -50,8 +55,17 @@
     {% if not upcoming['03']['events'] %}
         {% include 'partials/contribute-box.html' %}
     {% endif %}
+    
+    {% if year == '2020' %}
+			<h2 id="2021" class="h2"><a href="/2021">See list of events in 2021</a></h2>
+		{% endif %}
+
 
 {% endif %}
+
+
+
+    
 
 <p>
     If you know about an event that is not yet listed here and it matches the <a

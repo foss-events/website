@@ -33,7 +33,8 @@ def parse_all_events():
     today = datetime.now()
     events2019 = parse_events('data/2019_events_db.csv', today)
     events2020 = parse_events('data/2020_events_db.csv', today)
-    return {**events2019['all'], **events2020['all']}
+    events2021 = parse_events('data/2021_events_db.csv', today)
+    return {**events2019['all'], **events2020['all'], **events2021['all']}
 
 
 def parse_events(file_path, today):

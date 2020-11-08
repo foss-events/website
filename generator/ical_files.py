@@ -50,6 +50,6 @@ def generate_event_ical_files(events):
 
 today = datetime.now()
 
-for year in [2019, 2020]:
+for year in [2019, 2020, 2021]:
     events = parse_events('data/' + str(year) + '_events_db.csv', today)
     generate_event_ical_files(events['all'].values())
