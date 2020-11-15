@@ -33,7 +33,8 @@ def parse_all_events():
     today = datetime.now()
     events2019 = parse_events('data/2019_events_db.csv', today)
     events2020 = parse_events('data/2020_events_db.csv', today)
-    return {**events2019['all'], **events2020['all']}
+    events2021 = parse_events('data/2021_events_db.csv', today)
+    return {**events2019['all'], **events2020['all'], **events2021['all']}
 
 
 def parse_events(file_path, today):
@@ -196,6 +197,7 @@ def parse_event(row, today):
         'cfp_raw_link': cfp['cfp_raw_link'],
         'coc_link': coc_link,
         'registration': row['Registration'],
+        'timezone': row.get('Timezone', None),
         'classes': classes,
         'type': row.get('type', '?'),
         'upcoming': upcoming_event,

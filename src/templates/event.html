@@ -213,6 +213,12 @@
             <div class="event-props__content">{{ event['technological_liberties'] }}</div>
         </div>
     {% endif %}
+    {% if event['timezone'] %}
+        <div class="event-props__group">
+            <div class="event-props__label">Timezone</div>
+            <div class="event-props__content">{{ event['timezone'] }}</div>
+        </div>
+    {% endif %}
 	{% if event['specialities'] %}
         <div class="event-props__group">
             <div class="event-props__label">Specialities</div>
