@@ -9,6 +9,7 @@ iso_3166_countries = {
     'DE': 'Germany',
     'DK': 'Denmark',
     'ES': 'Spain',
+    'FI': 'Finland',
     'FR': 'France',
     'GB': 'United Kingdom',
     'GR': 'Greece',
