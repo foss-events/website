@@ -44,6 +44,21 @@
     {% include 'partials/header-logo.html' %}
 
 
+<!-- selector of showing the event banner for online-events or a map for offline-events or nothing for online events without banner -->
+
+	{% if event['onlinebanner'] %}
+	
+		<a href="{{ event['homepage'] }}">
+			<img 
+				class="event__onlinebanner"
+				src="{{ event['onlinebanner'] }}" 
+				alt="picture of a banner or logo from {{ event['name'] }}" 
+				title="{{ event['name'] }}">
+		</a>
+		
+	{% endif %}
+
+
 <!-- show event name and topic -->
 
 	<h2 class="event-title">{{ event['label'] }}</h2>
@@ -121,27 +136,11 @@
 		{% endif %}
 	</div>
 
-<!-- selector of showing the event banner for online-events or a map for offline-events or nothing for online events without banner -->
 
-	{% if event['online'] and event['onlinebanner'] %}
-	
-		<a href="{{ event['homepage'] }}">
-			<img 
-				class="event__onlinebanner"
-				src="{{ event['onlinebanner'] }}" 
-				alt="picture of a banner or logo from {{ event['name'] }}" 
-				title="{{ event['name'] }}">
-		</a>
-		
-	{% elif event['online'] == false %}
-
-		<div id="map" class="event__map"></div>
-		
-	{% else %}
-		<div class="h1-divider"></div>
-	{% endif %}
 
 <!-- list about all the meta data of an event -->
+
+<div class="h1-divider" style="margin-top:2em;"></div>
 
 <div class="event-props">
     {% if event['homepage'] %}
@@ -295,6 +294,15 @@
 
 </div>
 
+<!-- a selector to show the event's banner here in case it is an offline event and it has a banner -->
+
+		{% if event['lat'] %}
+	
+		<div id="map" class="event__map"></div>
+
+
+		{% endif %}
+
 
 <!-- the contribute-element -->
 
@@ -306,14 +314,10 @@
 
 
 
-<!-- a selector to show the event's banner here in case it is an offline event and it has a banner -->
 
-		{% if event['online'] == false and event['onlinebanner'] %}
 		
-				<a href="{{ event['homepage'] }}"><img class="event__onlinebanner"
-				src="{{ event['onlinebanner'] }}" alt="picture of a banner or logo from {{ event['name'] }}" title="{{ event['name'] }}"></a>
+		
 
-		{% endif %}
 
 
 <!-- the footer -->
