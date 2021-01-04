@@ -3,7 +3,7 @@ $(shell mkdir -p build/2019 build/2020 build/2021 build/img build/js build/style
 SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg')
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 
-all: css js img build/.htaccess build/index.html build/2019/index.html build/2021/index.html build/about.html build/events_token
+all: css js img build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/about.html build/events_token
 
 .PHONY: css
 css: build/styles/fossevents.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
@@ -46,11 +46,14 @@ build/favicon.ico: src/img/favicon.ico
 build/2021/index.html: data/2021_events_db.csv pip_deps_token
 	pipenv run python3 generator/index_2021.py
 
-build/index.html: data/2020_events_db.csv pip_deps_token
+build/index.html: data/2021_events_db.csv pip_deps_token
 	pipenv run python3 generator/index.py
 
 build/2019/index.html: data/2019_events_db.csv pip_deps_token
 	pipenv run python3 generator/index_2019.py
+
+build/2020/index.html: data/2020_events_db.csv pip_deps_token
+	pipenv run python3 generator/index_2020.py
 
 build/about.html: src/templates/about.html pip_deps_token
 	pipenv run python3 generator/about.py
