@@ -1,4 +1,3 @@
-import csv
 from datetime import datetime
 
 from helper import create_jinja_env, generate_event_details_path

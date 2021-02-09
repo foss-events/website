@@ -43,9 +43,6 @@ build/.htaccess: src/.htaccess
 build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
-build/2021/index.html: data/2021_events_db.csv pip_deps_token
-	pipenv run python3 generator/index_2021.py
-
 build/index.html: data/2021_events_db.csv pip_deps_token
 	pipenv run python3 generator/index.py
 
@@ -54,6 +51,9 @@ build/2019/index.html: data/2019_events_db.csv pip_deps_token
 
 build/2020/index.html: data/2020_events_db.csv pip_deps_token
 	pipenv run python3 generator/index_2020.py
+
+build/2021/index.html: data/2021_events_db.csv pip_deps_token
+	pipenv run python3 generator/index_2021.py
 
 build/about.html: src/templates/about.html pip_deps_token
 	pipenv run python3 generator/about.py
