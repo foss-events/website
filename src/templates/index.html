@@ -21,15 +21,14 @@
     <div class="h1-divider"></div>
 
 	<h2 id="upcoming" class="h2">
-        Upcoming in {{ year }} 
-        
+        Upcoming in {{ year }}
+
         <!--
 	{% if year == '2020' %}
 			(and <a href="/2021" class="about-nav__item" style="width:auto">2021</a>)
 	{% endif %}
 -->
     </h2>
-
 
 
     {% for month_id, month in upcoming.items() %}
@@ -47,8 +46,8 @@
                 {% endfor %}
             </table>
         {% endif %}
-        
-		
+
+
         {% if month['events'] and month_id == '03' %}
             {% include 'partials/contribute-box.html' %}
         {% endif %}
@@ -57,9 +56,9 @@
     {% if not upcoming['03']['events'] %}
         {% include 'partials/contribute-box.html' %}
     {% endif %}
-    
+
     <!--
-    
+
     {% if year == '2020' %}
 			<h2 id="2021" class="h2"><a href="/2021">See list of events in 2021</a></h2>
 		{% endif %}
@@ -67,10 +66,6 @@
 -->
 
 {% endif %}
-
-
-
-    
 
 <p>
     If you know about an event that is not yet listed here and it matches the <a
@@ -112,10 +107,13 @@
 <h1 id="archive" class="h1">Archive</h1>
 <div class="h1-divider"></div>
 
-<p>See the most comprehensive collection of Free, Libre and/or Open Source Software (related) events happening in Europe in ...</p>
+<p>
+    See the most comprehensive collection of Free, Libre and/or Open Source Software (related) events happening in
+    Europe in ...
+</p>
 
-<p style="font-size:150%" class="text-center">
-  <a href="/2019/"><strong>2019</strong></a> / 
+<p class="years-menu">
+  <a href="/2019/"><strong>2019</strong></a> /
   <a href="/2020/"><strong>2020</strong></a>
 </p>
 

@@ -6,7 +6,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="description" content="Read everything in a nutshell about {{ event['label'] }} {{ event['start_year'] }} in {{ event['readable_location'] }} on // foss.events" />
+    <meta
+            name="description"
+            content="Read everything in a nutshell about {{ event['label'] }} {{ event['start_year'] }} in {{ event['readable_location'] }} on // foss.events" />
     <meta name="keywords" content="{{ event['keywords_string'] }}"/>
 
     <!-- Open Graph meta-data (e.g. Facebook) -->
@@ -47,15 +49,15 @@
 <!-- selector of showing the event banner for online-events or a map for offline-events or nothing for online events without banner -->
 
 	{% if event['onlinebanner'] %}
-	
+
 		<a href="{{ event['homepage'] }}">
-			<img 
+			<img
 				class="event__onlinebanner"
-				src="{{ event['onlinebanner'] }}" 
-				alt="picture of a banner or logo from {{ event['name'] }}" 
+				src="{{ event['onlinebanner'] }}"
+				alt="picture of a banner or logo from {{ event['name'] }}"
 				title="{{ event['name'] }}">
 		</a>
-		
+
 	{% endif %}
 
 
@@ -140,7 +142,7 @@
 
 <!-- list about all the meta data of an event -->
 
-<div class="h1-divider" style="margin-top:2em;"></div>
+<div class="h1-divider"></div>
 
 <div class="event-props">
     {% if event['homepage'] %}
@@ -157,7 +159,7 @@
     <div class="event-props__group">
         <div class="event-props__label">Type</div>
         <div class="event-props__content">
-            {{ event['type'] }} <span class="badge badge--grey">online</span> 
+            {{ event['type'] }} <span class="badge badge--grey">online</span>
         </div>
     </div>
     {% else %}
@@ -178,7 +180,10 @@
     {% endif %}
     {% if event['description'] %}
         <div class="event-props__group">
-            <div class="event-props__label">Their self-description<br/><em>(<a href="{{ event['homepage'] }}">source</a>)</em></div>
+            <div
+                    class="event-props__label">
+                Their self-description<br/><em>(<a href="{{ event['homepage'] }}">source</a>)</em>
+            </div>
             <div class="event-props__content"><em>{{ event['description'] }}</em></div>
         </div>
     {% endif %}
@@ -253,7 +258,7 @@
             </div>
         </div>
     {% endif %}
-   
+
     <!-- let's keep this for later
     {% if event['main_sponsors'] %}
         <div class="event-props__group">
@@ -270,7 +275,7 @@
             </div>
         </div>
     {% endif %}
-    
+
 	{% if event['registration'] %}
 	<div class="event-props__group">
         <div class="event-props__label">Registration</div>
@@ -297,10 +302,7 @@
 <!-- a selector to show the event's banner here in case it is an offline event and it has a banner -->
 
 		{% if event['lat'] %}
-	
-		<div id="map" class="event__map"></div>
-
-
+    		<div id="map" class="event__map"></div>
 		{% endif %}
 
 
@@ -311,13 +313,6 @@
         <p>info missing or out of date?</p>
         <p><a href="/about.html#contributing">please help to fix it &amp; contribute!</a></p>
 	</div>
-
-
-
-
-		
-		
-
 
 
 <!-- the footer -->

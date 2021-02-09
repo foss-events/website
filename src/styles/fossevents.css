@@ -242,7 +242,6 @@ h2.navhead {
     background-image: url("/img/menu_envelope_darker.svg");
 }
 
-
 @media only screen and (min-width: 768px) {
 
     .menu__logo {
@@ -258,6 +257,11 @@ h2.navhead {
     .menu__logo-container--second {
         display: inline-block;
     }
+}
+
+.years-menu {
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .navlinks {
@@ -472,7 +476,7 @@ table.month p.eventdate {
 }
 
 .event-location {
-    margin-bottom: .5rem;
+    margin-bottom: 2rem;
 }
 
 .event-location__link {
