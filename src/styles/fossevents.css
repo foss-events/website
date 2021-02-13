@@ -624,3 +624,21 @@ table.month p.eventdate {
     color: #fff;
     background-color: #6c757d;
 }
+
+.fedifeed {
+    border: 1px solid #888;
+    height: 800px;
+    width: 100%;
+}
+
+.icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1rem;
+    width: 1rem;
+}
+
+.icon--mastodon {
+    background-image: url("/img/menu_Mastodon.svg");
+}
