@@ -1,4 +1,4 @@
-image: debian:buster-slim
+image: mweimann/fossevents-cicd:1.0.0
 
 stages:
   - build
@@ -11,11 +11,6 @@ build_website:
   artifacts:
     paths:
       - build/
-  before_script:
-    - apt update
-    - apt install -y curl
-    - curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
-    - apt install -y python3 python3-pip pipenv make nodejs
   script:
     - pipenv install
     - make
@@ -24,9 +19,6 @@ deploy_to_test:
   stage: deploy
   dependencies:
     - build_website
-  before_script:
-    - apt update
-    - apt install -c lftp
   script:
     - lftp -e "set ftp:ssl-allow no; mirror --parallel --no-symlinks -R build/ /" -u $TEST_FTP_USER,$TEST_FTP_PASS $TEST_FTP_HOST || true
   only:
@@ -36,9 +28,6 @@ deploy_to_live:
   stage: deploy
   dependencies:
     - build_website
-  before_script:
-    - apt update
-    - apt install -c lftp
   script:
     - lftp -e "set ftp:ssl-allow no; mirror --parallel --no-symlinks -R build/ /" -u $LIVE_FTP_USER,$LIVE_FTP_PASS $LIVE_FTP_HOST || true
   only:
