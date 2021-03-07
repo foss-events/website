@@ -1,4 +1,5 @@
-$(shell mkdir -p build/2019 build/2020 build/2021 build/img build/js build/styles/images)
+$(shell mkdir -p build/2019 build/2020 build/2021 build/img/eventlogos/2020 build/img/eventbanners/2020 build/js build/styles/images)
+$(shell mkdir -p build/img/eventbanners/2020 build/img/eventbanners/2021)
 # here is the import of all images from src/img into the build process, see https://github.com/foss-events/website/pull/179/commits/b695c04ec9eecf9dbda4efe0646cc592a8c746ef
 SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg')
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
@@ -25,8 +26,18 @@ build/img/%: src/img/%
 
 build/img/%.svg: npm_deps_token
 
+build/img/%.png: npm_deps_token
+
+build/img/%.jpg: npm_deps_token
+
 build/img/%.svg: src/img/%.svg
 	node_modules/svgo/bin/svgo $< -o $@
+
+build/img/%.png: src/img/%.png
+	node_modules/imagemin-cli/cli.js $< > $@
+
+build/img/%.jpg: src/img/%.jpg
+	node_modules/imagemin-cli/cli.js $< > $@
 
 build/styles/images/%.png: src/lib/leaflet/images/%.png
 	cp $< $@

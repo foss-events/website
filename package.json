@@ -13,6 +13,10 @@
   "homepage": "https://foss.events/",
   "devDependencies": {
     "cssnano": "^4.1.10",
+    "imagemin": "^7.0.1",
+    "imagemin-cli": "^6.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
     "postcss-cli": "^7.1.1",
     "svgo": "^1.3.2"
   }
