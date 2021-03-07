@@ -13,9 +13,10 @@ build_website:
       - build/
   before_script:
     - apk update
-    - apk add --no-cache python3 make nodejs npm
+    - apk add --no-cache python3 make nodejs npm bash lcms2-dev libpng-dev
     - pip3 install pipenv
   script:
+    - bash
     - pipenv install
     - make
 
