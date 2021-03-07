@@ -1,4 +1,4 @@
-image: alpine:3.10
+image: debian:buster-slim
 
 stages:
   - build
@@ -12,11 +12,11 @@ build_website:
     paths:
       - build/
   before_script:
-    - apk update
-    - apk add --no-cache python3 make nodejs npm bash nasm g++ lcms2-dev libpng-dev
-    - pip3 install pipenv
+    - apt update
+    - apt install -y curl
+    - curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
+    - apt install -y python3 python3-pip pipenv make nodejs
   script:
-    - bash
     - pipenv install
     - make
 
@@ -25,8 +25,8 @@ deploy_to_test:
   dependencies:
     - build_website
   before_script:
-    - apk update
-    - apk add --no-cache lftp
+    - apt update
+    - apt install -c lftp
   script:
     - lftp -e "set ftp:ssl-allow no; mirror --parallel --no-symlinks -R build/ /" -u $TEST_FTP_USER,$TEST_FTP_PASS $TEST_FTP_HOST || true
   only:
@@ -37,8 +37,8 @@ deploy_to_live:
   dependencies:
     - build_website
   before_script:
-    - apk update
-    - apk add --no-cache lftp
+    - apt update
+    - apt install -c lftp
   script:
     - lftp -e "set ftp:ssl-allow no; mirror --parallel --no-symlinks -R build/ /" -u $LIVE_FTP_USER,$LIVE_FTP_PASS $LIVE_FTP_HOST || true
   only:
