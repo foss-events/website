@@ -630,6 +630,16 @@ table.month p.eventdate {
     background-color: #34920a;
 }
 
+.badge--orange {
+    color: #fff;
+    background-color: #fac608;
+}
+
+.badge--red {
+    color: #fff;
+    background-color: #920a35;
+}
+
 .fedifeed {
     border: 1px solid #888;
     height: 800px;
