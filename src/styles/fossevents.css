@@ -646,6 +646,10 @@ table.month p.eventdate {
     width: 100%;
 }
 
+.fedifeed--event {
+    margin-bottom: 2rem;
+}
+
 .icon {
     background-position: center center;
     background-repeat: no-repeat;

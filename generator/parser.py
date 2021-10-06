@@ -148,6 +148,11 @@ def parse_event(row, today):
     else:
         participants = '?'
 
+    if row.get('Mastodon', '').startswith('http'):
+        mastodon = row.get('Mastodon')
+    else:
+        mastodon = None
+
     try:
         lat = float(row['lat'])
         lon = float(row['lon'])
@@ -209,7 +214,8 @@ def parse_event(row, today):
         'tags': row.get('tags', None),
         'tech_in_use': row.get('Technologies in use', None),
         'interactivity': row.get('Online Interactivity', None),
-        'technical_liberties': row.get('Technical Liberties', None)
+        'technical_liberties': row.get('Technical Liberties', None),
+        'mastodon': mastodon
     }
 
     event['ical_path'] = generate_event_ical_path(event)
