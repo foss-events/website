@@ -15,7 +15,7 @@ js: build/js/event.js build/js/leaflet.js
 .PHONY: img
 img: build/favicon.ico $(TARGET_IMGS)
 
-build/styles/fossevents.css: npm_deps_token
+build/styles/fossevents.css: tmp/npm_deps_token
 
 build/styles/fossevents.css: src/styles/fossevents.css src/lib/leaflet/leaflet.css
 	cat $^ | node_modules/postcss-cli/bin/postcss -o $@
@@ -24,11 +24,11 @@ build/img/%: src/img/%
 	@mkdir -p $(@D)
 	cp $< $@
 
-build/img/%.svg: npm_deps_token
+build/img/%.svg: tmp/npm_deps_token
 
-build/img/%.png: npm_deps_token
+build/img/%.png: tmp/npm_deps_token
 
-build/img/%.jpg: npm_deps_token
+build/img/%.jpg: tmp/npm_deps_token
 
 build/img/%.svg: src/img/%.svg
 	node_modules/svgo/bin/svgo $< -o $@
@@ -54,31 +54,33 @@ build/.htaccess: src/.htaccess
 build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
-build/index.html: data/2021_events_db.csv pip_deps_token
+build/index.html: data/2021_events_db.csv tmp/pip_deps_token
 	pipenv run python3 generator/index.py
 
-build/2019/index.html: data/2019_events_db.csv pip_deps_token
+build/2019/index.html: data/2019_events_db.csv tmp/pip_deps_token
 	pipenv run python3 generator/index_2019.py
 
-build/2020/index.html: data/2020_events_db.csv pip_deps_token
+build/2020/index.html: data/2020_events_db.csv tmp/pip_deps_token
 	pipenv run python3 generator/index_2020.py
 
-build/2021/index.html: data/2021_events_db.csv pip_deps_token
+build/2021/index.html: data/2021_events_db.csv tmp/pip_deps_token
 	pipenv run python3 generator/index_2021.py
 
-build/about.html: src/templates/about.html pip_deps_token
+build/about.html: src/templates/about.html tmp/pip_deps_token
 	pipenv run python3 generator/about.py
 
-build/events_token: data/2019_events_db.csv data/2020_events_db.csv data/2021_events_db.csv pip_deps_token
+build/events_token: data/2019_events_db.csv data/2020_events_db.csv data/2021_events_db.csv tmp/pip_deps_token
 	pipenv run python3 generator/event_pages.py
 	pipenv run python3 generator/ical_files.py
 	touch build/events_token
 
-npm_deps_token: package.json package-lock.json
+tmp/npm_deps_token: package.json package-lock.json
 	npm ci
+	touch tmp/npm_deps_token
 
-pip_deps_token: Pipfile Pipfile.lock
+tmp/pip_deps_token: Pipfile Pipfile.lock
 	pipenv install
+	touch tmp/pip_deps_token
 
 .PHONY: clean
 clean:
