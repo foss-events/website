@@ -1,11 +1,21 @@
+#!/usr/bin/env python3
+
 from datetime import datetime
+import sys
 
 from helper import create_jinja_env
 from parser import parse_events, parse_all_events
 
+if len(sys.argv) != 3:
+    print("generator must be called with two arguments year and target, e.g. index.py 2021 build/2020/index.html")
+    sys.exit(1)
+
+year = int(sys.argv[1])
+target = sys.argv[2]
+
 today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
 all_events = parse_all_events()
-events = parse_events('data/2021_events_db.csv', today)
+events = parse_events(f"data/{year}_events_db.csv", today)
 
 env = create_jinja_env()
 template = env.get_template('index.html')
@@ -15,9 +25,7 @@ result = template.render(
     prev=events['prev'],
     has_prev=events['has_prev'],
     all_events=all_events,
-    year='2021',
-    other_year=('2019', '2020'),
-    other_year_link=('2019', '2020')
+    year=year
 )
-with open('build/index.html', 'a') as f:
+with open(target, 'w') as f:
     f.write(result)
