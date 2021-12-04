@@ -24,6 +24,6 @@ def generate_event_pages(events, all_events):
 all_events = parse_all_events()
 today = datetime.now()
 
-for year in [2019, 2020, 2021]:
+for year in [2019, 2020, 2021, 2022]:
     events = parse_events('data/' + str(year) + '_events_db.csv', today)
     generate_event_pages(events['all'].values(), all_events)
