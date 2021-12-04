@@ -308,7 +308,13 @@
 		{% endif %}
 
     {% if event['mastodon'] %}
+        <h1 class="h1">News</h1>
         <div class="h1-divider"></div>
+        <p class="text-center">
+            Don't miss the latest news and<br>
+            follow <a href="{{ event['mastodon'] }}" target="_blank">{{ event['label'] }}</a> on
+            <img class="icon icon--mastodon" src="/img/menu_Mastodon.svg" alt="Mastodon logo"> Mastodon.
+        </p>
         <iframe
                 class="fedifeed fedifeed--event"
                 allowfullscreen
