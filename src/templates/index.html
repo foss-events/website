@@ -47,12 +47,16 @@
 
 
         {% if month['events'] and month_id == '03' %}
-            {% include 'partials/contribute-box.html' %}
+            {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+                {% include 'partials/contribute-box.html' %}
+            {% endwith %}
         {% endif %}
     {% endfor %}
 
     {% if not upcoming['03']['events'] %}
-        {% include 'partials/contribute-box.html' %}
+        {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+            {% include 'partials/contribute-box.html' %}
+        {% endwith %}
     {% endif %}
 
     <!--
@@ -92,12 +96,16 @@
         {% endif %}
 
         {% if month['events'] and month_id == '03' and not has_upcoming %}
-            {% include 'partials/contribute-box.html' %}
+            {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+                {% include 'partials/contribute-box.html' %}
+            {% endwith %}
         {% endif %}
     {% endfor %}
 
     {% if not prev['03']['events'] and not has_upcoming %}
-        {% include 'partials/contribute-box.html' %}
+        {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+            {% include 'partials/contribute-box.html' %}
+        {% endwith %}
     {% endif %}
 {% endif %}
 

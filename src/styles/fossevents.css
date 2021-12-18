@@ -84,15 +84,6 @@ a:hover {
     text-align: center;
 }
 
-.contribute-box__content {
-    border: 5px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.33);
-    box-sizing: content-box;
-    display: inline-block;
-    overflow: visible;
-    padding: .5rem 2rem;
-}
-
 h2.navhead {
     padding-top: 2em;
 }
@@ -561,29 +552,42 @@ table.month p.eventdate {
     color: #9B2C2C;
 }
 
+/* button */
+
+.fe-button {
+    background: #339109;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    padding: .3rem .4rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 100ms linear;
+    width: 8rem;
+}
+
+.fe-button:hover {
+    background: #1A7800;
+    color: white;
+    text-decoration: none;
+}
+
+
 /* about page */
+
+.about-nav {
+    display: flex;
+    justify-content: center;
+}
 
 .about-nav-headline {
     margin-top: 5rem;
     text-align: center;
 }
 
-.about-nav {
-    text-align: center;
-}
-
 .about-nav__item {
-    background: #339109;
-    border-radius: 3px;
-    color: white;
-    display: inline-block;
     margin-bottom: .5rem;
     margin-right: .5rem;
-    padding: .3rem .4rem;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 100ms linear;
-    width: 8rem;
 }
 
 .about-nav__item:hover {
