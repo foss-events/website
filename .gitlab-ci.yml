@@ -13,7 +13,7 @@ build_website:
       - build/
   script:
     - pipenv install
-    - make
+    - make --jobs=2
 
 deploy_to_test:
   stage: deploy

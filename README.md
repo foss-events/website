@@ -7,11 +7,11 @@ Requirements:
 * [Node.js](https://nodejs.org/en/download/package-manager/) >= 12
 * Python >= 3.6
 * pipenv
-* virtualenv
+* make
 
 ```
 pipenv install
-make
+make --jobs=4
 ```
 
 Start the dev server
