@@ -55,7 +55,7 @@ build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
 build/index.html: data/2021_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py
-	pipenv run python3 generator/index.py 2021 build/index.html
+	pipenv run python3 generator/index.py 2022 build/index.html
 
 build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py
 	pipenv run python3 generator/index.py $* build/$*/index.html
