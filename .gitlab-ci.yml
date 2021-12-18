@@ -13,6 +13,7 @@ build_website:
       - build/
   script:
     - pipenv install
+    - make tmp/npm_deps_token
     - make --jobs=2
 
 deploy_to_test:

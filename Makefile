@@ -79,3 +79,4 @@ tmp/pip_deps_token: Pipfile Pipfile.lock
 .PHONY: clean
 clean:
 	rm -rf build
+	rm -f tmp/npm_deps_token tmp/pip_deps_token

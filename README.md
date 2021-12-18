@@ -11,7 +11,7 @@ Requirements:
 
 ```
 pipenv install
-make --jobs=4
+make
 ```
 
 Start the dev server
