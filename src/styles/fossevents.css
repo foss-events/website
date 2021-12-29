@@ -457,6 +457,10 @@ table.month p.eventdate {
     margin-top: 1rem;
 }
 
+.event-subtitle {
+    color: #6c757d;
+}
+
 .event-date {
     font-weight: bold;
     margin-top: 1rem;

@@ -63,7 +63,7 @@ build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/index.
 build/about.html: src/templates/about.html tmp/pip_deps_token
 	pipenv run python3 generator/about.py
 
-build/events_token: data/2019_events_db.csv data/2020_events_db.csv data/2021_events_db.csv tmp/pip_deps_token
+build/events_token: data/2019_events_db.csv data/2020_events_db.csv data/2021_events_db.csv generator/parser.py src/templates/event.html tmp/pip_deps_token
 	pipenv run python3 generator/event_pages.py
 	pipenv run python3 generator/ical_files.py
 	touch build/events_token

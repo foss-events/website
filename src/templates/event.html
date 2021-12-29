@@ -65,7 +65,15 @@
 
 <!-- show event name and topic -->
 
-	<h2 class="event-title">{{ event['label'] }}</h2>
+	<h2 class="event-title">
+        {% if event['shortname'] %}
+            {{ event['shortname'] }} -
+            <small class="event-subtitle">{{ event['name'] }}</small>
+        {% else %}
+            {{ event['label'] }}
+        {% endif %}
+    </h2>
+
 	{% if event['editions_topic'] %}
 		<div class="event-subtitle">This edition's topic: <em>{{ event['editions_topic'] }}</em></div>
 	{% endif %}
