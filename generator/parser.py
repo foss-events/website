@@ -117,6 +117,8 @@ def parse_event(row, today):
 
     end_date = datetime.strptime(row['dateend'], '%Y%m%d')
     end_day = end_date.strftime('%d')
+    end_month = end_date.strftime('%m')
+    end_year = end_date.strftime('%Y')
 
     upcoming_event = end_date >= today
 
@@ -187,6 +189,9 @@ def parse_event(row, today):
         'start_year': start_year,
         'end_date': end_date,
         'end_day': end_day,
+        'end_month': end_month,
+        'end_month_string': months[end_month],
+        'end_year': end_year,
         'homepage': row['homepage'],
         'fee': fee,
         'venue': row['venue'],
