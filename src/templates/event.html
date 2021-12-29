@@ -117,9 +117,19 @@
 <!-- date and location of an event -->
 
 	<div class="event-date">
-		{{ event['start_day'] }}<!--
-			-->{% if event['start_day'] != event['end_day'] %}-{{ event['end_day'] }}{% endif %}
-		{{ event['start_month_string'] }} {{ event['start_year'] }}
+      {# if start and end in different years #}
+        {% if event['start_year'] != event['end_year'] -%}
+        {{ event['start_day'] }} {{ event['start_month_string'] }} {{ event['start_year'] }} -
+      {# if start and end in same year but different months #}
+        {% elif event['start_month'] != event['end_month'] %}
+        {{ event['start_day'] }} {{ event['start_month_string'] }} -
+      {# if start and end in same year and month but different days #}
+        {% elif event['start_day'] != event['end_day'] %}
+        {{ event['start_day'] }}-
+        {%- endif -%}
+      {# if start and end in same year, month and day -> skip if-block! -#}
+        {{ event['end_day'] }} {{ event['end_month_string'] }} {{ event['end_year'] }}
+
 		<a
 				class="event-date__link"
 				href="{{ event['ical_path'] }}">
