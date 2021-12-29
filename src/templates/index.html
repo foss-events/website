@@ -38,6 +38,8 @@
                 {% for event in month['events'] %}
                     {% if event['online'] %}
                         {% include 'partials/event-list-item-online.html' %}
+                    {% elif event['hybrid'] %}
+                        {% include 'partials/event-list-hybrid.html' %}
                     {% else %}
                         {% include 'partials/event-list-item.html' %}
                     {% endif %}
