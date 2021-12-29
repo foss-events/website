@@ -5,7 +5,7 @@ from datetime import datetime
 from pprint import pprint
 
 from helper import get_start_of_month, get_end_of_day, generate_event_details_path, generate_event_ical_path
-from consts import iso_3166_countries, months
+from consts import iso_3166_countries, iso_639_languages, months
 from parse_helper import extract_cfp, extract_meta_keywords
 
 event_type_class_map = {
@@ -140,6 +140,18 @@ def parse_event(row, today):
         country_code = row['country'].strip()
         country = iso_3166_countries.get(country_code, country_code)
 
+    if not row.get('Main language', None) or row.get('Main language') == "?":
+        has_language_info = False
+        main_language = "?"
+        main_language_string = ""
+    else:
+        has_language_info = True
+        main_language = row.get('Main language')
+
+        languages = main_language.split("/")
+        iso_languages = [iso_639_languages.get(lang, lang) for lang in languages]
+        main_language_string = "/".join(iso_languages)
+
     if row['EntranceFee'] != '0':
         fee = row['EntranceFee']
     else:
@@ -200,8 +212,9 @@ def parse_event(row, today):
         'country': country,
         'osm_link': row['OSM-Link'],
         'geo': geo,
-        'has_language_info': row.get('Main language', None) is not None,
-        'main_language': row.get('Main language', '?'),
+        'has_language_info': has_language_info,
+        'main_language': main_language,
+        'main_language_string': main_language_string,
         'cfp_date': cfp['cfp_date'],
         'cfp_passed': cfp['cfp_passed'],
         'cfp_link': cfp['cfp_link'],
