@@ -31,32 +31,6 @@ iso_3166_countries = {
     'UK': 'United Kingdom'  # historical reasons™
 }
 
-iso_639_languages = {
-    "BG": "Bulgarian",
-    "BS": "Bosnian",
-    "CA": "Catalan",
-    "CZ": "Czech",
-    "DA": "Danish",
-    "DE": "German",
-    "EN": "English",
-    "ES": "Spanish",
-    "FI": "Finnish",
-    "FR": "French",
-    "GR": "Greek",
-    "IT": "Italian",
-    "HR": "Croatian",
-    "HU": "Hungarian",
-    "NL": "Dutch",
-    "PL": "Polish",
-    "PT": "Portuguese",
-    "RO": "Romanian",
-    "RU": "Russian",
-    "SQ": "Albanian",
-    "SR": "Serbian",
-    "SV": "Swedish",
-    "UK": "Ukrainian",
-}
-
 months = {
     '01': 'January',
     '02': 'February',
