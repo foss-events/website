@@ -54,10 +54,10 @@ build/.htaccess: src/.htaccess
 build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
-build/index.html: data/2021_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py
+build/index.html: data/2021_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py generator/parser.py
 	pipenv run python3 generator/index.py 2022 build/index.html
 
-build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py
+build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py generator/parser.py
 	pipenv run python3 generator/index.py $* build/$*/index.html
 
 build/about.html: src/templates/about.html tmp/pip_deps_token

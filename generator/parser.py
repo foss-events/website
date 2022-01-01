@@ -178,6 +178,10 @@ def parse_event(row, today):
 
     cfp = extract_cfp(row, today)
 
+    main_organiser = row.get('Main Organiser', None)
+    if main_organiser == "?":
+        main_organiser = None
+
     event = {
         'id': row['id'],
         'label': row['label'],
@@ -186,7 +190,7 @@ def parse_event(row, today):
         'online': row.get('presentation form', None) == 'online',
         'onlinebanner': row.get('onlinebanner', None),
         'editions_topic': row.get('Edition’s Topic', None),
-        'main_organiser': row.get('Main Organiser', None),
+        'main_organiser': main_organiser,
         'description': row['Self-description'],
         'specialities': row.get('Specialties', None),
         'cancelled': row.get('cancelled', None) == 'cancelled',
