@@ -3,6 +3,8 @@ $(shell mkdir -p build/img/eventbanners/2020 build/img/eventbanners/2021 build/i
 # here is the import of all images from src/img into the build process, see https://github.com/foss-events/website/pull/179/commits/b695c04ec9eecf9dbda4efe0646cc592a8c746ef
 SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg')
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
+COMMON=generator/parser.py generator/parse_helper.py
+CSVS=$(wildcard data/*.csv)
 
 all: css js img build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/about.html build/events_token
 
@@ -54,16 +56,16 @@ build/.htaccess: src/.htaccess
 build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
-build/index.html: data/2021_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py generator/parser.py
+build/index.html: data/2022_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py $(COMMON)
 	pipenv run python3 generator/index.py 2022 build/index.html
 
-build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py generator/parser.py
+build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py $(COMMON)
 	pipenv run python3 generator/index.py $* build/$*/index.html
 
 build/about.html: src/templates/about.html tmp/pip_deps_token
 	pipenv run python3 generator/about.py
 
-build/events_token: data/2019_events_db.csv data/2020_events_db.csv data/2021_events_db.csv generator/parser.py src/templates/event.html tmp/pip_deps_token
+build/events_token: $(CSVS) generator/parser.py src/templates/event.html tmp/pip_deps_token
 	pipenv run python3 generator/event_pages.py
 	pipenv run python3 generator/ical_files.py
 	touch build/events_token
