@@ -1,7 +1,11 @@
+import warnings
 from datetime import datetime
 
+from iso639 import Lang
 from helper import get_end_of_day
 
+# only print warning message, not path or message code, etc
+warnings.formatwarning = lambda msg, *args, **kwargs: f'{msg}\n'
 
 def extract_meta_keywords(row):
     meta_keywords = [
@@ -80,3 +84,14 @@ def extract_cfp(row, today):
         'cfp_link': cfp_link,
         'cfp_raw_link': cfp_raw_link
     }
+
+def translate_iso639_code2name(code):
+    code_clean = code.strip().lower()
+
+    try:
+        name = Lang(code_clean).name
+    except:
+        name = code
+        warnings.warn(code + " is not a valid iso 639 code")
+
+    return name
