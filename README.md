@@ -27,3 +27,5 @@ You may now access the website locally in your browser [https://localhost:1337/]
 Please read the [contribute section on the website](https://foss.events/about.html#contributing).
 
 Pull requests are welcome as well.
+
+
