@@ -35,7 +35,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
 
-    <script async defer data-website-id="393f9149-34ad-4d2f-a2f3-9d3760baceec" src="https://traffic.foss.events/umami.js"></script> 
+    <script async defer data-website-id="393f9149-34ad-4d2f-a2f3-9d3760baceec" src="https://traffic.foss.events/umami.js"></script>
 
 
     <title>All about {{ event['label'] }} {{ event['start_year'] }} in a nutshell on // foss.events</title>
@@ -305,6 +305,19 @@
         </div>
     </div>
     {% endif %}
+
+    {% if event['matrix'] %}
+    <div class="event-props__group">
+        <div class="event-props__label">Matrix</div>
+        <div class="event-props__content">
+            <a href=" https://matrix.to/#/{{ event['matrix'] }}">
+                {{ event['matrix'] }}
+            </a>
+        </div>
+    </div>
+    {% endif %}
+
+
     {% if event['tags'] %}
         <div class="event-props__group">
             <div class="event-props__label">Tags</div>
