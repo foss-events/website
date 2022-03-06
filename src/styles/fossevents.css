@@ -563,11 +563,10 @@ table.month p.eventdate {
     border-radius: 3px;
     color: white;
     display: inline-block;
-    padding: .3rem .4rem;
+    padding: .3rem .6rem;
     text-align: center;
     text-decoration: none;
     transition: background-color 100ms linear;
-    width: 8rem;
 }
 
 .fe-button:hover {
