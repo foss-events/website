@@ -10,3 +10,4 @@ icalendar = "*"
 iso639-lang = "*"
 
 [dev-packages]
+reuse = "*"

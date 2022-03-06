@@ -56,16 +56,16 @@ build/.htaccess: src/.htaccess
 build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
-build/index.html: data/2022_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py $(COMMON)
+build/index.html: data/2022_events_db.csv tmp/pip_deps_token src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/index.html generator/index.py $(COMMON)
 	pipenv run python3 generator/index.py 2022 build/index.html
 
-build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/index.html generator/index.py $(COMMON)
+build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/index.html generator/index.py $(COMMON)
 	pipenv run python3 generator/index.py $* build/$*/index.html
 
 build/about.html: src/templates/about.html tmp/pip_deps_token
 	pipenv run python3 generator/about.py
 
-build/events_token: $(CSVS) generator/parser.py src/templates/event.html tmp/pip_deps_token
+build/events_token: $(CSVS) generator/parser.py src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/event.html tmp/pip_deps_token
 	pipenv run python3 generator/event_pages.py
 	pipenv run python3 generator/ical_files.py
 	touch build/events_token
