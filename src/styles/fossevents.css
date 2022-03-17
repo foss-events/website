@@ -89,8 +89,10 @@ h2.navhead {
 }
 
 .menu {
-    padding: 2rem 0 0;
-    text-align: center;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
 }
 
 .menu--spacing-bottom {
@@ -99,15 +101,16 @@ h2.navhead {
 
 .menu__hl {
     display: block;
-    font-size: 2.25rem;
-    margin: 0 0 .85rem;
+    font-size: 1.75rem;
+    font-weight: normal;
+    margin: 0;
+    white-space: nowrap;
 }
 
 .menu__link {
     align-items: center;
     color: #000;
     display: flex;
-    justify-content: center;
     text-decoration: none;
 }
 
@@ -151,39 +154,32 @@ h2.navhead {
 .menu-icons {
     align-items: flex-end;
     display: flex;
+    gap: .5rem;
     justify-content: center;
+    margin-top: .5rem;
 }
 
-.menu-icons__line {
-    display: none;
-}
-
-@media only screen and (min-width: 768px) {
-    .menu-icons__line {
-        background-color: #888;
-        display: block;
-        flex: 0 1 5rem;
-        height: 1px;
+@media only screen and (min-width: 576px) {
+    .menu {
+        align-items: center;
+        flex-direction: row;
     }
-}
 
-.menu-icons__line:first-of-type {
-    margin-right: .8rem;
+    .menu-icons {
+        margin-left: auto;
+        margin-top: 0;
+    }
 }
 
 .menu-icons__icon {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 50%;
     cursor: pointer;
-    height: 2.5rem;
-    margin-right: .8rem;
+    height: 2rem;
     transition: all 100ms linear;
-    width: 2.5rem;
-}
-
-.menu-icons__icon:last-of-type {
-    margin-right: 0;
+    width: 2rem;
 }
 
 .menu-icons__icon--mastodon {
@@ -206,6 +202,18 @@ h2.navhead {
     background-image: url("/img/menu_GitHub.svg");
 }
 
+.menu-icons__icon--matrix {
+    background-color: #34920a;
+    background-image: url("/img/icons/matrix.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.25rem;
+}
+
+.menu-icons__icon--matrix:hover {
+    background-color: #266c08;
+}
+
 .menu-icons__icon--github:hover {
     background-image: url("/img/menu_GitHub_darker.svg");
 }
@@ -213,8 +221,8 @@ h2.navhead {
 .menu-icons__icon--fossevents {
     background-image: url("/img/fossevents_nippelspace.svg");
     background-size: contain;
-    height: 3rem;
-    width: 3rem;
+    border-radius: 0;
+    margin-right: .5rem;
 }
 
 .menu-icons__icon--info {
@@ -667,4 +675,8 @@ table.month p.eventdate {
 
 .icon--mastodon {
     background-image: url("/img/menu_Mastodon.svg");
+}
+
+.introduction {
+    margin-bottom: 4rem;
 }

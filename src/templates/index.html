@@ -9,35 +9,16 @@
 
 {% include 'partials/header-logo.html' %}
 
-<p>
+<p class="introduction">
     // foss.events connects people via the most comprehensive collection of Free, Libre
     and/or Open Source Software events happening in Europe and <span class="badge badge--grey">online</span>.
     <a href="/about.html#diversity" class="button umami--click--frontpage-unity">Unity in diversity!</a>
 </p>
 
-    <div class="h1-divider" style="margin-top:2em;"></div>
-
-    <div class="contribute-box">
-        <p style="font-weight: bold;">
-            <span class="badge badge--grey">NEW</span> 
-            Join us in our 
-            <a 
-                href="https://matrix.to/#/#foss.events:matrix.org" 
-                class="fe-button"
-            >
-                Matrix room
-            </a>
-        </p>
-    </div>
-
 {% if has_upcoming %}
 
-    <div class="h1-divider"></div>
-
-	<h2 id="upcoming" class="h2">
-        Upcoming in {{ year }}
-    </h2>
-
+	<h2 id="upcoming" class="h2">Upcoming in {{ year }}</h2>
+    <div class="h2-divider"></div>
 
     {% for month_id, month in upcoming.items() %}
         {% if month['events'] %}
