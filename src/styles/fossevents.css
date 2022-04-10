@@ -541,7 +541,7 @@ table.month p.eventdate {
 .event__onlinebanner {
     display: block;
     margin: 0 auto 2rem;
-    max-height: 20rem;
+    max-height: 15rem;
     max-width: 100%;
 }
 
