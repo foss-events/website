@@ -310,8 +310,19 @@
     <div class="event-props__group">
         <div class="event-props__label">Matrix</div>
         <div class="event-props__content">
-            <a href=" https://matrix.to/#/{{ event['matrix'] }}">
+            <a href=" https://matrix.to/#/{{ event['matrix'] }}" target="_blank">
                 {{ event['matrix'] }}
+            </a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if event['mailinglist'] %}
+    <div class="event-props__group">
+        <div class="event-props__label">Mailing list</div>
+        <div class="event-props__content">
+            <a href="{{ event['mailinglist'] }}" target="_blank">
+                Subscribe
             </a>
         </div>
     </div>
