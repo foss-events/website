@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+import csv
+import os
+import subprocess
+import sys
+from tempfile import NamedTemporaryFile, TemporaryFile
+
+if len(sys.argv) < 3:
+    print("params missing; usage: ./fe file line")
+    sys.exit(1)
+
+editor = os.getenv("EDITOR")
+editfile = sys.argv[1]
+editline = int(sys.argv[2])
+line = 0
+
+with open(editfile, "r") as f:
+    reader = csv.DictReader(f, delimiter="	")
+    for row in reader:
+        line += 1
+        if line == editline:
+            with NamedTemporaryFile(mode="r+") as t:
+                for k,v in row.items():
+                    t.write(f"{k}: {v}\n")
+                t.flush()
+                p = subprocess.Popen([editor, t.name])
+                p.wait()
+
+                t.seek(0)
+                values = []
+                for line in t:
+                    stripped = line.strip()
+                    parts = stripped.split(":", maxsplit=1)
+                    values.append(parts[1].strip())
+
+                with TemporaryFile(mode="w+") as outfile:
+                    csvoutfile = csv.writer(outfile, delimiter="	")
+                    csvoutfile.writerow(values)
+                    outfile.seek(0)
+                    targetline = outfile.readline()
+            break
+
+with open(editfile, "r") as f:
+    contents = f.readlines()
+
+contents[editline] = targetline
+
+with open(editfile, "w") as f:
+    f.writelines(contents)
