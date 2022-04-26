@@ -70,7 +70,7 @@ def generate_calendar(events, now):
 
 now = datetime.now()
 
-for year in [2019, 2020, 2021]:
+for year in [2019, 2020, 2021, 2022]:
     events = parse_events('data/' + str(year) + '_events_db.csv', now)
     generate_event_ical_files(events['all'].values(), now)
 
