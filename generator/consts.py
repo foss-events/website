@@ -25,6 +25,7 @@ iso_3166_countries = {
     'RO': 'Romania',
     'RS': 'Serbia',
     'SE': 'Sweden',
+    'TR': 'Turkey',
     'UA': 'Ukraine',
     'EU': 'Europe',
     'ZZ': 'International', # ZZ is a "User-assigned code element" and free to use: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#ZZ
