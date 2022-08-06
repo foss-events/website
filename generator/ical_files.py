@@ -74,5 +74,5 @@ for year in [2019, 2020, 2021, 2022]:
     events = parse_events('data/' + str(year) + '_events_db.csv', now)
     generate_event_ical_files(events['all'].values(), now)
 
-events_2021 = parse_events('data/2022_events_db.csv', now)
-generate_calendar(events['all'].values(), now)
+events_2022 = parse_events('data/2022_events_db.csv', now)
+generate_calendar(events_2022['all'].values(), now)
