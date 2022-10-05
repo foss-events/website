@@ -1,5 +1,5 @@
-$(shell mkdir -p build/2019 build/2020 build/2021 build/2022 build/img/eventlogos/2020 build/js build/styles/images)
-$(shell mkdir -p build/img/eventbanners/2020 build/img/eventbanners/2021 build/img/eventbanners/2022)
+$(shell mkdir -p build/2019 build/2020 build/2021 build/2022 build/2023 build/img/eventlogos/2020 build/js build/styles/images)
+$(shell mkdir -p build/img/eventbanners/2020 build/img/eventbanners/2021 build/img/eventbanners/2022 build/img/eventbanners/2023)
 # here is the import of all images from src/img into the build process, see https://github.com/foss-events/website/pull/179/commits/b695c04ec9eecf9dbda4efe0646cc592a8c746ef
 SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg')
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
