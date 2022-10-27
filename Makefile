@@ -6,7 +6,7 @@ TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 COMMON=generator/parser.py generator/parse_helper.py
 CSVS=$(wildcard data/*.csv)
 
-all: css js img build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/about.html build/events_token
+all: css js img build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
 
 .PHONY: css
 css: build/styles/fossevents.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png

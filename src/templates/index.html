@@ -15,6 +15,15 @@
     <a href="/about.html#diversity" class="button umami--click--frontpage-unity">Unity in diversity!</a>
 </p>
 
+<div class="text-center">
+    {% if year == 2022 %}
+    <a class="fe-button" href="/2023/">Show 2023</a>
+    {% else %}
+    <a class="fe-button" href="/2022/">Show current year</a>
+    {% endif %}
+</div>
+
+
 {% if has_upcoming %}
 
 	<h2 id="upcoming" class="h2">Upcoming in {{ year }}</h2>
