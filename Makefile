@@ -5,6 +5,7 @@ SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -nam
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 COMMON=generator/parser.py generator/parse_helper.py
 CSVS=$(wildcard data/*.csv)
+export PYTHONWARNINGS = ignore
 
 all: css js img build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
 
