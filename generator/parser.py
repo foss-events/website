@@ -241,9 +241,29 @@ def parse_event(row, today):
         'mastodon': mastodon,
         "matrix": row.get('Matrix', None),
         "mailinglist": row.get('Mailinglist', None),
+        "hashtag": row.get('hashtag', None),
     }
 
+    printable_date = ""
+
+    if event["start_year"] != event["end_year"]:
+        printable_date = event["start_day"] + " " + event["start_month_string"] + " " + event["start_year"] + " - "
+    elif event["start_month"] != event["end_month"]:
+        printable_date = event['start_day'] + " " + event['start_month_string'] + " - "
+    elif event["start_day"] != event["end_day"]:
+        printable_date = event["start_day"] + "-"
+
+    printable_date = printable_date + event["end_day"] + " " + event["end_month_string"] + " " + event["end_year"]
+    event["printable_date"] = printable_date
+
     event['ical_path'] = generate_event_ical_path(event)
+
+    printable_short_location = event["city"]
+
+    if event["city"] and event["country"]:
+        printable_short_location = printable_short_location + ", " + event["country"]
+
+    event["printable_short_location"] = printable_short_location
 
     readable_location = event['venue']
 

@@ -9,7 +9,7 @@ CSVS=$(wildcard data/*.csv)
 POSTS=$(wildcard blog/*.html)
 export PYTHONWARNINGS = ignore
 
-all: css js img build/blog/% build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
+all: css js img build/toots.html build/blog/% build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
 
 .PHONY: css
 css: build/styles/fossevents.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
@@ -70,6 +70,9 @@ build/blog/%: $(POSTS)
 
 build/about.html: src/templates/about.html tmp/pip_deps_token
 	pipenv run python3 generator/about.py
+
+build/toots.html: data/2023_events_db.csv
+	pipenv run python3 generator/toots.py
 
 build/events_token: $(CSVS) generator/parser.py src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/event.html tmp/pip_deps_token
 	pipenv run python3 generator/event_pages.py

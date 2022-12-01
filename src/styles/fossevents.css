@@ -725,3 +725,16 @@ table.month p.eventdate {
 .blog-post__title {
     margin: 2rem 0 0;
 }
+
+.toot {
+    margin-bottom: 2rem;
+}
+
+.toot pre {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    padding: .75rem;
+    white-space: pre-wrap;
+}
