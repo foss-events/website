@@ -1,13 +1,15 @@
 $(shell mkdir -p build/2019 build/2020 build/2021 build/2022 build/2023 build/img/eventlogos/2020 build/js build/styles/images)
 $(shell mkdir -p build/img/eventbanners/2020 build/img/eventbanners/2021 build/img/eventbanners/2022 build/img/eventbanners/2023)
+$(shell mkdir -p build/img/blog)
 # here is the import of all images from src/img into the build process, see https://github.com/foss-events/website/pull/179/commits/b695c04ec9eecf9dbda4efe0646cc592a8c746ef
 SOURCE_IMGS=$(shell find src/img/ -type f -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg')
 TARGET_IMGS=$(subst src,build,$(SOURCE_IMGS))
 COMMON=generator/parser.py generator/parse_helper.py
 CSVS=$(wildcard data/*.csv)
+POSTS=$(wildcard blog/*.html)
 export PYTHONWARNINGS = ignore
 
-all: css js img build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
+all: css js img build/blog/% build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
 
 .PHONY: css
 css: build/styles/fossevents.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
@@ -62,6 +64,9 @@ build/index.html: data/2022_events_db.csv tmp/pip_deps_token src/templates/parti
 
 build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/index.html generator/index.py $(COMMON)
 	pipenv run python3 generator/index.py $* build/$*/index.html
+
+build/blog/%: $(POSTS)
+	pipenv run python3 generator/blog.py
 
 build/about.html: src/templates/about.html tmp/pip_deps_token
 	pipenv run python3 generator/about.py

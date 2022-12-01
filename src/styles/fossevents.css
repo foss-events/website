@@ -19,7 +19,13 @@ body {
 
 /* preloading */
 body:after {
-    content: url(/img/menu_Mastodon_darker.svg) url(/img/menu_Twitter_darker.svg) url(/img/menu_GitHub_darker.svg) url(/img/menu_info_darker.svg) url(/img/menu_envelope_darker.svg);
+    content:
+        url(/img/menu_Mastodon_darker.svg)
+        url(/img/menu_Twitter_darker.svg)
+        url(/img/menu_blog_darker.svg)
+        url(/img/menu_GitHub_darker.svg)
+        url(/img/menu_info_darker.svg)
+        url(/img/menu_envelope_darker.svg);
     display: inline-block;
     height: 0;
     position: absolute;
@@ -188,6 +194,14 @@ h2.navhead {
 
 .menu-icons__icon--mastodon:hover {
     background-image: url("/img/menu_Mastodon_darker.svg");
+}
+
+.menu-icons__icon--blog {
+    background-image: url("/img/menu_blog.svg");
+}
+
+.menu-icons__icon--blog:hover {
+    background-image: url("/img/menu_blog_darker.svg");
 }
 
 .menu-icons__icon--twitter {
@@ -679,4 +693,35 @@ table.month p.eventdate {
 
 .introduction {
     margin-bottom: 4rem;
+}
+
+.blog-item {
+    margin-bottom: 4rem;
+}
+
+.blog-item__title {
+    margin: 0;
+}
+
+.blog-item__date,
+.blog-post__date {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.blog-item__summary {
+    margin-bottom: .5rem;
+    padding-left: 2rem;
+}
+
+.blog-item__link {
+    padding-left: 2rem;
+}
+
+.blog-post img {
+    max-width: 100%;
+}
+
+.blog-post__title {
+    margin: 2rem 0 0;
 }

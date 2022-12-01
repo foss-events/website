@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/styles/fossevents.css">
+
+    <title>{{ title }} on // foss.events blog</title>
+
+    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+</head>
+
+<body>
+    {% include 'partials/header-logo.html' %}
+
+    <a href="/blog.html">← read all blog posts</a>
+
+    <div class="blog-post">
+        <h1 class="blog-post__title">{{ title }}</h1>
+        <div class="blog-post__date">{{ date }}</div>
+        <div class="blog-post__article">
+            {{ article }}
+        </div>
+    </div>
+
+    {% include 'partials/footer.html' %}
+</body>
+</html>
