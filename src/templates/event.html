@@ -208,6 +208,15 @@
             <div class="event-props__content"><em>{{ event['description'] }}</em></div>
         </div>
     {% endif %}
+
+    {% if event['hashtag'] %}
+        <div class="event-props__group">
+            <div
+                    class="event-props__label">Hashtag</div>
+            <div class="event-props__content"><em>{{ event['hashtag'] }}</em></div>
+        </div>
+    {% endif %}
+    
 	{% if event['main_organiser'] %}
         <div class="event-props__group">
             <div class="event-props__label">Main organiser</div>
