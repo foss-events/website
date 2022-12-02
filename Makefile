@@ -9,7 +9,7 @@ CSVS=$(wildcard data/*.csv)
 POSTS=$(wildcard blog/*.html)
 export PYTHONWARNINGS = ignore
 
-all: css js img build/toots.html build/blog/% build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
+all: build/robots.txt css js img build/toots.html build/blog/% build/.htaccess build/index.html build/2019/index.html build/2020/index.html build/2021/index.html build/2022/index.html build/2023/index.html build/about.html build/events_token
 
 .PHONY: css
 css: build/styles/fossevents.css build/styles/images/marker-icon.png build/styles/images/marker-icon-2x.png build/styles/images/marker-shadow.png
@@ -43,6 +43,9 @@ build/img/%.png: src/img/%.png
 
 build/img/%.jpg: src/img/%.jpg
 	node_modules/imagemin-cli/cli.js $< > $@
+
+build/robots.txt: src/robots.txt
+	cp src/robots.txt build/robots.txt
 
 build/styles/images/%.png: src/lib/leaflet/images/%.png
 	cp $< $@
