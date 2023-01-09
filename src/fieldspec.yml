@@ -1,6 +1,7 @@
 # foss.events field spec
 #
 # Properties for all fields:
+# label: Human readable field label
 # description: Field description
 # optional: true/false, defaults to false
 # default: Default field value, if not set
@@ -41,8 +42,10 @@
 fields:
   id:
     type: id
+    label: Event-Id
   label:
     type: text
+    label: Label
     description: Event label. Used in lists (e.g. on the home page)
     max_length: 50
   approved:
@@ -50,6 +53,7 @@ fields:
     description: Whether the event will be listed on foss.events
   datestart:
     type: date
+    label: Start date
   dateend:
     type: date
   homepage:
