@@ -1,0 +1,76 @@
+# foss.events field spec
+#
+# Properties for all fields:
+# description: Field description
+# optional: true/false, defaults to false
+# default: Default field value, if not set
+#
+# Types
+#
+# id: unique across all records
+#
+# text: Arbitrary text content
+# Properties:
+# - max_length: Max number of chars
+# - html: Allow HTML input
+#
+# bool: Boolean flag field. Allowed values: true/false
+#
+# date: Date value in YYYYMMDD format
+#
+# url: Valid URL
+#
+# country: ISO 3166 country code
+#
+# language: ISO 639-2 language code
+#
+# float: Decimal number
+#
+# set: Set of items from a list of values
+# Properties:
+# - values: List of values
+# Value fields:
+# - Value: Value to store
+# - Description: Value description
+#
+# choice: Item from a list of values (see set)
+#
+# matrix_room: Valid matrix room Id
+
+---
+fields:
+  id:
+    type: id
+  label:
+    type: text
+    description: Event label. Used in lists (e.g. on the home page)
+    max_length: 50
+  approved:
+    type: bool
+    description: Whether the event will be listed on foss.events
+  datestart:
+    type: date
+  dateend:
+    type: date
+  homepage:
+    type: url
+  country:
+    type: country
+    optional: true
+  lat:
+    type: float
+    optional: true
+  type:
+    type: set
+    description: Type of the event
+    values:
+      - value: Community Event
+        description: Tach…
+      - value: Unconference
+        description: |
+          Multi
+          Line
+          Description
+  matrix:
+    type: matrix_room
+    optional: true
