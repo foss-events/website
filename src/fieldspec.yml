@@ -5,6 +5,7 @@
 # description: Field description
 # optional: true/false, defaults to false
 # default: Default field value, if not set
+# display: a text that is shown as an example entry inside the field, that dissapears with the first key stroke
 #
 # Types
 #
@@ -39,42 +40,254 @@
 # matrix_room: Valid matrix room Id
 
 ---
+
+# I think it makes sense to visually group the fields in clusters including a subheading
 fields:
+# Main data
   id:
     type: id
     label: Event-Id
+    description: Please help us and give your event a unique ID. We use the current Unix Timestamp at the time of this entry as a unique ID for each event. You can find the current Unix Timestamp at <a href="https://www.unixtimestamp.com/">https://www.unixtimestamp.com/</a> and copy from there.
+    display: 1676546736
+    max_langth: 10
   label:
     type: text
     label: Label
-    description: Event label. Used in lists (e.g. on the home page)
-    max_length: 50
-  approved:
-    type: bool
-    description: Whether the event will be listed on foss.events
-  datestart:
-    type: date
-    label: Start date
-  dateend:
-    type: date
+    description: The common name of an event that we use to display in lists (e.g. on the home page) and other forms of visualizations.
+    display: e.g. FOSDEM
+    max_length: 40
+  name:
+    type: text
+    label: Full Name
+    description: The full name of an event without abbreviations
+    display: e.g. Free and Open Source Software Developers European Meeting
+    max_length: 80
   homepage:
     type: url
+    label: Homepage
+    description: The URL of your event
+    display: e.g. https://fosdem.org/2023/
+  datestart:
+    type: date
+    label: Start Date
+    description: The day the event starts in format year-month-date
+    display: YYYYMMDD
+  dateend:
+    type: date
+    label: End Date
+    description: The day the event ends in format year-month-date. Can be the same as the start date in case of one-day events.
+    display: YYYYMMDD
+  presentation form:
+    type: set
+    label: Presentation Form
+    description: Please choose if the event is a physical-only event, and online-only event or a hybrid of both.
+    values:
+      - value: online
+      - value: physical
+      - value: hybrid
+    optional: true
+
+# Location - obviously for physcial events only
+  city:
+    type: text
+    label: City
+    description: The city in that the event happens. 
+    display: e.g. Brussels
+    optional: true
   country:
     type: country
+    label: Country
+    description: the country in that the city is in that the events happens. Please choose the an ISO 3166 country code from the list.
+    optional: true
+  venue:
+    type: text
+    label: Venue
+    description: Name of the venue in that the event happens. This could be any kind from congress center to a university to a local space. 
+    display: e.g. Université Libre Bruxelles
+    optional: true
+  OSM-Link:
+    type: url
+    label: OSM-Link
+    description: The Open Streetmap link that shows the venue of the event. Probably this is a unique identifier in OSM, if not you can simply use the link that corresponds to the location's lat and lon. You can find out this link by right-clicking any point on Open Streetmap and choose "show address". <a href="URL">See our help page</a> for more information.
+    display: e.g. https://www.openstreetmap.org/relation/13699100
     optional: true
   lat:
     type: float
+    label: Latitude (lan)
+    description: The latitude of the location where the event happens. You can find out lat and lon by right-clicking any point on Open Streetmap and choose "show address". <a href="URL">See our help page</a> for more information.
+    display: 50.81295
+    optional: true
+  lon:
+    type: float
+    label: Longitude (lon)
+    description: The longitude of the location where the event happens. You can find out lat and lon by right-clicking any point on Open Streetmap and choose "show address". <a href="URL">See our help page</a> for more information.
+    display: 4.38002
+    optional: true
+
+# More details about the event
+  Self-description:
+    type: text
+    label: Self-Description
+    description: A concise description of the event up to 3 paragraphs. The text should be copied from the event's page and if possible in English - else you can copy & paste the description in the event's local language. Please do not write a descriptoin yourself. See <a href="URL">our help page</a> for some examples.
+    display: e.g. FOSDEM is a free event for software developers to meet, share ideas and collaborate. Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels. You don't need to register. Just turn up and join in!
+  language:
+    type: language
+    label: Main language
+    description: Please choose the default language following the ISO 639-2 language code. The default language means the main language of the talks given, not of the visitors. The main language is English, for example, in case all talks are in English although the visitors speak mainly another (local) language. 
+    optional: true
+  cfplink:
+    type: url
+    label: Call for Participation
+    description: An url with the call for participation for speakers etc.
+    display: e.g. https://fosdem.org/2023/news/2022-11-13-call-for-presentations/
+    optional: true
+  cfpdate:
+    type: date
+    label: CfP Deadline
+    description: The deadline for the call for participation to apply in format year-month-day.
+    display: YYYYMMDD
+    optional: true
+  coclink:
+    type: url
+    label: Code of Conduct
+    description: An URL that shows the code of conduct of the event.
+    display: e.g. https://fosdem.org/2023/practical/conduct/
+    optional: true
+  hashtag:
+    type: text
+    label: Hashtag
+    description: The hashtag(s) the organisers of the event decided to use as official hashtag for this event
+    display: e.g. #fosdem #fosdem23
+    max_length: 80
+    optional: true
+  onlinebanner:
+    type: url
+    label: Picture/Banner
+    description: Please put an url where we can find a banner or a picture of the event. Best visibility is 650 x 250 pixel.
+    display: e.g. https://fosdem.org/2023/support/promote/box.png
     optional: true
   type:
     type: set
-    description: Type of the event
+    description: At // foss.events we try to sort events in different types to help people find their favorite events. <a href="URL">See our help page</a> for more information.
     values:
       - value: Community Event
-        description: Tach…
+      - value: Project Event
+      - value: Science Event
+      - value: Business Event
+      - value: Policy Event
+      - value: Exhibition/Fair
+      - value: Hackmeeting
+      - value: Hackathon
+      - value: Camping
+      - value: Festival
       - value: Unconference
-        description: |
-          Multi
-          Line
-          Description
+      - value: Global Day
+      - value: Regional Day
+  Specialties:
+    type: text
+    label: Any Specialties
+    description: Anything that is special about the event and not similar to other events. This could be for example a lottery taking place among participants, a night-event that participants are invited, developer rooms, villages ... 
+    display: 
+    optional: true
+
+
+# Admission and organisation
+  ParticipantsLastTime:
+    type: float
+    label: Number of Participants
+    description: An estimated or official number of visitors this event happened the last time. 
+    display: 100
+    optional: true
+  EntranceFee:
+    type: float
+    label: Standard Participation Fee
+    description: The Standard participation fee if you buy a standard ticket without discount, early bird, support ticket etc. Please put your value in Euro  or an approcximate value in Euro if you need to convert it from another currency.
+    display: 0
+    optional: true
+  Registration:
+    type: url
+    label: Registration
+    description: A link to a registration form to buy a ticket in advance, if necessary.
+    display: 
+    optional: true
+  Main Organiser:
+    type: text
+    label: Main Organiser
+    description: Person(s) or association(s) who are mainly organising the event. Can be multiple. 
+    display: e.g. Fosdem Team
+    optional: true
+  Main Sponsor:
+    type: text
+    label: Main Sponsor
+    description: Main sponsor of the event. Can be multiple. 
+    display: 
+    optional: true
+  First Edition:
+    type: text
+    label: First Edition
+    description: The year when the first edition of the event has happened. You can also include a link here to a first edition, if the URL still exists. <a href="URL">See our help page</a> for more information.
+    display: e.g. 2001 or <a href="https://archive.fosdem.org/2001/index.html">2001</a>
+    optional: true
+
+# Technologies - for hybrid and online events only
+  Technologies in use:
+    type: text
+    label: Technologies in use
+    description: Please list the technologies that are used for this event. For example Jitsi, Big Blue Button or Rocket Chat. But also platforms like peertube or youtube. 
+    display: e.g. Big Blue Button and Matrix
+    optional: true
+  Online Interactivity:
+    type: text
+    label: Online Interactivity
+    description: Please specify how online participants can interact with organisers and/or with each other.
+    display: e.g. Q+A with the speakers, virtual rooms
+    optional: true
+  Timezone:
+    type: text
+    label: Timezone
+    description: Please let us know the universal time zone in that your event happens. 
+    display: e.g. UTC+1
+    optional: true
+    max_length: 10
+
+# I think it does not make sense to let users decide about approval, this should be done by moderators. 
+#  approved:
+#    type: bool
+#    description: Whether the event will be listed on foss.events
+
+
+# And a last thing: social accounts
+  Mastodon:
+    type: url
+    label: Mastodon
+    description: URL of the event's Mastodon account - latest toots will be shown on the event's page
+    display: https://fosstodon.org/@fosdem
+    optional: true
   matrix:
     type: matrix_room
+    label: Matrix
+    description: URL of the event's Matrix room
+    display:
     optional: true
+  Pixelfed:
+    type: url
+    label: Pixelfed
+    description: URL of the event's Pixelfed account
+    display: 
+    optional: true
+  Peertube:
+    type: url
+    label: Peertubge
+    description: URL of the event's Peertube account
+    display:
+    optional: true
+  Git*:
+    type: url
+    label: Git*
+    description: URL of the event's git page
+    display:
+    optional: true
+    
+
+
+
