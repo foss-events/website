@@ -32,7 +32,7 @@ Send an e-mail to [onemore@foss.events](mailto:onemore@foss.events).
 
 ### Add an event via Git
 
-* For [this repo](https://github.com/foss-events/website)
+* Fork [this repo](https://github.com/foss-events/website)
 * Add you event to [the CSV file](https://github.com/foss-events/website/tree/master/data)
 * Optionally [provide a logo](https://github.com/foss-events/website/tree/master/src/img/eventbanners)
 * Open a pull request
