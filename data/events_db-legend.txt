@@ -39,7 +39,7 @@ Variable
 * Science Conference = Conference run by and for scientists
 * Business Conference = Conference organised for and by Business, business booths for money etc. Examples: CubeCon, OpenExpo, Linuxplumbet etc
 * Policy Conference = Conference run by and for administrations, policy, politics. Examples: Connected Smart Cities Conference
-* Exhibition = Messe (ohne talks) without conferene, normally aber gemischt mit einer form von konferenz
+* Exhibition = Messe (ohne talks) without conference, normally aber gemischt mit einer form von konferenz
 * Hackmeeting = Meetings to hack together without conference around and without competition like in a hackathon. Examples: GNU Hackers Meeting, Debcamp etc
 * Hackathon = competitive hack events with winners and awards
 * Camping
