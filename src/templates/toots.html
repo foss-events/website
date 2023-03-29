@@ -28,7 +28,9 @@
 {% if toot.cfp %}
 Call for participation is running until {{ toot.cfp }}
 {% endif %}{% if toot.hashtags %}
-{{ toot.hashtags }} {% endif %}</code></pre>
+{{ toot.hashtags }} {% endif %}
+{% if toot.mastodon %}
+{{ toot.mastodon }} {% endif %}</code></pre>
 
             <pre><code>Just one Week left to apply for a talk at {{ toot.label }} {% if toot.main_organiser %}by {{ toot.main_organiser }}{% endif %} on {{ toot.printable_date }} {% if toot.printable_short_location %}in {{ toot.printable_short_location }}{% endif %}
 
