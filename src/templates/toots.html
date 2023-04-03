@@ -28,18 +28,21 @@
 {% if toot.cfp %}
 Call for participation is running until {{ toot.cfp }}
 {% endif %}{% if toot.hashtags %}
-{{ toot.hashtags }} {% endif %}</code></pre>
+{{ toot.hashtags }} {% endif %}{% if toot.mastodon %}
+{{ toot.mastodon }} {% endif %}</code></pre>
 
             <pre><code>Just one Week left to apply for a talk at {{ toot.label }} {% if toot.main_organiser %}by {{ toot.main_organiser }}{% endif %} on {{ toot.printable_date }} {% if toot.printable_short_location %}in {{ toot.printable_short_location }}{% endif %}
 
 {{ toot.url }}
 {% if toot.hashtags %}
-{{ toot.hashtags }} {% endif %}</code></pre>
+{{ toot.hashtags }} {% endif %}{% if toot.mastodon %}
+{{ toot.mastodon }} {% endif %}</code></pre>
             <pre><code>Wishing everyone a great time at {{ toot.label }} {% if toot.main_organiser %}by {{ toot.main_organiser }}{% endif %}{% if toot.printable_short_location %} starting today in {{ toot.printable_short_location }}{% endif %}
 
 {{ toot.url }}
 {% if toot.hashtags %}
-{{ toot.hashtags }} {% endif %}</code></pre>
+{{ toot.hashtags }} {% endif %}{% if toot.mastodon %}
+{{ toot.mastodon }} {% endif %}</code></pre>
         </div>
         {% endfor %}
     </div>

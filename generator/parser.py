@@ -238,7 +238,7 @@ def parse_event(row, today):
         'tech_in_use': row.get('Technologies in use', None),
         'interactivity': row.get('Online Interactivity', None),
         'technical_liberties': row.get('Technical Liberties', None),
-        'mastodon': mastodon,
+        'mastodon': row.get('Mastodon', None),
         "matrix": row.get('Matrix', None),
         "mailinglist": row.get('Mailinglist', None),
         "hashtag": row.get('hashtag', None),

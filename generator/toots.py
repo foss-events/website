@@ -29,6 +29,7 @@ for event in events["all"].values():
         "url": "https://foss.events/" + generate_event_details_path(event),
         "hashtags": event["hashtag"],
         "cfp": cfp,
+        "mastodon": event["mastodon"],
     })
 
 with open("build/toots.html", "w") as f:
