@@ -8,5 +8,5 @@ result = template.render(
     other_year='2019',
     other_year_link='2019'
 )
-with open('build/about.html', 'a') as f:
+with open('build/about.html', 'w') as f:
     f.write(result)
