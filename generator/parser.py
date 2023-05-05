@@ -162,10 +162,17 @@ def parse_event(row, today):
     else:
         participants = '?'
 
-    if row.get('Mastodon', '').startswith('http'):
-        mastodon = row.get('Mastodon')
-    else:
-        mastodon = None
+    mastodon = None
+    mastodon_raw = row.get('Mastodon')
+
+    if mastodon_raw:
+        if mastodon_raw.startswith('https'):
+            mastodon = row.get('Mastodon')
+        elif mastodon_raw.startswith('@'):
+            mastodon_parts = mastodon_raw.split('@')
+
+            if len(mastodon_parts) == 3:
+                mastodon = f"https://{mastodon_parts[2]}/@{mastodon_parts[1]}"
 
     try:
         lat = float(row['lat'])
@@ -238,7 +245,7 @@ def parse_event(row, today):
         'tech_in_use': row.get('Technologies in use', None),
         'interactivity': row.get('Online Interactivity', None),
         'technical_liberties': row.get('Technical Liberties', None),
-        'mastodon': row.get('Mastodon', None),
+        'mastodon': mastodon,
         "matrix": row.get('Matrix', None),
         "mailinglist": row.get('Mailinglist', None),
         "hashtag": row.get('hashtag', None),
