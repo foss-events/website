@@ -4,9 +4,9 @@ import sys
 from datetime import datetime
 from pprint import pprint
 
-from helper import get_start_of_month, get_end_of_day, generate_event_details_path, generate_event_ical_path
-from consts import iso_3166_countries, months
-from parse_helper import extract_cfp, extract_meta_keywords, translate_iso639_code2name
+from .helper import get_start_of_month, get_end_of_day, generate_event_details_path, generate_event_ical_path
+from .consts import iso_3166_countries, months
+from .parse_helper import extract_cfp, extract_meta_keywords, translate_iso639_code2name
 
 event_type_class_map = {
     'Global Day': 'event--highlighted',
@@ -105,9 +105,9 @@ def parse_event(row, today):
     end_of_today = get_end_of_day(today)
 
     try:
-        start_date = datetime.strptime(row['datestart'], '%Y%m%d')
+        start_date = datetime.strptime(row['date_start'], '%Y%m%d')
     except ValueError:
-        pprint('error parsing datestart')
+        pprint('error parsing date_start')
         pprint(row)
         return None
 
@@ -115,7 +115,7 @@ def parse_event(row, today):
     start_month = start_date.strftime('%m')
     start_year = start_date.strftime('%Y')
 
-    end_date = datetime.strptime(row['dateend'], '%Y%m%d')
+    end_date = datetime.strptime(row['date_end'], '%Y%m%d')
     end_day = end_date.strftime('%d')
     end_month = end_date.strftime('%m')
     end_year = end_date.strftime('%Y')
@@ -124,8 +124,8 @@ def parse_event(row, today):
 
     classes = event_type_class_map.get(row['type'], '')
 
-    if row['coclink'] and row['coclink'] != 'nococ':
-        coc_link = row['coclink']
+    if row['coc_link'] and row['coc_link'] != 'nococ':
+        coc_link = row['coc_link']
     else:
         coc_link = None
 
@@ -140,34 +140,34 @@ def parse_event(row, today):
         country_code = row['country'].strip()
         country = iso_3166_countries.get(country_code, country_code)
 
-    if not row.get('Main language', None) or row.get('Main language') == "?":
+    if not row.get('main_language', None) or row.get('main_language') == "?":
         has_language_info = False
         main_language = ""
         main_language_string = ""
     else:
         has_language_info = True
-        main_language = row.get('Main language')
+        main_language = row.get('main_language')
 
         languages = main_language.split("/")
         iso_language_names = [translate_iso639_code2name(lang) for lang in languages]
         main_language_string = "/".join(iso_language_names)
 
-    if row['EntranceFee'] != '0':
-        fee = row['EntranceFee']
+    if row['entrance_fee'] != '0':
+        fee = row['entrance_fee']
     else:
         fee = None
 
-    if row['ParticipantsLastTime']:
-        participants = row['ParticipantsLastTime']
+    if row['participants_last_time']:
+        participants = row['participants_last_time']
     else:
         participants = '?'
 
     mastodon = None
-    mastodon_raw = row.get('Mastodon')
+    mastodon_raw = row.get('mastodon')
 
     if mastodon_raw:
         if mastodon_raw.startswith('https'):
-            mastodon = row.get('Mastodon')
+            mastodon = row.get('mastodon')
         elif mastodon_raw.startswith('@'):
             mastodon_parts = mastodon_raw.split('@')
 
@@ -185,7 +185,7 @@ def parse_event(row, today):
 
     cfp = extract_cfp(row, today)
 
-    main_organiser = row.get('Main Organiser', None)
+    main_organiser = row.get("main_organiser", None)
     if main_organiser == "?":
         main_organiser = None
 
@@ -196,10 +196,10 @@ def parse_event(row, today):
         'shortname': row.get('shortname', None),
         'online': row.get('presentation form', None) == 'online',
         'onlinebanner': row.get('onlinebanner', None),
-        'editions_topic': row.get('Edition’s Topic', None),
+        'editions_topic': row.get('editions_topic', None),
         'main_organiser': main_organiser,
-        'description': row['Self-description'],
-        'specialities': row.get('Specialties', None),
+        'description': row["self_description"],
+        'specialities': row.get('specialities', None),
         'cancelled': row.get('cancelled', None) == 'cancelled',
         'postponed': row.get('cancelled', None) == 'postpone',
         'replacement': row.get('replacement', None),
@@ -221,7 +221,7 @@ def parse_event(row, today):
         'venue': row['venue'],
         'city': city,
         'country': country,
-        'osm_link': row['OSM-Link'],
+        'osm_link': row['osm_link'],
         'geo': geo,
         'has_language_info': has_language_info,
         'main_language': main_language,
@@ -231,23 +231,23 @@ def parse_event(row, today):
         'cfp_link': cfp['cfp_link'],
         'cfp_raw_link': cfp['cfp_raw_link'],
         'coc_link': coc_link,
-        'registration': row['Registration'],
-        'timezone': row.get('Timezone', None),
+        'registration': row['registration'],
+        'timezone': row.get('timezone', None),
         'classes': classes,
         'type': row.get('type', '?'),
         'upcoming': upcoming_event,
         'participants': participants,
         'lat': lat,
         'lon': lon,
-        'first_edition': row.get('First Edition', None),
-        'main_sponsors': row.get('Main Sponsors', None),
+        'first_edition': row.get('first_edition', None),
+        'main_sponsors': row.get('main_sponsors', None),
         'tags': row.get('tags', None),
-        'tech_in_use': row.get('Technologies in use', None),
-        'interactivity': row.get('Online Interactivity', None),
-        'technical_liberties': row.get('Technical Liberties', None),
+        'tech_in_use': row.get('technologies_in_use', None),
+        'interactivity': row.get('online_interactivity', None),
+        'technical_liberties': row.get('technical_liberties', None),
         'mastodon': mastodon,
-        "matrix": row.get('Matrix', None),
-        "mailinglist": row.get('Mailinglist', None),
+        "matrix": row.get('matrix', None),
+        "mailinglist": row.get('mailinglist', None),
         "hashtag": row.get('hashtag', None),
     }
 

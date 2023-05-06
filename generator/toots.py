@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from helper import create_jinja_env, generate_event_details_path
-from parser import parse_events
+from .helper import create_jinja_env, generate_event_details_path
+from .parser import parse_events
 
 env = create_jinja_env()
 template = env.get_template("toots.html")
