@@ -6,8 +6,8 @@ Variable
 * "nada": this one is not going to happen this year
 * "": keep on checking this if there are news
 
-# Datestart: YYYYMMDD
-# Datenend: YYYYMMDD
+# date_start: YYYYMMDD
+# date_end: YYYYMMDD
 
 # Label: the name we use in the list
 # Name: The name we use in the detailed view

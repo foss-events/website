@@ -8,6 +8,7 @@ jinja2 = "*"
 python-slugify = "*"
 icalendar = "*"
 iso639-lang = "*"
+pyyaml = "*"
 
 [dev-packages]
 reuse = "*"

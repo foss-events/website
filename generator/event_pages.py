@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from helper import create_jinja_env, generate_event_details_path
-from parser import parse_events, parse_all_events
+from .helper import create_jinja_env, generate_event_details_path
+from .parser import parse_events, parse_all_events
 
 # this script generates the event detail pages
 

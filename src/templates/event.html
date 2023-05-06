@@ -104,7 +104,7 @@
 		{% endif %}
 		{% if  (event['cancelled'] or event['postponed'] or event['only_online']) and event['cancellation_description'] %}
 			<div class="event-cancellation-note__text">
-				{{ event['cancellation_description'] }}
+				{{ event['cancellation_description'] | safe }}
 			</div>
 		{% endif %}
 	</div>
@@ -205,7 +205,7 @@
                     class="event-props__label">
                 Their self-description<br/><em>(<a href="{{ event['homepage'] }}">source</a>)</em>
             </div>
-            <div class="event-props__content"><em>{{ event['description'] }}</em></div>
+            <div class="event-props__content"><em>{{ event['description'] | safe }}</em></div>
         </div>
     {% endif %}
 
@@ -216,7 +216,7 @@
             <div class="event-props__content"><em>{{ event['hashtag'] }}</em></div>
         </div>
     {% endif %}
-    
+
 	{% if event['main_organiser'] %}
         <div class="event-props__group">
             <div class="event-props__label">Main organiser</div>
@@ -244,7 +244,7 @@
     {% if event['technical_liberties'] %}
         <div class="event-props__group">
             <div class="event-props__label">User's freedom</div>
-            <div class="event-props__content">{{ event['technical_liberties'] }}</div>
+            <div class="event-props__content">{{ event['technical_liberties'] | safe }}</div>
         </div>
     {% endif %}
     {% if event['timezone'] %}
@@ -256,7 +256,7 @@
 	{% if event['specialities'] %}
         <div class="event-props__group">
             <div class="event-props__label">Specialities</div>
-            <div class="event-props__content">{{ event['specialities'] }}</div>
+            <div class="event-props__content">{{ event['specialities'] | safe }}</div>
         </div>
     {% endif %}
     <div class="event-props__group">
@@ -272,7 +272,7 @@
                 {% if event['cfp_passed'] %}
                     The deadline for this CfP passed on {{ event['cfp_date'].strftime('%d.%m.%Y') }}.
                 {% else %}
-                    {{ event['cfp_link'] }}
+                    {{ event['cfp_link'] | safe }}
                     {% if event['cfp_date'] %}
                         Deadline: {{ event['cfp_date'].strftime('%d.%m.%Y') }}
                     {% endif %}
@@ -301,7 +301,7 @@
     {% if event['first_edition'] %}
         <div class="event-props__group">
             <div class="event-props__label">First edition held in</div>
-            <div class="event-props__content">{{ event['first_edition'] }}
+            <div class="event-props__content">{{ event['first_edition'] | safe }}
             </div>
         </div>
     {% endif %}
@@ -310,7 +310,7 @@
 	<div class="event-props__group">
         <div class="event-props__label">Registration</div>
         <div class="event-props__content">
-			{{ event['registration'] | url_mixed }}
+			{{ event['registration'] | url_mixed | safe }}
         </div>
     </div>
     {% endif %}

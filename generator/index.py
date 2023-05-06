@@ -3,8 +3,8 @@
 from datetime import datetime
 import sys
 
-from helper import create_jinja_env
-from parser import parse_events, parse_all_events
+from .helper import create_jinja_env
+from .parser import parse_events, parse_all_events
 
 if len(sys.argv) != 3:
     print("generator must be called with two arguments year and target, e.g. index.py 2021 build/2020/index.html")
