@@ -7,7 +7,7 @@
   --url-logo-header-svg: url("/img/fossevents_headerlogo.svg");
   --color-top-menu-foss-events-logo: #000;
   --color-background-list-event-highlighted: WhiteSmoke;
-  --color-badge-grey-text: #fff; 
+  --color-badge-grey-text: #fff;
   --color-badge-grey-background: #6c757d;
   --url-toggle-header-svg: url("/img/menu_toggle.svg");
   --color-background-toots-page-badges: #eee;
@@ -26,7 +26,7 @@
           --color-badge-grey-background: #606060;
           --url-toggle-header-svg: url("/img/menu_toggle-darkmode.svg");
           --color-background-toots-page-badges: #3f3f3f;
-        }  
+        }
 }
 
 .fe-light {
@@ -37,7 +37,7 @@
   --url-logo-header-svg: url("/img/fossevents_headerlogo.svg");
   --color-top-menu-foss-events-logo: #000;
   --color-background-list-event-highlighted: WhiteSmoke;
-  --color-badge-grey-text: #fff; 
+  --color-badge-grey-text: #fff;
   --color-badge-grey-background: #6c757d;
   --url-toggle-header-svg: url("/img/menu_toggle.svg");
   --color-background-toots-page-badges: #eee;
@@ -300,7 +300,7 @@ h2.navhead {
 }
 
 .menu-icons__icon--fossevents {
-    background-image: var(--url-logo-header-svg); 
+    background-image: var(--url-logo-header-svg);
     background-size: contain;
     border-radius: 0;
     margin-right: .5rem;
@@ -311,7 +311,7 @@ h2.navhead {
 }
 
 .menu-icons__icon--toggle {
-    background-image: var(--url-toggle-header-svg); 
+    background-image: var(--url-toggle-header-svg);
 }
 
 .menu-icons__icon--info:hover {
@@ -654,6 +654,7 @@ table.month p.eventdate {
 
 .fe-button {
     background: #339109;
+    border: 0;
     border-radius: 3px;
     color: white;
     display: inline-block;
@@ -809,4 +810,30 @@ table.month p.eventdate {
     margin-bottom: 1rem;
     padding: .75rem;
     white-space: pre-wrap;
+}
+
+.fe-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.fe-field-input {
+    padding: 8px 16px;
+}
+
+.fe-field-label {
+    font-weight: bold;
+}
+
+.fe-field-description {
+    color: #444;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.fe-form-group {
+    border: 0;
+    margin: 0 0 32px;
+    padding: 0;
 }

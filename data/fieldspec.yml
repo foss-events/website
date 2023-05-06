@@ -92,6 +92,8 @@ sections:
         label: Presentation Form
         description: Please choose if the event is a physical-only event, and online-only event or a hybrid of both.
         options:
+          - label: offline
+            value: offline
           - label: online
             value: online
           - label: physical
@@ -108,6 +110,7 @@ sections:
           - label: "Yes"
             value: yes
       - name: cancellation_description
+        type: text
         label: Cancellation reason
         max_length: 1000
         optional: true
@@ -162,12 +165,13 @@ sections:
     fields:
       - name: self_description
         type: text
+        max_length: 4000
         label: Self-Description
-        description: A concise description of the event up to 3 paragraphs. The text should be copied from the event's page and if possible in English - else you can copy & paste the description in the event's local language. Please do not write a descriptoin yourself. See <a href="URL">our help page</a> for some examples.
+        description: A concise description of the event up to 3 paragraphs. The text should be copied from the event's page and if possible in English - else you can copy & paste the description in the event's local language. Please do not write a description yourself. See <a href="URL">our help page</a> for some examples.
         placeholder: e.g. FOSDEM is a free event for software developers to meet, share ideas and collaborate. Every year, thousands of developers of free and open source software from all over the world gather at the event in Brussels. You don't need to register. Just turn up and join in!
       - name: main_language
         type: language
-        label: Main language
+        label: Main languages
         description: Please choose the default language following the ISO 639-2 language code. The default language means the main language of the talks given, not of the visitors. The main language is English, for example, in case all talks are in English although the visitors speak mainly another (local) language.
         optional: true
       - name: cfp_link
@@ -195,7 +199,7 @@ sections:
         max_length: 80
         optional: true
       - name: onlinebanner
-        type: url
+        type: text
         label: Picture/Banner
         description: Please put an url where we can find a banner or a picture of the event. Best visibility is 650 x 250 pixel.
         placeholder: e.g. https://fosdem.org/2023/support/promote/box.png
@@ -206,49 +210,47 @@ sections:
         description: At // foss.events we try to sort events in different types to help people find their favorite events. <a href="URL">See our help page</a> for more information.
         options:
           - label: Community Event
-            value: community_event
+            value: Community Event
           - label: Project Event
-            value: project_event
+            value: Project Event
           - label: Science Event
-            value: science_event
+            value: Science Event
           - label: Business Event
-            value: business_event
+            value: Business Event
           - label: Policy Event
-            value: policy_event
+            value: Policy Event
           - label: Exhibition/Fair
-            value: exhibition_fair
+            value: Exhibition/Fair
           - label: Hackmeeting
-            value: hackmeeting
+            value: Hackmeeting
           - label: Hackathon
-            value: hackathon
+            value: Hackathon
           - label: Camping
-            value: camping
+            value: Camping
           - label: Festival
-            value: festival
+            value: Festival
           - label: Unconference
-            value: unconference
+            value: Unconference
           - label: Global Day
-            value: global_day
+            value: Global Day
           - label: Regional Day
-            value: regional_day
+            value: Regional Day
       - name: specialities
         type: text
+        max_length: 4000
         label: Any specialities
         description: Anything that is special about the event and not similar to other events. This could be for example a lottery taking place among participants, a night-event that participants are invited, developer rooms, villages ...
-        placeholder:
         optional: true
-      - name: main_sponsors
-        type: text
-        label: Main Sponsors
-        max_length: 1000
       - name: editions_topic
-        type: text
         label: Edition's topic
-        max_length: 100
-      - name: tags
         type: text
+        max_length: 100
+        optional: true
+      - name: tags
         label: Tags
+        type: text
         max_length: 1000
+        optional: true
   - id: admission
     label: Admission and organisation
     fields:
@@ -268,7 +270,6 @@ sections:
         type: url
         label: Registration
         description: A link to a registration form to buy a ticket in advance, if necessary.
-        placeholder:
         optional: true
       - name: main_organiser
         type: text
@@ -276,9 +277,10 @@ sections:
         description: Person(s) or association(s) who are mainly organising the event. Can be multiple.
         placeholder: e.g. Fosdem Team
         optional: true
-      - name: main_sponsor
+      - name: main_sponsors
         type: text
         label: Main Sponsor
+        max_length: 4000
         description: Main sponsor of the event. Can be multiple.
         placeholder:
         optional: true
@@ -299,6 +301,7 @@ sections:
         optional: true
       - name: technical_liberties
         type: text
+        label: Technical Liberties
         max_length: 500
         optional: true
       - name: online_interactivity
@@ -327,16 +330,6 @@ sections:
         type: matrix_room
         label: Matrix
         description: URL of the event's Matrix room
-        optional: true
-      - name: pixelfed
-        type: url
-        label: Pixelfed
-        description: URL of the event's Pixelfed account
-        optional: true
-      - name: peertube
-        type: url
-        label: Peertubge
-        description: URL of the event's Peertube account
         optional: true
       - name: facebook
         type: url
@@ -372,6 +365,18 @@ sections:
         label: Git
         description: URL of the event's git page
         optional: true
+  - id: revision_info
+    label: Revision Info
+    fields:
+    - name: change_email
+      label: E-Mail
+      type: text
+      optional: true
+    - name: change_comment
+      label: Comment
+      type: text
+      max_length: 4000
+      optional: true
 
 # I think it does not make sense to let users decide about approval, this should be done by moderators.
 #  approved:

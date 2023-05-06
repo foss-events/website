@@ -28,9 +28,14 @@ for section in fieldspec["sections"]:
 
 reader = open_file(data_file)
 
-for row in reader:
-    csv_names = row.keys()
-    break
+languages = []
 
-field_diff = csv_names - fieldnames
-print(field_diff)
+for row in reader:
+    # csv_names = row.keys()
+    if row["main_language"] not in languages:
+        languages.append(row["main_language"])
+
+pprint(languages)
+
+# field_diff = csv_names - fieldnames
+# print(field_diff)

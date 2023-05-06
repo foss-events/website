@@ -9,6 +9,8 @@ python-slugify = "*"
 icalendar = "*"
 iso639-lang = "*"
 pyyaml = "*"
+flask = "*"
+flask-httpauth = "*"
 
 [dev-packages]
 reuse = "*"

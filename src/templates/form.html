@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include 'partials/head.html' %}
+
+    <body>
+        <div class="content">
+
+        {% include 'partials/header-logo.html' %}
+            <form method="POST" action="/event/{{ event_id }}/save">
+                {% for section in fieldspec.sections %}
+                    <h2>{{ section.label }}</h2>
+                    <fieldset class="fe-form-group">
+                        {% for field in section.fields %}
+                            <div class="fe-field">
+                                <label class="fe-field-label" >
+                                    {{ field.label }}
+                                    {% if not field.optional %}*{% endif %}
+                                </label>
+                                {% if field.type in ["text", "matrix_room"] %}
+                                    {% if field.get("max_length", 0) > 250 %}
+                                        <textarea
+                                            name="{{ field.name }}"
+                                            class="fe-field-input"
+                                            rows="10"
+                                            {% if not field.optional %}required{% endif %}
+                                        >
+                                            {{- data[field.name] -}}
+                                        </textarea>
+                                    {% else %}
+                                        <input
+                                            name="{{ field.name }}"
+                                            class="fe-field-input"
+                                            type="text"
+                                            value="{{ data[field.name] }}"
+                                            {% if field.max_length %}max-length="{{ field.max_length }}"{% endif %}
+                                            {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                                            {% if not field.optional %}required{% endif %}
+                                        >
+                                    {% endif %}
+                                {% elif field.type == "date" %}
+                                    <input
+                                        name="{{ field.name }}"
+                                        class="fe-field-input"
+                                        type="date"
+                                        value="{{ data[field.name] }}"
+                                        {% if not field.optional %}required{% endif %}
+                                    >
+                                {% elif field.type == "set" %}
+                                    {% for option in field.options %}
+                                    <label>
+                                        <input
+                                            name="{{ field.name }}"
+                                            type="checkbox"
+                                            value="{{ option.value }}"
+                                            {% if option.value in data.get(field.name, []) %}checked{% endif %}
+                                        >
+                                        {{ option.label }}
+                                    </label>
+                                    {% endfor %}
+                                {% elif field.type == "integer" %}
+                                    <input
+                                        name="{{ field.name }}"
+                                        class="fe-field-input"
+                                        type="number"
+                                        step="1"
+                                        value="{{ data[field.name] }}"
+                                        {% if not field.optional %}required{% endif %}
+                                    >
+                                {% elif field.type == "float" %}
+                                    <input
+                                        name="{{ field.name }}"
+                                        class="fe-field-input"
+                                        type="number"
+                                        value="{{ data[field.name] }}"
+                                        {% if not field.optional %}required{% endif %}
+                                    >
+                                {% elif field.type == "url" %}
+                                    <input
+                                        name="{{ field.name }}"
+                                        class="fe-field-input"
+                                        type="url"
+                                        value="{{ data[field.name] }}"
+                                        {% if not field.optional %}required{% endif %}
+                                    >
+                                {% elif field.type == "country" %}
+                                    <select
+                                        name="{{ field.name }}"
+                                        class="fe-field-input"
+                                        {% if not field.optional %}required{% endif %}
+                                    >
+                                        {% for country in countries %}
+                                            <option
+                                                value="{{ country.value }}"
+                                                {% if country["value"] in data.get("country", []) %}selected{% endif %}
+                                            >
+                                                {{ country.label }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                {% elif field.type == "select" %}
+                                    <select
+                                        class="fe-field-input"
+                                        {% if not field.optional %}required{% endif %}
+                                    >
+                                        {% for option in field.options %}
+                                            <option value="{{ option.value }}">
+                                                {{ option.label }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                {% elif field.type == "language" %}
+                                    {% for language in languages %}
+                                        <label>
+                                            <input
+                                                name="{{ field.name }}"
+                                                type="checkbox"
+                                                value="{{ language.value }}"
+                                                {% if language["value"] in data.get("main_language", []) %}checked{% endif %}
+                                            >
+                                            {{ language.label }}
+                                        </label>
+                                    {% endfor %}
+                                    </select>
+                                {% endif %}
+                                <div class="fe-field-description">{{ field.description | safe }}</div>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                {% endfor %}
+                <button class="fe-button" type="submit">Submit</button>
+            </form>
+
+        {% include 'partials/footer.html' %}
+        </div>
+    </body>
+</html>

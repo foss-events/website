@@ -23,23 +23,70 @@ def open_file(path):
         file_content = file_content.replace('“', '\"')
 
         content_io = io.StringIO(file_content)
-        return csv.DictReader(content_io, delimiter='\t')
+        return csv.DictReader(content_io, delimiter=',')
+
+
+def parse_all_events_as_list():
+    events = []
+    today = datetime.now()
+
+    data_files = []
+
+    # for year in range(2019, 2024):
+    #     data_files.append(f"data/{year}_events_db.csv")
+
+    data_files = ["data/events.csv"]
+
+    for data_file in data_files:
+        try:
+            reader = open_file(data_file)
+        except:
+            continue
+
+        for row in reader:
+            try:
+                event = parse_event(row, today)
+            except:
+                continue
+
+            if event is None or not event["id"]:
+                continue
+
+            events.append(event)
+
+    return events
+
+
+def load_event_revisions(event_id):
+    events = parse_all_events_as_list()
+    revisions = []
+
+    for event in events:
+        if event["id"] != event_id:
+            continue
+
+        revisions.append(event)
+
+    return revisions
 
 
 def parse_all_events():
     """
     :return: dict containing all events by id
     """
+
     today = datetime.now()
-    events2019 = parse_events('data/2019_events_db.csv', today)
-    events2020 = parse_events('data/2020_events_db.csv', today)
-    events2021 = parse_events('data/2021_events_db.csv', today)
-    return {**events2019['all'], **events2020['all'], **events2021['all']}
+    events = parse_events('data/events.csv', today)
+    return events["all"]
 
 
-def parse_events(file_path, today):
-
-    reader = open_file(file_path)
+def parse_events(file_path, today, year=None):
+    try:
+        reader = open_file(file_path)
+    except:
+        return {
+            "all": {}
+        }
 
     all_events = {}
     upcoming = {}
@@ -73,6 +120,9 @@ def parse_events(file_path, today):
         if event is None:
             continue
 
+        if year and str(event["start_year"]) != str(year):
+            continue
+
         event_id = event['id']
         all_events[event_id] = event
         start_month = event['start_month']
@@ -100,7 +150,6 @@ def parse_events(file_path, today):
 
 
 def parse_event(row, today):
-
     start_of_month = get_start_of_month(today)
     end_of_today = get_end_of_day(today)
 
@@ -191,6 +240,7 @@ def parse_event(row, today):
 
     event = {
         'id': row['id'],
+        "approved": row["approved"],
         'label': row['label'],
         'name': row['name'],
         'shortname': row.get('shortname', None),
@@ -249,6 +299,7 @@ def parse_event(row, today):
         "matrix": row.get('matrix', None),
         "mailinglist": row.get('mailinglist', None),
         "hashtag": row.get('hashtag', None),
+        "raw": row,
     }
 
     printable_date = ""

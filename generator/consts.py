@@ -33,9 +33,17 @@ iso_3166_countries = {
 }
 
 supported_languages = [
+    "bg",
+    "ca",
+    "cs",
     "de",
+    "el",
     "en",
+    "es",
     "fr",
+    "it",
+    "nl",
+    "no",
 ]
 
 months = {
