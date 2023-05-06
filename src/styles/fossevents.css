@@ -1,7 +1,37 @@
+:root {
+  --color-main-background: #ffffff;
+  --color-main-text: #000;
+  --color-event-props-label: #343a40;
+  --color-event-title: #000;
+  --url-logo-header-svg: url("/img/fossevents_headerlogo.svg");
+  --color-top-menu-foss-events-logo: #000;
+  --color-background-list-event-highlighted: WhiteSmoke;
+  --color-badge-grey-text: #fff; 
+  --color-badge-grey-background: #6c757d; 
+}
+
+@media (prefers-color-scheme: dark) {
+   :root {
+          --color-main-background: #2f2f2f; /*222222*/
+          --color-main-text: #e7e7e7; /*#b7b6b6* dbdbdb*/
+          --color-event-props-label: #ccc;
+          --color-event-title: #ccc;
+          --url-logo-header-svg: url("/img/fossevents_headerlogo-dark.svg");
+          --color-top-menu-foss-events-logo: #dbdbdb;
+          --color-background-list-event-highlighted: #3f3f3f;
+          --color-badge-grey-text: #e7e7e7; /*d7d7d7 */
+          --color-badge-grey-background: #606060;
+        }  
+}
+
+
+
 html,
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--color-main-background);
+    color: var(--color-main-text);
 }
 
 html {
@@ -111,6 +141,7 @@ h2.navhead {
     font-weight: normal;
     margin: 0;
     white-space: nowrap;
+    color: var(--color-top-menu-foss-events-logo);
 }
 
 .menu__link {
@@ -233,7 +264,7 @@ h2.navhead {
 }
 
 .menu-icons__icon--fossevents {
-    background-image: url("/img/fossevents_nippelspace.svg");
+    background-image: var(--url-logo-header-svg); 
     background-size: contain;
     border-radius: 0;
     margin-right: .5rem;
@@ -366,7 +397,7 @@ table.tba th td {
 }
 
 .event--highlighted {
-    background-color: WhiteSmoke;
+    background-color: var(--color-background-list-event-highlighted);
     text-align: center;
 }
 
@@ -477,6 +508,7 @@ table.month p.eventdate {
     line-height: 1.25;
     margin-bottom: 0;
     margin-top: 1rem;
+    color: var(--color-event-title);
 }
 
 .event-subtitle {
@@ -509,7 +541,7 @@ table.month p.eventdate {
 }
 
 .event-props__label {
-    color: #343a40;
+    color: var(--color-event-props-label);
     font-weight: bold;
     margin-bottom: .25rem;
     vertical-align: top;
@@ -650,8 +682,8 @@ table.month p.eventdate {
 }
 
 .badge--grey {
-    color: #fff;
-    background-color: #6c757d;
+    color: var(--color-badge-grey-text);
+    background-color: var(--color-badge-grey-background);
 }
 
 .badge--green {
