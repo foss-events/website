@@ -74,13 +74,8 @@ build/blog/%: $(POSTS)
 build/about.html: src/templates/about.html tmp/pip_deps_token
 	pipenv run python3 -m generator.about
 
-<<<<<<< HEAD
 build/toots.html: data/2023_events_db.csv src/templates/toots.html
-	pipenv run python3 generator/toots.py
-=======
-build/toots.html: data/2023_events_db.csv
 	pipenv run python3 -m generator.toots
->>>>>>> 7ca9e13e5b873c451bcafd5a1ca852fade4c2f29
 
 build/events_token: $(CSVS) generator/parser.py src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/event.html tmp/pip_deps_token
 	pipenv run python3 -m generator.event_pages
