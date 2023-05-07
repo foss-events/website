@@ -32,6 +32,12 @@ iso_3166_countries = {
     'UK': 'United Kingdom'  # historical reasons™
 }
 
+supported_languages = [
+    "de",
+    "en",
+    "fr",
+]
+
 months = {
     '01': 'January',
     '02': 'February',

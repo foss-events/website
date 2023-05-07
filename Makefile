@@ -63,23 +63,28 @@ build/favicon.ico: src/img/favicon.ico
 	cp $< $@
 
 build/index.html: data/2023_events_db.csv tmp/pip_deps_token src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/index.html generator/index.py $(COMMON)
-	pipenv run python3 generator/index.py 2023 build/index.html
+	pipenv run python3 -m generator.index 2023 build/index.html
 
 build/%/index.html: data/%_events_db.csv tmp/pip_deps_token src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/index.html generator/index.py $(COMMON)
-	pipenv run python3 generator/index.py $* build/$*/index.html
+	pipenv run python3 -m generator.index $* build/$*/index.html
 
 build/blog/%: $(POSTS)
-	pipenv run python3 generator/blog.py
+	pipenv run python3 -m generator.blog
 
 build/about.html: src/templates/about.html tmp/pip_deps_token
-	pipenv run python3 generator/about.py
+	pipenv run python3 -m generator.about
 
+<<<<<<< HEAD
 build/toots.html: data/2023_events_db.csv src/templates/toots.html
 	pipenv run python3 generator/toots.py
+=======
+build/toots.html: data/2023_events_db.csv
+	pipenv run python3 -m generator.toots
+>>>>>>> 7ca9e13e5b873c451bcafd5a1ca852fade4c2f29
 
 build/events_token: $(CSVS) generator/parser.py src/templates/partials/header-logo.html src/templates/partials/head.html src/templates/event.html tmp/pip_deps_token
-	pipenv run python3 generator/event_pages.py
-	pipenv run python3 generator/ical_files.py
+	pipenv run python3 -m generator.event_pages
+	pipenv run python3 -m generator.ical_files
 	touch build/events_token
 
 tmp/npm_deps_token: package.json package-lock.json

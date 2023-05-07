@@ -3,7 +3,7 @@ from glob import glob
 import pathlib
 import re
 
-from helper import create_jinja_env
+from .helper import create_jinja_env
 
 env = create_jinja_env()
 template = env.get_template("blog-post.html")

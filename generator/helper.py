@@ -39,7 +39,7 @@ def url_mixed_filter(value):
 
 def create_jinja_env():
     file_loader = FileSystemLoader('src/templates')
-    env = Environment(loader=file_loader)
+    env = Environment(loader=file_loader, autoescape=True)
     env.filters['url_mixed'] = url_mixed_filter
     return env
 

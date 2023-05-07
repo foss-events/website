@@ -2,7 +2,8 @@ import warnings
 from datetime import datetime
 
 from iso639 import Lang
-from helper import get_end_of_day
+
+from .helper import get_end_of_day
 
 # only print warning message, not path or message code, etc
 warnings.formatwarning = lambda msg, *args, **kwargs: f'{msg}\n'
@@ -45,23 +46,23 @@ def extract_meta_keywords(row):
 
 
 def extract_cfp(row, today):
-    cfp_date_string = row['cfpdate']
+    cfp_date_string = row['cfp_date']
 
-    if row['cfplink'].startswith('http'):
-        cfp_link = "<a href='" + row['cfplink'] + "'>Take part</a>."
-        cfp_raw_link = row['cfplink']
+    if row['cfp_link'].startswith('http'):
+        cfp_link = "<a href='" + row['cfp_link'] + "'>Take part</a>."
+        cfp_raw_link = row['cfp_link']
     else:
-        cfp_link = row['cfplink']
+        cfp_link = row['cfp_link']
         cfp_raw_link = None
 
 
     if cfp_date_string:
-        if row['cfpdate'] == 'open':
+        if row['cfp_date'] == 'open':
             cfp_date = None
             cfp_passed = False
         else:
             try:
-                cfp_date = datetime.strptime(row['cfpdate'], '%Y%m%d')
+                cfp_date = datetime.strptime(row['cfp_date'], '%Y%m%d')
                 end_of_today = get_end_of_day(today)
 
                 if cfp_date < end_of_today:

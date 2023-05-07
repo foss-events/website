@@ -2,8 +2,8 @@ from datetime import datetime, timedelta
 
 from icalendar import Calendar, Event, vDate, vDatetime, vUri, vGeo
 
-from helper import generate_event_ical_path, remove_tags
-from parser import parse_events
+from .helper import generate_event_ical_path, remove_tags
+from .parser import parse_events
 
 # this script generates the event detail pages
 
