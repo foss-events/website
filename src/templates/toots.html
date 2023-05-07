@@ -16,7 +16,11 @@
 </head>
 
 <body>
+<div class="content">
+  <div id="top"></div>
     {% include 'partials/header-logo.html' %}
+
+    <h3>Tootse</h3>
 
     <div>
         {% for toot in toots %}
@@ -48,5 +52,6 @@ Call for participation is running until {{ toot.cfp }}
     </div>
 
     {% include 'partials/footer.html' %}
+</div>
 </body>
 </html>

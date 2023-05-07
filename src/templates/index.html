@@ -4,149 +4,150 @@
 {% include 'partials/head.html' %}
 
 <body>
+<div class="content">
 
-<div id="top"></div>
+  <div id="top"></div>
 
-{% include 'partials/header-logo.html' %}
+  {% include 'partials/header-logo.html' %}
 
-<p class="introduction">
-    Connecting people via the most comprehensive collection of Free, Libre
-    and/or Open Source Software events happening in Europe and <span class="badge badge--grey">online</span>.
-    <a href="/about.html#diversity" class="button umami--click--frontpage-unity">Unity in diversity!</a>
-</p>
+  <p class="introduction">
+      Connecting people via the most comprehensive collection of Free, Libre
+      and/or Open Source Software events happening in Europe and <span class="badge badge--grey">online</span>.
+      <a href="/about.html#diversity" class="button umami--click--frontpage-unity">Unity in diversity!</a>
+  </p>
 
-<!-- this is to put a year-switch forwards/backwards in December and January
+  <!-- this is to put a year-switch forwards/backwards in December and January
 
-<div class="text-center">
-    {% if year == 2022 %}
-    <a class="fe-button" href="/">Show 2023</a>
-    {% else %}
-    <a class="fe-button" href="/2022/">Show 2022</a>
-    {% endif %}
+  <div class="text-center">
+      {% if year == 2022 %}
+      <a class="fe-button" href="/">Show 2023</a>
+      {% else %}
+      <a class="fe-button" href="/2022/">Show 2022</a>
+      {% endif %}
+  </div>
+
+  -->
+
+  {% if has_upcoming %}
+
+    <h2 id="upcoming" class="h2">Upcoming in {{ year }}</h2>
+      <div class="h2-divider"></div>
+
+      {% for month_id, month in upcoming.items() %}
+          {% if month['events'] %}
+              <h2 class="month" id="{{ month["label"] }}">
+                  {{ month['label'] }}
+              </h2>
+              <table class="month">
+                  {% for event in month['events'] %}
+                      {% if event['online'] %}
+                          {% include 'partials/event-list-item-online.html' %}
+                      {% elif event['hybrid'] %}
+                          {% include 'partials/event-list-hybrid.html' %}
+                      {% else %}
+                          {% include 'partials/event-list-item.html' %}
+                      {% endif %}
+                  {% endfor %}
+              </table>
+          {% endif %}
+
+
+          {% if month['events'] and month_id == '03' %}
+              {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+                  {% include 'partials/contribute-box.html' %}
+              {% endwith %}
+          {% endif %}
+      {% endfor %}
+
+      {% if not upcoming['03']['events'] %}
+          {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+              {% include 'partials/contribute-box.html' %}
+          {% endwith %}
+      {% endif %}
+
+      <!--
+
+      {% if year == '2020' %}
+        <h2 id="2021" class="h2"><a href="/2021">See list of events in 2021</a></h2>
+      {% endif %}
+
+  -->
+
+  {% endif %}
+
+  <p>
+      If you know about an event that is not yet listed here and it matches the <a
+          href="/about.html#criteria" class="umami--click--frontpage-critera">criteria</a>, please <a href="/about.html#contributing" class="umami--click--frontpage-contribute">contribute</a>. For any
+      questions get in <a href="/about.html#contact" class="umami--click--frontpage-contact">contact</a>.
+  </p>
+
+  {% if has_prev %}
+      <h2 id="passed" class="h2">Past events in {{ year }}</h2>
+      <div class="h2-divider"></div>
+
+      {% for month_id, month in prev.items() %}
+          {% if month['events'] %}
+              <h2 class="month" id="{{ month["label"] }}">
+                  {{ month['label'] }}
+              </h2>
+              <table class="month">
+                  {% for event in month['events'] %}
+                      {% if event['online'] %}
+                          {% include 'partials/event-list-item-online.html' %}
+                      {% else %}
+                          {% include 'partials/event-list-item.html' %}
+                      {% endif %}
+                  {% endfor %}
+              </table>
+          {% endif %}
+
+          {% if month['events'] and month_id == '03' and not has_upcoming %}
+              {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+                  {% include 'partials/contribute-box.html' %}
+              {% endwith %}
+          {% endif %}
+      {% endfor %}
+
+      {% if not prev['03']['events'] and not has_upcoming %}
+          {% with extra_class = 'umami--click--frontpage-addnewevent' %}
+              {% include 'partials/contribute-box.html' %}
+          {% endwith %}
+      {% endif %}
+  {% endif %}
+
+
+  <h1 class="h1">News</h1>
+  <div class="h1-divider"></div>
+  <p class="text-center">
+      Don't miss the latest news and<br>
+      follow <a rel="me" href="https://fosstodon.org/@foss_events"> @FOSS_events</a> on
+      <img class="icon icon--mastodon" src="/img/menu_Mastodon.svg" alt="Mastodon logo"> Mastodon<a rel="me" href="https://chaos.social/@dreirik">.</a>
+  </p>
+  <iframe
+          class="fedifeed"
+          allowfullscreen
+          sandbox="allow-top-navigation allow-scripts"
+          src="https://fedifeed.foss.events/apiv2/feed?userurl=https%3A%2F%2Ffosstodon.org%2F%2Fusers%2Ffoss_events&theme=auto&size=100&header=false&replies=false&boosts=false">
+  </iframe>
+
+
+  <h1 id="archive" class="h1">Archive</h1>
+  <div class="h1-divider"></div>
+
+  <p>
+      See the most comprehensive collection of Free, Libre and/or Open Source Software (related) events happening in
+      Europe in ...
+  </p>
+
+  <p class="years-menu">
+    <a href="/2019/"><strong>2019</strong></a> /
+    <a href="/2020/"><strong>2020</strong></a> /
+    <a href="/2021/"><strong>2021</strong></a> /
+    <a href="/2022/"><strong>2022</strong></a>
+  </p>
+
+  {% include 'partials/footer.html' %}
 </div>
-
--->
-
-{% if has_upcoming %}
-
-	<h2 id="upcoming" class="h2">Upcoming in {{ year }}</h2>
-    <div class="h2-divider"></div>
-
-    {% for month_id, month in upcoming.items() %}
-        {% if month['events'] %}
-            <h2 class="month" id="{{ month["label"] }}">
-                {{ month['label'] }}
-            </h2>
-            <table class="month">
-                {% for event in month['events'] %}
-                    {% if event['online'] %}
-                        {% include 'partials/event-list-item-online.html' %}
-                    {% elif event['hybrid'] %}
-                        {% include 'partials/event-list-hybrid.html' %}
-                    {% else %}
-                        {% include 'partials/event-list-item.html' %}
-                    {% endif %}
-                {% endfor %}
-            </table>
-        {% endif %}
-
-
-        {% if month['events'] and month_id == '03' %}
-            {% with extra_class = 'umami--click--frontpage-addnewevent' %}
-                {% include 'partials/contribute-box.html' %}
-            {% endwith %}
-        {% endif %}
-    {% endfor %}
-
-    {% if not upcoming['03']['events'] %}
-        {% with extra_class = 'umami--click--frontpage-addnewevent' %}
-            {% include 'partials/contribute-box.html' %}
-        {% endwith %}
-    {% endif %}
-
-    <!--
-
-    {% if year == '2020' %}
-			<h2 id="2021" class="h2"><a href="/2021">See list of events in 2021</a></h2>
-		{% endif %}
-
--->
-
-{% endif %}
-
-<p>
-    If you know about an event that is not yet listed here and it matches the <a
-        href="/about.html#criteria" class="umami--click--frontpage-critera">criteria</a>, please <a href="/about.html#contributing" class="umami--click--frontpage-contribute">contribute</a>. For any
-    questions get in <a href="/about.html#contact" class="umami--click--frontpage-contact">contact</a>.
-</p>
-
-{% if has_prev %}
-    <h2 id="passed" class="h2">Past events in {{ year }}</h2>
-    <div class="h2-divider"></div>
-
-    {% for month_id, month in prev.items() %}
-        {% if month['events'] %}
-            <h2 class="month" id="{{ month["label"] }}">
-                {{ month['label'] }}
-            </h2>
-            <table class="month">
-                {% for event in month['events'] %}
-                    {% if event['online'] %}
-                        {% include 'partials/event-list-item-online.html' %}
-                    {% else %}
-                        {% include 'partials/event-list-item.html' %}
-                    {% endif %}
-                {% endfor %}
-            </table>
-        {% endif %}
-
-        {% if month['events'] and month_id == '03' and not has_upcoming %}
-            {% with extra_class = 'umami--click--frontpage-addnewevent' %}
-                {% include 'partials/contribute-box.html' %}
-            {% endwith %}
-        {% endif %}
-    {% endfor %}
-
-    {% if not prev['03']['events'] and not has_upcoming %}
-        {% with extra_class = 'umami--click--frontpage-addnewevent' %}
-            {% include 'partials/contribute-box.html' %}
-        {% endwith %}
-    {% endif %}
-{% endif %}
-
-
-<h1 class="h1">News</h1>
-<div class="h1-divider"></div>
-<p class="text-center">
-    Don't miss the latest news and<br>
-    follow <a rel="me" href="https://fosstodon.org/@foss_events"> @FOSS_events</a> on
-    <img class="icon icon--mastodon" src="/img/menu_Mastodon.svg" alt="Mastodon logo"> Mastodon<a rel="me" href="https://chaos.social/@dreirik">.</a>
-</p>
-<iframe
-        class="fedifeed"
-        allowfullscreen
-        sandbox="allow-top-navigation allow-scripts"
-        src="https://fedifeed.foss.events/apiv2/feed?userurl=https%3A%2F%2Ffosstodon.org%2F%2Fusers%2Ffoss_events&theme=auto&size=100&header=false&replies=false&boosts=false">
-</iframe>
-
-
-<h1 id="archive" class="h1">Archive</h1>
-<div class="h1-divider"></div>
-
-<p>
-    See the most comprehensive collection of Free, Libre and/or Open Source Software (related) events happening in
-    Europe in ...
-</p>
-
-<p class="years-menu">
-  <a href="/2019/"><strong>2019</strong></a> /
-  <a href="/2020/"><strong>2020</strong></a> /
-  <a href="/2021/"><strong>2021</strong></a> /
-  <a href="/2022/"><strong>2022</strong></a>
-</p>
-
-{% include 'partials/footer.html' %}
-
 </body>
 
 </html>

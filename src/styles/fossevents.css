@@ -1,3 +1,4 @@
+
 :root {
   --color-main-background: #ffffff;
   --color-main-text: #000;
@@ -7,7 +8,9 @@
   --color-top-menu-foss-events-logo: #000;
   --color-background-list-event-highlighted: WhiteSmoke;
   --color-badge-grey-text: #fff; 
-  --color-badge-grey-background: #6c757d; 
+  --color-badge-grey-background: #6c757d;
+  --url-toggle-header-svg: url("/img/menu_toggle.svg");
+  --color-background-toots-page-badges: #eee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,31 +24,56 @@
           --color-background-list-event-highlighted: #3f3f3f;
           --color-badge-grey-text: #e7e7e7; /*d7d7d7 */
           --color-badge-grey-background: #606060;
+          --url-toggle-header-svg: url("/img/menu_toggle-darkmode.svg");
+          --color-background-toots-page-badges: #3f3f3f;
         }  
 }
 
+.fe-light {
+  --color-main-background: #ffffff;
+  --color-main-text: #000;
+  --color-event-props-label: #343a40;
+  --color-event-title: #000;
+  --url-logo-header-svg: url("/img/fossevents_headerlogo.svg");
+  --color-top-menu-foss-events-logo: #000;
+  --color-background-list-event-highlighted: WhiteSmoke;
+  --color-badge-grey-text: #fff; 
+  --color-badge-grey-background: #6c757d;
+  --url-toggle-header-svg: url("/img/menu_toggle.svg");
+  --color-background-toots-page-badges: #eee;
+}
+
+.fe-dark {
+          --color-main-background: #2f2f2f; /*222222*/
+          --color-main-text: #e7e7e7; /*#b7b6b6* dbdbdb*/
+          --color-event-props-label: #ccc;
+          --color-event-title: #ccc;
+          --url-logo-header-svg: url("/img/fossevents_headerlogo-dark.svg");
+          --color-top-menu-foss-events-logo: #dbdbdb;
+          --color-background-list-event-highlighted: #3f3f3f;
+          --color-badge-grey-text: #e7e7e7; /*d7d7d7 */
+          --color-badge-grey-background: #606060;
+          --url-toggle-header-svg: url("/img/menu_toggle-darkmode.svg");
+          --color-background-toots-page-badges: #3f3f3f;
+}
 
 
 html,
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-main-background);
-    color: var(--color-main-text);
-}
+  }
 
-html {
-    margin-left: 5%;
-    margin-right: 5%;
-}
 
 body {
     font-family: Cantarell, sans-serif;
     line-height: 1.5;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: var(--color-main-background);
+    color: var(--color-main-text);
+
 }
+
+
 
 /* preloading */
 body:after {
@@ -63,10 +91,18 @@ body:after {
     width: 0;
 }
 
+.content{
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media only screen and (min-width: 768px) {
-    html {
-        margin-left: 10%;
-        margin-right: 10%;
+    .content {
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
 
@@ -128,7 +164,7 @@ h2.navhead {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    padding: 1rem 0;
 }
 
 .menu--spacing-bottom {
@@ -272,6 +308,10 @@ h2.navhead {
 
 .menu-icons__icon--info {
     background-image: url("/img/menu_info.svg");
+}
+
+.menu-icons__icon--toggle {
+    background-image: var(--url-toggle-header-svg); 
 }
 
 .menu-icons__icon--info:hover {
@@ -599,7 +639,7 @@ table.month p.eventdate {
 }
 
 .footer__content {
-    margin: 3rem 0;
+    padding: 3rem 0;
 }
 
 .footer__divider {
@@ -763,7 +803,7 @@ table.month p.eventdate {
 }
 
 .toot pre {
-    background-color: #eee;
+    background-color: #000000;
     border: 1px solid #ddd;
     border-radius: .25rem;
     margin-bottom: 1rem;
