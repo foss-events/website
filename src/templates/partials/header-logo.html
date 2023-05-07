@@ -27,6 +27,42 @@
                 class="menu-icons__icon menu-icons__icon--info umami--click--head-about"
                 title="about"
                 href="/about.html"></a>
+        <a
+                class="menu-icons__icon menu-icons__icon--toggle umami--click--head-dark"
+                title="toggle"
+                id="themetoggle"></a>
+
     </div>
 </div>
 <hr class="menu__divider">
+
+                <script>
+                  (()=>{
+               
+                  var element = document.body;
+                  const feTheme=localStorage.getItem("feTheme")
+                  if (["fe-light","fe-dark"].includes(feTheme)){
+                    element.classList.add(feTheme)
+                  }
+                  
+                const myFunction = () => {
+
+                const storedTheme = localStorage.getItem("feTheme")
+                
+                const isDarkMode=storedTheme==="fe-dark"||((!storedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches))
+                  
+                 if (isDarkMode) {
+                    localStorage.setItem("feTheme","fe-light")
+                    element.classList.add("fe-light")
+                    element.classList.remove("fe-dark")
+                  }
+                 else {
+                    localStorage.setItem("feTheme","fe-dark")
+                    element.classList.add("fe-dark")
+                    element.classList.remove("fe-light")
+                  }
+
+                }
+                document.getElementById("themetoggle").addEventListener("click",myFunction)
+                   })()
+                </script>
