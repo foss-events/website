@@ -1,5 +1,7 @@
 # // foss.events
 
+## ❗ If possible, contribute to our [Codeberg repository](https://codeberg.org/foss.events/foss-events-website)! 
+
 ## About the software
 
 // foss.events is a data-driven Free Software community calendar to enable communities setting up their own customized calendars, thus helping to connect its members. [www.foss.events](https://www.foss.events) is one running instance and showcase of the software. 
